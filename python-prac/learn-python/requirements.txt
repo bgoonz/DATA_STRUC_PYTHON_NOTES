@@ -1,5 +1,5 @@
 astroid==2.5.7
-atomicwrites==1.1.5
+atomicwrites==1.4.0
 attrs==18.1.0
 flake8==3.5.0
 isort==4.3.4
