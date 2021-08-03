@@ -27,7 +27,7 @@
     "eslint-plugin-react": "7.1.0",
     "eslint-watch": "3.1.2",
     "node-sass": "4.14.1",
-    "sass-loader": "6.0.6",
+    "sass-loader": "6.0.7",
     "style-loader": "0.18.2",
     "webpack": "3.4.1"
   }
