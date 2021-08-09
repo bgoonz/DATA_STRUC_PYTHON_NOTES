@@ -147,9 +147,9 @@ new_http_archive(
 new_http_archive(
     name = "polyfill",
     build_file = "third_party/BUILD.polyfill",
-    sha256 = "9606cdeacbb67f21fb495a4b0a0e5ea6a137fc453945907822e1b930e77124d4",
-    strip_prefix = "custom-elements-1.0.8",
-    url = "https://github.com/webcomponents/custom-elements/archive/v1.0.8.zip",
+    sha256 = "41ac28dcc22ec88b20c53edfd464f3f471c7eedfce7b5d77970551d1c2ef553e",
+    strip_prefix = "custom-elements-1.2.4",
+    url = "https://github.com/webcomponents/custom-elements/archive/v1.2.4.zip",
 )
 
 git_repository(
