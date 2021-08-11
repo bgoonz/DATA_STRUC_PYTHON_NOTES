@@ -17,7 +17,7 @@
   "license": "ISC",
   "devDependencies": {
     "babel-jest": "19.0.0",
-    "eslint": "3.19.0",
+    "eslint": "7.32.0",
     "eslint-config-airbnb": "14.1.0",
     "eslint-plugin-import": "2.24.0",
     "eslint-plugin-jsx-a11y": "4.0.0",
