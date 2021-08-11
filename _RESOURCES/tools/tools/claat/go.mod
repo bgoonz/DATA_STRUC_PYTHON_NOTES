@@ -7,5 +7,5 @@ require (
 	github.com/x1ddos/csslex v0.0.0-20160125172232-7894d8ab8bfe
 	github.com/yuin/goldmark v1.3.7
 	golang.org/x/net v0.0.0-20210726213435-c6fcb2dbf985
-	golang.org/x/oauth2 v0.0.0-20210514164344-f6687ab2804c
+	golang.org/x/oauth2 v0.0.0-20210810183815-faf39c7919d5
 )
