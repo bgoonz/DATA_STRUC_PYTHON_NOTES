@@ -1,4 +1,4 @@
-# Examples
+# index
 
 ```python
 import math

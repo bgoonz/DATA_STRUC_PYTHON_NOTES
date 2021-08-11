@@ -1,7 +1,5 @@
 # Problems w Solutions
 
-
-
 * [Python built-in Modules \[ 31 Exercises with Solution \]](https://www.w3resource.com/python-exercises/modules/index.php)
 * [Python Data Types - String \[ 101 Exercises with Solution \]](https://www.w3resource.com/python-exercises/string/)
 * [Python JSON \[ 9 Exercises with Solution \]](https://www.w3resource.com/python-exercises/python-json-index.php)
@@ -87,8 +85,6 @@
 * [Pandas IMDb Movies Queries \[ 17 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/movies/index.php)
 * [Pandas Practice Set-1 \[ 65 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/practice-set1/index.php)
 
-
-
 **Python Machine Learning :**
 
 * [Python Machine learning Iris flower data set \[38 exercises with solution\]](https://www.w3resource.com/machine-learning/scikit-learn/iris/index.php)
@@ -115,9 +111,6 @@
 **List of Python Exercises :**
 
 * [Python Basic \(Part -I\) \[ 150 Exercises with Solution \]](https://www.w3resource.com/python-exercises/python-basic-exercises.php)
-
-
-
 * [Python Basic \(Part -II\) \[ 142 Exercises with Solution \]](https://www.w3resource.com/python-exercises/basic/)
 
 _An editor is available at the bottom of the page to write and execute the scripts._\]
@@ -413,8 +406,7 @@ Input month and date \(separated by a single space\):
 Name of the date: Sunday  
 [Click me to see the sample solution](https://www.w3resource.com/python-exercises/basic/python-basic-1-exercise-46.php)
 
-**47.** Write a Python program which reads a text \(only alphabetical characters and spaces.\) and prints two words. The first one is the word which is arise most frequently in the text. The second one is the word which has the maximum number of letters. [Go to the editor](https://www.w3resource.com/python-exercises/basic/#EDITOR)  
-
+**47.** Write a Python program which reads a text \(only alphabetical characters and spaces.\) and prints two words. The first one is the word which is arise most frequently in the text. The second one is the word which has the maximum number of letters. [Go to the editor](https://www.w3resource.com/python-exercises/basic/#EDITOR)
 
 Note: A word is a sequence of letters which is separated by the spaces.**Input:**  
 A text is given in a line with following condition:  
@@ -834,8 +826,7 @@ Sample Input:
 \[-10, -20, 20, 1\]  
 \[-1, -1, 4, 2, 1\]  
 \[1, 2, 3, 4, 5, 6\]  
-Sample Output:  
-
+Sample Output:
 
 ```text
 4000
@@ -851,8 +842,7 @@ Sample Input:
 \[1, 2, 4, -7, 6, 8, 1, -10, 15\]  
 \[1, 2, 3, 4, 5, 6, 7\]  
 \[-2, -3, -1, 1, 2, 3\]  
-Sample Output:  
-
+Sample Output:
 
 ```text
 4
@@ -867,8 +857,7 @@ Sample Output:
 Note: Use random.sample\(\) to generate a list of random values.  
 Sample Input:  
 \(1,100\)  
-Sample Output:  
-
+Sample Output:
 
 ```text
 [4, 22, 8, 20, 24, 12, 30, 98, 28, 48]
@@ -1076,7 +1065,7 @@ There are also 4-digit narcissistic numbers, some of which are 1634, 8208, 9474 
 9474 = 94+44+74+44  
 It has been proven that there are only 88 narcissistic numbers \(in the decimal system\) and that the largest of which is  
 115,132,219,018,763,992,565,095,597,973,971,522,401  
-has 39 digits.Ref.: //https://bit.ly/2qNYxo2  
+has 39 digits.Ref.: //[https://bit.ly/2qNYxo2](https://bit.ly/2qNYxo2)  
 Sample Input:  
 \(153\)  
 \(370\)  
@@ -1085,8 +1074,7 @@ Sample Input:
 \(1634\)  
 \(8208\)  
 \(9474\)  
-\(9475\)  
-
+\(9475\)
 
 Sample Output:  
 True  
@@ -1373,11 +1361,11 @@ HTML code of the above web page:
 &lt;h1&gt;Example Domain&lt;/h1&gt;  
 &lt;p&gt;This domain is for use in illustrative examples in documents. You may use this  
 domain in literature without prior coordination or asking for permission.&lt;/p&gt;  
-&lt;p&gt;&lt;a href="https://www.iana.org/domains/example"&gt;More information...&lt;/a&gt;&lt;/p&gt;  
+&lt;p&gt;&lt;a href="[https://www.iana.org/domains/example"&gt;More](https://www.iana.org/domains/example">More) information...&lt;/a&gt;&lt;/p&gt;  
 &lt;/div&gt;  
 &lt;/body&gt;  
-&lt;/html&gt;  
-  
+&lt;/html&gt;
+
 [Click me to see the sample solution](https://www.w3resource.com/python-exercises/basic/python-basic-1-exercise-117.php)
 
 **118.** In multiprocessing, processes are spawned by creating a Process object. Write a Python program to show the individual process IDs \(parent process, process id etc.\) involved. [Go to the editor](https://www.w3resource.com/python-exercises/basic/#EDITOR)  
@@ -1611,9 +1599,5 @@ Original sequence: 00011100011
 Check if every consecutive sequence of zeroes is followed by a consecutive sequence of ones in the said string:  
 False  
 [Click me to see the sample solution](https://www.w3resource.com/python-exercises/basic/python-basic-1-exercise-142.php)
-
-
-
-
 
 * 
