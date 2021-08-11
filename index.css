@@ -202,8 +202,8 @@ a {
 
 .vsplitbar {
   width: 4px;
-  background: #d7dee3;
-  border-right: 1px solid #bbb;
+  background: #f0f0f0;
+  border-right: 1px solid rgb(247, 245, 245);
 }
 
 #files.tablesorter {

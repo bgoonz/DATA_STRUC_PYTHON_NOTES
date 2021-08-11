@@ -1,6 +1,8 @@
 # Python Keywords
 
-## In the Beginning were Python’s Keywords <a id="in-the-beginning-were-python-s-keywords"></a>
+
+
+### In the Beginning were Python’s Keywords <a id="in-the-beginning-were-python-s-keywords"></a>
 
 Let’s face it, learning to _write_ computer programs is _hard_. Doing so involves picking up a lot of specialized skills and jargon, most of which is unfamiliar, and it also means cultivating a mental approach to the world that, at first, might seem downright _alien_. It’s a long journey, but fluency starts with learning how to _read_ computer programs, and that _really_ shouldn’t be so hard.
 
@@ -14,7 +16,7 @@ To make that task a little easier I’m going to try, in this post and the ones 
 
 That’s right; the core vocabulary of Python you actually _need_ to know to start to do meaningful work is just 35 keywords. It’s not the smallest language, but it’s _far_ from the largest, and just compare it to the roughly 10,000 words required to achieve basic _native_ fluency in a non-programming language.
 
-### First, Some Conventions <a id="first-some-conventions"></a>
+#### First, Some Conventions <a id="first-some-conventions"></a>
 
 Python is what is known as a _statement_-oriented language; but what _is_ a statement? Well, for the purposes of this article we’re just going to say that in Python a statement is a _single_ line of code that does _something_. _What_ it does, specifically, depends on the building blocks of that statement.
 
@@ -32,9 +34,9 @@ That covers any given _line_ of code, but there are also a couple of higher leve
 
 There are many other concepts you’ll need to become familiar with, but with these building blocks we can investigate all 35 words in Python’s relatively small vocabulary, and thus understand the skeleton of any Python program.
 
-## On to the Keywords <a id="on-to-the-keywords"></a>
+### On to the Keywords <a id="on-to-the-keywords"></a>
 
-### One That Does Nothing <a id="one-that-does-nothing"></a>
+#### One That Does Nothing <a id="one-that-does-nothing"></a>
 
 [pass](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#pass)[docs](https://docs.python.org/3/tutorial/controlflow.html?highlight=pass#pass-statements)A placeholder; technically known as Python’s _null operation_, [`pass`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#pass) does nothing whatsoever; it exists solely to allow you to write a syntactically valid BLOCK.
 
@@ -49,7 +51,7 @@ STATEMENT:
 
 Because it’s mainly used early on when building the rough structure of a program you’ll rarely, if ever, see [`pass`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#pass) in working code, but it’s good to know it exists.
 
-### Three That Are Objects <a id="three-that-are-objects"></a>
+#### Three That Are Objects <a id="three-that-are-objects"></a>
 
 The next three keywords are specialized because they each behave like a primitive VALUE. This means they can be assigned to a NAME, kept within a COLLECTION, and can be the result of evaluating an EXPRESSION. They’re also the only keywords that start with a capital letter, which makes them easy to distinguish.
 
@@ -75,7 +77,7 @@ A Middle English pronoun from the Old English _**nan**_, meaning “not one” o
 
 The notion of making _something_ that explicitly represents _nothing_ might seem a little odd, at first, but the need for [`None`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#none) becomes obvious when you start building _useful_ code.
 
-### Three for Making Decisions <a id="three-for-making-decisions"></a>
+#### Three for Making Decisions <a id="three-for-making-decisions"></a>
 
 Being able to tell if something is considered [`True`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#true) or [`False`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#false) isn’t very useful unless you have the means to take different actions based on that knowledge. For that _most_ programming languages have some notion of _conditional operations_. In Python there are three keywords dedicated to conditional tasks.[if](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#if)[docs](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement)Starts a conditional BLOCK by checking the _truth-value_ of the EXPRESSION that follows it; the STATEMENT\(s\) indented underneath the [`if`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#if) will be executed only if the EXPRESSION is considered [`True`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#true) .
 
@@ -131,7 +133,7 @@ else:
 
 We’ll find this useful when we look at the OPERATOR-like keywords below.
 
-### Five That Are Operators <a id="five-that-are-operators"></a>
+#### Five That Are Operators <a id="five-that-are-operators"></a>
 
 The next five keywords all behave like an OPERATOR to denote actions performed on OBJECTs and/or EXPRESSIONS.
 
@@ -253,7 +255,7 @@ OBJECT not in CONTAINER
 
 It can be tempting to think you can use [`is`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#is) with [`in`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#in) , but that’s invalid syntax. It helps to remember that since [`is`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#is) , [`is not`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#is) , [`in`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#in) , and [`not in`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#in) are all binary OPERATORs they _must_ have either an OBJECT or EXPRESSION on either side, _not_ another KEYWORD.
 
-### Four Used to Loop <a id="four-used-to-loop"></a>
+#### Four Used to Loop <a id="four-used-to-loop"></a>
 
 The above keywords give you everything you need to perform simple decision making and to take basic actions, but they’re useless whenever you need to do something _repeatedly_; that’s where _looping_ comes in. In Python the following four keywords give you everything you need to do that.
 
@@ -369,7 +371,7 @@ for NAME in COLLECTION:
 
 This is particularly useful if there’s some situation that warrants skipping the current loop; for example if you only wanted to act on every second iteration.
 
-### Three for Importing Other Things <a id="three-for-importing-other-things"></a>
+#### Three for Importing Other Things <a id="three-for-importing-other-things"></a>
 
 All of the above, plus the _builtin_ functions we’ll talk about in a later article, are sufficient to let you start using Python as a _scripting_ language, where you glue together things others have written with your own code to do some task you want to accomplish. But you need to be able to access those “things others have written” to do so. That’s what Python’s _import mechanism_ is for.[import](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#import)[docs](https://docs.python.org/3/reference/simple_stmts.html#the-import-statement)Used to bring the functionality of an external MODULE into your own code.
 
@@ -450,7 +452,7 @@ The point of [`as`](https://yawpitchroll.com/posts/the-35-words-you-need-to-pyth
 from math import pi as half_as_good_as_tau
 ```
 
-### Five for Exceptional Situations <a id="five-for-exceptional-situations"></a>
+#### Five for Exceptional Situations <a id="five-for-exceptional-situations"></a>
 
 Now that you’ve got the basics down, you’re getting into more complicated territory. What happens if you find yourself reaching a point in the code where you’re in an obvious error state and you don’t want to continue? This is where the notion of [exception handling](https://en.wikipedia.org/wiki/Exception_handling) come into play. We’ll go into more detail on the standard Exceptions in later articles, but for now let’s just say that an EXCEPTION is a special type of VALUE that signifies a specific issue that has come up in your program. That issue _might_ be an _error_, in which case you might want to crash out of the program, or it might be a signal that something _unusual_ but expected has occurred. Either way you need to be able to emit those signals from your own code, as well as catch and react to such signals emitted by other code.
 
@@ -609,7 +611,7 @@ finally:
 
 But, thankfully, it’s often not that complex, and you usually only have to deal with exception handling when something truly exceptional has happened.
 
-### Four for Writing Functions <a id="four-for-writing-functions"></a>
+#### Four for Writing Functions <a id="four-for-writing-functions"></a>
 
 Now that you’ve got all the structures you need to write an arbitrarily complex program, with the ability to make decisions, loop, and handle errors, your biggest problem is going to be organizing those structures into re-usable units. For instance you don’t want to type out a complex exception handler for every single time you connect to and query a database, as that would quickly lead to an unmanageable amount of repetition.
 
@@ -806,7 +808,7 @@ Which is a specialized use case that allows you to write a GENERATOR that will [
 
 A thorough explanation of GENERATORs is outside the scope of this series of articles, as they’re a fairly advanced topic. For now it’s sufficient to know that if you encounter [`yield`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#yield) you’re looking at a GENERATOR.
 
-### Three for Manipulating Namespaces <a id="three-for-manipulating-namespaces"></a>
+#### Three for Manipulating Namespaces <a id="three-for-manipulating-namespaces"></a>
 
 Now that you understand the basics of function, you’ll need to know about [namespaces](https://en.wikipedia.org/wiki/Namespace), as they become very important when you start building more complex programs.
 
@@ -905,7 +907,7 @@ del test[:]         # deletes all items
 
 We’ll leave a further exploration of this for when we discuss the _builtin_ types in later articles. In the meantime, let’s finally meet the keyword that will let you start defining such type-specific behaviors for yourself.
 
-### One for Defining New Types of Object <a id="one-for-defining-new-types-of-object"></a>
+#### One for Defining New Types of Object <a id="one-for-defining-new-types-of-object"></a>
 
 Up until this point I’ve been pretty vague about what an OBJECT actually is. In the [Object-Oriented Programming](https://en.wikipedia.org/wiki/Class_%28computer_programming%29) paradigm, also known as OOP, an object is, basically, a _thing_ that has both _state_ \(in the form of named _attributes_\) and _behavior_ \(in the form of callable _methods_\). Two individual things of the same _type_ may have different specific values for those attributes – we call them different _instances_ of the same _type_ – but they share the same overall _interface_. However there’s a bit more to it than that; the programmer should be able to define partial interfaces, which we’ll call _traits_, that types with similar needs can implement in different ways, such that they all share some common attributes and behaviors \(a property known as [_polymorphism_](https://en.wikipedia.org/wiki/Polymorphism_%28computer_science%29)\). Additionally these traits should be able to be passed from more generic types to more specific types via an [inheritance](https://en.wikipedia.org/wiki/Inheritance_%28object-oriented_programming%29) mechanism, much as a parent passes on traits to their children.
 
@@ -997,7 +999,7 @@ print(unit.area())
 
 Since they’re the fundamental building block of _everything_ in Python’s [data model](https://docs.python.org/3/reference/datamodel.html), there’s a _lot_ than can be said [about classes in Python](https://docs.python.org/3.7/tutorial/classes.html#classes), and there’s a lot of subtleties that can go into their proper use \(and improper abuse\), so we’ll come back to them often in later articles in this series. For now though the important thing is to start to recognize how [`class`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#class) is used to create them, and how instances are used when accessing their attributes and methods. It’s also helpful to know that there are quite a few “dunder” methods, and that these are used to implement a lot of the common “under-the-hood” functionality that supports all the [builtin functions](https://docs.python.org/3/library/functions.html) we’ll start to meet in later articles.
 
-### One for Working Within a Context <a id="one-for-working-within-a-context"></a>
+#### One for Working Within a Context <a id="one-for-working-within-a-context"></a>
 
 Sometimes there are actions you _always_ want to perform within a specific context, such as committing a database transaction or closing a network connection. These sort of things _usually_ involve some form of _exception handling_ or other boilerplate specific to the task, and that can lead to a lot of boilerplate that needs to be repeated. An example is something as simple as reading a file: opening the file must necessarily mean getting some resources from the underlying operating system, and you always want to free up those resources, even if you accidentally tried to open a file that didn’t exist or which you did not have permissions to read. The file is a _type_ of OBJECT that will always carry that contextual need to manage a resource with it, and so you’ll need to write the same [`try`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#try) and [`finally`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#finally) boilerplate _every_ time you open a file.
 
@@ -1057,7 +1059,7 @@ with CONTEXT_MANAGER_A as NAME_A:
 
 You’ll get to meet quite a few context managers as you work your way through the Python standard library. And now you know that building your own is just a matter of creating a new [`class`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#class) and implementing a couple of “dunder” methods.
 
-### And, Finally… Two for Working Asynchronously <a id="and-finally-two-for-working-asynchronously"></a>
+#### And, Finally… Two for Working Asynchronously <a id="and-finally-two-for-working-asynchronously"></a>
 
 Any function or method you write with [`def`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#def) alone is, by definition, _synchronous_, meaning that the moment you call it your running code has to stop everything else and _wait_, however long it takes, for your function to either [`return`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#return) or [`yield`](https://yawpitchroll.com/posts/the-35-words-you-need-to-python/#yield) control back to it before the rest of your code can be executed. For most tasks that happen on a local machine this is sensible and perfectly fine, especially when you _need_ the answer before you can proceed any further.
 
@@ -1115,7 +1117,7 @@ Which will pause the execution of the outer COROUTINE and wait until the called 
 
 Of course now that you’ve got the basics of doing asynchronous work down, how do you actually _perform_ such work? Well, as of Python 3.7 that still requires using functionality provided by the [asyncio](https://docs.python.org/3/library/asyncio.html) module, the details of which are _well_ outside the scope of these articles. See the [async primer](https://realpython.com/async-io-python/) I mentioned earlier for details.
 
-## Whew… <a id="whew"></a>
+### Whew… <a id="whew"></a>
 
 There you have them, Python’s 35 keywords: in and of themselves not enough to make you fluent in Python, but if you’ve read this far and digested it you’re well on your way to truly _understanding_ \(and not merely _using_\) the skeleton of _what is going on_ in one of the fastest growing general programming languages around. In the next post in this series we’ll take a step away from _words_ and look instead at _symbols_, with a dive into Python’s slightly smaller, but thankfully _much_ simpler, list of _operators_.
 

@@ -1,4 +1,10 @@
-# Untitled
+---
+description: Random stuff
+---
 
-{% embed url="https://i.ritzastatic.com/codewithreplit/e-books/coding-with-replit-export.pdf" caption="" %}
+# MISC
+
+{% embed url="https://i.ritzastatic.com/codewithreplit/e-books/coding-with-replit-export.pdf" %}
+
+
 
