@@ -32,7 +32,7 @@
     "jshint-stylish": "2.2.1",
     "merge-stream": "1.0.1",
     "path": "0.12.7",
-    "postcss-syntax": "0.34.0",
+    "postcss-syntax": "0.36.2",
     "swig-templates": "2.0.3",
     "through2": "3.0.2",
     "uglify-es": "3.3.9",
