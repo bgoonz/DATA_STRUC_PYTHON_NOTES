@@ -1,9 +1,5 @@
 # Built-in Functions
 
-
-
-## 
-
 The Python interpreter has a number of functions and types built into it that are always available. They are listed here in alphabetical order.
 
 |  |  | Built-in Functions |  |  |
@@ -22,8 +18,6 @@ The Python interpreter has a number of functions and types built into it that ar
 | [`classmethod()`](https://docs.python.org/3/library/functions.html#classmethod) | [`getattr()`](https://docs.python.org/3/library/functions.html#getattr) | [`locals()`](https://docs.python.org/3/library/functions.html#locals) | [`repr()`](https://docs.python.org/3/library/functions.html#repr) | [`zip()`](https://docs.python.org/3/library/functions.html#zip) |
 | [`compile()`](https://docs.python.org/3/library/functions.html#compile) | [`globals()`](https://docs.python.org/3/library/functions.html#globals) | [`map()`](https://docs.python.org/3/library/functions.html#map) | [`reversed()`](https://docs.python.org/3/library/functions.html#reversed) | [`__import__()`](https://docs.python.org/3/library/functions.html#__import__) |
 | [`complex()`](https://docs.python.org/3/library/functions.html#complex) | [`hasattr()`](https://docs.python.org/3/library/functions.html#hasattr) | [`max()`](https://docs.python.org/3/library/functions.html#max) | [`round()`](https://docs.python.org/3/library/functions.html#round) |  |
-
-
 
 `abs`\(_x_\)
 
@@ -150,11 +144,11 @@ If you want to parse Python code into its AST representation, see [`ast.parse()`
 
 Raises an [auditing event](https://docs.python.org/3/library/sys.html#auditing) `compile` with arguments `source` and `filename`. This event may also be raised by implicit compilation.
 
-Note 
+Note
 
 When compiling a string with multi-line code in `'single'` or `'eval'` mode, input must be terminated by at least one newline character. This is to facilitate detection of incomplete and complete statements in the [`code`](https://docs.python.org/3/library/code.html#module-code) module.
 
-Warning 
+Warning
 
 It is possible to crash the Python interpreter with a sufficiently large/complex string when compiling to an AST object due to stack depth limitations in Python’s AST compiler.
 
@@ -168,7 +162,7 @@ Return a complex number with the value _real_ + _imag_\*1j or convert a string o
 
 For a general Python object `x`, `complex(x)` delegates to `x.__complex__()`. If `__complex__()` is not defined then it falls back to [`__float__()`](https://docs.python.org/3/reference/datamodel.html#object.__float__). If `__float__()` is not defined then it falls back to [`__index__()`](https://docs.python.org/3/reference/datamodel.html#object.__index__).
 
-Note 
+Note
 
 When converting from a string, the string must not contain whitespace around the central `+` or `-` operator. For example, `complex('1+2j')` is fine, but `complex('1 + 2j')` raises [`ValueError`](https://docs.python.org/3/library/exceptions.html#ValueError).
 
@@ -215,7 +209,7 @@ The resulting list is sorted alphabetically. For example:&gt;&gt;&gt;
 ['area', 'location', 'perimeter']
 ```
 
-Note 
+Note
 
 Because [`dir()`](https://docs.python.org/3/library/functions.html#dir) is supplied primarily as a convenience for use at an interactive prompt, it tries to supply an interesting set of names more than it tries to supply a rigorously or consistently defined set of names, and its detailed behavior may change across releases. For example, metaclass attributes are not in the result list when the argument is a class.`divmod`\(_a_, _b_\)
 
@@ -273,11 +267,11 @@ If the _globals_ dictionary does not contain a value for the key `__builtins__`,
 
 Raises an [auditing event](https://docs.python.org/3/library/sys.html#auditing) `exec` with the code object as the argument. Code compilation events may also be raised.
 
-Note 
+Note
 
 The built-in functions [`globals()`](https://docs.python.org/3/library/functions.html#globals) and [`locals()`](https://docs.python.org/3/library/functions.html#locals) return the current global and local dictionary, respectively, which may be useful to pass around for use as the second and third argument to [`exec()`](https://docs.python.org/3/library/functions.html#exec).
 
-Note 
+Note
 
 The default _locals_ act as described for function [`locals()`](https://docs.python.org/3/library/functions.html#locals) below: modifications to the default _locals_ dictionary should not be attempted. Pass an explicit _locals_ dictionary if you need to see effects of the code on _locals_ after function [`exec()`](https://docs.python.org/3/library/functions.html#exec) returns.`filter`\(_function_, _iterable_\)
 
@@ -344,7 +338,7 @@ For other containers see the built-in [`set`](https://docs.python.org/3/library/
 
 Return the value of the named attribute of _object_. _name_ must be a string. If the string is the name of one of the object’s attributes, the result is the value of that attribute. For example, `getattr(x, 'foobar')` is equivalent to `x.foobar`. If the named attribute does not exist, _default_ is returned if provided, otherwise [`AttributeError`](https://docs.python.org/3/library/exceptions.html#AttributeError) is raised.
 
-Note 
+Note
 
 Since [private name mangling](https://docs.python.org/3/reference/expressions.html#private-name-mangling) happens at compilation time, one must manually mangle a private attribute’s \(attributes with two leading underscores\) name in order to retrieve it with [`getattr()`](https://docs.python.org/3/library/functions.html#getattr).`globals`\(\)
 
@@ -354,7 +348,7 @@ The arguments are an object and a string. The result is `True` if the string is 
 
 Return the hash value of the object \(if it has one\). Hash values are integers. They are used to quickly compare dictionary keys during a dictionary lookup. Numeric values that compare equal have the same hash value \(even if they are of different types, as is the case for 1 and 1.0\).
 
-Note 
+Note
 
 For objects with custom [`__hash__()`](https://docs.python.org/3/reference/datamodel.html#object.__hash__) methods, note that [`hash()`](https://docs.python.org/3/library/functions.html#hash) truncates the return value based on the bit width of the host machine. See [`__hash__()`](https://docs.python.org/3/reference/datamodel.html#object.__hash__) for details.`help`\(\[_object_\]\)
 
@@ -390,7 +384,7 @@ See also [`format()`](https://docs.python.org/3/library/functions.html#format) f
 
 See also [`int()`](https://docs.python.org/3/library/functions.html#int) for converting a hexadecimal string to an integer using a base of 16.
 
-Note 
+Note
 
 To obtain a hexadecimal string representation for a float, use the [`float.hex()`](https://docs.python.org/3/library/stdtypes.html#float.hex) method.`id`\(_object_\)
 
@@ -458,7 +452,7 @@ Rather than being a function, [`list`](https://docs.python.org/3/library/stdtype
 
 Update and return a dictionary representing the current local symbol table. Free variables are returned by [`locals()`](https://docs.python.org/3/library/functions.html#locals) when it is called in function blocks, but not in class blocks. Note that at the module level, [`locals()`](https://docs.python.org/3/library/functions.html#locals) and [`globals()`](https://docs.python.org/3/library/functions.html#globals) are the same dictionary.
 
-Note 
+Note
 
 The contents of this dictionary should not be modified; changes may not affect the values of local and free variables used by the interpreter.`map`\(_function_, _iterable_, _..._\)
 
@@ -494,7 +488,7 @@ Retrieve the next item from the _iterator_ by calling its [`__next__()`](https:/
 
 Return a new featureless object. [`object`](https://docs.python.org/3/library/functions.html#object) is a base for all classes. It has the methods that are common to all instances of Python classes. This function does not accept any arguments.
 
-Note 
+Note
 
 [`object`](https://docs.python.org/3/library/functions.html#object) does _not_ have a [`__dict__`](https://docs.python.org/3/library/stdtypes.html#object.__dict__), so you can’t assign arbitrary attributes to an instance of the [`object`](https://docs.python.org/3/library/functions.html#object) class.`oct`\(_x_\)
 
@@ -520,7 +514,7 @@ If you want to convert an integer number to octal string either with prefix “0
 
 See also [`format()`](https://docs.python.org/3/library/functions.html#format) for more information.
 
->
+&gt;
 
 `open`\(_file_, _mode='r'_, _buffering=-1_, _encoding=None_, _errors=None_, _newline=None_, _closefd=True_, _opener=None_\)
 
@@ -546,7 +540,7 @@ As mentioned in the [Overview](https://docs.python.org/3/library/io.html#io-over
 
 There is an additional mode character permitted, `'U'`, which no longer has any effect, and is considered deprecated. It previously enabled [universal newlines](https://docs.python.org/3/glossary.html#term-universal-newlines) in text mode, which became the default behaviour in Python 3.0. Refer to the documentation of the [newline](https://docs.python.org/3/library/functions.html#open-newline-parameter) parameter for further details.
 
-Note 
+Note
 
 Python doesn’t depend on the underlying operating system’s notion of text files; all the processing is done by Python itself, and is therefore platform-independent.
 
@@ -606,7 +600,7 @@ The `mode` and `flags` arguments may have been modified or inferred from the ori
 > * The `'x'` mode was added.
 > * [`IOError`](https://docs.python.org/3/library/exceptions.html#IOError) used to be raised, it is now an alias of [`OSError`](https://docs.python.org/3/library/exceptions.html#OSError).
 > * [`FileExistsError`](https://docs.python.org/3/library/exceptions.html#FileExistsError) is now raised if the file opened in exclusive creation mode \(`'x'`\) already exists.
-
+>
 > Changed in version 3.4:
 >
 > * The file is now non-inheritable.
@@ -617,7 +611,7 @@ Deprecated since version 3.4, will be removed in version 3.10: The `'U'` mode.
 >
 > * If the system call is interrupted and the signal handler does not raise an exception, the function now retries the system call instead of raising an [`InterruptedError`](https://docs.python.org/3/library/exceptions.html#InterruptedError) exception \(see [**PEP 475**](https://www.python.org/dev/peps/pep-0475) for the rationale\).
 > * The `'namereplace'` error handler was added.
-
+>
 > Changed in version 3.6:
 >
 > * Support added to accept objects implementing [`os.PathLike`](https://docs.python.org/3/library/os.html#os.PathLike).
@@ -735,7 +729,7 @@ For the built-in types supporting [`round()`](https://docs.python.org/3/library/
 
 For a general Python object `number`, `round` delegates to `number.__round__`.
 
-Note 
+Note
 
 The behavior of [`round()`](https://docs.python.org/3/library/functions.html#round) for floats can be surprising: for example, `round(2.675, 2)` gives `2.67` instead of the expected `2.68`. This is not a bug: it’s a result of the fact that most decimal fractions can’t be represented exactly as a float. See [Floating Point Arithmetic: Issues and Limitations](https://docs.python.org/3/tutorial/floatingpoint.html#tut-fp-issues) for more information._class_ `set`\(\[_iterable_\]\)
 
@@ -745,7 +739,7 @@ For other containers see the built-in [`frozenset`](https://docs.python.org/3/li
 
 This is the counterpart of [`getattr()`](https://docs.python.org/3/library/functions.html#getattr). The arguments are an object, a string and an arbitrary value. The string may name an existing attribute or a new attribute. The function assigns the value to the attribute, provided the object allows it. For example, `setattr(x, 'foobar', 123)` is equivalent to `x.foobar = 123`.
 
-Note 
+Note
 
 Since [private name mangling](https://docs.python.org/3/reference/expressions.html#private-name-mangling) happens at compilation time, one must manually mangle a private attribute’s \(attributes with two leading underscores\) name in order to set it with [`setattr()`](https://docs.python.org/3/library/functions.html#setattr)._class_ `slice`\(_stop_\)_class_ `slice`\(_start_, _stop_\[, _step_\]\)
 
@@ -900,7 +894,7 @@ True
 
 `__import__`\(_name_, _globals=None_, _locals=None_, _fromlist=\(\)_, _level=0_\)
 
-Note 
+Note
 
 This is an advanced function that is not needed in everyday Python programming, unlike [`importlib.import_module()`](https://docs.python.org/3/library/importlib.html#importlib.import_module).
 

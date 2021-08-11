@@ -5,11 +5,11 @@ _Sample String :_ "Twinkle, twinkle, little star, How I wonder what you are! Up 
 
 ```text
 Twinkle, twinkle, little star,
-	How I wonder what you are! 
-		Up above the world so high,   		
-		Like a diamond in the sky. 
+    How I wonder what you are! 
+        Up above the world so high,           
+        Like a diamond in the sky. 
 Twinkle, twinkle, little star, 
-	How I wonder what you are
+    How I wonder what you are
 ```
 
 [Click me to see the sample solution](https://www.w3resource.com/python-exercises/python-basic-exercise-1.php)
@@ -159,7 +159,7 @@ _Expected Output_ :
 **33.** Write a Python program to sum of three given integers. However, if two values are equal sum will be zero. [Go to the editor](https://www.w3resource.com/python-exercises/python-basic-exercises.php#EDITOR)  
 [Click me to see the sample solution](https://www.w3resource.com/python-exercises/python-basic-exercise-33.php)
 
-**34.** Write a Python program to sum of two given integers. However, if the sum is between 15 to 20 it will return 20. [Go to the editor  
+**34.** Write a Python program to sum of two given integers. However, if the sum is between 15 to 20 it will return 20. [Go to the editor    
 ](https://www.w3resource.com/python-exercises/python-basic-exercises.php#EDITOR)[Click me to see the sample solution](https://www.w3resource.com/python-exercises/python-basic-exercise-34.php)
 
 **35.** Write a Python program that will return true if the two given integer values are equal or their sum or difference is 5. [Go to the editor](https://www.w3resource.com/python-exercises/python-basic-exercises.php#EDITOR)  

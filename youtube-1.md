@@ -1,7 +1,5 @@
 # Youtube
 
-
-
 **Here are the best YouTube channels to learn Python programming for beginners:**
 
 1. [**Al Sweigart**](https://mikkegoes.com/youtube-channels-learn-python/#al-sweigart)\*\*\*\*
