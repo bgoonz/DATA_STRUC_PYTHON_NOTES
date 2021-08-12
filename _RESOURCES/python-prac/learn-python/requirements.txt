@@ -5,7 +5,7 @@ flake8==3.5.0
 isort==4.3.4
 lazy-object-proxy==1.6.0
 mccabe==0.6.1
-more-itertools==4.3.0
+more-itertools==8.8.0
 pluggy==0.7.1
 py==1.5.4
 pycodestyle==2.3.1
