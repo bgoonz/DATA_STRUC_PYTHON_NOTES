@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "html-webpack-plugin": "^2.29.0",
+    "html-webpack-plugin": "^5.0.0",
     "path": "^0.12.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
