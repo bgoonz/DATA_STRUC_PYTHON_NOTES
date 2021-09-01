@@ -24,7 +24,7 @@ email-validator = "*"
 flask-login = "*"
 
 [dev-packages]
-psycopg2-binary = "==2.8.6"
+psycopg2-binary = "==2.9.1"
 autopep8 = "*"
 pylint = "*"
 
