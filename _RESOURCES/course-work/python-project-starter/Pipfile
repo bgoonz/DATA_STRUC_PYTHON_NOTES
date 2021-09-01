@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-click = "==7.1.2"
+click = "==8.0.1"
 gunicorn = "==20.0.4"
 itsdangerous = "==1.1.0"
 python-dotenv = "==0.14.0"
