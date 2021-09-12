@@ -1,13 +1,23 @@
 def add(param1, param2):
     return param1 + param2
+#------------------------------------------------------------------------------------------------#
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def centuryFromYear(year):
     return ((year - 1) // 100) + 1
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def checkPalindrome(inputString):
     return inputString == inputString[::-1]
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def adjacentElementsProduct(inputArray):
@@ -18,6 +28,9 @@ def adjacentElementsProduct(inputArray):
     return max
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def shapeArea(n):
     sum = n * 2 - 1
     for i in range(1, (n * 2) - 1, 2):
@@ -25,8 +38,14 @@ def shapeArea(n):
     return sum
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def makeArrayConsecutive2(statues):
     return max(statues) - min(statues) - len(statues) + 1
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def almostIncreasingSequence(sequence):
@@ -43,11 +62,17 @@ def almostIncreasingSequence(sequence):
     return True
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def increasingSequence(sequence):
     for i in range(len(sequence) - 1):
         if not sequence[i] < sequence[i + 1]:
             return False
     return True
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def matrixElementsSum(matrix):
@@ -63,10 +88,16 @@ def matrixElementsSum(matrix):
     return sum
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def allLongestStrings(inputArray):
     length = max([len(word) for word in inputArray])
     result = [word for word in inputArray if len(word) == length]
     return result
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def commonCharacterCount(s1, s2):
@@ -79,11 +110,17 @@ def commonCharacterCount(s1, s2):
     return count
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def isLucky(n):
     string = str(n)
     top = [int(x) for x in string[: len(string) // 2]]
     bottom = [int(x) for x in string[len(string) // 2 :]]
     return sum(top) == sum(bottom)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def sortByHeight(a):
@@ -97,6 +134,9 @@ def sortByHeight(a):
 import re
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def reverseParentheses(s):
     while "(" in s:
         match = re.search("\([^()]*\)", s)
@@ -106,10 +146,16 @@ def reverseParentheses(s):
     return s
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def alternatingSums(a):
     team1 = sum(a[0::2])
     team2 = sum(a[1::2])
     return [team1, team2]
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def addBorder(picture):
@@ -118,11 +164,17 @@ def addBorder(picture):
     return picture
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def areSimilar(a, b):
     diff = [i for i in range(len(a)) if a[i] != b[i]]
     if len(diff) == 2:
         b[diff[0]], b[diff[1]] = b[diff[1]], b[diff[0]]
     return a == b
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def arrayChange(inputArray):
@@ -133,6 +185,9 @@ def arrayChange(inputArray):
             inputArray[i] += difference + 1
             count += difference + 1
     return count
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def palindromeRearranging(inputString):
@@ -149,10 +204,16 @@ def palindromeRearranging(inputString):
     return len(inputList) == 0 or not foundMiddle
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def areEquallyStrong(yourLeft, yourRight, friendsLeft, friendsRight):
     sameHands = yourLeft == friendsLeft and yourRight == friendsRight
     differentHands = yourLeft == friendsRight and yourRight == friendsLeft
     return sameHands or differentHands
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def arrayMaximalAdjacentDifference(inputArray):
@@ -162,6 +223,9 @@ def arrayMaximalAdjacentDifference(inputArray):
     return max(diffs)
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def isIPv4Address(inputString):
     strings = [string for string in inputString.split(".")]
     for string in strings:
@@ -169,6 +233,9 @@ def isIPv4Address(inputString):
             return False
     nums = [int(num) for num in strings]
     return max(nums) <= 255 and min(nums) >= 0 and len(nums) == 4
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def avoidObstacles(inputArray):
@@ -182,6 +249,9 @@ def avoidObstacles(inputArray):
             jump += length
         if done:
             return length
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def boxBlur(image):
@@ -203,6 +273,9 @@ def boxBlur(image):
             line.append(total // 9)
         outImage.append(line)
     return outImage
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def minesweeper(matrix):
@@ -236,8 +309,14 @@ def minesweeper(matrix):
     return outMatrix
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def arrayReplace(inputArray, elemToReplace, substitutionElem):
     return [x if x != elemToReplace else substitutionElem for x in inputArray]
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def evenDigitsOnly(n):
@@ -246,12 +325,21 @@ def evenDigitsOnly(n):
     )
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def variableName(name):
     return name.replace("_", "").isalnum() and not name[0].isdigit()
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def alphabeticShift(inputString):
     return "".join([chr(ord(x) + 1) if x != "z" else "a" for x in inputString])
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def chessBoardCellColor(cell1, cell2):
@@ -260,8 +348,14 @@ def chessBoardCellColor(cell1, cell2):
     return color1 == color2
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def circleOfNumbers(n, firstNumber):
     return (firstNumber + (n / 2)) % n
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def depositProfit(deposit, rate, threshold):
@@ -270,6 +364,9 @@ def depositProfit(deposit, rate, threshold):
         deposit *= 1 + (rate / 100)
         year += 1
     return year
+
+#------------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------------#
 
 
 def absoluteValuesSumMinimization(a):
@@ -287,12 +384,18 @@ def absoluteValuesSumMinimization(a):
 import itertools
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def stringsRearrangement(inputArray):
     permutations = itertools.permutations(inputArray)
     for array in permutations:
         if testArrangement(array):
             return True
     return False
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def testArrangement(array):
@@ -302,8 +405,14 @@ def testArrangement(array):
     return True
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def extractEachKth(inputArray, k):
     return [inputArray[x] for x in range(len(inputArray)) if (x + 1) % k != 0]
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def firstDigit(inputString):
@@ -312,8 +421,14 @@ def firstDigit(inputString):
             return char
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def differentSymbolsNaive(s):
     return len(set(s))
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def arrayMaxConsecutiveSum(inputArray, k):
@@ -321,6 +436,9 @@ def arrayMaxConsecutiveSum(inputArray, k):
     for i in range(1, len(inputArray) - k + 1):
         sums.append(sums[i - 1] - inputArray[i - 1] + inputArray[i + k - 1])
     return max(sums)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def growingPlant(upSpeed, downSpeed, desiredHeight):
@@ -334,6 +452,9 @@ def growingPlant(upSpeed, downSpeed, desiredHeight):
     return days
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def knapsackLight(value1, weight1, value2, weight2, maxW):
     if weight1 + weight2 <= maxW:
         return value1 + value2
@@ -344,11 +465,17 @@ def knapsackLight(value1, weight1, value2, weight2, maxW):
     return 0
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def longestDigitsPrefix(inputString):
     for char in range(len(inputString)):
         if not inputString[char].isdigit():
             return inputString[:char]
     return inputString
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def digitDegree(n):
@@ -359,8 +486,14 @@ def digitDegree(n):
     return degree
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def bishopAndPawn(bishop, pawn):
     return abs(ord(bishop[0]) - ord(pawn[0])) == abs(ord(bishop[1]) - ord(pawn[1]))
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def isBeautifulString(inputString):
@@ -370,8 +503,14 @@ def isBeautifulString(inputString):
     return True
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def findEmailDomain(address):
     return address[address.rfind("@") + 1 :]
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def buildPalindrome(st):
@@ -385,6 +524,9 @@ def buildPalindrome(st):
     return st + st[index - 1 :: -1]
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def electionsWinners(votes, k):
     winners = 0
     current_winner = max(votes)
@@ -394,6 +536,9 @@ def electionsWinners(votes, k):
         if k == 0 and candidate == current_winner and votes.count(candidate) == 1:
             winners += 1
     return winners
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def isMAC48Address(inputString):
@@ -431,8 +576,14 @@ def isMAC48Address(inputString):
     return True
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def isDigit(symbol):
     return symbol.isdigit()
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def lineEncoding(s):
@@ -452,6 +603,9 @@ def lineEncoding(s):
     else:
         output.append(s[len(s) - 1])
     return "".join(output)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def chessKnight(cell):
@@ -477,6 +631,9 @@ def chessKnight(cell):
     return moves
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def deleteDigit(n):
     num = str(n)
     highest = 0
@@ -485,6 +642,9 @@ def deleteDigit(n):
         if int(output) > int(highest):
             highest = output
     return int(highest)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def longestWord(text):
@@ -502,6 +662,9 @@ def longestWord(text):
     return "".join(longest)
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def validTime(time):
     groups = time.split(":")
     if len(groups) != 2:
@@ -511,6 +674,9 @@ def validTime(time):
     if int(groups[0]) > 23 or int(groups[1]) > 59:
         return False
     return True
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def sumUpNumbers(inputString):
@@ -530,6 +696,9 @@ def sumUpNumbers(inputString):
     return total
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def differentSquares(matrix):
     squares = set()
     for row in range(len(matrix) - 1):
@@ -540,6 +709,9 @@ def differentSquares(matrix):
             )
             squares.add(square)
     return len(squares)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def digitsProduct(product):
@@ -581,11 +753,17 @@ def digitsProduct(product):
     return int("".join(map(str, sorted(factors))))
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def findFactors(n):
     for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
             return i, n // i
     return False
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def fileNaming(names):
@@ -600,12 +778,18 @@ def fileNaming(names):
     return outnames
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def messageFromBinaryCode(code):
     output = []
     for i in range(0, len(code), 8):
         letter = chr(int(code[i : i + 8], 2))
         output.append(letter)
     return "".join(output)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def spiralNumbers(n):
@@ -649,6 +833,9 @@ def spiralNumbers(n):
 print(spiralNumbers(5))
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def sudoku(grid):
     match = [i for i in range(1, 10)]
     for row in grid:
@@ -669,20 +856,35 @@ def sudoku(grid):
     return True
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def addTwoDigits(n):
     return (n // 10) + (n % 10)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def largestNumber(n):
     return int("9" * n)
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def candies(n, m):
     return (m // n) * n
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def seatsInTheater(nCols, nRows, col, row):
     return (nCols - col + 1) * (nRows - row)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def maxMultiple(divisor, bound):
@@ -692,14 +894,23 @@ def maxMultiple(divisor, bound):
     return 0
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def circleOfNumbers(n, firstNumber):
     return (firstNumber + (n // 2)) % n
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def lateRide(n):
     hours = n // 60
     minutes = n % 60
     return (hours // 10) + (hours % 10) + (minutes // 10) + (minutes % 10)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def phoneCall(min1, min2_10, min11, s):
@@ -715,8 +926,14 @@ def phoneCall(min1, min2_10, min11, s):
     return (s // min11) + 10
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def reachNextLevel(experience, threshold, reward):
     return experience + reward >= threshold
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def knapsackLight(value1, weight1, value2, weight2, maxW):
@@ -731,6 +948,9 @@ def knapsackLight(value1, weight1, value2, weight2, maxW):
     return 0
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def extraNumber(a, b, c):
     if a == b:
         return c
@@ -739,12 +959,21 @@ def extraNumber(a, b, c):
     return a
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def isInfiniteProcess(a, b):
     return a > b or (a % 2 != b % 2)
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def arithmeticExpression(a, b, c):
     return a + b == c or a - b == c or a * b == c or a / b == c
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def tennisSet(score1, score2):
@@ -755,8 +984,14 @@ def tennisSet(score1, score2):
     return False
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def willYou(young, beautiful, loved):
     return (young and beautiful) != loved
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def metroCard(lastNumberOfDays):
@@ -765,14 +1000,23 @@ def metroCard(lastNumberOfDays):
     return [28, 30, 31]
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def killKthBit(n, k):
     return n & ~(2 ** (k - 1))
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def arrayPacking(a):
     binary_array = [bin(num)[2:].rjust(8, "0") for num in a]
     out_string = "".join(binary_array[::-1])
     return int(out_string, 2)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def rangeBitCount(a, b):
@@ -782,25 +1026,43 @@ def rangeBitCount(a, b):
     return sum(count_array)
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def mirrorBits(a):
     binary = bin(a)[2:]
     return int(binary[::-1], 2)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def secondRightmostZeroBit(n):
     return 2 ** bin(n)[::-1].find("0", bin(n)[::-1].find("0") + 1)
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def swapAdjacentBits(n):
     return ((n >> 1) & 1431655765) | ((n << 1) & 2863311530)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def differentRightmostBit(n, m):
     return 2 ** bin((n ^ m))[::-1].find("1")
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def equalPairOfBits(n, m):
     return 2 ** bin(~(n ^ m))[::-1].find("1")
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def leastFactorial(n):
@@ -810,6 +1072,9 @@ def leastFactorial(n):
         index += 1
         factorial *= index
     return factorial
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def countSumOfTwoRepresentations2(n, l, r):
@@ -823,6 +1088,9 @@ def countSumOfTwoRepresentations2(n, l, r):
     return count
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def magicalWell(a, b, n):
     total = 0
     for i in range(n):
@@ -830,6 +1098,9 @@ def magicalWell(a, b, n):
         a += 1
         b += 1
     return total
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def lineUp(commands):
@@ -852,6 +1123,9 @@ def lineUp(commands):
     return count
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def additionWithoutCarrying(param1, param2):
     # Convert numbers to strings
     str1 = str(param1)
@@ -867,6 +1141,9 @@ def additionWithoutCarrying(param1, param2):
     return int("".join(output))
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def appleBoxes(k):
     red = 0
     yellow = 0
@@ -876,6 +1153,9 @@ def appleBoxes(k):
         red += i * i
 
     return red - yellow
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def increaseNumberRoundness(n):
@@ -897,12 +1177,18 @@ def increaseNumberRoundness(n):
     return zero_sandwich.count("0") != len(zero_sandwich)
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def rounders(value):
     length = len(str(value))
     magnitude = length - 1
     for i in range(length - 1):
         value = int((value / 10) + 0.5)
     return value * (10 ** magnitude)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def candles(candlesNumber, makeNew):
@@ -917,11 +1203,17 @@ def candles(candlesNumber, makeNew):
     return totalBurned
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def countBlackCells(n, m):
     gcd = find_gcd(n, m)
     line_cells = n + m - gcd
     line_corner_cells = (gcd - 1) * 2
     return line_cells + line_corner_cells
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def find_gcd(a, b):
@@ -930,8 +1222,14 @@ def find_gcd(a, b):
     return a
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def createArray(size):
     return [1] * size
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def arrayReplace(inputArray, elemToReplace, substitutionElem):
@@ -939,6 +1237,9 @@ def arrayReplace(inputArray, elemToReplace, substitutionElem):
         elem if elem != elemToReplace else substitutionElem for elem in inputArray
     ]
     return output
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def firstReverseTry(arr):
@@ -949,12 +1250,21 @@ def firstReverseTry(arr):
     return arr[-1:] + arr[1:-1] + arr[:1]
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def concatenateArrays(a, b):
     return a + b
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def removeArrayPart(inputArray, l, r):
     return inputArray[:l] + inputArray[r + 1 :]
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def isSmooth(arr):
@@ -967,6 +1277,9 @@ def isSmooth(arr):
     return arr[0] == middle
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def replaceMiddle(arr):
     if len(arr) % 2 != 0:
         return arr
@@ -975,12 +1288,18 @@ def replaceMiddle(arr):
     return arr[: right_middle - 1] + [middle_value] + arr[right_middle + 1 :]
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def makeArrayConsecutive2(statues):
     count = 0
     for i in range(min(statues), max(statues)):
         if i not in statues:
             count += 1
     return count
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def isPower(n):
@@ -997,6 +1316,9 @@ def isPower(n):
         b = 2
         a += 1
     return False
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def isSumOfConsecutive2(n):
@@ -1016,6 +1338,9 @@ def isSumOfConsecutive2(n):
     return count
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def squareDigitsSequence(a0):
     sequence = [a0]
     while sequence[-1] not in sequence[:-1]:
@@ -1024,6 +1349,9 @@ def squareDigitsSequence(a0):
             next_value += int(digit) ** 2
         sequence.append(next_value)
     return len(sequence)
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def pagesNumberingWithInk(current, numberOfDigits):
@@ -1036,6 +1364,9 @@ def pagesNumberingWithInk(current, numberOfDigits):
     return current
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def comfortableNumbers(l, r):
     count = 0
     for a in range(l, r):
@@ -1045,6 +1376,9 @@ def comfortableNumbers(l, r):
             if b <= a + a_sum and a >= b - b_sum:
                 count += 1
     return count
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def weakNumbers(n):
@@ -1060,6 +1394,9 @@ def weakNumbers(n):
         return [weakest, weaknesses.count(weakest)]
 
 
+#------------------------------------------------------------------------------------------------#
+
+
 def count_factors(n):
     factors = 0
     for i in range(1, n + 1):
@@ -1071,6 +1408,9 @@ def count_factors(n):
 print(weakNumbers(500))
 
 import math
+
+
+#------------------------------------------------------------------------------------------------#
 
 
 def rectangleRotation(a, b):
