@@ -9,7 +9,9 @@ def making_change(quantity: int, value: list) -> int:
     elif quantity < 0 or (len(value) == 0 and quantity > 0):
         return 0
     else:
-        return making_change(quantity - value[-1], value) + making_change(quantity, value[:-1])
+        return making_change(quantity - value[-1], value) + making_change(
+            quantity, value[:-1]
+        )
 
 
 # if __name__ == "__main__":

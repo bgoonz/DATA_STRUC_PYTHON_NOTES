@@ -15,64 +15,61 @@
 **/
 
 function timeout() {
-    setInterval(function () {
-        render()
-    }, 10);
+  setInterval(function () {
+    render();
+  }, 10);
 }
 
 function hoursAMPM(milHours) {
-  if(milHours>=0){
+  if (milHours >= 0) {
     milHours = milHours % 24;
-  }
-  else {
+  } else {
     milHours = 24 - Math.abs(milHours % 24);
   }
-  if(milHours<12 && milHours!==0) {
+  if (milHours < 12 && milHours !== 0) {
     return ['' + milHours, 'AM'];
-  }
-  else if(milHours===0) {
+  } else if (milHours === 0) {
     return ['12', 'AM'];
-  }
-  else if(milHours===12) {
+  } else if (milHours === 12) {
     return ['12', 'PM'];
-  }
-  else {
-    return(['' + (milHours-12), 'PM'])
+  } else {
+    return ['' + (milHours - 12), 'PM'];
   }
 }
 
 function minuteMod(minutes) {
-  if(minutes<10) {
-    return '0'+minutes;
-  }
-  else {
+  if (minutes < 10) {
+    return '0' + minutes;
+  } else {
     return minutes;
   }
 }
 
 var N = 0;
 
-var plus = document.getElementById('plus_hour').addEventListener('click', function(){
-  N++;
-})
+var plus = document
+  .getElementById('plus_hour')
+  .addEventListener('click', function () {
+    N++;
+  });
 
-var minus = document.getElementById('minus_hour').addEventListener('click', function(){
-  N--;
-})
+var minus = document
+  .getElementById('minus_hour')
+  .addEventListener('click', function () {
+    N--;
+  });
 
 function render() {
   var now = new Date();
-  var app = document.getElementById("app");
-  var hourTime = hoursAMPM(now.getHours()+N);
+  var app = document.getElementById('app');
+  var hourTime = hoursAMPM(now.getHours() + N);
   var minuteTime = minuteMod(now.getMinutes());
   var secondTime = minuteMod(now.getSeconds());
 
-  app.innerHTML = '' + hourTime[0] + ':' + minuteTime + ':' + secondTime + ' ' + hourTime[1];
-
+  app.innerHTML =
+    '' + hourTime[0] + ':' + minuteTime + ':' + secondTime + ' ' + hourTime[1];
 }
-
-
 
 //render()
 
-timeout()
+timeout();

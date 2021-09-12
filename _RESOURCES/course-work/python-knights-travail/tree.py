@@ -42,7 +42,7 @@ class Node:
             self._children.remove(node)
             node.parent = None
         except:
-            print('Node does not exist')
+            print("Node does not exist")
 
     def breadth_search(self, value):
         queue = [self]
@@ -65,6 +65,7 @@ class Node:
             found = child.depth_search(value)
             if found:
                 return found
+
 
 node1 = Node("root1")
 node2 = Node("root2")

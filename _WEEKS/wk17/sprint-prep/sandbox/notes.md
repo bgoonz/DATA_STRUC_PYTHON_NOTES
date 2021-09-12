@@ -61,7 +61,7 @@ print (csReverseString2("helloworld"))
 
 ---
 
-My solution was as follows:
+#My solution was as follows:
 
 ```py
 def csRemoveDuplicateWords(input_str):

@@ -49,13 +49,39 @@ for word in words:
 def get_neighbors(word):
     """""
     Return all words from word_list that are exactly 1 letter different
-    """""
+    """ ""
     # time complexity: O(length_of_begin_word)
     # space complexity: O(number_words)
     neighbors = []
     letter_list = list(word)  # "abc" -> ["a", "b", "c"]
-    letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
-               "v", "w", "x", "y", "z"]
+    letters = [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+    ]
     # For each letter in our word...
     for i in range(len(letter_list)):
         # check each other letter

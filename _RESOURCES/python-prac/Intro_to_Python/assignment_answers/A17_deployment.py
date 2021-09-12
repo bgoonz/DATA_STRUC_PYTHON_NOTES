@@ -11,11 +11,11 @@ developing a package vs a module?
 """
 
 # Answer
-''' 
+""" 
 1. A module is a single python file where a package is a directory of one or 
 more python files. Packages are marked by the existence of the 
 `__init__.py` file. Modules do not require this file. 
 
 2. The setup file for a module uses the py_modules=['my_module'] keyword argument,
 where a package requires this to be changed to the packages=['my_package'] keyword argument.
-'''
+"""

@@ -41,19 +41,17 @@ output = []
 math_module_functions_list = dir(math)
 
 for function_string in math_module_functions_list:
-  if function_string[0:2] == "is":
-    output.append(function_string)
+    if function_string[0:2] == "is":
+        output.append(function_string)
 
 output.sort()
 
 print(output)
 
 
-
-
-  # print(func)
-  # if func == "isinf":
-  #   print("i got one!")
+# print(func)
+# if func == "isinf":
+#   print("i got one!")
 # print("bobinf".startswith("is"))
 # print("isinf"[0] == "i" and "isinf"[1] == "s")
 # print("isinf"[0:2])
@@ -88,15 +86,19 @@ and `dog`. Set `cat` to have a name of "Purrfect", kind of "cat",
 and color of "brown". Set `dog` to have a name of "Fido",
 kind of "dog", and color of "black".
 """
+
+
 class Animal:
     def __init__(self, name="", kind="", color=""):
-      self.name = name
-      self.color = color
-      self.kind = kind
+        self.name = name
+        self.color = color
+        self.kind = kind
 
     def description(self):
         # return "%s is a %s %s." % (self.name, self.color, self.kind)
         return f"{self.name} is a {self.color} {self.kind}"
+
+
 """
 instantiate an instance of the Animal class labeled cat
 instantiate an instance of the Animal class labeled dog
@@ -161,20 +163,22 @@ Notes:
 # n = 3
 # print(l[0 - n: len(l)])
 
+
 def last(a, n):
-  if n > len(a):
-    return "invalid"
+    if n > len(a):
+        return "invalid"
 
-  if n == 0:
-    return []
+    if n == 0:
+        return []
 
-  return a[0 - n: len(a)]
+    return a[0 - n : len(a)]
+
 
 # tests
-print(last([1, 2, 3, 4, 5], 1)) #  ➞ [5]
-print(last([4, 3, 9, 9, 7, 6], 3)) #  ➞ [9, 7, 6]
-print(last([1, 2, 3, 4, 5], 7)) # ➞ "invalid"
-print(last([1, 2, 3, 4, 5], 0)) #  ➞ []
+print(last([1, 2, 3, 4, 5], 1))  #  ➞ [5]
+print(last([4, 3, 9, 9, 7, 6], 3))  #  ➞ [9, 7, 6]
+print(last([1, 2, 3, 4, 5], 7))  # ➞ "invalid"
+print(last([1, 2, 3, 4, 5], 0))  #  ➞ []
 
 """# U**.**P**.**E**.**R
 

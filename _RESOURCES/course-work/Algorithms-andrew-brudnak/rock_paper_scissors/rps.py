@@ -13,6 +13,7 @@ def rock_paper_scissors(n: int) -> list:
             return
         for i in ro_sham_bo:
             helper(v - 1, result + [i])
+
     helper(n, [])
     return possibilities
 

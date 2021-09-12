@@ -4,7 +4,7 @@ def neighbours(matrix, i, j, rows, columns):
     if i >= 1 and j >= 1:
         if matrix[i - 1][j - 1]:
             mines += 1
-    # Top center        
+    # Top center
     if i >= 1:
         if matrix[i - 1][j]:
             mines += 1
@@ -33,7 +33,8 @@ def neighbours(matrix, i, j, rows, columns):
         if matrix[i][j - 1]:
             mines += 1
     return mines
-    
+
+
 def minesweeper(matrix):
     rows, columns = len(matrix), len(matrix[0])
     game_setup = []
@@ -43,7 +44,3 @@ def minesweeper(matrix):
             game_setup_row.append(neighbours(matrix, i, j, rows, columns))
         game_setup.append(game_setup_row)
     return game_setup
-            
-            
-
-

@@ -1,5 +1,3 @@
-
-
 # '''
 # Linked List hash table key/value pair
 # '''
@@ -21,9 +19,9 @@ class HashTable:
 
 # Hash int
 def hash(x, max):
-    x = ((x >> 16) ^ x) * 0x45d9f3b
-    x = ((x >> 16) ^ x) * 0x45d9f3b
-    x = ((x >> 16) ^ x)
+    x = ((x >> 16) ^ x) * 0x45D9F3B
+    x = ((x >> 16) ^ x) * 0x45D9F3B
+    x = (x >> 16) ^ x
 
     return x % max
 
@@ -86,7 +84,7 @@ def hash_table_retrieve(hash_table, key):
     current_pair = hash_table.storage[index]
 
     while current_pair is not None:
-        if(current_pair.key == key):
+        if current_pair.key == key:
             return current_pair.value
         current_pair = current_pair.next
 
@@ -102,9 +100,7 @@ def hash_table_resize(hash_table):
     for i in range(len(hash_table.storage)):
         current_pair = hash_table.storage[i]
         while current_pair is not None:
-            hash_table_insert(new_hash_table,
-                              current_pair.key,
-                              current_pair.value)
+            hash_table_insert(new_hash_table, current_pair.key, current_pair.value)
             current_pair = current_pair.next
 
     return new_hash_table

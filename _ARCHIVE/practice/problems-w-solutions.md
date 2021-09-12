@@ -1,117 +1,117 @@
 # Problems w Solutions
 
-* [Python built-in Modules \[ 31 Exercises with Solution \]](https://www.w3resource.com/python-exercises/modules/index.php)
-* [Python Data Types - String \[ 101 Exercises with Solution \]](https://www.w3resource.com/python-exercises/string/)
-* [Python JSON \[ 9 Exercises with Solution \]](https://www.w3resource.com/python-exercises/python-json-index.php)
-* [Python Data Types - List \[ 272 Exercises with Solution \]](https://www.w3resource.com/python-exercises/list/)
-* [Python Data Types - Dictionary \[ 80 Exercises with Solution \]](https://www.w3resource.com/python-exercises/dictionary/)
-* [Python Data Types - Tuple \[ 33 Exercises with Solution \]](https://www.w3resource.com/python-exercises/tuple/)
-* [Python Data Types - Sets \[ 20 Exercises with Solution \]](https://www.w3resource.com/python-exercises/sets/)
-* [Python Data Types - Collections \[ 36 Exercises with Solution \]](https://www.w3resource.com/python-exercises/collections/)
-* [Python heap queue algorithm \[ 29 exercises with solution \]](https://www.w3resource.com/python-exercises/heap-queue-algorithm/index.php)
-* [Python Array \[ 24 Exercises with Solution \]](https://www.w3resource.com/python-exercises/array/)
-* [Python Enum \[ 5 Exercises with Solution \]](https://www.w3resource.com/python-exercises/enum/)
-* [Python Bisect \[ 9 Exercises with Solution \]](https://www.w3resource.com/python-exercises/bisect/)
-* [Python Conditional statements and loops \[ 44 Exercises with Solution\]](https://www.w3resource.com/python-exercises/python-conditional-statements-and-loop-exercises.php)
-* [Python functions \[ 21 Exercises with Solution \]](https://www.w3resource.com/python-exercises/python-functions-exercises.php)
-* [Python Lambda \[ 52 Exercises with Solution \]](https://www.w3resource.com/python-exercises/lambda/index.php)
-* [Python Map \[ 17 Exercises with Solution \]](https://www.w3resource.com/python-exercises/map/index.php)
-* [Python Operating System Services \[ 18 Exercises with Solution \]](https://www.w3resource.com/python-exercises/os/index.php)
-* [Python Date Time \[ 63 Exercises with Solution \]](https://www.w3resource.com/python-exercises/date-time-exercise/)
-* [Python Class \[ 24 Exercises with Solution \]](https://www.w3resource.com/python-exercises/class-exercises/)
-* [Search and Sorting \[ 39 Exercises with Solution \]](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/)
-* [Linked List \[ 14 Exercises with Solution \]](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-linked-list.php)
-* [Binary Search Tree \[ 6 Exercises with Solution \]](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-binary-search-tree-index.php)
-* [Recursion \[ 11 Exercises with Solution \]](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-recursion.php)
-* [Python Math \[ 88 Exercises with Solution \]](https://www.w3resource.com/python-exercises/math/)
-* [Python File Input Output \[ 21 Exercises with Solution \]](https://www.w3resource.com/python-exercises/file/)
-* [Python Regular Expression \[ 56 Exercises with Solution \]](https://www.w3resource.com/python-exercises/re/)
-* [Python SQLite Database \[ 13 Exercises with Solution \]](https://www.w3resource.com/python-exercises/sqlite/index.php)
-* [Python CSV File Reading and Writing \[ 11 exercises with solution \]](https://www.w3resource.com/python-exercises/csv/index.php)
-* [Python Itertools \[ 44 exercises with solution \]](https://www.w3resource.com/python-exercises/itertools/index.php)
-* [Python Requests \[ 9 exercises with solution \]](https://www.w3resource.com/python-exercises/requests/index.php)
-* More to Come !
+- [Python built-in Modules \[ 31 Exercises with Solution \]](https://www.w3resource.com/python-exercises/modules/index.php)
+- [Python Data Types - String \[ 101 Exercises with Solution \]](https://www.w3resource.com/python-exercises/string/)
+- [Python JSON \[ 9 Exercises with Solution \]](https://www.w3resource.com/python-exercises/python-json-index.php)
+- [Python Data Types - List \[ 272 Exercises with Solution \]](https://www.w3resource.com/python-exercises/list/)
+- [Python Data Types - Dictionary \[ 80 Exercises with Solution \]](https://www.w3resource.com/python-exercises/dictionary/)
+- [Python Data Types - Tuple \[ 33 Exercises with Solution \]](https://www.w3resource.com/python-exercises/tuple/)
+- [Python Data Types - Sets \[ 20 Exercises with Solution \]](https://www.w3resource.com/python-exercises/sets/)
+- [Python Data Types - Collections \[ 36 Exercises with Solution \]](https://www.w3resource.com/python-exercises/collections/)
+- [Python heap queue algorithm \[ 29 exercises with solution \]](https://www.w3resource.com/python-exercises/heap-queue-algorithm/index.php)
+- [Python Array \[ 24 Exercises with Solution \]](https://www.w3resource.com/python-exercises/array/)
+- [Python Enum \[ 5 Exercises with Solution \]](https://www.w3resource.com/python-exercises/enum/)
+- [Python Bisect \[ 9 Exercises with Solution \]](https://www.w3resource.com/python-exercises/bisect/)
+- [Python Conditional statements and loops \[ 44 Exercises with Solution\]](https://www.w3resource.com/python-exercises/python-conditional-statements-and-loop-exercises.php)
+- [Python functions \[ 21 Exercises with Solution \]](https://www.w3resource.com/python-exercises/python-functions-exercises.php)
+- [Python Lambda \[ 52 Exercises with Solution \]](https://www.w3resource.com/python-exercises/lambda/index.php)
+- [Python Map \[ 17 Exercises with Solution \]](https://www.w3resource.com/python-exercises/map/index.php)
+- [Python Operating System Services \[ 18 Exercises with Solution \]](https://www.w3resource.com/python-exercises/os/index.php)
+- [Python Date Time \[ 63 Exercises with Solution \]](https://www.w3resource.com/python-exercises/date-time-exercise/)
+- [Python Class \[ 24 Exercises with Solution \]](https://www.w3resource.com/python-exercises/class-exercises/)
+- [Search and Sorting \[ 39 Exercises with Solution \]](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/)
+- [Linked List \[ 14 Exercises with Solution \]](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-linked-list.php)
+- [Binary Search Tree \[ 6 Exercises with Solution \]](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-binary-search-tree-index.php)
+- [Recursion \[ 11 Exercises with Solution \]](https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-recursion.php)
+- [Python Math \[ 88 Exercises with Solution \]](https://www.w3resource.com/python-exercises/math/)
+- [Python File Input Output \[ 21 Exercises with Solution \]](https://www.w3resource.com/python-exercises/file/)
+- [Python Regular Expression \[ 56 Exercises with Solution \]](https://www.w3resource.com/python-exercises/re/)
+- [Python SQLite Database \[ 13 Exercises with Solution \]](https://www.w3resource.com/python-exercises/sqlite/index.php)
+- [Python CSV File Reading and Writing \[ 11 exercises with solution \]](https://www.w3resource.com/python-exercises/csv/index.php)
+- [Python Itertools \[ 44 exercises with solution \]](https://www.w3resource.com/python-exercises/itertools/index.php)
+- [Python Requests \[ 9 exercises with solution \]](https://www.w3resource.com/python-exercises/requests/index.php)
+- More to Come !
 
 **Python GUI tkinter**
 
-* [Python tkinter Basic \[ 5 Exercises with Solution \]](https://www.w3resource.com/python-exercises/tkinter/index-basic.php)
-* [Python tkinter widgets \[ 12 Exercises with Solution \]](https://www.w3resource.com/python-exercises/tkinter/index.php)
+- [Python tkinter Basic \[ 5 Exercises with Solution \]](https://www.w3resource.com/python-exercises/tkinter/index-basic.php)
+- [Python tkinter widgets \[ 12 Exercises with Solution \]](https://www.w3resource.com/python-exercises/tkinter/index.php)
 
 **Python NumPy :**
 
-* [Python NumPy Home](https://www.w3resource.com/python-exercises/numpy/index.php)
-* [Python NumPy Basic \[ 59 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/basic/index.php)
-* [Python NumPy arrays \[ 205 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/index.php)
-* [Python NumPy Linear Algebra \[ 19 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/linear-algebra/index.php)
-* [Python NumPy Random \[ 17 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-random.php)
-* [Python NumPy Sorting and Searching \[ 9 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-sorting-and-searching.php)
-* [Python NumPy Mathematics \[ 41 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-math.php)
-* [Python NumPy Statistics \[ 14 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-stat.php)
-* [Python NumPy DateTime \[ 7 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-datetime.php)
-* [Python NumPy String \[ 22 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-string.php)
-* More to come
+- [Python NumPy Home](https://www.w3resource.com/python-exercises/numpy/index.php)
+- [Python NumPy Basic \[ 59 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/basic/index.php)
+- [Python NumPy arrays \[ 205 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/index.php)
+- [Python NumPy Linear Algebra \[ 19 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/linear-algebra/index.php)
+- [Python NumPy Random \[ 17 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-random.php)
+- [Python NumPy Sorting and Searching \[ 9 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-sorting-and-searching.php)
+- [Python NumPy Mathematics \[ 41 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-math.php)
+- [Python NumPy Statistics \[ 14 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-stat.php)
+- [Python NumPy DateTime \[ 7 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-datetime.php)
+- [Python NumPy String \[ 22 Exercises with Solution \]](https://www.w3resource.com/python-exercises/numpy/python-numpy-string.php)
+- More to come
 
 **Python Challenges :**
 
-* [Python Challenges: Part -1 \[ 1- 64 \]](https://www.w3resource.com/python-exercises/challenges/1/index.php)
-* More to come
+- [Python Challenges: Part -1 \[ 1- 64 \]](https://www.w3resource.com/python-exercises/challenges/1/index.php)
+- More to come
 
 **Python Mini Projects :**
 
-* [Python Projects Numbers: \[ 11 Projects with solution \]](https://www.w3resource.com/projects/python/index.php)
-* [Python Web Programming: \[ 12 Projects with solution \]](https://www.w3resource.com/projects/python/web-programming/index.php)
-* [Python Projects: Novel Coronavirus \(COVID-19\) \[ 14 Exercises with Solution \]](https://www.w3resource.com/python-exercises/project/covid-19/index.php)
-* More to come
+- [Python Projects Numbers: \[ 11 Projects with solution \]](https://www.w3resource.com/projects/python/index.php)
+- [Python Web Programming: \[ 12 Projects with solution \]](https://www.w3resource.com/projects/python/web-programming/index.php)
+- [Python Projects: Novel Coronavirus \(COVID-19\) \[ 14 Exercises with Solution \]](https://www.w3resource.com/python-exercises/project/covid-19/index.php)
+- More to come
 
 **Python Pandas :**
 
-* [Python Pandas Home](https://www.w3resource.com/python-exercises/pandas/index.php)
-* [Pandas Data Series \[ 40 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/index-data-series.php)
-* [Pandas DataFrame \[ 81 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/index-dataframe.php)
-* [Pandas Index \[ 26 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/index/index.php)
-* [Pandas String and Regular Expression \[ 41 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/string/index.php)
-* [Pandas Joining and merging DataFrame \[ 15 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/joining-and-merging/index.php)
-* [Pandas Grouping and Aggregating \[ 32 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/groupby/index.php)
-* [Pandas Time Series \[ 32 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/time-series/index.php)
-* [Pandas Filter \[ 27 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/filter/index.php)
-* [Pandas GroupBy \[ 32 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/groupby/index.php)
-* [Pandas Handling Missing Values \[ 20 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/missing-values/index.php)
-* [Pandas Style \[ 15 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/style/index.php)
-* [Pandas Excel Data Analysis \[ 25 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/excel/index.php)
-* [Pandas Pivot Table \[ 32 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/excel/index-pivot.php)
-* [Pandas Datetime \[ 25 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/datetime/index.php)
-* [Pandas Plotting \[ 19 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/plotting/index.php)
-* [Pandas SQL database Queries \[ 24 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/sql/index.php)
-* [Pandas IMDb Movies Queries \[ 17 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/movies/index.php)
-* [Pandas Practice Set-1 \[ 65 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/practice-set1/index.php)
+- [Python Pandas Home](https://www.w3resource.com/python-exercises/pandas/index.php)
+- [Pandas Data Series \[ 40 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/index-data-series.php)
+- [Pandas DataFrame \[ 81 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/index-dataframe.php)
+- [Pandas Index \[ 26 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/index/index.php)
+- [Pandas String and Regular Expression \[ 41 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/string/index.php)
+- [Pandas Joining and merging DataFrame \[ 15 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/joining-and-merging/index.php)
+- [Pandas Grouping and Aggregating \[ 32 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/groupby/index.php)
+- [Pandas Time Series \[ 32 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/time-series/index.php)
+- [Pandas Filter \[ 27 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/filter/index.php)
+- [Pandas GroupBy \[ 32 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/groupby/index.php)
+- [Pandas Handling Missing Values \[ 20 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/missing-values/index.php)
+- [Pandas Style \[ 15 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/style/index.php)
+- [Pandas Excel Data Analysis \[ 25 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/excel/index.php)
+- [Pandas Pivot Table \[ 32 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/excel/index-pivot.php)
+- [Pandas Datetime \[ 25 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/datetime/index.php)
+- [Pandas Plotting \[ 19 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/plotting/index.php)
+- [Pandas SQL database Queries \[ 24 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/sql/index.php)
+- [Pandas IMDb Movies Queries \[ 17 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/movies/index.php)
+- [Pandas Practice Set-1 \[ 65 exercises with solution \]](https://www.w3resource.com/python-exercises/pandas/practice-set1/index.php)
 
 **Python Machine Learning :**
 
-* [Python Machine learning Iris flower data set \[38 exercises with solution\]](https://www.w3resource.com/machine-learning/scikit-learn/iris/index.php)
-* More to come
+- [Python Machine learning Iris flower data set \[38 exercises with solution\]](https://www.w3resource.com/machine-learning/scikit-learn/iris/index.php)
+- More to come
 
 **Learn Python packages using Exercises, Practice, Solution and explanation**
 
 **Python GeoPy Package :**
 
-* [Python GeoPy Package \[ 7 exercises with solution \]](https://www.w3resource.com/python-exercises/geopy/index.php)
+- [Python GeoPy Package \[ 7 exercises with solution \]](https://www.w3resource.com/python-exercises/geopy/index.php)
 
 **Python BeautifulSoup :**
 
-* [Python BeautifulSoup \[ 36 exercises with solution \]](https://www.w3resource.com/python-exercises/BeautifulSoup/index.php)
+- [Python BeautifulSoup \[ 36 exercises with solution \]](https://www.w3resource.com/python-exercises/BeautifulSoup/index.php)
 
 **Python Arrow Module :**
 
-* [Python Arrow Module \[ 27 exercises with solution \]](https://www.w3resource.com/python-exercises/arrow/index.php)
+- [Python Arrow Module \[ 27 exercises with solution \]](https://www.w3resource.com/python-exercises/arrow/index.php)
 
 **Python Web Scraping :**
 
-* [Python Web Scraping \[ 27 Exercises with solution \]](https://www.w3resource.com/python-exercises/web-scraping/index.php)
+- [Python Web Scraping \[ 27 Exercises with solution \]](https://www.w3resource.com/python-exercises/web-scraping/index.php)
 
 **List of Python Exercises :**
 
-* [Python Basic \(Part -I\) \[ 150 Exercises with Solution \]](https://www.w3resource.com/python-exercises/python-basic-exercises.php)
-* [Python Basic \(Part -II\) \[ 142 Exercises with Solution \]](https://www.w3resource.com/python-exercises/basic/)
+- [Python Basic \(Part -I\) \[ 150 Exercises with Solution \]](https://www.w3resource.com/python-exercises/python-basic-exercises.php)
+- [Python Basic \(Part -II\) \[ 142 Exercises with Solution \]](https://www.w3resource.com/python-exercises/basic/)
 
 _An editor is available at the bottom of the page to write and execute the scripts._\]
 
@@ -159,7 +159,7 @@ target = 70
 [Click me to see the sample solution](https://www.w3resource.com/python-exercises/basic/python-basic-1-exercise-12.php)
 
 **13.** Write a Python program to get all possible two digit letter combinations from a digit \(1 to 9\) string. [Go to the editor](https://www.w3resource.com/python-exercises/basic/#EDITOR)  
-string\_maps = {  
+string_maps = {  
 "1": "abc",  
 "2": "def",  
 "3": "ghi",  
@@ -386,10 +386,10 @@ Input number of sequence of numbers you want to input \(0 to exit\):
 
 Write a Python program to test the followings -
 
-* "C2 is in C1" if C2 is in C1
-* "C1 is in C2" if C1 is in C2
-* "Circumference of C1 and C2 intersect" if circumference of C1 and C2 intersect, and
-* "C1 and C2 do not overlap" if C1 and C2 do not overlap.
+- "C2 is in C1" if C2 is in C1
+- "C1 is in C2" if C1 is in C2
+- "Circumference of C1 and C2 intersect" if circumference of C1 and C2 intersect, and
+- "C1 and C2 do not overlap" if C1 and C2 do not overlap.
 
 **Input:**  
 Input numbers \(real numbers\) are separated by a space.  
@@ -1599,4 +1599,3 @@ Original sequence: 00011100011
 Check if every consecutive sequence of zeroes is followed by a consecutive sequence of ones in the said string:  
 False  
 [Click me to see the sample solution](https://www.w3resource.com/python-exercises/basic/python-basic-1-exercise-142.php)
-

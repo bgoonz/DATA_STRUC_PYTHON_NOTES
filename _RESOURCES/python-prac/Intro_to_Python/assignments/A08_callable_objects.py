@@ -22,5 +22,5 @@ def test_is_even() -> None:
         print(is_even_lambda(i))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_is_even()

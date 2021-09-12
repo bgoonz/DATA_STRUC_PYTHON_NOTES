@@ -24,12 +24,18 @@ class KnightPathFinder:
 
         # lst = [(x + new_x,y + new_y) for (x,y) in valid if]
 
-        return set(filter(lambda move: move[0] in range(8) and move[1] in range(8), valid_moves))
+        return set(
+            filter(
+                lambda move: move[0] in range(8) and move[1] in range(8), valid_moves
+            )
+        )
 
     def new_move_positions(self, pos):
         # self._considered_positions.remove(pos)
         new_positions = self.get_valid_moves(pos) - self._considered_positions
-        self._considered_positions = self._considered_positions | self.get_valid_moves(pos)
+        self._considered_positions = self._considered_positions | self.get_valid_moves(
+            pos
+        )
 
         return new_positions
 
@@ -39,7 +45,6 @@ class KnightPathFinder:
 
     def build_move_tree(self):
         queue = [self.new_move_positions(self._root.value), self._root]
-
 
         while len(queue) > 0:
             pos = queue.pop(0)

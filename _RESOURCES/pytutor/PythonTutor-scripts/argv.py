@@ -3,7 +3,7 @@
 # i need to check that filed are existing and that there are
 # only 4 arguments. if a file is missing i need to print valueError
 # this is what i got so far
-'''
+"""
 def check_input_args(args):
     counter = 0
     for i in args:
@@ -20,7 +20,7 @@ def check_input_args(args):
                 print(os.path.isfile(arg))
                 break
             except ValueError:
-                print(' file is missing')'''
+                print(' file is missing')"""
 
 
 import os

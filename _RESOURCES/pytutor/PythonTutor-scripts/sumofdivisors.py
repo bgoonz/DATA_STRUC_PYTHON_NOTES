@@ -20,7 +20,7 @@ class Divisors:
 
         #  Get the square of each divisor
         #  and compute the sum
-        sum_square_div = sum([num**2 for num in divisors])
+        sum_square_div = sum([num ** 2 for num in divisors])
         sr = math.sqrt(sum_square_div)
 
         ans = []

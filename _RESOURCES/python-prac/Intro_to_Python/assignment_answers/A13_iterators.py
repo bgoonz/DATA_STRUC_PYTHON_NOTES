@@ -30,7 +30,7 @@ def make_iter(sequence):
 
 print(list(iter(iterable)) == list(make_iter(iterable)))
 
-''' While both of these answers work to solve the problem at hand, the first way 
+""" While both of these answers work to solve the problem at hand, the first way 
 seems better because the `iter()` function is already defined for us and we add
 no new functionality: we're just wrapping a builtin function and giving it a 
-new name. This is quite silly and not pythonic at all. '''
+new name. This is quite silly and not pythonic at all. """

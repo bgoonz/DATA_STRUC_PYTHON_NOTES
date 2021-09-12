@@ -11,7 +11,7 @@
 # modify_list(l)
 # print(l)
 # output must be [1,2,3]
-'''Write the function modify_list (l), which takes a list of integers as
+"""Write the function modify_list (l), which takes a list of integers as
 an input, removes all odd values from it, and evenly divides even numbers
 by two. The function should not return anything, it only requires
 changing the transferred list, for example:
@@ -26,7 +26,7 @@ lst = [10, 5, 8, 3]
 modify_list (lst)
 print (lst) # [5, 4]
 The function should not carry out input / output information.
-'''
+"""
 
 
 def modify_list(seq):

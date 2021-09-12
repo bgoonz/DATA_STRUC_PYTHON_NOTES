@@ -1,33 +1,34 @@
 from collections import defaultdict
 import random
-#actually, an inverse "islands" problem
-#instead of finding all connected items
-#find all items with no connections
-#need to have an inverse link
-#instead of a "common animal" link
-#build a goofy "dark edge" graph
 
-#start with all classes connected to all other classes
-#then disconnect them when an edge between them is found!
+# actually, an inverse "islands" problem
+# instead of finding all connected items
+# find all items with no connections
+# need to have an inverse link
+# instead of a "common animal" link
+# build a goofy "dark edge" graph
+
+# start with all classes connected to all other classes
+# then disconnect them when an edge between them is found!
 def feedingTime(classes):
     class_graph = defaultdict(set)
     animals = defaultdict(set)
     neg_graph = defaultdict(set)
     c_size = len(classes)
 
-    #fully connected graph
+    # fully connected graph
     for i in range(c_size):
         for j in range(c_size):
-            if(not i == j):
+            if not i == j:
                 class_graph[i].add(j)
 
-    #animals graph to classes - constructed here
+    # animals graph to classes - constructed here
     for i, c_arr in enumerate(classes):
         for animal in c_arr:
             animals[animal].add(i)
 
-    #now remove edges based on connections
-    #need to remove third-party edges as well...
+    # now remove edges based on connections
+    # need to remove third-party edges as well...
     for i, c_arr in enumerate(classes):
         for animal in c_arr:
             for c_val in animals[animal]:
@@ -35,10 +36,10 @@ def feedingTime(classes):
                 neg_graph[c_val].update(set(animals[animal]))
                 neg_graph[c_val].discard(c_val)
 
-    #now find islands as normal!
-    #worth a shot
-    #need a break condition if the conflicting animals are related when can be added to current
-    #then remove from graph!
+    # now find islands as normal!
+    # worth a shot
+    # need a break condition if the conflicting animals are related when can be added to current
+    # then remove from graph!
     check = []
 
     # check.append(graph_search([9, 5, 1, 4, 6, 2, 7, 3, 8, 0], class_graph.copy(), neg_graph.copy()))
@@ -59,7 +60,7 @@ def feedingTime(classes):
 
     islands = min(check)
 
-    if(islands > 5):
+    if islands > 5:
         return -1
 
     return islands
@@ -76,16 +77,16 @@ def graph_search(vals, class_graph, neg_graph):
             route.add(i)
             found_val = False
 
-            while(queue):
+            while queue:
                 curr = queue.pop(0)
                 route.add(curr)
                 seen.add(curr)
                 for item in class_graph[curr]:
-                    #halts the BFS if any connections to another class that has the same animals
-                    #should actually only add item if not in conflict with anything in route
-                    #not break altogether
+                    # halts the BFS if any connections to another class that has the same animals
+                    # should actually only add item if not in conflict with anything in route
+                    # not break altogether
                     test = [True if item in neg_graph[a] else False for a in route]
-                    if(not any(test) and item not in seen):
+                    if not any(test) and item not in seen:
                         seen.add(item)
                         queue.append(item)
                         route.add(item)
@@ -97,11 +98,7 @@ def graph_search(vals, class_graph, neg_graph):
     print(islands)
     return len(islands)
 
-
-
-
-
-    #below is close, but not quite there!
+    # below is close, but not quite there!
     # classes_assigned = {}
     # day_schedule = []
     # day_animals = defaultdict(set)
@@ -162,6 +159,7 @@ def graph_search(vals, class_graph, neg_graph):
     #     return -1
 
     # return len(day_schedule)
+
 
 def sort_last(tup):
     return tup[1]

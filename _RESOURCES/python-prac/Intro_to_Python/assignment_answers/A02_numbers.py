@@ -8,4 +8,4 @@
 my_int = 42
 my_float = 3.14
 my_complex = 3 + 7j
-print(2**65536)
+print(2 ** 65536)

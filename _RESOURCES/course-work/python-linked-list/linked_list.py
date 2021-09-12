@@ -99,7 +99,6 @@ class LinkedList:
             self._length -= 1
             return head
 
-
     # TODO: Implement the remove_tail method here
     def remove_tail(self):
         node = self._head
@@ -121,7 +120,7 @@ class LinkedList:
     def __len__(self):
         return self._length
 
-# Phase 2
+    # Phase 2
 
     # TODO: Implement the contains_value method here
     def contains_value(self, target):
@@ -156,7 +155,6 @@ class LinkedList:
             self._length += 1
             return True
 
-
     # TODO: Implement the update_value method here
     def update_value(self, position, value):
         node_to_update = self.get_node(position)
@@ -187,11 +185,10 @@ class LinkedList:
             self._length -= 1
             return current_node
 
-
     # TODO: Implement the __str__ method here
     def __str__(self):
         if not self._head:
-            return 'Empty List'
+            return "Empty List"
         node_list = []
         counter = 0
         currentNode = self._head
@@ -200,7 +197,7 @@ class LinkedList:
             currentNode = currentNode.next
             counter += 1
 
-        return (', ').join(node_list)
+        return (", ").join(node_list)
 
 
 # Phase 1 Manual Testing:
@@ -267,8 +264,8 @@ class LinkedList:
 
 # # 5. Format the list as a string whenever `print()` is invoked
 new_linked_list = LinkedList()
-print(new_linked_list)                  # Empty List
-new_linked_list.add_to_tail('puppies')
-print(new_linked_list)                  # puppies
-new_linked_list.add_to_tail('kittens')
-print(new_linked_list)                  # puppies, kittens
+print(new_linked_list)  # Empty List
+new_linked_list.add_to_tail("puppies")
+print(new_linked_list)  # puppies
+new_linked_list.add_to_tail("kittens")
+print(new_linked_list)  # puppies, kittens

@@ -21,13 +21,13 @@ class SparseVec(object):
     def get_vec(self):
         return self.vec
 
-        '''
+        """
         In the add meethod you first need to find which vector
         that is longer (self or other). Then you can create a
         new sparse vector and add all elements from self and
         other to the new vector (can do that in 1 or 2 for-loops).
         Then you return the new vector last.
-        '''
+        """
 
     def __add__(self, other):
         #  Get the longer vector
@@ -74,18 +74,20 @@ class SparseVec(object):
             self.vec = nonzeroes
 
     def __repr__(self):
-        string = ''
+        string = ""
         for key, val in self.vec.items():
-            string += '[{}]={} '.format(key, val)
+            string += "[{}]={} ".format(key, val)
         return string
 
-    '''
+    """
     def __repr__(self):
         format_string = ''
         for key, val in enumerate(self.vec):
             format_string += '[{}]={} '.format(key, val)
         return format_string
-    '''
+    """
+
+
 #    def __repr__(self):
 #        return 'Sparse Vector {}'. format(n)
 
@@ -96,22 +98,22 @@ a[0] = -1
 # test for self.val
 print("a[0]", a[0])
 print(a)
-#[0]=-1 [1]=0 [2]=9.2 [3]=0
+# [0]=-1 [1]=0 [2]=9.2 [3]=0
 print(a.get_vec())
-#{0: -1, 2: 9.2}
+# {0: -1, 2: 9.2}
 b = SparseVec(5)
 b[1] = 1
 b[2] = 10
 print(b)
-#[0]=0 [1]=1 [2]=0 [3]=0 [4]=0
+# [0]=0 [1]=1 [2]=0 [3]=0 [4]=0
 print(b.get_vec())
-#{1: 1}
+# {1: 1}
 print("add op:")
-c = (a + b)
+c = a + b
 print(c.get_vec())
-#[0]=-1 [1]=1 [2]=9.2 [3]=0 [4]=0
+# [0]=-1 [1]=1 [2]=9.2 [3]=0 [4]=0
 # print(c.vec)
-#{0: -1, 1: 1, 2: 9.2}
+# {0: -1, 1: 1, 2: 9.2}
 # for ai, i in a: # SparseVec iterator
 #    print ('a[%d]=%g ' % (i, ai))
 

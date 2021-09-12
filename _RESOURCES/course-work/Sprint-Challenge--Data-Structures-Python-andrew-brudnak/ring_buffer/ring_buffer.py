@@ -34,23 +34,29 @@ class RingBuffer:
 
 buffer = RingBuffer(3)
 
-buffer.get()   # should return []
+buffer.get()  # should return []
 
-buffer.append('a')
-buffer.append('b')
-buffer.append('c')
+buffer.append("a")
+buffer.append("b")
+buffer.append("c")
 
-print(f"Should return \"['a', 'b', 'c']\" \t --> \t {buffer.get()}")   # should return ['a', 'b', 'c']
+print(
+    f"Should return \"['a', 'b', 'c']\" \t --> \t {buffer.get()}"
+)  # should return ['a', 'b', 'c']
 
 # 'd' overwrites the oldest value in the ring buffer, which is 'a'
-buffer.append('d')
+buffer.append("d")
 
-print(f"Should return \"['d', 'b', 'c']\" \t --> \t {buffer.get()}")   # should return ['d', 'b', 'c']
+print(
+    f"Should return \"['d', 'b', 'c']\" \t --> \t {buffer.get()}"
+)  # should return ['d', 'b', 'c']
 
-buffer.append('e')
-buffer.append('f')
+buffer.append("e")
+buffer.append("f")
 
-print(f"Should return \"['d', 'e', 'f']\" \t --> \t {buffer.get()}")   # should return ['d', 'e', 'f']
+print(
+    f"Should return \"['d', 'e', 'f']\" \t --> \t {buffer.get()}"
+)  # should return ['d', 'e', 'f']
 
 # Testing
 

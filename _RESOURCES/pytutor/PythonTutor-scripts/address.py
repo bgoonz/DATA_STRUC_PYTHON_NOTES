@@ -7,20 +7,21 @@ if __name__ == "__main__":
 
     # ADDRESS BOOK
     # The address book contains the names & addresses of customers who have registered with the drone
-    address_book = {"Alice": Address(92617, 10, 1200),
-                    "Bob": Address(92617, 10, 8320),
-                    "Cindy": Address(92630, 15, 2550),
-                    "Wang": Address(91250, 24, 3205),
-                    "Chang":  Address(91450, 61, 9982),
-                    "Lee": Address(91750, 92, 6420),
-                    "Steve":  Address(91250, 89, 7102),
-                    "Turing": Address(96250, 57, 8311)}
+    address_book = {
+        "Alice": Address(92617, 10, 1200),
+        "Bob": Address(92617, 10, 8320),
+        "Cindy": Address(92630, 15, 2550),
+        "Wang": Address(91250, 24, 3205),
+        "Chang": Address(91450, 61, 9982),
+        "Lee": Address(91750, 92, 6420),
+        "Steve": Address(91250, 89, 7102),
+        "Turing": Address(96250, 57, 8311),
+    }
 
     # print(address_book)
     # ORDER LIST
     # Given a list of orders, where each order is a tuple (user_name, amount)
-    orders = [("Wang", 11.25), ("Turing", 2.54),
-              ("Alice", 26.25), ("Steve", 12.34)]
+    orders = [("Wang", 11.25), ("Turing", 2.54), ("Alice", 26.25), ("Steve", 12.34)]
 
     delivery_dictionary = {}
 
@@ -72,8 +73,7 @@ if __name__ == "__main__":
                         # Add the delivery fee
                         new_price = price + 2.5
                         # Update the dictionary
-                        delivery_dictionary_clone[zipcode].append(
-                            (name, new_price))
+                        delivery_dictionary_clone[zipcode].append((name, new_price))
 
             else:
                 name = orders[0][0]
@@ -84,8 +84,7 @@ if __name__ == "__main__":
                     # Delete the old order entry
                     delivery_dictionary_clone[zipcode].clear()
                     # Update the dictionary
-                    delivery_dictionary_clone[zipcode].append(
-                        (name, new_price))
+                    delivery_dictionary_clone[zipcode].append((name, new_price))
 
     print("Task 3")
     print(delivery_dictionary_clone)
@@ -100,10 +99,16 @@ if __name__ == "__main__":
         if orders:
             if len(orders) > 1:
                 for order in orders:
-                    print("zipcode: {}, order: {}, {}".format(
-                        zipcode, "".join(order[0]), order[1]))
+                    print(
+                        "zipcode: {}, order: {}, {}".format(
+                            zipcode, "".join(order[0]), order[1]
+                        )
+                    )
             else:
-                print("zipcode: {}, order: {}, {}".format(
-                    zipcode, "".join(orders[0][0]), orders[0][1]))
+                print(
+                    "zipcode: {}, order: {}, {}".format(
+                        zipcode, "".join(orders[0][0]), orders[0][1]
+                    )
+                )
         else:
             print("zipcode: {}, No Orders".format(zipcode))

@@ -4,9 +4,9 @@ def boxBlur(image):
         out.append(
             [
                 (
-                    sum(image[i][j: j + 3])
-                    + sum(image[i + 1][j: j + 3])
-                    + sum(image[i + 2][j: j + 3])
+                    sum(image[i][j : j + 3])
+                    + sum(image[i + 1][j : j + 3])
+                    + sum(image[i + 2][j : j + 3])
                 )
                 // 9
                 for j in range(len(image[i]) - 2)

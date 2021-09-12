@@ -9,7 +9,7 @@ def isLucky(n):
     # return sum(l[0:len(l) // 2]) == sum(l[len(l) // 2:])
 
     s = str(n)
-    return sum(map(int, s[: len(s) // 2])) == sum(map(int, s[len(s) // 2: len(s)]))
+    return sum(map(int, s[: len(s) // 2])) == sum(map(int, s[len(s) // 2 : len(s)]))
 
 
 n = 1230

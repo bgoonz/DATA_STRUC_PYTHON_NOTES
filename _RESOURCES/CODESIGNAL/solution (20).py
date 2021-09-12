@@ -1,4 +1,3 @@
-
 def almostIncreasingSequence(sequence):
     for ind in range(len(sequence) - 1):
         if sequence[ind] < sequence[ind + 1]:

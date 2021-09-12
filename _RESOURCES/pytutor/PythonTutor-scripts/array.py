@@ -39,10 +39,13 @@ def num_multiply(array, n):
 
     def num2(x):
         return n * x
-   # return num_multiply(array, n) ?
+
+    # return num_multiply(array, n) ?
 
     return transform_array(array, num2)
-   # I just want to change my array
+
+
+# I just want to change my array
 
 
 # TEST

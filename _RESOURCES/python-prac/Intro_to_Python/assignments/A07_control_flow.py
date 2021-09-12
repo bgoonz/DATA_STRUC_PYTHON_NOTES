@@ -13,8 +13,8 @@ Also, try not to evaluate the length of the name more than once. """
 a = 1
 
 if not a:
-    print('a')
+    print("a")
 elif a == 1:
     print("a is 1")
 else:
-    print('not a')
+    print("not a")

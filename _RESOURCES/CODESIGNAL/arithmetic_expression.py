@@ -4,4 +4,6 @@ def arithmeticExpression(a, b, c):
     Check whether it is possible to replace # with one of 
     the four signs: +, -, * or / to obtain a correct
     """
-    return True if (a + b == c) or (a - b == c) or (a * b == c) or (a / b == c) else False
+    return (
+        True if (a + b == c) or (a - b == c) or (a * b == c) or (a / b == c) else False
+    )

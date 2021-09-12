@@ -13,7 +13,7 @@ def arithmetic_arranger(problems, calc=False):
     if len(problems) > 5:
         return ERR_SIZE
 
-    rex = re.compile(r'^[0-9]{1,4}$')
+    rex = re.compile(r"^[0-9]{1,4}$")
 
     formated = []
 
@@ -21,7 +21,7 @@ def arithmetic_arranger(problems, calc=False):
         [a, op, b] = p.split()
 
         # check the operator
-        if op != '+' and op != "-":
+        if op != "+" and op != "-":
             return ERR_OP
 
         if len(a) > 4 or len(b) > 4:
@@ -41,19 +41,19 @@ def arithmetic_arranger(problems, calc=False):
     if not calc:
         ss = ss[0:3]
 
-    return '\n'.join(ss)
+    return "\n".join(ss)
 
 
 def fmt(a, op, b, calc):
     x = int(a)
     y = int(b)
-    r = x + y if op == '+' else x - y
+    r = x + y if op == "+" else x - y
     base = r if r > 0 else 0 - r
     n = max([len(a), len(b), len(str(base))]) if calc else max([len(a), len(b)])
 
     r = str(r)
     n += 2  # for the op and a space
-    res = [a.rjust(n), op + " " + b.rjust(n - 2), '-' * n]
+    res = [a.rjust(n), op + " " + b.rjust(n - 2), "-" * n]
     if calc:
         res.append(r.rjust(n))
     return res

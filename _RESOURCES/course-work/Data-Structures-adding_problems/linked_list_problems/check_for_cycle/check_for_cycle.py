@@ -1,5 +1,6 @@
 from linked_list import LinkedList
 
+
 def check_for_cycle(ll):
     pass
 

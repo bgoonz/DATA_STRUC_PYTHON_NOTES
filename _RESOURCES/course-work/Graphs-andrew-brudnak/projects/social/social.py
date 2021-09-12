@@ -1,5 +1,6 @@
 import random
 
+
 class Queue:
     def __init__(self):
         self.queue = []
@@ -37,7 +38,9 @@ class SocialGraph:
         """
         if userID == friendID:
             print("WARNING: You cannot be friends with yourself")
-        elif friendID in self.friendships[userID] or userID in self.friendships[friendID]:
+        elif (
+            friendID in self.friendships[userID] or userID in self.friendships[friendID]
+        ):
             print("WARNING: Friendship already exists")
         else:
             self.friendships[userID].add(friendID)
@@ -130,7 +133,9 @@ class SocialGraph:
         que = Queue()  # creating our queue
 
         # since BFS add start id to que
-        que.enqueue([userID])  # enqueuing the user id in list / build possible path / keep a good one
+        que.enqueue(
+            [userID]
+        )  # enqueuing the user id in list / build possible path / keep a good one
 
         while que.size() > 0:  # while the queue is not empty...
             path = que.dequeue()
@@ -138,7 +143,9 @@ class SocialGraph:
             new_user_id = path[-1]
 
             if new_user_id not in visited:
-                visited[new_user_id] = path  # dict of paths from starting to everyone else
+                visited[
+                    new_user_id
+                ] = path  # dict of paths from starting to everyone else
 
                 for neighbor in self.friendships[new_user_id]:
                     path_copy = path.copy()
@@ -168,7 +175,7 @@ class SocialGraph:
     # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sg = SocialGraph()
     sg.populateGraph(11, 3)
     print("USERS:")

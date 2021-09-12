@@ -23,11 +23,7 @@ Original file is located at
 Add "Herb" to the phonebook with the number 7653420789.
 Remove "Bill" from the phonebook.
 """
-phonebook = {
-    "Abe": 4569874321,
-    "Bill": 7659803241,
-    "Barry": 6573214789
-}
+phonebook = {"Abe": 4569874321, "Bill": 7659803241, "Barry": 6573214789}
 
 # YOUR CODE HERE
 phonebook["Herb"] = 7653420789
@@ -60,7 +56,6 @@ my_list1.append(7)
 print(id(my_list1), id(my_list2))
 
 
-
 """
 Example Two
 """
@@ -77,7 +72,6 @@ print("My Text", id(my_text1), id(my_text2))
 # Now check if my_text1 and my_text2 have the same value?
 print("1:", my_text1, "2:", my_text2)
 # Do they? Explain why or why not.
-
 
 
 """
@@ -108,65 +102,85 @@ print(dir(store))
 """
 Constant Time O(1)
 """
+
+
 def print_one_item(items):
     print(items[0])
+
 
 """
 Linear Time O(n)
 """
+
+
 def print_every_item(items):
     for item in items:
         print(item)
 
+
 """
 Quadratic Time O(n^2)
 """
+
+
 def print_pairs(items):
     for item_one in items:
         for item_two in items:
             print(item_one, item_two)
+
+
 """
 What about constants?
 """
-def do_a_bunch_of_stuff(items): # O(1 + n/2 + 2000) -> O(n)
+
+
+def do_a_bunch_of_stuff(items):  # O(1 + n/2 + 2000) -> O(n)
     last_idx = len(items) - 1
-    print(items[last_idx]) # O(1)
+    print(items[last_idx])  # O(1)
 
     middle_idx = len(items) / 2
     idx = 0
-    while idx < middle_idx: # O(n/2)
+    while idx < middle_idx:  # O(n/2)
         print(items[idx])
         idx = idx + 1
 
-    for num in range(2000): # O(2000)
+    for num in range(2000):  # O(2000)
         print(num)
+
 
 """
 Most significant term
 """
-def do_different_things(items): # O(n + n^2) -> O(n^2)
-    for item in items: # O(n)
+
+
+def do_different_things(items):  # O(n + n^2) -> O(n^2)
+    for item in items:  # O(n)
         print(item)
 
-    for item_one in items: # O(n * n) = O(n^2)
+    for item_one in items:  # O(n * n) = O(n^2)
         for item_two in items:
             print(item_one, item_two)
+
 
 """
 Big O is the worst case
 """
-def search_for_thing(items, thing): # O(n)
+
+
+def search_for_thing(items, thing):  # O(n)
     for item in items:
         if item == thing:
             return True
 
     return False
 
+
 """
 Classify the runtime complexity of the number_of_steps function below using Big O notation.
 """
 
-def number_of_steps(num): # O(log(n))
+
+def number_of_steps(num):  # O(log(n))
     steps = 0
     while num > 0:
         if num % 2 == 0:
@@ -176,6 +190,7 @@ def number_of_steps(num): # O(log(n))
         steps = steps + 1
     return steps
 
+
 # print(number_of_steps(10))
 print(number_of_steps(10000))
 
@@ -184,9 +199,12 @@ print(number_of_steps(10000))
 """
 Constant Space O(1)
 """
+
+
 def print_lambda_n_times(n):
     for i in range(n):
         print("lambda")
+
 
 def get_the_max(items_list):
     maximum = float("-inf")
@@ -196,34 +214,41 @@ def get_the_max(items_list):
 
     return maximum
 
+
 """
 Linear Space O(n)
 """
-def append_to_list_n_times(n):
-    my_list = [] # O(1)
 
-    for _ in range(n): # O(n)
-        my_list.append("lambda") # O(1)
+
+def append_to_list_n_times(n):
+    my_list = []  # O(1)
+
+    for _ in range(n):  # O(n)
+        my_list.append("lambda")  # O(1)
 
     return my_list
 
-"""
-Use Big O notation to classify the space complexity of the function below.
-"""
-def fibonacci(n): # O(n)
-    lst = [0, 1] # O(2)
-    for i in range(2, n): # O(n)
-        lst.append(lst[i-2] + lst[i-1]) # O(2)
-
-    return lst[n-1] # O(1)
-
-
 
 """
 Use Big O notation to classify the space complexity of the function below.
 """
-def fibonacci_two(n): # O(1)
-    x, y, z = 0, 1, None # O(3)
+
+
+def fibonacci(n):  # O(n)
+    lst = [0, 1]  # O(2)
+    for i in range(2, n):  # O(n)
+        lst.append(lst[i - 2] + lst[i - 1])  # O(2)
+
+    return lst[n - 1]  # O(1)
+
+
+"""
+Use Big O notation to classify the space complexity of the function below.
+"""
+
+
+def fibonacci_two(n):  # O(1)
+    x, y, z = 0, 1, None  # O(3)
 
     if n == 0:
         return x
@@ -236,22 +261,26 @@ def fibonacci_two(n): # O(1)
 
     return z
 
+
 """
 Use Big O notation to classify the space complexity of the function below.
 """
-def do_something(n): # O(n^2)
-    lst = [] # O(1)
-    for i in range(n): # O(n)
-        for j in range(n): # O(n)
-            lst.append(i + j) # O(n^2 * 2)
+
+
+def do_something(n):  # O(n^2)
+    lst = []  # O(1)
+    for i in range(n):  # O(n)
+        for j in range(n):  # O(n)
+            lst.append(i + j)  # O(n^2 * 2)
 
     return lst
+
 
 """# List Comprehensions"""
 
 l = [1, 2, 3, 4, 5]
 for i in range(len(l)):
-  l[i] = l[i] * 2
+    l[i] = l[i] * 2
 
 l2 = [l[i] * 2 for i in range(len(l)) if l[i] == 4]
 # for i in range(len(l)):
@@ -260,7 +289,7 @@ l2 = [l[i] * 2 for i in range(len(l)) if l[i] == 4]
 
 l3 = []
 for i in range(len(l)):
-  l3.append(l[i] * 2)
+    l3.append(l[i] * 2)
 print(l)
 print(l2)
 print(l3)
@@ -301,17 +330,20 @@ Examples:
 - single_number([5,2,3,2,3]) -> 5
 - single_number([10]) -> 10
 """
+
+
 def single_number(nums):
-  singles = []
+    singles = []
 
-  for num in nums:
-    if num not in singles:
-      singles.append(num)
-    else:
-      singles.remove(num)
+    for num in nums:
+        if num not in singles:
+            singles.append(num)
+        else:
+            singles.remove(num)
 
-  return singles.pop()
+    return singles.pop()
 
-print(single_number([3,3,2])) #  -> 2
-print(single_number([5,2,3,2,3])) # -> 5
-print(single_number([10])) # -> 10
+
+print(single_number([3, 3, 2]))  #  -> 2
+print(single_number([5, 2, 3, 2, 3]))  # -> 5
+print(single_number([10]))  # -> 10

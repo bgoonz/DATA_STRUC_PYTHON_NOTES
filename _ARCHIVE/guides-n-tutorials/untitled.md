@@ -1,4 +1,4 @@
-# Untitled
+# Complete Beginner's Guide
 
 ## Course Content
 

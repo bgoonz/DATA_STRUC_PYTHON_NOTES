@@ -1,6 +1,6 @@
 # Given a word, return all the anagrams of that word in the English language.
 
-f = open('words.txt', 'r')
+f = open("words.txt", "r")
 words = f.read().split("\n")
 words = [w.lower() for w in words]
 f.close()

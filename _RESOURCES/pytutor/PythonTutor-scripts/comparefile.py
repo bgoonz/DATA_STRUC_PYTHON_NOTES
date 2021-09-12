@@ -8,6 +8,8 @@ def singleline_diff(line1, line2):
             return i
 
     return shorter_length
+
+
 # print(singleline_diff("abcd", "abcde"))
 
 
@@ -17,15 +19,15 @@ def singleline_diff_format(line1, line2, idx):
     length2 = len(line2)
     shorter_length = min(length1, length2)
     longer_length = max(length1, length2)
-    if ("\n" in line1) or ("\n" in line2) or ("\r"in line1) or ("\r" in line2):
+    if ("\n" in line1) or ("\n" in line2) or ("\r" in line1) or ("\r" in line2):
         return ""
-    if not(0 <= idx <= shorter_length):
+    if not (0 <= idx <= shorter_length):
         return ""
     for i in range(longer_length):
         if i < idx:
             total = total + "="
     total = total + "^"
-    return("{}\n{}\n{}\n".format(line1, total, line2))
+    return "{}\n{}\n{}\n".format(line1, total, line2)
 
 
 # print(singleline_diff_format("abcd", "abef", 2))
@@ -54,6 +56,8 @@ def get_file_lines(filename):
     for line in lines:
         list0.append(line.rstrip())
     return list0
+
+
 # print(get_file_lines("file1.txt"))
 
 
@@ -66,12 +70,20 @@ def file_diff_format(filename1, filename2):
     else:
         try:
             op1 = multiline_diff(list1, list2)
-            op2 = singleline_diff_format(
-                (list1[op1[0]]), (list2[op1[0]]), op1[1])
+            op2 = singleline_diff_format((list1[op1[0]]), (list2[op1[0]]), op1[1])
 
         except IndexError:
             if not list1:
-                return "Line " + str(op1[0]) + ":" + "\n" + "\n" + "^" + "\n" + "".join(list2)
+                return (
+                    "Line "
+                    + str(op1[0])
+                    + ":"
+                    + "\n"
+                    + "\n"
+                    + "^"
+                    + "\n"
+                    + "".join(list2)
+                )
 
             elif not list2:
                 return "Line " + str(op1[0]) + ":" + "\n" + "".join(list1) + "\n" + "^"

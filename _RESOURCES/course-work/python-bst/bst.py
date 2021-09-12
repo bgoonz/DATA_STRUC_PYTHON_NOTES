@@ -5,7 +5,6 @@ class TreeNode:
         self.right = None
 
 
-
 class BinarySearchTree:
     def __init__(self, value):
         self._root = None
@@ -53,11 +52,11 @@ class BinarySearchTree:
                 return False
             current_node = self._root
 
-        if(value < current_node.value):
+        if value < current_node.value:
             if not current_node.left:
                 return False
             return self.search_recursively(value, current_node.left)
-        elif(value > current_node.value):
+        elif value > current_node.value:
             if not current_node.right:
                 return False
             return self.search_recursively(value, current_node.right)
@@ -66,9 +65,8 @@ class BinarySearchTree:
         return False
 
 
-
 tree = BinarySearchTree(3)
-print(tree._root)                         # None
+print(tree._root)  # None
 
 # 1. Test node value insertion
 tree.insert_value(10)
@@ -77,22 +75,22 @@ tree.insert_value(16)
 tree.insert_value(1)
 tree.insert_value(7)
 tree.insert_value(16)
-print(tree._root.value)                  # 10
-print(tree._root.left.value)            # 5
-print(tree._root.right.value)           # 16
-print(tree._root.left.left.value)      # 1
-print(tree._root.left.right.value)     # 7
-print(tree._root.right.right.value)    # 16
+print(tree._root.value)  # 10
+print(tree._root.left.value)  # 5
+print(tree._root.right.value)  # 16
+print(tree._root.left.left.value)  # 1
+print(tree._root.left.right.value)  # 7
+print(tree._root.right.right.value)  # 16
 
 # # 2. Test iterative search
 empty_tree = BinarySearchTree(2)
 print(empty_tree.search_iteratively(10))  # False
-print(tree.search_iteratively(10))        # True
-print(tree.search_iteratively(7))         # True
-print(tree.search_iteratively(-1))        # False
+print(tree.search_iteratively(10))  # True
+print(tree.search_iteratively(7))  # True
+print(tree.search_iteratively(-1))  # False
 
 # # 3. Test recursive search
 print(empty_tree.search_recursively(10))  # False
-print(tree.search_recursively(10))        # True
-print(tree.search_recursively(7))         # True
-print(tree.search_recursively(-1))        # False
+print(tree.search_recursively(10))  # True
+print(tree.search_recursively(7))  # True
+print(tree.search_recursively(-1))  # False

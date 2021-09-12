@@ -3,6 +3,8 @@ import string
 
 
 punctuations = string.punctuation + " "
+
+
 def is_palindrome(text):
     def text_strip(text):
         table = str.maketrans({punc: None for punc in punctuations})
@@ -10,6 +12,7 @@ def is_palindrome(text):
         return text
 
     return text_strip(text)
+
 
 print(is_palindrome("striin!+., ng"))
 
@@ -21,5 +24,6 @@ def is_palindrome(text):
         return text
 
     return text_strip(text)
+
 
 print(is_palindrome("striin!+., ng"))

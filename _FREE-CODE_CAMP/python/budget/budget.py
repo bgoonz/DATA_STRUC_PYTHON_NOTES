@@ -8,10 +8,7 @@ class Category:
         self.ledger = []
 
     def deposit(self, amount, description=""):
-        self.ledger.append({
-            'amount': amount,
-            'description': description,
-        })
+        self.ledger.append({"amount": amount, "description": description})
         self.balance += amount
 
     def withdraw(self, amount, description=""):
@@ -19,10 +16,7 @@ class Category:
             return False
 
         self.balance -= amount
-        self.ledger.append({
-            'amount': -amount,
-            'description': description,
-        })
+        self.ledger.append({"amount": -amount, "description": description})
 
         return True
 
@@ -65,7 +59,7 @@ def create_spend_chart(categories):
     ss = ["Percentage spent by category"]
     for i in range(0, 11):
         level = 10 * (10 - i)
-        s = '{:>3}| '.format(level)
+        s = "{:>3}| ".format(level)
         for p in percentages:
             if p >= level:
                 s += "o  "

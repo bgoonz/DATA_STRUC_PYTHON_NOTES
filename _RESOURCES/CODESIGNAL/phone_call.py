@@ -11,9 +11,9 @@ def phoneCall(min1, min2_10, min11, s):
     # a 1 minutes call
     if s < min1:
         return 0
-    s -= min1 # Subtract the cost of the minutes
-    total_minutes = 1 # We have one minute of call time so far
-    
+    s -= min1  # Subtract the cost of the minutes
+    total_minutes = 1  # We have one minute of call time so far
+
     # Check if there are enough cents to make
     # a 9 minute call
     if s < 9 * min2_10:
@@ -21,8 +21,8 @@ def phoneCall(min1, min2_10, min11, s):
         return total_minutes
     s -= 9 * min2_10
     total_minutes += 9
-    
-    # Calculate how many more minutes can be 
+
+    # Calculate how many more minutes can be
     # purchased
     total_minutes += s // min11
     return total_minutes

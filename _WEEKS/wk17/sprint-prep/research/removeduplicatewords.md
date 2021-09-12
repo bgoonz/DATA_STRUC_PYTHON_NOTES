@@ -52,9 +52,7 @@ This step is interesting. It creates a dictionary (more on why a dictionary late
 
 But there's something missing. Aren't dictionaries in Python supposed to have keys _and_ values? It turns out that when you use dict.fromkeys to form a dictionary with no values in the argument, it just enters None for each value.
 
-To clarify this, here's what it looks like if you print this a dict formed in this manner from the input string s = 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'.  
-Here's the dictionary:  
-{'alpha': None, 'beta': None, 'gamma': None, 'delta': None}
+To clarify this, here's what it looks like if you print this a dict formed in this manner from the input string s = 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'. Here's the dictionary: {'alpha': None, 'beta': None, 'gamma': None, 'delta': None}
 
 We're almost there.
 
@@ -62,8 +60,7 @@ We're almost there.
 
 Enter fullscreen mode Exit fullscreen mode
 
-Note the syntax here. It's calling the method .join on a string with one space. Since the argument is a dictionary, this will output the a string with words taken from the keys, separated by spaces.  
-(Note: I'm not sure why it ignores the values. I tested and it does this even if there is a value (like 4) for one of the keys).
+Note the syntax here. It's calling the method .join on a string with one space. Since the argument is a dictionary, this will output the a string with words taken from the keys, separated by spaces. (Note: I'm not sure why it ignores the values. I tested and it does this even if there is a value (like 4) for one of the keys).
 
 All that's left is to return the value of this expression. Note that while it might seem more intuitive to do something like this:
 

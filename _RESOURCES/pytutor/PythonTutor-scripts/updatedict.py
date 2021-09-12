@@ -1,4 +1,4 @@
-'''
+"""
 d = {}
 
 
@@ -13,7 +13,7 @@ def update_dictionary(d, key, value):
 
 update_dictionary(d, 1, -1)
 print(d)
-'''
+"""
 d = {}
 
 
@@ -30,7 +30,7 @@ def update_dictionary(d, key, value):
 update_dictionary(d, 2, -2)
 print(d)
 
-'''Write an update_dictionary (d, key, value) function that takes
+"""Write an update_dictionary (d, key, value) function that takes
 input dictionary d and two numbers: key and value.
 
 If the key key is in the d dictionary, then add the value value to the list
@@ -51,4 +51,4 @@ update_dictionary(d, 2, -2)
 print(d)                             {2: [-1, -2]}
 update_dictionary(d, 1, -3)
 print(d)                             {2: [-1, -2, -3]}
-'''
+"""

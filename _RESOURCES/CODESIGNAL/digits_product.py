@@ -11,12 +11,11 @@ def digitsProduct(product):
     number = 1
     while True:
         p = 1
-        digits = [int(x) for x in str(number)]        
-        for n in digits: 
+        digits = [int(x) for x in str(number)]
+        for n in digits:
             p = p * n
         if number > 10000:
             return -1
         if p == product:
             return number
         number += 1
-    

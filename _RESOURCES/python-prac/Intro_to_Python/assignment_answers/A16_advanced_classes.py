@@ -18,7 +18,6 @@ script is executed as main and not when it is imported. """
 
 # Possible Answer
 class Player:
-
     def __init__(self, name, level, player_class="Villager"):
         self.Name = name
         self.Class = player_class
@@ -27,21 +26,20 @@ class Player:
 
     def __str__(self):
         _fields = (f"{k}: {v}" for k, v in self.__dict__.items())
-        return '\n  '.join(_fields) + '\n'
+        return "\n  ".join(_fields) + "\n"
 
 
 # Stretch Goal
 class Wizard(Player):
-
     def __init__(self, name, level, wizard_school):
         super().__init__(name, level, f"Wizard of {wizard_school}")
         self.Mana = self.Level * 10
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(Player("George", 1))
     print(Wizard("Jim Darkmagic", 10, wizard_school="Illusion"))
-    '''
+    """
     One problem I encountered was the syntax for the super function. I forgot
     the `.__init__()` part. Once I got that solved everything worked great!
-    '''
+    """

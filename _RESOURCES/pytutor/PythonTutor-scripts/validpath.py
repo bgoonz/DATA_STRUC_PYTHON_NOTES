@@ -10,7 +10,7 @@ def is_path(graph, path):
 
     # the first value
     # converts first row of bits into integer base 2
-    value = int(''.join(str(bit) for bit in graph[path[0]]), 2)
+    value = int("".join(str(bit) for bit in graph[path[0]]), 2)
 
     # for one row
     if len(graph) == 1:
@@ -18,7 +18,7 @@ def is_path(graph, path):
 
     # rest of the values
     for i in path[1:]:
-        value1 = value & int(''.join(str(bit) for bit in graph[i]), 2)
+        value1 = value & int("".join(str(bit) for bit in graph[i]), 2)
         print(value)
         # & returns True if both bits are 1
         # thus, if value means if 1
@@ -30,10 +30,7 @@ def is_path(graph, path):
     return True
 
 
-test = [[0, 1, 1, 1],
-        [1, 0, 1, 0],
-        [1, 1, 0, 0],
-        [1, 0, 0, 0]]
+test = [[0, 1, 1, 1], [1, 0, 1, 0], [1, 1, 0, 0], [1, 0, 0, 0]]
 
 path = [0, 1, 2, 0, 3]
 

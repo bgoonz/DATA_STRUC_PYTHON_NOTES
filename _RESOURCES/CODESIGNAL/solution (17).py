@@ -6,7 +6,7 @@ def minimumOnStack(operations):
     out = []
     for i in operations:
         if "push" in i:
-            l.append(int(i[i.index(" ") + 1:]))
+            l.append(int(i[i.index(" ") + 1 :]))
         elif "pop" in i:
             l.pop()
         else:

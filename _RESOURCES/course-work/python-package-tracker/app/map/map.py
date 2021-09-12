@@ -13,7 +13,7 @@ map = {
     "Nashville": {"Kansas City", "Houston", "Miami"},
     "New York": {"Chicago", "Washington D.C."},
     "Washington D.C.": {"Chicago", "Nashville", "Miami"},
-    "Miami": {"Washington D.C.", "Houston", "Nashville"}
+    "Miami": {"Washington D.C.", "Houston", "Nashville"},
 }
 
 DELIVERED = "Delivered"

@@ -95,8 +95,9 @@ def summarize(filename):
         data_dict = {}
 
         for i in range(1960, 1974):
-            data_dict.setdefault(i, (dict(Commercial=[]), dict(
-                Industrial=[]), dict(Residential=[])))
+            data_dict.setdefault(
+                i, (dict(Commercial=[]), dict(Industrial=[]), dict(Residential=[]))
+            )
 
         #  Map consumption per sector for each year
         for line in csv_reader:
@@ -114,12 +115,9 @@ def summarize(filename):
 
         #  Compute the sum of each sector
         for year in data_dict:
-            data_dict[year][0]["Commercial"] = sum(
-                data_dict[year][0]["Commercial"])
-            data_dict[year][1]["Industrial"] = sum(
-                data_dict[year][1]["Industrial"])
-            data_dict[year][2]["Residential"] = sum(
-                data_dict[year][2]["Residential"])
+            data_dict[year][0]["Commercial"] = sum(data_dict[year][0]["Commercial"])
+            data_dict[year][1]["Industrial"] = sum(data_dict[year][1]["Industrial"])
+            data_dict[year][2]["Residential"] = sum(data_dict[year][2]["Residential"])
 
         # return data_dict
 
@@ -133,18 +131,30 @@ def summarize(filename):
 
         #  Remove the "csv" string in filename
         #  Pass newline = "" to remove newline in writerow() method
-        with open(os.path.join(op, filename.rstrip("csv") + output_fn), "w", newline="") as csv_file:
+        with open(
+            os.path.join(op, filename.rstrip("csv") + output_fn), "w", newline=""
+        ) as csv_file:
 
-            fieldnames = ["Year", "Consumption.Commercial",
-                          "Consumption.Industrial", "Consumption.Residential"]
+            fieldnames = [
+                "Year",
+                "Consumption.Commercial",
+                "Consumption.Industrial",
+                "Consumption.Residential",
+            ]
 
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
             writer.writeheader()
 
             for year, sector in data_dict.items():
-                writer.writerow({"Year": year, "Consumption.Commercial": sector[0]["Commercial"],
-                                 "Consumption.Industrial": sector[1]["Industrial"], "Consumption.Residential": sector[2]["Residential"]})
+                writer.writerow(
+                    {
+                        "Year": year,
+                        "Consumption.Commercial": sector[0]["Commercial"],
+                        "Consumption.Industrial": sector[1]["Industrial"],
+                        "Consumption.Residential": sector[2]["Residential"],
+                    }
+                )
 
             #  Check if the file is exported successfuly
             if not os.path.isfile(os.path.join(op, filename.rstrip("csv") + output_fn)):

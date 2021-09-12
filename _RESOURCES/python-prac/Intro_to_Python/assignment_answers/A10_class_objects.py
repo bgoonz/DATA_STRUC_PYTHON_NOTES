@@ -53,7 +53,6 @@ class Warlock(Character):
 
 
 class Player:
-
     def __init__(self, name: str, class_type: Character, level: int):
         self.name = name
         self.class_type = class_type

@@ -7,4 +7,3 @@ def growingPlant(upSpeed, downSpeed, desiredHeight):
         height -= downSpeed
         height += upSpeed
     return days
-        

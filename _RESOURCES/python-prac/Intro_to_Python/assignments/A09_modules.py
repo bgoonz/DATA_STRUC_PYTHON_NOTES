@@ -23,7 +23,7 @@ from MonkeyScope import distribution_timer
 from random import choice
 
 
-arr = ('Apple', 'Grapes', 'Orange', 'Cherry', 'Pear')
+arr = ("Apple", "Grapes", "Orange", "Cherry", "Pear")
 
 distribution_timer(random_value, arr)
 distribution_timer(choice, arr)

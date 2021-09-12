@@ -1,4 +1,4 @@
-'''Write a class named Car that has the following data attribute:
+"""Write a class named Car that has the following data attribute:
  speed(for the car's current speed)
 The Car class should have an __init__ method that initialises(assigns) the speed data attribute to 0.
 The class should also have the following methods:
@@ -12,7 +12,7 @@ Write a program that creates a Car object and then calls the accelerate method f
 the accelerate method, get the current speed of the car(call the get_speed method) and display it. Then
 call the brake method five times. After each call to the brake method, get the current speed of the car and
 display it.
-'''
+"""
 
 
 class Car:
@@ -31,6 +31,7 @@ class Car:
     # getter
     def get_speed(self):
         return self.speed
+
 
 # Initialze the car
 car = Car()

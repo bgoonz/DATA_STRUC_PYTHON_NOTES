@@ -12,7 +12,7 @@ class PhoneDevice:
         self.number = number
 
     def call(self, number):
-        print('Calling number', number)
+        print("Calling number", number)
 
 
 class MusicPlayer(StorageDevice):
@@ -25,6 +25,7 @@ class MusicPlayer(StorageDevice):
         else:
             print(song + " not found")
 
+
 # iphone needs to take on methods of both phonedevice and musicplayer
 
 
@@ -34,10 +35,10 @@ class IPhone(PhoneDevice, MusicPlayer):
 
 
 iphone = IPhone(256)
-print(iphone.play_song('Sha La La'))  # of musicplayer
+print(iphone.play_song("Sha La La"))  # of musicplayer
 print(iphone.call(98765432))  # of phone device
 
-'''
+"""
 why is the answer wrong if i change the order to this instead of in
 line 18? TypeError: __init__() takes 2 positional arguments but 3 were given
 
@@ -45,4 +46,4 @@ class IPhone(MusicPlayer,PhoneDevice):
         def __init__(self,number):
                 super().__init__(number,0)
 
-'''
+"""

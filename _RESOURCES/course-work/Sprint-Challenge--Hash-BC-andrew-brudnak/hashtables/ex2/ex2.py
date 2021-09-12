@@ -1,9 +1,11 @@
 #  Hint:  You may not need all of these.  Remove the unused functions.
-from hashtables import (HashTable,
-                        hash_table_insert,
-                        hash_table_remove,
-                        hash_table_retrieve,
-                        hash_table_resize)
+from hashtables import (
+    HashTable,
+    hash_table_insert,
+    hash_table_remove,
+    hash_table_retrieve,
+    hash_table_resize,
+)
 
 
 class Ticket:
@@ -24,9 +26,15 @@ def reconstruct_trip(tickets, length):
     print(f"Length: {length}")  # checking out data
 
     # tickets are coming in as a multi-dimensional array / list
-    for ticket in tickets:  # Hash each ticket - starting location is the key and the destination is the val
+    for (
+        ticket
+    ) in (
+        tickets
+    ):  # Hash each ticket - starting location is the key and the destination is the val
         hash_table_insert(hashtable, ticket.source, ticket.destination)
-    route[0] = hash_table_retrieve(hashtable, "NONE")   # 1st route = starting route / NONE source
+    route[0] = hash_table_retrieve(
+        hashtable, "NONE"
+    )  # 1st route = starting route / NONE source
 
     for i in range(1, length):  # skip starting
         route[i] = hash_table_retrieve(hashtable, route[i - 1])

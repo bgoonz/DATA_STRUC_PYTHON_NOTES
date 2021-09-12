@@ -20,7 +20,7 @@ class Fork:
     c_var = 42
 
     def __init__(self):
-        self.i_var = 'forty two'
+        self.i_var = "forty two"
 
     def __str__(self):
         return f"{self.i_var}, {self.c_var}"

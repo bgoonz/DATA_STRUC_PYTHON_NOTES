@@ -1,4 +1,4 @@
-'''Election Winners
+"""Election Winners
 
     Given an array of the numbers of votes 
     given to each of the candidates so far, 
@@ -12,7 +12,9 @@
     If two or more candidates receive the same 
     (maximum) number of votes, assume there is 
     no winner at all.
-'''
+"""
+
+
 def electionsWinners(votes, k):
     """Find number of candidates that have chance to win election
     
@@ -32,4 +34,3 @@ def electionsWinners(votes, k):
             return 1
         return 0
     return len([vote for vote in votes if vote + k > highest])
-    

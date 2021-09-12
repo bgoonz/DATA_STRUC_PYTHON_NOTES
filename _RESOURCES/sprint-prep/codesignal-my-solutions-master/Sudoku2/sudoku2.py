@@ -48,11 +48,11 @@ def sudoku2(grid):
         if not grid3x3_valid:
             break
 
-        sub_mat = grid[i : i + 3]
+        sub_mat = grid[i: i + 3]
 
         for j in range(0, len(grid[0]), 3):
 
-            tmp_list = [x[j : j + 3] for x in sub_mat]
+            tmp_list = [x[j: j + 3] for x in sub_mat]
             # print(tmp_list)
             tmp_list = [
                 tmp_list[k][l]

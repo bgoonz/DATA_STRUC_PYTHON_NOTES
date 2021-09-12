@@ -1,9 +1,6 @@
 # Checking your Setup
 
-Knowing if you've followed all the steps correctly can be tricky. There's
-so many things that can go wrong, and everyone's computer is different. To help with
-this problem, AppAcademy has created a script that checks your setup to verify
-it is done correctly.
+Knowing if you've followed all the steps correctly can be tricky. There's so many things that can go wrong, and everyone's computer is different. To help with this problem, AppAcademy has created a script that checks your setup to verify it is done correctly.
 
 To run this script you simply open a terminal and run this command:
 
@@ -11,8 +8,7 @@ To run this script you simply open a terminal and run this command:
 curl -s https://raw.githubusercontent.com/appacademy/aa-setup-checker/master/run.sh | bash
 ```
 
-This command will download a script from our github page and if your setup is correct
-you should see output like this:
+This command will download a script from our github page and if your setup is correct you should see output like this:
 
 ```shell
 ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
@@ -61,13 +57,8 @@ Congratulations, you have everything installed properly!
 ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
 ```
 
-If you get the Congratulations message you'll know you have everything setup
-properly. The script tries to tell you what steps you should probably take
-if some piece fails.
+If you get the Congratulations message you'll know you have everything setup properly. The script tries to tell you what steps you should probably take if some piece fails.
 
-If you get a failure and don't know how to fix it, feel free to post your output in
-Slack or to ask an instructor for help.
+If you get a failure and don't know how to fix it, feel free to post your output in Slack or to ask an instructor for help.
 
-> Note if you have an apple silicon mac, you can't install Docker, so expect
-> that piece to always fail the check.
-
+> Note if you have an apple silicon mac, you can't install Docker, so expect that piece to always fail the check.

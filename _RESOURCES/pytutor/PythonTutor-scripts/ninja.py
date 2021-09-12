@@ -3,15 +3,15 @@ import random
 
 def try_tutorial():
     print("You have the following elements available to you!")
-    el_list = ["fire", 'water', "snow"]
+    el_list = ["fire", "water", "snow"]
     for i in el_list:
         user_inp = input("What elements would you like to play: ")
-        if user_inp == 'fire':
+        if user_inp == "fire":
             print("Well Done, you have played fire")
-        if user_inp == 'water':
+        if user_inp == "water":
             print("Well done, you have played water")
-        if user_inp == 'snow':
-            print('you have unleashed the snow jitsu in you.')
+        if user_inp == "snow":
+            print("you have unleashed the snow jitsu in you.")
 
 
 def jitsu_tutorial():
@@ -19,8 +19,12 @@ def jitsu_tutorial():
     el_list = ["fire", "water", "ice"]
     for i in el_list:
         print(i)
-    print("You can win by elements: fire beats snow, snow beats water and water beats fire")
-    print("You get it? Now, you can challenge our very own sensei and herbert the polar bear!")
+    print(
+        "You can win by elements: fire beats snow, snow beats water and water beats fire"
+    )
+    print(
+        "You get it? Now, you can challenge our very own sensei and herbert the polar bear!"
+    )
     print("Let's try!")
     try_tutorial()
     print("Now that you have managed to try and play the elements, let's head back!")
@@ -33,7 +37,9 @@ class SM:
     def step(self, input):
         # print("Step function called")
         (next_state, output) = self.get_next_values(self.state, input)
-        self.state = next_state  # updates the current state to be equal to the next state
+        self.state = (
+            next_state
+        )  # updates the current state to be equal to the next state
         return output
 
     def transduce(self, inputs):
@@ -41,7 +47,7 @@ class SM:
         outputs = []
         for input_value in inputs:
             output = self.step(input_value)
-            if (self.done(self.state)):
+            if self.done(self.state):
                 break
             else:
                 outputs.append(output)
@@ -50,6 +56,8 @@ class SM:
 
     def done(self, inp):
         pass
+
+
 # define the character involve in the game
 # states will be passed in form of integer values between 5 and 12
 # the idea across is to regenerate the next value of the card elements
@@ -87,8 +95,7 @@ class Ninja(elemental):
         self.name = name
         self.health = 7
         self.attack = 10
-        self.start_state = int(
-            input("choose a number you would like to put in "))
+        self.start_state = int(input("choose a number you would like to put in "))
 
     def quit_game(self):
         self.health = 0
@@ -120,7 +127,7 @@ class enemy:
         self.attack = 12
 
     def element_choice(self):
-        elements = ['fire', 'snow', 'water']
+        elements = ["fire", "snow", "water"]
         self.element = random.choice(elements)
         return self.element
 
@@ -144,7 +151,7 @@ def print_draw():
 def play_the_game():
 
     user_tut = input("Would you like a jitsu tutorial?")
-    if user_tut == 'yes':
+    if user_tut == "yes":
         jitsu_tutorial()
         player_in_game()
     else:
@@ -156,8 +163,8 @@ def player_in_game():
     player = Ninja(name, 5)
     challenger = enemy()
     # this happens for the first time
-    el = ['fire', 'water', 'snow']
-    el_dict = {"f": 'fire', 's': 'snow', 'w': 'water'}
+    el = ["fire", "water", "snow"]
+    el_dict = {"f": "fire", "s": "snow", "w": "water"}
     # following lists are to compare the elements between the players and attack magnitudes between the players
     player_lst = []
     player_win = []
@@ -169,7 +176,7 @@ def player_in_game():
     inp = int(input("choose a random number between 5 to 12 to start with"))
     # instantiate what happens next
     st = int(inp)
-    #name = player.__init__()
+    # name = player.__init__()
     print("you have just started the game")
     print("choose from the following elements available to you.")
     for i in el:

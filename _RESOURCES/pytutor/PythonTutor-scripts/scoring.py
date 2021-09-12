@@ -3,13 +3,14 @@ count = 0
 total = 0
 # Handle any exceptions using try/except
 try:
+
     def main():
         # Initialize variables
         count = 0
         total = 0
 
         # Opens the Section1.txt file.
-        infile = open('Section1.txt', 'r')
+        infile = open("Section1.txt", "r")
 
         # Reads the numbers in the file into a list
         num = infile.readlines()
@@ -22,14 +23,15 @@ try:
 
             # Close the file
             infile.close
+
     # Output: display the number of the scores, and the average of the scores
     print("Number of scores in Section 1: ", count)
-    print('Average: ', format((average), '.2f'), 'Letter Grade: ',)
+    print("Average: ", format((average), ".2f"), "Letter Grade: ")
 
     total2 = 0
     count2 = 0
 
-    infile2 = open("Section2.txt.", 'r')
+    infile2 = open("Section2.txt.", "r")
 
     for num in infile2:
         number = float(num)
@@ -39,13 +41,13 @@ try:
 
     infile2.close
 
-    print('Number of scores in Section 2: ', count2)
-    print('Average: ', format((average2), '.2f'), 'Letter Grade: ', score)
+    print("Number of scores in Section 2: ", count2)
+    print("Average: ", format((average2), ".2f"), "Letter Grade: ", score)
 
     total_count = count1 + count2
     total_average = (total1 + total2) / total_count
-    print('Numbers of score in both sections combined: ', total_count)
-    print('Average: ', format((total_average), '.2f'), 'Letter grade: ', score)
+    print("Numbers of score in both sections combined: ", total_count)
+    print("Average: ", format((total_average), ".2f"), "Letter grade: ", score)
 
     scoring(grade)
 
@@ -63,6 +65,7 @@ try:
             print("The letter grade is F")
         else:
             print("invalid score")
+
     main()
 
 

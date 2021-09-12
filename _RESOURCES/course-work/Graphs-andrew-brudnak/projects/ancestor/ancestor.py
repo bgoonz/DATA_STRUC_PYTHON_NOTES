@@ -52,7 +52,11 @@ def earliest_ancestor(ancestors, starting_node):
         path = q.dequeue()
         v = path[-1]
 
-        if len(path) >= max_path_length and v < earliest_anc or len(path) > max_path_length:
+        if (
+            len(path) >= max_path_length
+            and v < earliest_anc
+            or len(path) > max_path_length
+        ):
             earliest_anc = v
             max_path_length = len(path)
 
@@ -62,4 +66,3 @@ def earliest_ancestor(ancestors, starting_node):
             q.enqueue(path_copy)
 
     return earliest_anc
-

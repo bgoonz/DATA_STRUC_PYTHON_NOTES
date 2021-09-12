@@ -66,7 +66,7 @@ def add_time(start, duration, day=""):
 def parse_time(t):
     [hm, am] = t.split()
     [h, m] = parse_duration(hm)
-    if am != 'AM':
+    if am != "AM":
         h += 12
     return [h, m]
 

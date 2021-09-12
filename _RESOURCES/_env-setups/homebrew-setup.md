@@ -1,12 +1,10 @@
 # Homebrew
 
-Homebrew is a piece of software for macOS that lets you install extra unix
-software on your Mac.
+Homebrew is a piece of software for macOS that lets you install extra unix software on your Mac.
 
 We will need it from time to time so it's a good thing to install.
 
-Head to the [homebrew](http://brew.sh) website at http://brew.sh and on the main
-page are instructions.
+Head to the [homebrew](http://brew.sh) website at http://brew.sh and on the main page are instructions.
 
 They say to run a command like this, so open a Terminal and run this:
 
