@@ -1,48 +1,38 @@
-import timeit
-from random import randint
+# helper function conceptual partitioning
+def partition(data):
+    # takes in a single list and partitions it in to 3 lists left, pivot, right
+    # create 2 empty lists (left, right)
+    left = []
+    right = []
+    # create a pivot list containing the first element of the data
+    pivot = data[0]
 
+    # for each value in our data starting at index 1:
+    for value in data[1:]:
+        # check if value is less than or equal to the pivot
+        if value <= pivot:
+            # append our value to the left list
+            left.append(value)
+        # otherwise (the value must be greater than the pivot)
+        else:
+            # append our value to the right list
+            right.append(value)
 
-def partition(collection, left, right):
-    pivot = collection[right]
-    j = left
-    for i in range(left, right):
-        if collection[i] <= pivot:
-            collection[i], collection[j] = collection[j], collection[i]
-            j += 1
-    collection[right], collection[j] = collection[j], collection[right]
-    return j
+    # returns the tuple of (left, pivot, right)
+    return left, pivot, right
 
+# quick sort that uses the partitioned data
+def quicksort(data):
+    # base case if the data is an empty list return an empty list
+    if data == []:
+        return data
 
-def quickSort(collection, left, right, counter):
-    if left < right:
-        counter += 1
-        print("Step %i -->" % counter, collection)
+    # partition the data in to 3 variables (left, pivot, right)
+    left, pivot, right = partition(data)
 
-        mainstay = partition(collection, left, right)
-        collection, counter = quickSort(collection, left, mainstay - 1, counter)
-        collection, counter = quickSort(collection, mainstay + 1, right, counter)
+    # recursive call to quicksort using the left
+    # recursive call to quicksort using the right
+    # return the concatination quicksort of lhs + pivot + quicksort of rhs
+    return quicksort(left) + [pivot] + quicksort(right)
 
-    return collection, counter
-
-
-def visualization():
-    counter = 0
-    length = 10
-    collection = [randint(0, length) for _ in range(length)]
-
-    print("Initial list:", collection)
-    print("Visualization of algorithm work.")
-
-    collection, counter = quickSort(collection, 0, length - 1, counter)
-
-    print("Final list:", collection)
-    print("Total numbers of passages:", counter)
-
-
-def main():
-    elapsedTime = timeit.timeit(visualization, number=1)
-    print("Elapsed time: ", round(elapsedTime, 7), "sec.")
-
-
-if __name__ == "__main__":
-    main()
+print(quicksort([5, 9, 3, 7, 2, 8, 1, 6]))
