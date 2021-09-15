@@ -4,8 +4,7 @@
 
 {{ super() }} {% endblock %} {% block body %}
 
-{{ \_('Search') }}
-==================
+# {{ \_('Search') }}
 
 {% trans %}Please activate JavaScript to enable the search functionality.{% endtrans %}
 
@@ -15,8 +14,7 @@
 
 {% if search\_performed %}
 
-{{ \_('Search Results') }}
---------------------------
+## {{ \_('Search Results') }}
 
 {% if not search\_results %}
 
@@ -26,8 +24,7 @@
 
 {% if search\_results %}
 
--   [{{ caption }}](%7B%7B%20pathto(item.href)%20%7D%7D)
-    {{ context|e }}
+- [{{ caption }}](<%7B%7B%20pathto(item.href)%20%7D%7D>) {{ context|e }}
 
 {% endif %}
 

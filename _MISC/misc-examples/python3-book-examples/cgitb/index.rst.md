@@ -1,36 +1,22 @@
-cgitb \-\-- Detailed Traceback Reports
-======================================
+# cgitb \-\-- Detailed Traceback Reports
 
-::: {.module synopsis="Mis-named module that provides extended traceback information."}
-cgitb
-:::
+::: {.module synopsis="Mis-named module that provides extended traceback information."} cgitb :::
 
 Purpose
 
-:   cgitb provides more detailed traceback information than
-    `traceback`{.interpreted-text role="mod"}.
+: cgitb provides more detailed traceback information than `traceback`{.interpreted-text role="mod"}.
 
-`cgitb` is a valuable debugging tool in the standard library. It was
-originally designed for showing errors and debugging information in web
-applications and was later updated to include plain-text output as well,
-but unfortunately was never renamed. This has led to obscurity, and the
-module is not used as often as it could be.
+`cgitb` is a valuable debugging tool in the standard library. It was originally designed for showing errors and debugging information in web applications and was later updated to include plain-text output as well, but unfortunately was never renamed. This has led to obscurity, and the module is not used as often as it could be.
 
-Standard Traceback Dumps
-------------------------
+## Standard Traceback Dumps
 
-Python\'s default exception handling behavior is to print a traceback to
-the standard error output stream with the call stack leading up to the
-error position. This basic output frequently contains enough information
-to understand the cause of the exception and permit a fix.
+Python\'s default exception handling behavior is to print a traceback to the standard error output stream with the call stack leading up to the error position. This basic output frequently contains enough information to understand the cause of the exception and permit a fix.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-cgitb\_basic\_traceback.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} cgitb_basic_traceback.py :::
 
 This sample program has a subtle error in `func2()`.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 cgitb_basic_traceback.py
 
 Traceback (most recent call last):
@@ -43,30 +29,22 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
-Enabling Detailed Tracebacks
-----------------------------
+## Enabling Detailed Tracebacks
 
-While the basic traceback includes enough information to spot the error,
-enabling `cgitb` gives more detail. `cgitb` replaces `sys.excepthook`
-with a function that gives extended tracebacks.
+While the basic traceback includes enough information to spot the error, enabling `cgitb` gives more detail. `cgitb` replaces `sys.excepthook` with a function that gives extended tracebacks.
 
-::: {.literalinclude caption="" lines="10-11"}
-cgitb\_local\_vars.py
-:::
+::: {.literalinclude caption="" lines="10-11"} cgitb_local_vars.py :::
 
-The error report from this example is much more extensive than the
-original. Each frame of the stack is listed, along with:
+The error report from this example is much more extensive than the original. Each frame of the stack is listed, along with:
 
--   The full path to the source file, instead of just the base name
--   The values of the arguments to each function in the stack
--   A few lines of source context from around the line in the error path
--   The values of variables in the expression causing the error
+- The full path to the source file, instead of just the base name
+- The values of the arguments to each function in the stack
+- A few lines of source context from around the line in the error path
+- The values of variables in the expression causing the error
 
-Having access to the variables involved in the error stack can help find
-a logical error that occurs somewhere higher in the stack than the line
-where the actual exception is generated.
+Having access to the variables involved in the error stack can help find a logical error that occurs somewhere higher in the stack than the line where the actual exception is generated.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 cgitb_local_vars.py
 
 ZeroDivisionError
@@ -81,7 +59,7 @@ occurred.
    18 def func1(a, b):
    19     c = b - 5
    20     return func2(a, c)
-   21 
+   21
    22 func1(1, 5)
 func1 = <function func1>
 
@@ -89,18 +67,18 @@ func1 = <function func1>
    18 def func1(a, b):
    19     c = b - 5
    20     return func2(a, c)
-   21 
+   21
    22 func1(1, 5)
 global func2 = <function func2>
 a = 1
 c = 0
 
  .../cgitb_local_vars.py in func2(a=1, divisor=0)
-   13 
+   13
    14 def func2(a, divisor):
    15     return a / divisor
-   16 
-   17 
+   16
+   17
 a = 1
 divisor = 0
 ZeroDivisionError: division by zero
@@ -173,38 +151,21 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
-In the case of this code with a `ZeroDivisionError`, it is apparent that
-the problem is introduced in the computation of the value of `c` in
-`func1()`, rather than where the value is used in `func2()`.
+In the case of this code with a `ZeroDivisionError`, it is apparent that the problem is introduced in the computation of the value of `c` in `func1()`, rather than where the value is used in `func2()`.
 
-The end of the output also includes the full details of the exception
-object (in case it has attributes other than `message` that would be
-useful for debugging) and the original form of a traceback dump.
+The end of the output also includes the full details of the exception object (in case it has attributes other than `message` that would be useful for debugging) and the original form of a traceback dump.
 
-Local Variables in Tracebacks
------------------------------
+## Local Variables in Tracebacks
 
-The code in `cgitb` that examines the variables used in the stack frame
-leading to the error is smart enough to evaluate object attributes to
-display them, too.
+The code in `cgitb` that examines the variables used in the stack frame leading to the error is smart enough to evaluate object attributes to display them, too.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-cgitb\_with\_classes.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} cgitb_with_classes.py :::
 
-If a function or method includes a lot of in-line comments, whitespace,
-or other code that makes it very long, then having the default of five
-lines of context may not provide enough direction. When the body of the
-function is pushed out of the code window displayed, there is not enough
-context to understand the location of the error. Using a larger context
-value with `cgitb` solves this problem. Passing an integer as the
-`context` argument to `enable()` controls the amount of code displayed
-for each line of the traceback.
+If a function or method includes a lot of in-line comments, whitespace, or other code that makes it very long, then having the default of five lines of context may not provide enough direction. When the body of the function is pushed out of the code window displayed, there is not enough context to understand the location of the error. Using a larger context value with `cgitb` solves this problem. Passing an integer as the `context` argument to `enable()` controls the amount of code displayed for each line of the traceback.
 
-This output shows that `self.a` and `self.b` are involved in the
-error-prone code.
+This output shows that `self.a` and `self.b` are involved in the error-prone code.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 cgitb_with_classes.py
 
 ZeroDivisionError
@@ -226,7 +187,7 @@ occurred.
    28         # here.
    29         self.d = self.a / self.b
    30         return
-   31 
+   31
    32 o = BrokenClass(1, 0)
 o undefined
 BrokenClass = <class '__main__.BrokenClass'>
@@ -243,7 +204,7 @@ BrokenClass = <class '__main__.BrokenClass'>
    28         # here.
    29         self.d = self.a / self.b
    30         return
-   31 
+   31
    32 o = BrokenClass(1, 0)
 self = <__main__.BrokenClass object>
 self.d undefined
@@ -317,21 +278,15 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 ```
 
-Exception Properties
---------------------
+## Exception Properties
 
-In addition to the local variables from each stack frame, `cgitb` shows
-all properties of the exception object. Extra properties on custom
-exception types are printed as part of the error report.
+In addition to the local variables from each stack frame, `cgitb` shows all properties of the exception object. Extra properties on custom exception types are printed as part of the error report.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-cgitb\_exception\_properties.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} cgitb_exception_properties.py :::
 
-In this example, the `bad_value` property is included along with the
-standard `message` and `args` values.
+In this example, the `bad_value` property is included along with the standard `message` and `args` values.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 cgitb_exception_properties.py
 
 MyException
@@ -346,7 +301,7 @@ occurred.
    19         self.bad_value = bad_value
    20         Exception.__init__(self, message)
    21         return
-   22 
+   22
    23 raise MyException('Normal message', bad_value=99)
 MyException = <class '__main__.MyException'>
 bad_value undefined
@@ -409,34 +364,19 @@ Traceback (most recent call last):
 MyException: Normal message
 ```
 
-HTML Output
------------
+## HTML Output
 
-Because `cgitb` was originally developed for handling exceptions in web
-applications, no discussion would be complete without mentioning its
-original HTML output format. The earlier examples all shows plain text
-output. To produce HTML instead, leave out the `format` argument (or
-specify `"html"`). Most modern web applications are constructed using a
-framework that includes an error reporting facility, so the HTML form is
-largely obsolete.
+Because `cgitb` was originally developed for handling exceptions in web applications, no discussion would be complete without mentioning its original HTML output format. The earlier examples all shows plain text output. To produce HTML instead, leave out the `format` argument (or specify `"html"`). Most modern web applications are constructed using a framework that includes an error reporting facility, so the HTML form is largely obsolete.
 
-Logging Tracebacks
-------------------
+## Logging Tracebacks
 
-For many situations, printing the traceback details to standard error is
-the best resolution. In a production system, however, logging the errors
-is even better. The `enable()` function includes an optional argument,
-`logdir`, to enable error logging. When a directory name is provided,
-each exception is logged to its own file in the given directory.
+For many situations, printing the traceback details to standard error is the best resolution. In a production system, however, logging the errors is even better. The `enable()` function includes an optional argument, `logdir`, to enable error logging. When a directory name is provided, each exception is logged to its own file in the given directory.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-cgitb\_log\_exception.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} cgitb_log_exception.py :::
 
-Even though the error display is suppressed, a message is printed
-describing where to go to find the error log.
+Even though the error display is suppressed, a message is printed describing where to go to find the error log.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 cgitb_log_exception.py
 
 <p>A problem occurred in a Python script.
@@ -457,18 +397,18 @@ function calls leading up to the error, in the order they
 occurred.
 
  .../cgitb_log_exception.py in <module>()
-   24 
+   24
    25 def func(a, divisor):
    26     return a / divisor
-   27 
+   27
    28 func(1, 0)
 func = <function func>
 
  .../cgitb_log_exception.py in func(a=1, divisor=0)
-   24 
+   24
    25 def func(a, divisor):
    26     return a / divisor
-   27 
+   27
    28 func(1, 0)
 a = 1
 divisor = 0
@@ -541,17 +481,9 @@ ZeroDivisionError: division by zero
 ```
 
 ::: {.seealso}
--   `cgitb`{.interpreted-text role="pydoc"}
--   `traceback`{.interpreted-text role="mod"} \-- Standard library
-    module for working with tracebacks.
--   `inspect`{.interpreted-text role="mod"} \-- The `inspect` module
-    includes more functions for examining the stack.
--   `sys`{.interpreted-text role="mod"} \-- The `sys` module provides
-    access to the current exception value and the `excepthook` handler
-    invoked when an exception occurs.
--   [Improved traceback
-    module](http://thread.gmane.org/gmane.comp.python.devel/110326)
-    \--Discussion on the Python development mailing list about
-    improvements to the traceback module and related enhancements other
-    developers use locally.
-:::
+
+- `cgitb`{.interpreted-text role="pydoc"}
+- `traceback`{.interpreted-text role="mod"} \-- Standard library module for working with tracebacks.
+- `inspect`{.interpreted-text role="mod"} \-- The `inspect` module includes more functions for examining the stack.
+- `sys`{.interpreted-text role="mod"} \-- The `sys` module provides access to the current exception value and the `excepthook` handler invoked when an exception occurs.
+- [Improved traceback module](http://thread.gmane.org/gmane.comp.python.devel/110326) \--Discussion on the Python development mailing list about improvements to the traceback module and related enhancements other developers use locally. :::

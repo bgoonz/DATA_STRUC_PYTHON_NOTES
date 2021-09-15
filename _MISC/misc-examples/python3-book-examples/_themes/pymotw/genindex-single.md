@@ -4,8 +4,7 @@
 
 {% endmacro %} {%- extends "layout.html" %} {% set title = \_('Index') %} {% block body %}
 
-{% trans key=key %}Index – {{ key }}{% endtrans %}
-==================================================
+# {% trans key=key %}Index – {{ key }}{% endtrans %}
 
 {%- for column in entries|slice(2) if column %}
 
@@ -21,8 +20,8 @@
 
 #### {{ \_('Index') }}
 
-{% for key, dummy in genindexentries -%} [**{{ key }}**](%7B%7B%20pathto('genindex-'%20+%20key)%20%7D%7D) {% if not loop.last %}| {% endif %} {%- endfor %}
+{% for key, dummy in genindexentries -%} [**{{ key }}**](<%7B%7B%20pathto('genindex-'%20+%20key)%20%7D%7D>) {% if not loop.last %}| {% endif %} {%- endfor %}
 
-[**{{ \_('Full index on one page') }}**](%7B%7B%20pathto('genindex-all')%20%7D%7D)
+[**{{ \_('Full index on one page') }}**](<%7B%7B%20pathto('genindex-all')%20%7D%7D>)
 
 {{ super() }} {% endblock %}

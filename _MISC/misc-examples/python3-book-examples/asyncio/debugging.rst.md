@@ -1,35 +1,18 @@
-Debugging with asyncio
-======================
+# Debugging with asyncio
 
 There are several useful debugging features built into `asyncio`.
 
-First, the event loop uses `logging`{.interpreted-text role="mod"} to
-emit status messages as it runs. Some of these are available if logging
-is enabled in an application. Others can be turned on by telling the
-loop to emit more debugging messages. Call `set_debug()` passing a
-boolean value indicating whether or not debugging should be enabled.
+First, the event loop uses `logging`{.interpreted-text role="mod"} to emit status messages as it runs. Some of these are available if logging is enabled in an application. Others can be turned on by telling the loop to emit more debugging messages. Call `set_debug()` passing a boolean value indicating whether or not debugging should be enabled.
 
-Because applications built on `asyncio` are highly sensitive to greedy
-coroutines failing to yield control, there is support for detecting slow
-callbacks built into the event loop. Turn it on by enabling debugging,
-and control the definition of \"slow\" by setting the
-`slow_callback_duration` property of the loop to the number of seconds
-after which a warning should be emitted.
+Because applications built on `asyncio` are highly sensitive to greedy coroutines failing to yield control, there is support for detecting slow callbacks built into the event loop. Turn it on by enabling debugging, and control the definition of \"slow\" by setting the `slow_callback_duration` property of the loop to the number of seconds after which a warning should be emitted.
 
-Finally, if an application using `asyncio` exits without cleaning up
-some of the coroutines or other resources, that may mean there is a
-logic error preventing some of the application code from running.
-Enabling `ResourceWarning` warnings causes these cases to be reported
-when the program exits.
+Finally, if an application using `asyncio` exits without cleaning up some of the coroutines or other resources, that may mean there is a logic error preventing some of the application code from running. Enabling `ResourceWarning` warnings causes these cases to be reported when the program exits.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-asyncio\_debug.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} asyncio_debug.py :::
 
-When run without debugging enabled, everything looks fine with this
-application.
+When run without debugging enabled, everything looks fine with this application.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 asyncio_debug.py
 
   DEBUG: Using selector: KqueueSelector
@@ -40,12 +23,9 @@ $ python3 asyncio_debug.py
    INFO: outer completed
 ```
 
-Turning on debugging exposes some of the issues it has, including the
-fact that although `inner()` finishes it takes more time to do so than
-the `slow_callback_duration` that has been set and that the event loop
-is not being properly closed when the program exits.
+Turning on debugging exposes some of the issues it has, including the fact that although `inner()` finishes it takes more time to do so than the `slow_callback_duration` that has been set and that the event loop is not being properly closed when the program exits.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 asyncio_debug.py -v
 
   DEBUG: Using selector: KqueueSelector

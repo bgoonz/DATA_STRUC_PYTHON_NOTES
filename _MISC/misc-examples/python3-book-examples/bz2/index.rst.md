@@ -1,41 +1,26 @@
-bz2 \-\-- bzip2 Compression
-===========================
+# bz2 \-\-- bzip2 Compression
 
-::: {.module synopsis="bzip2 compression"}
-bz2
-:::
+::: {.module synopsis="bzip2 compression"} bz2 :::
 
 Purpose
 
-:   bzip2 compression
+: bzip2 compression
 
-The `bz2` module is an interface for the bzip2 library, used to compress
-data for storage or transmission. There are three APIs provided:
+The `bz2` module is an interface for the bzip2 library, used to compress data for storage or transmission. There are three APIs provided:
 
--   \"one shot\" compression/decompression functions for operating on a
-    blob of data
--   iterative compression/decompression objects for working with streams
-    of data
--   a file-like class that supports reading and writing as with an
-    uncompressed file
+- \"one shot\" compression/decompression functions for operating on a blob of data
+- iterative compression/decompression objects for working with streams of data
+- a file-like class that supports reading and writing as with an uncompressed file
 
-One-shot Operations in Memory
------------------------------
+## One-shot Operations in Memory
 
-The simplest way to work with `bz2` is to load all of the data to be
-compressed or decompressed in memory, and then use `compress()` and
-`decompress()` to transform it.
+The simplest way to work with `bz2` is to load all of the data to be compressed or decompressed in memory, and then use `compress()` and `decompress()` to transform it.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_memory.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_memory.py :::
 
-The compressed data contains non-ASCII characters, so it needs to be
-converted to its hexadecimal representation before it can be printed. In
-the output from these examples, the hexadecimal version is reformatted
-to have at most 40 characters on each line.
+The compressed data contains non-ASCII characters, so it needs to be converted to its hexadecimal representation before it can be printed. In the output from these examples, the hexadecimal version is reformatted to have at most 40 characters on each line.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_memory.py
 
 Original     : 26 bytes
@@ -51,18 +36,13 @@ Decompressed : 26 bytes
 b'This is the original text.'
 ```
 
-For short text, the compressed version can be significantly longer than
-the original. While the actual results depend on the input data, it is
-interesting to observe the compression overhead.
+For short text, the compressed version can be significantly longer than the original. While the actual results depend on the input data, it is interesting to observe the compression overhead.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_lengths.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_lengths.py :::
 
-The output lines ending with `*` show the points where the compressed
-data is longer than the raw input.
+The output lines ending with `*` show the points where the compressed data is longer than the raw input.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_lengths.py
 
       len(data)  len(compressed)
@@ -74,28 +54,15 @@ $ python3 bz2_lengths.py
             104               72
 ```
 
-Incremental Compression and Decompression
------------------------------------------
+## Incremental Compression and Decompression
 
-The in-memory approach has obvious drawbacks that make it impractical
-for real-world use cases. The alternative is to use `BZ2Compressor` and
-`BZ2Decompressor` objects to manipulate data incrementally so that the
-entire data set does not have to fit into memory.
+The in-memory approach has obvious drawbacks that make it impractical for real-world use cases. The alternative is to use `BZ2Compressor` and `BZ2Decompressor` objects to manipulate data incrementally so that the entire data set does not have to fit into memory.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_incremental.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_incremental.py :::
 
-This example reads small blocks of data from a plain-text file and
-passes it to `compress()`. The compressor maintains an internal buffer
-of compressed data. Since the compression algorithm depends on checksums
-and minimum block sizes, the compressor may not be ready to return data
-each time it receives more input. If it does not have an entire
-compressed block ready, it returns an empty string. When all of the data
-is fed in, the `flush()` method forces the compressor to close the final
-block and return the rest of the compressed data.
+This example reads small blocks of data from a plain-text file and passes it to `compress()`. The compressor maintains an internal buffer of compressed data. Since the compression algorithm depends on checksums and minimum block sizes, the compressor may not be ready to return data each time it receives more input. If it does not have an entire compressed block ready, it returns an empty string. When all of the data is fed in, the `flush()` method forces the compressor to close the final block and return the rest of the compressed data.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_incremental.py
 
 buffering...
@@ -110,62 +77,42 @@ d755a67c10798387682c7ca7b5a3bb75da77755eb81c1cb1ca94c4b6faf209c5
 d6a221bdb8c7ff76b88c1d5342ee48a70a12175074918'
 ```
 
-Mixed Content Streams
----------------------
+## Mixed Content Streams
 
-`BZ2Decompressor` can also be used in situations where compressed and
-uncompressed data is mixed together.
+`BZ2Decompressor` can also be used in situations where compressed and uncompressed data is mixed together.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_mixed.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_mixed.py :::
 
-After decompressing all of the data, the `unused_data` attribute
-contains any data not used.
+After decompressing all of the data, the `unused_data` attribute contains any data not used.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_mixed.py
 
 Decompressed matches lorem: True
 Unused data matches lorem : True
 ```
 
-Writing Compressed Files
-------------------------
+## Writing Compressed Files
 
-`BZ2File` can be used to write to and read from bzip2-compressed files
-using the usual methods for writing and reading data.
+`BZ2File` can be used to write to and read from bzip2-compressed files using the usual methods for writing and reading data.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_file\_write.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_file_write.py :::
 
-To write data into a compressed file, open the file with mode `'wb'`.
-This example wraps the `BZ2File` with a `TextIOWrapper` from the
-`io`{.interpreted-text role="mod"} module to encode Unicode text to
-bytes suitable for compression.
+To write data into a compressed file, open the file with mode `'wb'`. This example wraps the `BZ2File` with a `TextIOWrapper` from the `io`{.interpreted-text role="mod"} module to encode Unicode text to bytes suitable for compression.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_file_write.py
 
 example.bz2: bzip2 compressed data, block size = 900k
 ```
 
-Different compression levels can be used by passing a `compresslevel`
-argument. Valid values range from `1` to `9`, inclusive. Lower values
-are faster and result in less compression. Higher values are slower and
-compress more, up to a point.
+Different compression levels can be used by passing a `compresslevel` argument. Valid values range from `1` to `9`, inclusive. Lower values are faster and result in less compression. Higher values are slower and compress more, up to a point.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_file\_compresslevel.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_file_compresslevel.py :::
 
-The center column of numbers in the output of the script is the size in
-bytes of the files produced. For this input data, the higher compression
-values do not always pay off in decreased storage space for the same
-input data. Results will vary for other inputs.
+The center column of numbers in the output of the script is the size in bytes of the files produced. For this input data, the higher compression values do not always pay off in decreased storage space for the same input data. Results will vary for other inputs.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_file_compresslevel.py
 
 3018243926 8771 compress-level-1.bz2
@@ -180,17 +127,13 @@ $ python3 bz2_file_compresslevel.py
 Input contains 754688 bytes
 ```
 
-A `BZ2File` instance also includes a `writelines()` method that can be
-used to write a sequence of strings.
+A `BZ2File` instance also includes a `writelines()` method that can be used to write a sequence of strings.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_file\_writelines.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_file_writelines.py :::
 
-The lines should end in a newline character, as when writing to a
-regular file.
+The lines should end in a newline character, as when writing to a regular file.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_file_writelines.py
 
 The same line, over and over.
@@ -205,40 +148,27 @@ The same line, over and over.
 The same line, over and over.
 ```
 
-Reading Compressed Files
-------------------------
+## Reading Compressed Files
 
-To read data back from previously compressed files, open the file with
-read mode (`'rb'`). The value returned from `read()` will be a byte
-string.
+To read data back from previously compressed files, open the file with read mode (`'rb'`). The value returned from `read()` will be a byte string.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_file\_read.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_file_read.py :::
 
-This example reads the file written by `bz2_file_write.py` from the
-previous section. The `BZ2File` is wrapped with a `TextIOWrapper` to
-decode bytes read to Unicode text.
+This example reads the file written by `bz2_file_write.py` from the previous section. The `BZ2File` is wrapped with a `TextIOWrapper` to decode bytes read to Unicode text.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_file_read.py
 
 Contents of the example file go here.
 ```
 
-While reading a file, it is also possible to seek, and to read only part
-of the data.
+While reading a file, it is also possible to seek, and to read only part of the data.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_file\_seek.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_file_seek.py :::
 
-The `seek()` position is relative to the *uncompressed* data, so the
-caller does not need to be aware that the data file is compressed. This
-allows a `BZ2File` instance to be passed to a function expecting a
-regular uncompressed file.
+The `seek()` position is relative to the _uncompressed_ data, so the caller does not need to be aware that the data file is compressed. This allows a `BZ2File` instance to be passed to a function expecting a regular uncompressed file.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_file_seek.py
 
 Entire file:
@@ -249,24 +179,15 @@ b'nts of the'
 True
 ```
 
-Reading and Writing Unicode Data
---------------------------------
+## Reading and Writing Unicode Data
 
-The previous examples used `BZ2File` directly and managed the encoding
-and decoding of Unicode text strings inline with an `io.TextIOWrapper`,
-where necessary. These extra steps can be avoided by using `bz2.open()`,
-which sets up an `io.TextIOWrapper` to handle the encoding or decoding
-automatically.
+The previous examples used `BZ2File` directly and managed the encoding and decoding of Unicode text strings inline with an `io.TextIOWrapper`, where necessary. These extra steps can be avoided by using `bz2.open()`, which sets up an `io.TextIOWrapper` to handle the encoding or decoding automatically.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-bz2\_unicode.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} bz2_unicode.py :::
 
-The file handle returned by `open()` supports `seek()`, but use care
-because the file pointer moves by *bytes* not *characters* and may end
-up in the middle of an encoded character.
+The file handle returned by `open()` supports `seek()`, but use care because the file pointer moves by _bytes_ not _characters_ and may end up in the middle of an encoded character.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_unicode.py
 
 Full file: Character with an åccent.
@@ -274,47 +195,27 @@ One character: å
 ERROR: failed to decode
 ```
 
-Compressing Network Data
-------------------------
+## Compressing Network Data
 
-The code in the next example responds to requests consisting of
-filenames by writing a compressed version of the file to the socket used
-to communicate with the client. It has some artificial chunking in place
-to illustrate the buffering that occurs when the data passed to
-`compress()` or `decompress()` does not result in a complete block of
-compressed or uncompressed output.
+The code in the next example responds to requests consisting of filenames by writing a compressed version of the file to the socket used to communicate with the client. It has some artificial chunking in place to illustrate the buffering that occurs when the data passed to `compress()` or `decompress()` does not result in a complete block of compressed or uncompressed output.
 
-::: {.literalinclude caption="" lines="9-52"}
-bz2\_server.py
-:::
+::: {.literalinclude caption="" lines="9-52"} bz2_server.py :::
 
-The main program starts a server in a thread, combining
-`SocketServer`{.interpreted-text role="mod"} and `Bz2RequestHandler`.
+The main program starts a server in a thread, combining `SocketServer`{.interpreted-text role="mod"} and `Bz2RequestHandler`.
 
-::: {.literalinclude lines="55-"}
-bz2\_server.py
-:::
+::: {.literalinclude lines="55-"} bz2_server.py :::
 
-It then opens a socket to communicate with the server as a client, and
-requests the file (defaulting to `lorem.txt`) which contains:
+It then opens a socket to communicate with the server as a client, and requests the file (defaulting to `lorem.txt`) which contains:
 
-::: {.literalinclude}
-lorem.txt
-:::
+::: {.literalinclude} lorem.txt :::
 
-::: {.warning}
-::: {.admonition-title}
-Warning
-:::
+::: {.warning} ::: {.admonition-title} Warning :::
 
-This implementation has obvious security implications. Do not run it on
-a server on the open Internet or in any environment where security might
-be an issue.
-:::
+This implementation has obvious security implications. Do not run it on a server on the open Internet or in any environment where security might be an issue. :::
 
 Running `bz2_server.py` produces:
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 bz2_server.py
 
 Client: Contacting server on 127.0.0.1:57364
@@ -361,7 +262,7 @@ Client: READ b'1088716cc8dedda5d489da410748531278043d70a8a131c2b
 8adcd6a221bdb8c'
 Client: BUFFERING
 Client: READ b'7ff76b88c1d5342ee48a70a12175074918'
-Client: DECOMPRESSED b'Lorem ipsum dolor sit amet, consectetuer 
+Client: DECOMPRESSED b'Lorem ipsum dolor sit amet, consectetuer
 adipiscing elit. Donec\negestas, enim et consectetuer ullamcorpe
 r, lectus ligula rutrum leo,\na elementum elit tortor eu quam. D
 uis tincidunt nisi ut ante. Nulla\nfacilisi.\n'
@@ -369,14 +270,10 @@ Client: response matches file contents: True
 ```
 
 ::: {.seealso}
--   `bz2`{.interpreted-text role="pydoc"}
--   [bzip2.org](http://www.bzip.org/) \-- The home page for `bzip2`.
--   `zlib`{.interpreted-text role="mod"} \-- The `zlib` module for GNU
-    zip compression.
--   `gzip`{.interpreted-text role="mod"} \-- A file-like interface to
-    GNU zip compressed files.
--   `io`{.interpreted-text role="mod"} \-- Building-blocks for creating
-    input and output pipelines.
--   `Python 2 to 3 porting notes for bz2 <porting-bz2>`{.interpreted-text
-    role="ref"}
-:::
+
+- `bz2`{.interpreted-text role="pydoc"}
+- [bzip2.org](http://www.bzip.org/) \-- The home page for `bzip2`.
+- `zlib`{.interpreted-text role="mod"} \-- The `zlib` module for GNU zip compression.
+- `gzip`{.interpreted-text role="mod"} \-- A file-like interface to GNU zip compressed files.
+- `io`{.interpreted-text role="mod"} \-- Building-blocks for creating input and output pipelines.
+- `Python 2 to 3 porting notes for bz2 <porting-bz2>`{.interpreted-text role="ref"} :::

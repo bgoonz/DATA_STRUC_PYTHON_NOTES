@@ -1,26 +1,16 @@
-Scheduling Calls to Regular Functions
-=====================================
+# Scheduling Calls to Regular Functions
 
-In addition to managing coroutines and I/O callbacks, the `asyncio`
-event loop can schedule calls to regular functions based on the timer
-value kept in the loop.
+In addition to managing coroutines and I/O callbacks, the `asyncio` event loop can schedule calls to regular functions based on the timer value kept in the loop.
 
-Scheduling a Callback \"Soon\"
-------------------------------
+## Scheduling a Callback \"Soon\"
 
-If the timing of the callback does not matter, `call_soon()` can be used
-to schedule the call for the next iteration of the loop. Any extra
-positional arguments after the function are passed to the callback when
-it is invoked. To pass keyword arguments to the callback, use
-`partial()` from the `functools`{.interpreted-text role="mod"} module.
+If the timing of the callback does not matter, `call_soon()` can be used to schedule the call for the next iteration of the loop. Any extra positional arguments after the function are passed to the callback when it is invoked. To pass keyword arguments to the callback, use `partial()` from the `functools`{.interpreted-text role="mod"} module.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-asyncio\_call\_soon.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} asyncio_call_soon.py :::
 
 The callbacks are invoked in the order they are scheduled.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 asyncio_call_soon.py
 
 entering event loop
@@ -30,24 +20,15 @@ callback invoked with 2 and not default
 closing event loop
 ```
 
-Scheduling a Callback with a Delay
-----------------------------------
+## Scheduling a Callback with a Delay
 
-To postpone a callback until some time in the future, use
-`call_later()`. The first argument is the delay in seconds and the
-second argument is the callback.
+To postpone a callback until some time in the future, use `call_later()`. The first argument is the delay in seconds and the second argument is the callback.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-asyncio\_call\_later.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} asyncio_call_later.py :::
 
-In this example, the same callback function is scheduled for several
-different times with different arguments. The final instance, using
-`call_soon()`, results in the callback being invoked with the argument
-`3` before any of the time-scheduled instances, showing that \"soon\"
-usually implies a minimal delay.
+In this example, the same callback function is scheduled for several different times with different arguments. The final instance, using `call_soon()`, results in the callback being invoked with the argument `3` before any of the time-scheduled instances, showing that \"soon\" usually implies a minimal delay.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 asyncio_call_later.py
 
 entering event loop
@@ -58,23 +39,15 @@ callback 1 invoked
 closing event loop
 ```
 
-Scheduling a Callback for a Specific Time
------------------------------------------
+## Scheduling a Callback for a Specific Time
 
-It is also possible to schedule a call to occur at a specific time. The
-loop uses a monotonic clock, rather than a wall-clock time, to ensure
-that the value of \"now\" never regresses. To choose a time for a
-scheduled callback it is necessary to start from the internal state of
-that clock using the loop\'s `time()` method.
+It is also possible to schedule a call to occur at a specific time. The loop uses a monotonic clock, rather than a wall-clock time, to ensure that the value of \"now\" never regresses. To choose a time for a scheduled callback it is necessary to start from the internal state of that clock using the loop\'s `time()` method.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-asyncio\_call\_at.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} asyncio_call_at.py :::
 
-Note that the time according to the loop does not match the value
-returned by `time.time()`.
+Note that the time according to the loop does not match the value returned by `time.time()`.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 asyncio_call_at.py
 
 entering event loop

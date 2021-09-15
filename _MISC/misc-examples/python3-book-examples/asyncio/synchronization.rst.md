@@ -1,31 +1,16 @@
-Synchronization Primitives
-==========================
+# Synchronization Primitives
 
-Although `asyncio` applications usually run as a single-threaded
-process, they are still built as concurrent applications. Each coroutine
-or task may execute in an unpredictable order, based on delays and
-interrupts from I/O and other external events. To support safe
-concurrency, `asyncio` includes implementations of some of the same
-low-level primitives found in the `threading`{.interpreted-text
-role="mod"} and `multiprocessing`{.interpreted-text role="mod"} modules.
+Although `asyncio` applications usually run as a single-threaded process, they are still built as concurrent applications. Each coroutine or task may execute in an unpredictable order, based on delays and interrupts from I/O and other external events. To support safe concurrency, `asyncio` includes implementations of some of the same low-level primitives found in the `threading`{.interpreted-text role="mod"} and `multiprocessing`{.interpreted-text role="mod"} modules.
 
-Locks
------
+## Locks
 
-A `Lock` can be used to guard access to a shared resource. Only the
-holder of the lock can use the resource. Multiple attempts to acquire
-the lock will block so that there is only one holder at a time.
+A `Lock` can be used to guard access to a shared resource. Only the holder of the lock can use the resource. Multiple attempts to acquire the lock will block so that there is only one holder at a time.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-asyncio\_lock.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} asyncio_lock.py :::
 
-A lock\'s `acquire()` method can be invoked directly, using `await`, and
-calling the `release()` method when done as in `coro2()` in this
-example. They also can be used as asynchronous context managers with the
-`with await` keywords, as in `coro1()`.
+A lock\'s `acquire()` method can be invoked directly, using `await`, and calling the `release()` method when done as in `coro2()` in this example. They also can be used as asynchronous context managers with the `with await` keywords, as in `coro1()`.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 asyncio_lock.py
 
 acquiring the lock before starting coroutines
@@ -40,23 +25,15 @@ coro1 acquired lock
 coro1 released lock
 ```
 
-Events
-------
+## Events
 
-An `asyncio.Event` is based on `threading.Event`, and is used to allow
-multiple consumers to wait for something to happen without looking for a
-specific value to be associated with the notification.
+An `asyncio.Event` is based on `threading.Event`, and is used to allow multiple consumers to wait for something to happen without looking for a specific value to be associated with the notification.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-asyncio\_event.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} asyncio_event.py :::
 
-As with the `Lock`, both `coro1()` and `coro2()` wait for the event to
-be set. The difference is that both can start as soon as the event state
-changes, and they do not need to acquire a unique hold on the event
-object.
+As with the `Lock`, both `coro1()` and `coro2()` wait for the event to be set. The difference is that both can start as soon as the event state changes, and they do not need to acquire a unique hold on the event object.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 asyncio_event.py
 
 event start state: False
@@ -68,23 +45,15 @@ coro1 triggered
 event end state: True
 ```
 
-Conditions
-----------
+## Conditions
 
-A `Condition` works similarly to an `Event` except that rather than
-notifying all waiting coroutines the number of waiters awakened is
-controlled with an argument to `notify()`.
+A `Condition` works similarly to an `Event` except that rather than notifying all waiting coroutines the number of waiters awakened is controlled with an argument to `notify()`.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-asyncio\_condition.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} asyncio_condition.py :::
 
-This example starts five consumers of the `Condition`. Each uses the
-`wait()` method to wait for a notification that they can proceed.
-`manipulate_condition()` notifies one consumer, then two consumers, then
-all of the remaining consumers.
+This example starts five consumers of the `Condition`. Each uses the `wait()` method to wait for a notification that they can proceed. `manipulate_condition()` notifies one consumer, then two consumers, then all of the remaining consumers.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 asyncio_condition.py
 
 starting manipulate_condition
@@ -109,23 +78,15 @@ consumer 2 triggered
 ending consumer 2
 ```
 
-Queues
-------
+## Queues
 
-An `asyncio.Queue` provides a first-in, first-out data structure for
-coroutines like a `queue.Queue` does for threads or a
-`multiprocessing.Queue` does for processes.
+An `asyncio.Queue` provides a first-in, first-out data structure for coroutines like a `queue.Queue` does for threads or a `multiprocessing.Queue` does for processes.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-asyncio\_queue.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} asyncio_queue.py :::
 
-Adding items with `put()` or removing items with `get()` are both
-asynchronous operations, since the queue size might be fixed (blocking
-an addition) or the queue might be empty (blocking a call to fetch an
-item).
+Adding items with `put()` or removing items with `get()` are both asynchronous operations, since the queue size might be fixed (blocking an addition) or the queue might be empty (blocking a call to fetch an item).
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 asyncio_queue.py
 
 consumer 0: starting

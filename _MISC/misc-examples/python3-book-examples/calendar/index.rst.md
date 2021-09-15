@@ -1,37 +1,24 @@
-calendar \-\-- Work with Dates
-==============================
+# calendar \-\-- Work with Dates
 
-::: {.module synopsis="Classes for working with year, month, and week-oriented values."}
-calendar
-:::
+::: {.module synopsis="Classes for working with year, month, and week-oriented values."} calendar :::
 
 Purpose
 
-:   The calendar module implements classes for working with dates to
-    manage year/month/week oriented values.
+: The calendar module implements classes for working with dates to manage year/month/week oriented values.
 
-The `calendar` module defines the `Calendar` class, which encapsulates
-calculations for values such as the dates of the weeks in a given month
-or year. In addition, the `TextCalendar` and `HTMLCalendar` classes can
-produce pre-formatted output.
+The `calendar` module defines the `Calendar` class, which encapsulates calculations for values such as the dates of the weeks in a given month or year. In addition, the `TextCalendar` and `HTMLCalendar` classes can produce pre-formatted output.
 
-Formatting Examples
--------------------
+## Formatting Examples
 
-The `prmonth()` method is a simple function that produces the formatted
-text output for a month.
+The `prmonth()` method is a simple function that produces the formatted text output for a month.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-calendar\_textcalendar.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} calendar_textcalendar.py :::
 
-The example configures `TextCalendar` to start weeks on Sunday,
-following the American convention. The default is to use the European
-convention of starting a week on Monday.
+The example configures `TextCalendar` to start weeks on Sunday, following the American convention. The default is to use the European convention of starting a week on Monday.
 
 The output looks like:
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 calendar_textcalendar.py
 
      July 2017
@@ -44,31 +31,17 @@ Su Mo Tu We Th Fr Sa
 30 31
 ```
 
-A similar HTML table can be produced with `HTMLCalendar` and
-`formatmonth()`. The rendered output looks roughly the same as the plain
-text version, but is wrapped with HTML tags. Each table cell has a class
-attribute corresponding to the day of the week, so the HTML can be
-styled through CSS.
+A similar HTML table can be produced with `HTMLCalendar` and `formatmonth()`. The rendered output looks roughly the same as the plain text version, but is wrapped with HTML tags. Each table cell has a class attribute corresponding to the day of the week, so the HTML can be styled through CSS.
 
-To produce output in a format other than one of the available defaults,
-use `calendar` to calculate the dates and organize the values into week
-and month ranges, then iterate over the result. The `weekheader()`,
-`monthcalendar()`, and `yeardays2calendar()` methods of `Calendar` are
-especially useful for that.
+To produce output in a format other than one of the available defaults, use `calendar` to calculate the dates and organize the values into week and month ranges, then iterate over the result. The `weekheader()`, `monthcalendar()`, and `yeardays2calendar()` methods of `Calendar` are especially useful for that.
 
-Calling `yeardays2calendar()` produces a sequence of \"month row\"
-lists. Each list includes the months as another list of weeks. The weeks
-are lists of tuples made up of day number (1-31) and weekday number
-(0-6). Days that fall outside of the month have a day number of 0.
+Calling `yeardays2calendar()` produces a sequence of \"month row\" lists. Each list includes the months as another list of weeks. The weeks are lists of tuples made up of day number (1-31) and weekday number (0-6). Days that fall outside of the month have a day number of 0.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-calendar\_yeardays2calendar.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} calendar_yeardays2calendar.py :::
 
-Calling `yeardays2calendar(2017, 3)` returns data for 2017, organized
-with three months per row.
+Calling `yeardays2calendar(2017, 3)` returns data for 2017, organized with three months per row.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 calendar_yeardays2calendar.py
 
 len(cal_data)      : 4
@@ -86,13 +59,11 @@ first_month:
 
 This is equivalent to the data used by `formatyear()`.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-calendar\_formatyear.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} calendar_formatyear.py :::
 
 For the same arguments, `formatyear()` produces this output:
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 calendar_formatyear.py
 
                               2017
@@ -133,26 +104,17 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
                                             31
 ```
 
-The `day_name`, `day_abbr`, `month_name`, and `month_abbr` module
-attributes useful for producing custom formatted output (i.e., to
-include links in the HTML output). They are automatically configured
-correctly for the current locale.
+The `day_name`, `day_abbr`, `month_name`, and `month_abbr` module attributes useful for producing custom formatted output (i.e., to include links in the HTML output). They are automatically configured correctly for the current locale.
 
-Locales
--------
+## Locales
 
-To produce a calendar formatted for a locale other than the current
-default, use `LocaleTextCalendar` or `LocaleHTMLCalendar`.
+To produce a calendar formatted for a locale other than the current default, use `LocaleTextCalendar` or `LocaleHTMLCalendar`.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-calendar\_locale.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} calendar_locale.py :::
 
-The first day of the week is not part of the locale settings, and the
-value is taken from the argument to the calendar class just as with the
-regular `TextCalendar`.
+The first day of the week is not part of the locale settings, and the value is taken from the argument to the calendar class just as with the regular `TextCalendar`.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 calendar_locale.py
 
      July 2017
@@ -174,24 +136,15 @@ Lu Ma Me Je Ve Sa Di
 31
 ```
 
-Calculating Dates
------------------
+## Calculating Dates
 
-Although the calendar module focuses mostly on printing full calendars
-in various formats, it also provides functions useful for working with
-dates in other ways, such as calculating dates for a recurring event.
-For example, the Python Atlanta User\'s Group meets on the second
-Thursday of every month. To calculate the dates for the meetings for a
-year, use the return value of `monthcalendar()`.
+Although the calendar module focuses mostly on printing full calendars in various formats, it also provides functions useful for working with dates in other ways, such as calculating dates for a recurring event. For example, the Python Atlanta User\'s Group meets on the second Thursday of every month. To calculate the dates for the meetings for a year, use the return value of `monthcalendar()`.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-calendar\_monthcalendar.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} calendar_monthcalendar.py :::
 
-Some days have a 0 value. Those are days of the week that overlap with
-the given month, but that are part of another month.
+Some days have a 0 value. Those are days of the week that overlap with the given month, but that are part of another month.
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 calendar_monthcalendar.py
 
 [[0, 0, 0, 0, 0, 1, 2],
@@ -202,26 +155,15 @@ $ python3 calendar_monthcalendar.py
  [31, 0, 0, 0, 0, 0, 0]]
 ```
 
-The first day of the week defaults to Monday. It is possible to change
-that by calling `setfirstweekday()`, but since the calendar module
-includes constants for indexing into the date ranges returned by
-`monthcalendar()`, it is more convenient to skip that step in this case.
+The first day of the week defaults to Monday. It is possible to change that by calling `setfirstweekday()`, but since the calendar module includes constants for indexing into the date ranges returned by `monthcalendar()`, it is more convenient to skip that step in this case.
 
-To calculate the group meeting dates for a year, assuming they are
-always on the second Thursday of every month, look at the output of
-`monthcalendar()` to find the dates on which Thursdays fall. The first
-and last week of the month are padded with 0 values as placeholders for
-the days falling in the preceding or subsequent month. For example, if a
-month starts on a Friday, the value in the first week in the Thursday
-position will be 0.
+To calculate the group meeting dates for a year, assuming they are always on the second Thursday of every month, look at the output of `monthcalendar()` to find the dates on which Thursdays fall. The first and last week of the month are padded with 0 values as placeholders for the days falling in the preceding or subsequent month. For example, if a month starts on a Friday, the value in the first week in the Thursday position will be 0.
 
-::: {.literalinclude caption="" start-after="#end_pymotw_header"}
-calendar\_secondthursday.py
-:::
+::: {.literalinclude caption="" start-after="#end_pymotw_header"} calendar_secondthursday.py :::
 
 So the meeting schedule for the year is:
 
-``` {.sourceCode .none}
+```{.sourceCode .none}
 $ python3 calendar_secondthursday.py 2017
 
 Jan: 12
@@ -239,9 +181,8 @@ Dec: 14
 ```
 
 ::: {.seealso}
--   `calendar`{.interpreted-text role="pydoc"}
--   `time`{.interpreted-text role="mod"} \-- Lower-level time functions.
--   `datetime`{.interpreted-text role="mod"} \-- Manipulate date values,
-    including timestamps and time zones.
--   `locale`{.interpreted-text role="mod"} \-- Locale settings.
-:::
+
+- `calendar`{.interpreted-text role="pydoc"}
+- `time`{.interpreted-text role="mod"} \-- Lower-level time functions.
+- `datetime`{.interpreted-text role="mod"} \-- Manipulate date values, including timestamps and time zones.
+- `locale`{.interpreted-text role="mod"} \-- Locale settings. :::
