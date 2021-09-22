@@ -84,6 +84,20 @@ Output: [3,5,1]
 
   
 """
+# 1. We start with a stack that contains the root node.
+# 
+# 2. We loop through the stack until it’s empty.
+# 
+# 3. We pop the last element from the stack and set it to a variable.
+# 
+# 4. We check if the node has a left child. If it does, we add the left child to
+# the stack.
+# 
+# 5. We check if the node has a right child. If it does, we add the right child
+# to the stack.
+# 
+# 6. We repeat steps 2-5 until the stack is empty.
+# O(N) complexity
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):

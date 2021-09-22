@@ -27,4 +27,17 @@ def hasPathWithGivenSum(t, s):
             if t.value == s:
                 return True
             else:
-                return False
+#                 return False
+# 1. If the tree is empty, we return false.
+# 
+# 2. If the tree is not empty, we check if the root node has a path with the
+# given sum.
+# 
+# 3. If the root node has a path with the given sum, we return true.
+# 
+# 4. lfthe root node does not have a path with the given sum, we check if
+# the left or right subtree has a path with the given sum.
+# 
+# 5. lfthe left or right subtree has a path with the given sum, we return true.
+# 6. lfthe left or right subtree does not have a path with the given sum, we
+# return false.
