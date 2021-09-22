@@ -46,7 +46,7 @@ def reversePairs(nums):
 
 
 nums = [1, 3, 2, 3, 1]
-print(f'reversePairs(nums): {reversePairs(nums)}')
+print(f"reversePairs(nums): {reversePairs(nums)}")
 
 """
 958. Check Completeness of a Binary Tree

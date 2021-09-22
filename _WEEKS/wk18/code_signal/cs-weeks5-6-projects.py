@@ -319,8 +319,11 @@ def balancedBinaryTree(root):
     # if the absolute value of left subtree - right subtree is less than or
     # equal to 1 and left tree is balanced and right tree is balanced then
     # the whole tree is balanced
-    if (abs(left_height - right_height) <= 1) and balancedBinaryTree(
-            root.left) is True and balancedBinaryTree(root.right) is True:
+    if (
+        (abs(left_height - right_height) <= 1)
+        and balancedBinaryTree(root.left) is True
+        and balancedBinaryTree(root.right) is True
+    ):
         return True
     return False
 
@@ -362,8 +365,9 @@ def minimumDepthBinaryTree(root):
         return minimumDepthBinaryTree(root.left) + 1
 
     # return the minimum depth after recursion
-    return min(minimumDepthBinaryTree(root.left), minimumDepthBinaryTree(
-        root.right)) + 1
+    return (
+        min(minimumDepthBinaryTree(root.left), minimumDepthBinaryTree(root.right)) + 1
+    )
 
 
 """"
@@ -560,8 +564,7 @@ def inorder_traversal(root):
     # recursively call the function on the left child until no more left
     # children then the root will be none and the values are returned up the
     # chain inorder
-    return inorder_traversal(root.left) + [root.val] + inorder_traversal(
-        root.right)
+    return inorder_traversal(root.left) + [root.val] + inorder_traversal(root.right)
 
 
 # the iterative way with a stack
@@ -644,7 +647,7 @@ def build_tree(preorder, inorder):
         root = TreeNode(preorder.pop(0))
         root_index = inorder.index(root.val)
         root.left = build_tree(preorder, inorder[:root_index])
-        root.right = build_tree(preorder, inorder[root_index + 1:])
+        root.right = build_tree(preorder, inorder[root_index + 1 :])
         return root
 
 
@@ -741,21 +744,13 @@ t = {
     "left": {
         "value": 2,
         "left": None,
-        "right": {
-            "value": 3,
-            "left": None,
-            "right": None
-        }
+        "right": {"value": 3, "left": None, "right": None},
     },
     "right": {
         "value": 4,
-        "left": {
-            "value": 5,
-            "left": None,
-            "right": None
-        },
-        "right": None
-    }
+        "left": {"value": 5, "left": None, "right": None},
+        "right": None,
+    },
 }
 
 
@@ -841,15 +836,15 @@ The given tree looks like this:
 def treePaths(t):
     if t is None:
         return []
-    result, stack = [], [(t, '')]
+    result, stack = [], [(t, "")]
     while stack:
         root, el = stack.pop()
         if root.left is None and root.right is None:
             result.append(el + str(root.value))
         if root.right:
-            stack.append((root.right, el + str(root.value) + '->'))
+            stack.append((root.right, el + str(root.value) + "->"))
         if root.left:
-            stack.append((root.left, el + str(root.value) + '->'))
+            stack.append((root.left, el + str(root.value) + "->"))
     return result
 
 
@@ -876,13 +871,13 @@ Objective 3
 class Graph:
     def __init__(self):
         self.vertices = {
-            'A': {'B': 1},
-            'B': {'C': 3, 'D': 2, 'E': 1},
-            'C': {'E': 4},
-            'D': {'E': 2},
-            'E': {'F': 3},
-            'F': {},
-            'G': {'D': 1},
+            "A": {"B": 1},
+            "B": {"C": 3, "D": 2, "E": 1},
+            "C": {"E": 4},
+            "D": {"E": 2},
+            "E": {"F": 3},
+            "F": {},
+            "G": {"D": 1},
         }
 
 
@@ -902,14 +897,18 @@ class Graph:
 
 # 3
 
+
 class Vertex:
     def __init__(self, value):
         self.value = value
         self.connections = {}
 
     def __str__(self):
-        return str(self.value) + ' connections: ' + str(
-            [x.value for x in self.connections])
+        return (
+            str(self.value)
+            + " connections: "
+            + str([x.value for x in self.connections])
+        )
 
     def add_connection(self, vert, weight=0):
         self.connections[vert] = weight
@@ -952,16 +951,16 @@ class Graph:
         return self.vertices.keys()
 
 
-g_verts = ['A', 'B', 'C', 'D', 'E']
+g_verts = ["A", "B", "C", "D", "E"]
 
 g = Graph()
 for v in g_verts:
     g.add_vertex(g)
 
-g.add_edge('A', 'B', 1)
-g.add_edge('B', 'C', 3)
-g.add_edge('B', 'D', 2)
-g.add_edge('E', 'D', 1)
+g.add_edge("A", "B", 1)
+g.add_edge("B", "C", 3)
+g.add_edge("B", "D", 2)
+g.add_edge("E", "D", 1)
 
 # for v in g:
 #     for w in v.get_connections():
@@ -1035,7 +1034,7 @@ grid = [
     ["1", "1", "1", "1", "0"],
     ["1", "1", "0", "1", "0"],
     ["1", "1", "0", "0", "0"],
-    ["0", "0", "0", "0", "0"]
+    ["0", "0", "0", "0", "0"],
 ]
 
 
@@ -1259,7 +1258,7 @@ Notes:
 
 
 def floodfill(image, row, col, color):
-    if image[row][col] != ' ':
+    if image[row][col] != " ":
         return
 
     image[row][col] = color
@@ -1362,13 +1361,9 @@ Explanation: The 0th and 1st students are direct friends, the 1st and 2nd studen
 so the 0th and 2nd students are indirect friends. All of them are in the same friend circle, so return 1.
 """
 
-friendships = [[1, 1, 0],
-               [1, 1, 0],
-               [0, 0, 1]]
+friendships = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
 
-friendships = [[1, 1, 0],
-               [1, 1, 1],
-               [0, 1, 1]]
+friendships = [[1, 1, 0], [1, 1, 1], [0, 1, 1]]
 
 
 def csFriendCircles(friendships):
@@ -1396,7 +1391,7 @@ def csFriendCircles(friendships):
                 print(i, v)
                 g.add_edge(i, v)
     # printing graph to make sure it is working properly
-    print('g', g.verts)
+    print("g", g.verts)
 
     def findConnectedFriends(graph):
         visited = []
@@ -1413,7 +1408,7 @@ def csFriendCircles(friendships):
             return visited, path
         visited.append(start)
         path.append(start)
-        print('group', graph.verts[start])
+        print("group", graph.verts[start])
         for node in graph.verts[start]:
             print(node)
             visited, path = dfs(graph, node, visited, path)
@@ -1449,7 +1444,7 @@ end_word = 'cog'
 return: ['hit', 'hot', 'cot', 'cog'] 
 """
 words = set()
-with open('words.txt') as f:
+with open("words.txt") as f:
     for w in f:
         w = w.strip().lower()
         words.add(w)
@@ -1476,7 +1471,7 @@ def get_neighbors(word):
 
 # BFS to solve this (not sure why takes much longer than guided)
 def bfs(start_word, end_word):
-    print('s, e', start_word, end_word)
+    print("s, e", start_word, end_word)
     visited = set()
     q = [[start_word]]
 
@@ -1576,7 +1571,7 @@ def csBSTRangeSum(root, lower, upper):
             return
         helper(root.left)
         if root.value <= upper and root.value >= lower:
-            print('value', root.value)
+            print("value", root.value)
             range.append(root.value)
         helper(root.right)
 
@@ -1697,7 +1692,7 @@ def reversePairs(nums):
 
 
 nums = [1, 3, 2, 3, 1]
-print(f'reversePairs(nums): {reversePairs(nums)}')
+print(f"reversePairs(nums): {reversePairs(nums)}")
 
 """
 958. Check Completeness of a Binary Tree

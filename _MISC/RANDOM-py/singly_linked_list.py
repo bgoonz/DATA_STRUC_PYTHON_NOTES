@@ -17,12 +17,11 @@ class Node:
         self.next_node = new_node
 
 
-
 class LinkedList:
     def __init__(self):
         # ref to head of list
         self.head = None
-        #ref to tail of list
+        # ref to tail of list
         self.tail = None
 
     def add_to_tail(self, value):
@@ -57,7 +56,7 @@ class LinkedList:
 
             # return the value of the current heads next
             return head.get_value()
-        
+
         # otherwise we have more than one element in our list
         # store the value
         value = self.head.get_value()
@@ -65,7 +64,6 @@ class LinkedList:
         self.head = self.head.get_next()
         # return the stored value
         return value
-
 
     def contains(self, value):
         # if there is no head we have an empty list

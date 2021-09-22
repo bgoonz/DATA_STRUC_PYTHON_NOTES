@@ -1,8 +1,9 @@
-'''
+"""
 Input: a List of integers as well as an integer `k` representing the size of the sliding window
 Returns: a List of integers
-'''
+"""
 from collections import deque
+
 
 def sliding_window_max(nums, k):
     max_vals = []
@@ -11,7 +12,7 @@ def sliding_window_max(nums, k):
     for i, n in enumerate(nums):
         while len(q) > 0 and n > q[-1]:
             q.pop()
-        
+
         q.append(n)
 
         # calc the window range
@@ -28,10 +29,6 @@ def sliding_window_max(nums, k):
                 q.popleft()
 
     return max_vals
-    
-
-
-    
 
     # # Your code here
     # max_vals = [0 for _ in range(len(nums) - k + 1)]
@@ -42,15 +39,14 @@ def sliding_window_max(nums, k):
     #     for j in range(1, k):
     #         if nums[i + j] > current_elem:
     #             current_elem = nums[i + j]
-        
-    #     max_vals[i] = current_elem
 
+    #     max_vals[i] = current_elem
 
     # return max_vals
 
 
-if __name__ == '__main__':
-    # Use the main function here to test out your implementation 
+if __name__ == "__main__":
+    # Use the main function here to test out your implementation
     arr = [1, 3, -1, -3, 5, 3, 6, 7]
     k = 3
 

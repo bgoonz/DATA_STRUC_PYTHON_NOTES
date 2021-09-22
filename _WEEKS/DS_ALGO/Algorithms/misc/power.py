@@ -1,5 +1,6 @@
 # given a value a and exponent b, compute the value of a^b
 
+
 def rec_pow(a, b):
     # anything raised to the power of 0 is 1
     if b <= 0:
@@ -8,9 +9,11 @@ def rec_pow(a, b):
         # call a multiplied by rec_pow on a and b - 1
         return a * rec_pow(a, b - 1)
 
+
 print(rec_pow(2, 8))
 
 # negative exponents
+
 
 def n_rec_pow(a, b):
     # anything raised to the power of 0 is 1
@@ -21,7 +24,7 @@ def n_rec_pow(a, b):
         # call a multiplied by rec_pow on a and b - 1
         return a * n_rec_pow(a, b - 1)
     else:
-    # negative exponent
+        # negative exponent
         # 1 divided by a multiplied by n_rec_pow of a and -b - 1
         return 1 / (a * n_rec_pow(a, -b - 1))
         # 1 divided by n_rec_pow of a and -b
@@ -30,6 +33,7 @@ def n_rec_pow(a, b):
 print(n_rec_pow(120, -20))
 
 # error handleing
+
 
 def e_rec_pow(a, b):
     # Error checking
@@ -46,5 +50,6 @@ def e_rec_pow(a, b):
     else:
         # call a multiplied by rec_pow on a and b - 1
         return a * e_rec_pow(a, b - 1)
+
 
 print(e_rec_pow(2, "bob"))

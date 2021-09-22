@@ -7,6 +7,7 @@ def f(*args):
     print(nargs, args)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import dis
+
     dis.dis(f)

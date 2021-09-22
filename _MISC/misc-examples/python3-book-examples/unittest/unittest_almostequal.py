@@ -2,12 +2,11 @@
 """Test for near equality
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
 class AlmostEqualTest(unittest.TestCase):
-
     def testEqual(self):
         self.assertEqual(1.1, 3.3 - 2.2)
 

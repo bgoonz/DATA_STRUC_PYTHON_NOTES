@@ -3,8 +3,9 @@
 """Generate a traceback with more details.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import cgitb
+
 cgitb.enable()
 
 
@@ -21,5 +22,6 @@ def func2(arg2):
 def func3(arg3):
     local_var = arg2 / 2  # noqa
     return local_var
+
 
 func1(1)

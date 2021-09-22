@@ -3,7 +3,7 @@
 """Demonstrate how insertion order affects dictonaries and sets.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
 

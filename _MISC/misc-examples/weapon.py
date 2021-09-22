@@ -1,4 +1,6 @@
 from item import Item
+
+
 class Weapon(Item):
     def __init__(self, name, description, power):
         super().__init__(name, description)

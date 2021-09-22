@@ -1,7 +1,7 @@
 # Faster searching than Red black trees, slower insertion and deletion
 
-class Node:
 
+class Node:
     def __init__(self, data, parent):
         self.data = data
         self.parent = parent
@@ -11,7 +11,6 @@ class Node:
 
 
 class AVLTree:
-
     def __init__(self):
         self.root = None
 
@@ -32,21 +31,39 @@ class AVLTree:
                 self.insert_node(data, node.left_node)
             else:
                 node.left_node = Node(data, node)
-                node.height = max(self.calculate_height(node.left_node), self.calculate_height(node.right_node))+1
+                node.height = (
+                    max(
+                        self.calculate_height(node.left_node),
+                        self.calculate_height(node.right_node),
+                    )
+                    + 1
+                )
         # we have to visit the right subtree
         else:
             if node.right_node:
                 self.insert_node(data, node.right_node)
             else:
                 node.right_node = Node(data, node)
-                node.height = max(self.calculate_height(node.left_node), self.calculate_height(node.right_node))+1
+                node.height = (
+                    max(
+                        self.calculate_height(node.left_node),
+                        self.calculate_height(node.right_node),
+                    )
+                    + 1
+                )
 
         self.handle_violation(node)
 
     def handle_violation(self, node):
 
         while node is not None:
-            node.height = max(self.calculate_height(node.left_node), self.calculate_height(node.right_node))+1
+            node.height = (
+                max(
+                    self.calculate_height(node.left_node),
+                    self.calculate_height(node.right_node),
+                )
+                + 1
+            )
             self.violation_helper(node)
             node = node.parent
 
@@ -115,7 +132,7 @@ class AVLTree:
                 self.handle_violation(parent)
 
             else:
-                print('Removing node with two children....')
+                print("Removing node with two children....")
 
                 predecessor = self.get_predecessor(node.left_node)
 
@@ -167,7 +184,9 @@ class AVLTree:
         if node is None:
             return 0
 
-        return self.calculate_height(node.left_node) - self.calculate_height(node.right_node)
+        return self.calculate_height(node.left_node) - self.calculate_height(
+            node.right_node
+        )
 
     def traverse(self):
         if self.root is not None:
@@ -177,26 +196,29 @@ class AVLTree:
         if node.left_node:
             self.traverse_in_order(node.left_node)
 
-        l = ''
-        r = ''
-        p = ''
+        l = ""
+        r = ""
+        p = ""
 
         if node.left_node is not None:
             l = node.left_node.data
         else:
-            l = 'NULL'
+            l = "NULL"
 
         if node.right_node is not None:
             r = node.right_node.data
         else:
-            r = 'NULL'
+            r = "NULL"
 
         if node.parent is not None:
             p = node.parent.data
         else:
-            p = 'NULL'
+            p = "NULL"
 
-        print("%s left: %s right: %s parent: %s height: %s" % (node.data, l, r, p, node.height))
+        print(
+            "%s left: %s right: %s parent: %s height: %s"
+            % (node.data, l, r, p, node.height)
+        )
 
         if node.right_node:
             self.traverse_in_order(node.right_node)
@@ -217,18 +239,35 @@ class AVLTree:
         node.parent = temp_left_node
         temp_left_node.parent = temp_parent
 
-        if temp_left_node.parent is not None and temp_left_node.parent.left_node == node:
+        if (
+            temp_left_node.parent is not None
+            and temp_left_node.parent.left_node == node
+        ):
             temp_left_node.parent.left_node = temp_left_node
 
-        if temp_left_node.parent is not None and temp_left_node.parent.right_node == node:
+        if (
+            temp_left_node.parent is not None
+            and temp_left_node.parent.right_node == node
+        ):
             temp_left_node.parent.right_node = temp_left_node
 
         if node == self.root:
             self.root = temp_left_node
 
-        node.height = max(self.calculate_height(node.left_node), self.calculate_height(node.right_node)) + 1
-        temp_left_node.height = max(self.calculate_height(temp_left_node.left_node),
-                                    self.calculate_height(temp_left_node.right_node)) + 1
+        node.height = (
+            max(
+                self.calculate_height(node.left_node),
+                self.calculate_height(node.right_node),
+            )
+            + 1
+        )
+        temp_left_node.height = (
+            max(
+                self.calculate_height(temp_left_node.left_node),
+                self.calculate_height(temp_left_node.right_node),
+            )
+            + 1
+        )
 
     def rotate_left(self, node):
         print("Rotating to the left on node ", node.data)
@@ -246,18 +285,35 @@ class AVLTree:
         node.parent = temp_right_node
         temp_right_node.parent = temp_parent
 
-        if temp_right_node.parent is not None and temp_right_node.parent.left_node == node:
+        if (
+            temp_right_node.parent is not None
+            and temp_right_node.parent.left_node == node
+        ):
             temp_right_node.parent.left_node = temp_right_node
 
-        if temp_right_node.parent is not None and temp_right_node.parent.right_node == node:
+        if (
+            temp_right_node.parent is not None
+            and temp_right_node.parent.right_node == node
+        ):
             temp_right_node.parent.right_node = temp_right_node
 
         if node == self.root:
             self.root = temp_right_node
 
-        node.height = max(self.calculate_height(node.left_node), self.calculate_height(node.right_node)) + 1
-        temp_right_node.height = max(self.calculate_height(temp_right_node.left_node),
-                                     self.calculate_height(temp_right_node.right_node)) + 1
+        node.height = (
+            max(
+                self.calculate_height(node.left_node),
+                self.calculate_height(node.right_node),
+            )
+            + 1
+        )
+        temp_right_node.height = (
+            max(
+                self.calculate_height(temp_right_node.left_node),
+                self.calculate_height(temp_right_node.right_node),
+            )
+            + 1
+        )
 
 
 avl = AVLTree()

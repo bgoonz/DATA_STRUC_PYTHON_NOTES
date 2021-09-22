@@ -3,21 +3,20 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import compileall
 import glob
 
 
 def show(title):
     print(title)
-    for filename in glob.glob('examples/**',
-                              recursive=True):
-        print('  {}'.format(filename))
+    for filename in glob.glob("examples/**", recursive=True):
+        print("  {}".format(filename))
     print()
 
 
-show('Before')
+show("Before")
 
-compileall.compile_dir('examples')
+compileall.compile_dir("examples")
 
-show('\nAfter')
+show("\nAfter")

@@ -16,6 +16,7 @@ class GraphNode:
         self.neighbors = set()
         self.color = None
 
+
 def color_graph(graph, colors):
     # Your code here
 
@@ -25,12 +26,11 @@ def color_graph(graph, colors):
         if node in node.neighbors:
             raise Exception("impossible to find a legal solution")
 
-
-
         # get the node's neighbors colors
         # check if a color is illegal?
-        illegal_colors = set([neighbor.color for neighbor in node.neighbors if neighbor.color])
-
+        illegal_colors = set(
+            [neighbor.color for neighbor in node.neighbors if neighbor.color]
+        )
 
         # assign the first legal color
         for color in colors:

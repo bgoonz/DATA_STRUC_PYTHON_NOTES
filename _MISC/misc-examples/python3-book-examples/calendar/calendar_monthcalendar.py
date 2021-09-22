@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Show the dates in each week of a month.
 """
-#end_pymotw_header
+# end_pymotw_header
 import calendar
 import pprint
 

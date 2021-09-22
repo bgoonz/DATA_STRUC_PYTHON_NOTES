@@ -3,10 +3,10 @@
 """Reading a configuration file.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from configparser import ConfigParser
 
 parser = ConfigParser()
-parser.read('interpolation_defaults.ini')
+parser.read("interpolation_defaults.ini")
 
-print('URL:', parser.get('bug_tracker', 'url'))
+print("URL:", parser.get("bug_tracker", "url"))

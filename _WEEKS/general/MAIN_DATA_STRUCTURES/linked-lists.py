@@ -5,7 +5,6 @@ is a node item containing the data and the pointer to the node it links to
 
 
 class Node:
-
     def __init__(self, data):
         self.data = data
         self.nextNode = None
@@ -18,7 +17,6 @@ because it doesn't exist yet and the number of nodes to 0 because its empty
 
 
 class LinkedList:
-
     def __init__(self):
         self.head = None
         self.numOfNodes = 0
@@ -127,7 +125,6 @@ class LinkedList:
             previous_node.nextNode = actual_node.nextNode
 
 
-
 """
 use the functions just created
 """
@@ -144,16 +141,4 @@ linked_list.remove(3)
 # print the node values of the list O(N)
 linked_list.traverse()
 # print the size of the list
-print(f'size: {linked_list.size_of_list()}')
-
-
-
-
-
-
-
-
-
-
-
-
+print(f"size: {linked_list.size_of_list()}")

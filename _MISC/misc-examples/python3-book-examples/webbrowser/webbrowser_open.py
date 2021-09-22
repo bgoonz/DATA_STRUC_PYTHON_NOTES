@@ -2,9 +2,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import webbrowser
 
-webbrowser.open(
-    'https://docs.python.org/3/library/webbrowser.html'
-)
+webbrowser.open("https://docs.python.org/3/library/webbrowser.html")

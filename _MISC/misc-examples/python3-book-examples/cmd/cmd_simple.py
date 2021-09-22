@@ -3,12 +3,11 @@
 """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import cmd
 
 
 class HelloWorld(cmd.Cmd):
-
     def do_greet(self, line):
         print("hello")
 
@@ -16,5 +15,5 @@ class HelloWorld(cmd.Cmd):
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HelloWorld().cmdloop()

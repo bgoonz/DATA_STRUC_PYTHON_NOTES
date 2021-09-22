@@ -3,19 +3,18 @@
 """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import cmd
 
 
 class HelloWorld(cmd.Cmd):
-
     def do_greet(self, person):
         """greet [person]
         Greet the named person"""
         if person:
             print("hi,", person)
         else:
-            print('hi')
+            print("hi")
 
     def do_EOF(self, line):
         return True
@@ -24,5 +23,5 @@ class HelloWorld(cmd.Cmd):
         print()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HelloWorld().cmdloop()

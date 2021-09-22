@@ -1,8 +1,10 @@
 from book import Book
+
 # Divide a problem in to subproblems (of the same type)
 # Solve the subproblems
-# Combine the results of the subproblems 
+# Combine the results of the subproblems
 # to get the solution to the original problem
+
 
 def quick_sort(data, low, high):
     # check base case
@@ -39,11 +41,12 @@ def quick_sort(data, low, high):
     # return the data
     return data
 
-b1 = Book('Food for thought', 'jon jones', 'food')
-b2 = Book('My life in reality', 'don davis', 'life')
-b3 = Book('Apples, how you like them?', 'stan simpson', 'food')
-b4 = Book('Just Do It', 'shia le boeuf', 'inspirational')
-b5 = Book('What is this code anyway', 'tom jones', 'programming')
+
+b1 = Book("Food for thought", "jon jones", "food")
+b2 = Book("My life in reality", "don davis", "life")
+b3 = Book("Apples, how you like them?", "stan simpson", "food")
+b4 = Book("Just Do It", "shia le boeuf", "inspirational")
+b5 = Book("What is this code anyway", "tom jones", "programming")
 
 books = [b1, b2, b3, b4, b5]
 
@@ -53,6 +56,6 @@ for b in books:
 quick_sort(books, 0, 5)
 
 
-print('----------------------------------------------------------')
+print("----------------------------------------------------------")
 for b in books:
     print(b)

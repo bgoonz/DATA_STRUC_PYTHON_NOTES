@@ -5,12 +5,8 @@ import string
 
 
 class Dictionary:
-
     def __init__(self, words):
-        self.by_letter = {
-            letter: []
-            for letter in string.ascii_letters
-        }
+        self.by_letter = {letter: [] for letter in string.ascii_letters}
         self.load_data(words)
 
     def load_data(self, words):

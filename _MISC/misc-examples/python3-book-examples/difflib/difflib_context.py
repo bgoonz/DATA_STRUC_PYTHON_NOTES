@@ -5,13 +5,9 @@
 """Context diff example
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import difflib
 from difflib_data import *
 
-diff = difflib.context_diff(
-    text1_lines,
-    text2_lines,
-    lineterm='',
-)
-print('\n'.join(diff))
+diff = difflib.context_diff(text1_lines, text2_lines, lineterm="")
+print("\n".join(diff))

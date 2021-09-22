@@ -7,6 +7,7 @@ class User:
     def __init__(self, name):
         self.name = name
 
+
 class SocialGraph:
     def __init__(self):
         self.last_id = 0
@@ -20,7 +21,10 @@ class SocialGraph:
         if user_id == friend_id:
             # print("WARNING: You cannot be friends with yourself")
             return False
-        elif friend_id in self.friendships[user_id] or user_id in self.friendships[friend_id]:
+        elif (
+            friend_id in self.friendships[user_id]
+            or user_id in self.friendships[friend_id]
+        ):
             # print("WARNING: Friendship already exists")
             return False
         else:
@@ -47,7 +51,7 @@ class SocialGraph:
             self.add_user(f"User {i}")
         # !!!! IMPLEMENT ME
 
-        target_friendships = (num_users * avg_friendships)
+        target_friendships = num_users * avg_friendships
         total_friendships = 0
         collisions = 0
 
@@ -59,9 +63,8 @@ class SocialGraph:
                 total_friendships += 2
             else:
                 collisions += 1
-        
-        print(f"Collisions: {collisions}")
 
+        print(f"Collisions: {collisions}")
 
     def populate_graph(self, num_users, avg_friendships):
         """
@@ -80,7 +83,6 @@ class SocialGraph:
         # Add users
         for i in range(0, num_users):
             self.add_user(f"User {i}")
-
 
         # Create friendships
         # generate all possible friendship combinations
@@ -103,8 +105,6 @@ class SocialGraph:
             user_id = friendship[0]
             friend_id = friendship[1]
             self.add_friendship(user_id, friend_id)
-
-
 
     def get_all_social_paths(self, user_id):
         """
@@ -132,7 +132,6 @@ class SocialGraph:
         return visited
 
 
-
 # if __name__ == '__main__':
 #     sg = SocialGraph()
 #     sg.populate_graph(10, 2)
@@ -152,7 +151,7 @@ class SocialGraph:
 #     print(f"Avg length of social path: {total_social_paths / len(connections)}")
 
 # Random Sampling
-if __name__ == '__main__':
+if __name__ == "__main__":
     sg = SocialGraph()
     # start_time = time.time()
     num_users = 2000
@@ -161,9 +160,9 @@ if __name__ == '__main__':
     sg.populate_graph_linear(num_users, avg_friendships)
     # print(sg.friendships)
     end_time = time.time()
-    print (f"Linear runtime: {end_time - start_time} seconds")
+    print(f"Linear runtime: {end_time - start_time} seconds")
     sg = SocialGraph()
     start_time = time.time()
     sg.populate_graph(num_users, avg_friendships)
     end_time = time.time()
-    print (f"Quadratic runtime: {end_time - start_time} seconds")
+    print(f"Quadratic runtime: {end_time - start_time} seconds")

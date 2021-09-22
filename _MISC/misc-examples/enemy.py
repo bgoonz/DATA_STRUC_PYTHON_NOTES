@@ -1,6 +1,7 @@
 import random
 from item import Item
 
+
 class Enemy:
     def __init__(self, room, name, items=None, health=100):
         self.room = room
@@ -12,9 +13,9 @@ class Enemy:
         self.alive = True
 
     def take_damage(self, dmg):
-      if self.alive:
-        print("the " + self.name + " took " + str(dmg) + " damage")
-        self.health -= (dmg + random.randrange(1, 20))
-        if self.health <= 0:
-          print("the " + self.name + " died from the battle")
-          self.alive = False
+        if self.alive:
+            print("the " + self.name + " took " + str(dmg) + " damage")
+            self.health -= dmg + random.randrange(1, 20)
+            if self.health <= 0:
+                print("the " + self.name + " died from the battle")
+                self.alive = False

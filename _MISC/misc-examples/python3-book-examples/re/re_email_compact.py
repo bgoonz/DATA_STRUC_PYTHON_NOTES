@@ -3,20 +3,18 @@
 """Match email addresses
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
-address = re.compile('[\w\d.+-]+@([\w\d.]+\.)+(com|org|edu)')
+address = re.compile("[\w\d.+-]+@([\w\d.]+\.)+(com|org|edu)")
 
 candidates = [
-    u'first.last@example.com',
-    u'first.last+category@gmail.com',
-    u'valid-address@mail.example.com',
-    u'not-valid@example.foo',
+    u"first.last@example.com",
+    u"first.last+category@gmail.com",
+    u"valid-address@mail.example.com",
+    u"not-valid@example.foo",
 ]
 
 for candidate in candidates:
     match = address.search(candidate)
-    print('{:<30}  {}'.format(
-        candidate, 'Matches' if match else 'No match')
-    )
+    print("{:<30}  {}".format(candidate, "Matches" if match else "No match"))

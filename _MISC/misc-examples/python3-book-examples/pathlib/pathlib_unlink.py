@@ -4,15 +4,15 @@
 """Removing files
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-p = pathlib.Path('touched')
+p = pathlib.Path("touched")
 
 p.touch()
 
-print('exists before removing:', p.exists())
+print("exists before removing:", p.exists())
 
 p.unlink()
 
-print('exists after removing:', p.exists())
+print("exists after removing:", p.exists())

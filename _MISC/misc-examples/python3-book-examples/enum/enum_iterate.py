@@ -3,7 +3,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import enum
 
 
@@ -19,4 +19,4 @@ class BugStatus(enum.Enum):
 
 
 for status in BugStatus:
-    print('{:15} = {}'.format(status.name, status.value))
+    print("{:15} = {}".format(status.name, status.value))

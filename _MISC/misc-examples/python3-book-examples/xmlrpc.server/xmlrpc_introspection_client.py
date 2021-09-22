@@ -2,13 +2,13 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import xmlrpc.client
 
-proxy = xmlrpc.client.ServerProxy('http://localhost:9000')
+proxy = xmlrpc.client.ServerProxy("http://localhost:9000")
 for method_name in proxy.system.listMethods():
-    print('=' * 60)
+    print("=" * 60)
     print(method_name)
-    print('-' * 60)
+    print("-" * 60)
     print(proxy.system.methodHelp(method_name))
     print()

@@ -3,12 +3,11 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import abc
 
 
 class PluginBase(abc.ABC):
-
     @abc.abstractmethod
     def load(self, input):
         """Retrieve data from the input source
@@ -21,7 +20,6 @@ class PluginBase(abc.ABC):
 
 
 class SubclassImplementation(PluginBase):
-
     def load(self, input):
         return input.read()
 
@@ -29,8 +27,6 @@ class SubclassImplementation(PluginBase):
         return output.write(data)
 
 
-if __name__ == '__main__':
-    print('Subclass:', issubclass(SubclassImplementation,
-                                  PluginBase))
-    print('Instance:', isinstance(SubclassImplementation(),
-                                  PluginBase))
+if __name__ == "__main__":
+    print("Subclass:", issubclass(SubclassImplementation, PluginBase))
+    print("Instance:", isinstance(SubclassImplementation(), PluginBase))

@@ -7,11 +7,12 @@ class Entity:
     def __str__(self):
         return f"{self.id}: ({self.x}, {self.y})"
 
+
 class Mob(Entity):
     def __init__(self, id, x, y, speed):
         super().__init__(id, x, y)
         self.speed = speed
-    
+
     def move(self, direction):
         if direction == "n":
             self.y -= self.speed
@@ -36,11 +37,13 @@ class Player(Mob):
     def __str__(self):
         return f"[{self.name}] {super().__str__()}, {self.health}, {self.attack}"
 
+
 class Tile(Entity):
-    def __init__(self, id, x, y, image, solid = False):
+    def __init__(self, id, x, y, image, solid=False):
         super().__init__(id, x, y)
         self.image = image
         self.solid = solid
+
 
 m = Mob(0, 12, 10, 1)  # is_a Entity
 

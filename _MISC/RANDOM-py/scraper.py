@@ -7,7 +7,7 @@ def scrape_emails(ADDR):
     # get the data
     data = requests.get(ADDR)
     # extract all emails on a web page
-    emails = re.findall(r'([\d\w\.]+@[\d\w\.\-]+\.\w+)', data.text)
+    emails = re.findall(r"([\d\w\.]+@[\d\w\.\-]+\.\w+)", data.text)
 
     return emails
 
@@ -23,7 +23,7 @@ def bs_scrape(ADDR):
 soup = bs_scrape("https://www.swfc.co.uk/club/club-contacts/")
 
 # grab the tags and print them
-#for item in soup.find_all("a"):
+# for item in soup.find_all("a"):
 #    print(item)
 
 # lets scrape the data from a game leaderboard now

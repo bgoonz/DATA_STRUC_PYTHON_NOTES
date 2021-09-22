@@ -1,5 +1,5 @@
-
 from util import Stack, Queue
+
 # lets code a dft
 """
     Remember to follow our problem solving framework
@@ -12,6 +12,7 @@ from util import Stack, Queue
 
 
 # code up a Graph class implementing with an adjacency list
+
 
 class Graph:
     """ Represent a Graph as dictionary of vertices map the labels to edges."""
@@ -77,5 +78,3 @@ class Graph:
                 # then add all of it's neighbors to the top of the stack
                 for next_vertex in self.vertices[v]:
                     s.push(next_vertex)
-
-    

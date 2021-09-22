@@ -3,7 +3,7 @@
 """combine values
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from itertools import *
 
 
@@ -12,4 +12,4 @@ def f(a, b):
     return b + a + b
 
 
-print(list(accumulate('abcde', f)))
+print(list(accumulate("abcde", f)))

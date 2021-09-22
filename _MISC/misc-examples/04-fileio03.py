@@ -12,10 +12,10 @@ try:
             comment_split = line.split("#")
 
             # extract our number
-            num = comment_split[0].strip() # trim whitespace
+            num = comment_split[0].strip()  # trim whitespace
 
-            if num == '':
-                continue # ignore blank lines
+            if num == "":
+                continue  # ignore blank lines
 
             # convert our binary string to a number
             x = int(num, 2)

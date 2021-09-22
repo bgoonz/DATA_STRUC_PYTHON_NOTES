@@ -11,19 +11,19 @@ PRINT_REG = 5
 ADD = 6
 # memory
 memory = [
-    PRINT_TOM, # [0000 0010]
-    SAVE, # save the value 65 to register 2
+    PRINT_TOM,  # [0000 0010]
+    SAVE,  # save the value 65 to register 2
     65,
     2,
-    SAVE, # save the value 20 to register 3
+    SAVE,  # save the value 20 to register 3
     20,
     3,
-    ADD, # Add the content of reg 2 and reg 3 together
+    ADD,  # Add the content of reg 2 and reg 3 together
     2,
     3,
     PRINT_REG,
     2,
-    HALT      # [0000 0001] 
+    HALT,  # [0000 0001]
 ]
 
 # flags
@@ -32,7 +32,7 @@ memory = [
 pc = 0
 
 # registers
-register = [0] * 8 # list of 8 registers
+register = [0] * 8  # list of 8 registers
 
 # state (running)
 running = True
@@ -48,7 +48,7 @@ while running:
         # EXECUTE
         instruction_size = 1
         print("Tom")
- 
+
     # DECODE
     elif command == HALT:
         # EXECUTE
@@ -61,7 +61,7 @@ while running:
         instruction_size = 2
         num = memory[pc + 1]
         print(num)
-  
+
     # DECODE
     elif command == SAVE:
         # EXECUTE
@@ -69,7 +69,7 @@ while running:
         num = memory[pc + 1]
         reg = memory[pc + 2]
         register[reg] = num
-  
+
     # DECODE
     elif command == ADD:
         # EXECUTE

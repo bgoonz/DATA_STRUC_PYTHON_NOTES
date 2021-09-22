@@ -3,9 +3,9 @@
 """Generate random numbers
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import random
 
 for i in range(5):
-    print('{:04.3f}'.format(random.uniform(1, 100)), end=' ')
+    print("{:04.3f}".format(random.uniform(1, 100)), end=" ")
 print()

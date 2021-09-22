@@ -3,19 +3,18 @@
 """Tests that modify module-level global values.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 _module_data = {}
 
 
 class TestGlobals:
-
     def one(self):
         """
         >>> TestGlobals().one()
         >>> 'var' in _module_data
         True
         """
-        _module_data['var'] = 'value'
+        _module_data["var"] = "value"
 
     def two(self):
         """

@@ -2,7 +2,7 @@
 """Using getmembers()
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import inspect
 from pprint import pprint
 

@@ -3,7 +3,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import decimal
 import threading
 from queue import PriorityQueue
@@ -24,8 +24,8 @@ class Multiplier(threading.Thread):
         self.q.put((self.prec, a * b))
 
 
-a = decimal.Decimal('3.14')
-b = decimal.Decimal('1.234')
+a = decimal.Decimal("3.14")
+b = decimal.Decimal("1.234")
 # A PriorityQueue will return values sorted by precision,
 # no matter what order the threads finish.
 q = PriorityQueue()
@@ -38,4 +38,4 @@ for t in threads:
 
 for i in range(5):
     prec, value = q.get()
-    print('{}  {}'.format(prec, value))
+    print("{}  {}".format(prec, value))

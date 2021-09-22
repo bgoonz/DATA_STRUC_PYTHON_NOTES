@@ -2,6 +2,7 @@ import time
 import unittest
 from sliding_window_max import sliding_window_max
 
+
 class Test(unittest.TestCase):
     def test_sliding_window_max_large_input(self):
         arr = []
@@ -25,5 +26,5 @@ class Test(unittest.TestCase):
         self.assertEqual(answer, expected)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

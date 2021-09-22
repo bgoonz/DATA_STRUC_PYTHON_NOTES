@@ -13,6 +13,7 @@ def build_lookup_table():
     for i in range(1, 1000001):
         inv_sqrt[i] = 1 / math.sqrt(i)
 
+
 print(inv_sqrt)
 
 build_lookup_table()

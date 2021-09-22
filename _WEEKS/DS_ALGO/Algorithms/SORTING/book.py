@@ -5,4 +5,4 @@ class Book:
         self.genre = genre
 
     def __str__(self):
-        return f'{self.genre}: {self.title} by {self.author}'
+        return f"{self.genre}: {self.title} by {self.author}"

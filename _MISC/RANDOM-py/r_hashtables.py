@@ -1,5 +1,3 @@
-
-
 # '''
 # Linked List hash table key/value pair
 # '''
@@ -76,8 +74,13 @@ def Testing():
     ht = hash_table_resize(ht)
     new_capacity = len(ht.storage)
 
-    print("Resized hash table from " + str(old_capacity)
-          + " to " + str(new_capacity) + ".")
+    print(
+        "Resized hash table from "
+        + str(old_capacity)
+        + " to "
+        + str(new_capacity)
+        + "."
+    )
 
 
 Testing()

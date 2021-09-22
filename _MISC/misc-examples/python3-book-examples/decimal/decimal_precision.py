@@ -3,11 +3,11 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import decimal
 
-d = decimal.Decimal('0.123456')
+d = decimal.Decimal("0.123456")
 
 for i in range(1, 5):
     decimal.getcontext().prec = i
-    print(i, ':', d, d * 1)
+    print(i, ":", d, d * 1)

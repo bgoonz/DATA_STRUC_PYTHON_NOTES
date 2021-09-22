@@ -2,13 +2,13 @@
 """Passing arguments to threads when they are created
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import threading
 
 
 def worker(num):
     """thread worker function"""
-    print('Worker: %s' % num)
+    print("Worker: %s" % num)
 
 
 threads = []

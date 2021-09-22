@@ -9,8 +9,8 @@ a. Loop through elements on right-hand-side of current index and find the smalle
 b. Swap the element at current index with the smallest element found in above loop
 """
 
-# TO-DO: Complete the selection_sort() function below 
-def selection_sort( arr ):
+# TO-DO: Complete the selection_sort() function below
+def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         # set sorted item index to i
@@ -23,17 +23,16 @@ def selection_sort( arr ):
         # our ranege is the current index to the len of array - 1
         # loop here
         for j in range(cur_index + 1, len(arr)):
-            # check if the number current iteration index is smaller than 
+            # check if the number current iteration index is smaller than
             # the number at the smallest index
             # if condition here
             if arr[j] < arr[smallest_index]:
                 # if true then set smallest index to iteration index
                 smallest_index = j
-        
+
         # swap number at current index for number at smallest index
         arr[smallest_index], arr[cur_index] = arr[cur_index], arr[smallest_index]
         # arr[smallest_index], arr[cur_index] = 5, 3
-
 
         # arr[smallest_index] = 5
         # arr[cur_index] = 3
@@ -42,6 +41,7 @@ def selection_sort( arr ):
 
     # return the array
     return arr
+
 
 """
 Loop through your array
@@ -52,7 +52,7 @@ go back to the element at index 0 and repeat step 1.
 """
 
 # TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
+def bubble_sort(arr):
     # set a variable to hosd swaps occured
     swaps_have_occured = True
     # loop while swaps have occured
@@ -69,15 +69,16 @@ def bubble_sort( arr ):
                 swaps_have_occured = True
     return arr
 
-print('Bubble Sort')
+
+print("Bubble Sort")
 
 lst = [8, 4, 6, 3, 2, 1, 5, 7, 9]
 print(lst)
-print('--------------------------')
+print("--------------------------")
 bubble_sort(lst)
 print(lst)
 
 # STRETCH: implement the Count Sort function below
-def count_sort( arr, maximum=-1 ):
+def count_sort(arr, maximum=-1):
 
     return arr

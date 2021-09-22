@@ -4,6 +4,7 @@ class Node(object):
         self.left = None
         self.right = None
 
+
 class BinaryTree(object):
     def __init__(self, root):
         self.root = Node(root)
@@ -11,18 +12,18 @@ class BinaryTree(object):
     def preorder_search(self, start, find_val):
         """Helper method - use this to create a
         recursive search solution."""
-        if(start.value == find_val):
+        if start.value == find_val:
             return True
-        if(start.left!=None):
+        if start.left != None:
             left_result = self.preorder_search(start.left, find_val)
         else:
             left_result = False
-        if(start.right!=None and left_result!=True):
+        if start.right != None and left_result != True:
             right_result = self.preorder_search(start.right, find_val)
         else:
             right_result = False
 
-        if(left_result==True or right_result==True):
+        if left_result == True or right_result == True:
             return True
         else:
             return False
@@ -30,12 +31,12 @@ class BinaryTree(object):
     def preorder_print(self, start, traversal):
         """Helper method - use this to create a
         recursive print solution."""
-        traversal += '-' + str(start.value)
-        left_nums = ''
-        right_nums = ''
-        if(start.left!=None):
+        traversal += "-" + str(start.value)
+        left_nums = ""
+        right_nums = ""
+        if start.left != None:
             traversal = self.preorder_print(start.left, traversal)
-        if(start.right!=None):
+        if start.right != None:
             traversal = self.preorder_print(start.right, traversal)
         return traversal
 
@@ -44,13 +45,13 @@ class BinaryTree(object):
         is in the tree, return
         False otherwise."""
         return self.preorder_search(self.root, find_val)
-        #print(self.preorder_search(self.root, find_val))
+        # print(self.preorder_search(self.root, find_val))
 
     def print_tree(self):
         """Print out all tree nodes
         as they are visited in
         a pre-order traversal."""
-        all_nodes = self.preorder_print(self.root, '')
+        all_nodes = self.preorder_print(self.root, "")
         all_nodes = all_nodes[1:]
         return all_nodes
 

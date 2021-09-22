@@ -1,8 +1,4 @@
-d = {
-    "foo": 120,
-    "bar": 17,
-    "qux": 2
-}
+d = {"foo": 120, "bar": 17, "qux": 2}
 
 # Sorting a dictionary doesn't make sense
 #
@@ -33,7 +29,7 @@ print(f"Sort descending by key: {items}")
 
 # lambda is an anonymous function. e is the argument representing the
 # element (a key/value tuple in this case).
-# 
+#
 # We return element 1 of the tuple (the value) to indicate we wish to
 # sort on the value.
 

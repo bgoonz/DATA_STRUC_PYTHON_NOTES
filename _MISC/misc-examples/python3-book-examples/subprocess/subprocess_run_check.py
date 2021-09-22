@@ -5,10 +5,10 @@
 """Checking exit codes from external processes
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import subprocess
 
 try:
-    subprocess.run(['false'], check=True)
+    subprocess.run(["false"], check=True)
 except subprocess.CalledProcessError as err:
-    print('ERROR:', err)
+    print("ERROR:", err)

@@ -31,6 +31,8 @@ so the 0th and 2nd students are indirect friends. All of them are in the same fr
 
 
 """
+
+
 def csFriendCircles_FLAGS(friendships):
     """
     Args:
@@ -39,30 +41,30 @@ def csFriendCircles_FLAGS(friendships):
     result
         count: int
     """
-    
+
     # set a counter count
     count = 0
     # the length of friends
     N = len(friendships)
     # start them off as False == not seen
     seen = [False] * N
-    
+
     def visit(current):
         # node is the list and the list of list are the edges
         for person, is_friend in enumerate(friendships[current]):
             # if edge is 1 and not seen
-            if is_friend ==1 and not seen[person]:
+            if is_friend == 1 and not seen[person]:
                 # mark as seen
                 seen[person] = True
                 # go to next node
                 visit(person)
-                
-    for person in range(N): # N = len(friendships)
+
+    for person in range(N):  # N = len(friendships)
         if not seen[person]:
             count += 1
             seen[person] = True
             visit(person)
-    
+
     return count
 
 
@@ -70,8 +72,9 @@ def csFriendCircles_FLAGS(friendships):
 DFS Recursive solution
 https://www.youtube.com/watch?v=TKHIC6muurM
 """
-def csFriendCircles(friendships):
 
+
+def csFriendCircles(friendships):
     def dfs(node, friendships, seen):
         for person, is_friend in enumerate(friendships[node]):
             if is_friend and person not in seen:
@@ -88,20 +91,14 @@ def csFriendCircles(friendships):
     return count
 
 
-
-
 # Example 1:
-# Input: 
-x1 = [[1,1,0],
-      [1,1,0],
-      [0,0,1]]
+# Input:
+x1 = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
 # Output: 2
 
 
 # Example 2:
-x2 = [[1,1,0],
-      [1,1,1],
-      [0,1,1]]
+x2 = [[1, 1, 0], [1, 1, 1], [0, 1, 1]]
 # Output: 1
 
 
@@ -110,4 +107,3 @@ print(csFriendCircles(x2))
 
 print(csFriendCircles_FLAGS(x1))
 print(csFriendCircles_FLAGS(x2))
-    

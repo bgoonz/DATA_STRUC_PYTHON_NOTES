@@ -4,10 +4,10 @@
 """Creating a directory
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-p = pathlib.Path('example_dir')
+p = pathlib.Path("example_dir")
 
-print('Creating {}'.format(p))
+print("Creating {}".format(p))
 p.mkdir()

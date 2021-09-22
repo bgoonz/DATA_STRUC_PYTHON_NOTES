@@ -1,4 +1,3 @@
-
 # collections
 
 # create an empty list? Array
@@ -39,8 +38,6 @@ numbers.append(24)
 #     print(f"Element: {i} is {e}")
 
 
-
-
 # while loop
 # i = 0
 # while i < len(numbers):
@@ -66,13 +63,11 @@ evens = [num for num in numbers if num % 2 == 0]
 # create a new list of even numbers using the values of the numbers list as inputs
 # print(evens)
 
-# create a new list containing only the names that start with 's' 
+# create a new list containing only the names that start with 's'
 # make sure they are capitalized (regardless of their original case)
 names = ["Sarah", "jorge", "sam", "frank", "bob", "sandy"]
-s_names = [name.capitalize() for name in names if name[0].lower() == 's']
+s_names = [name.capitalize() for name in names if name[0].lower() == "s"]
 # print(s_names)
-
-
 
 
 # Dictionaries
@@ -82,11 +77,7 @@ s_names = [name.capitalize() for name in names if name[0].lower() == 's']
 # empty
 d = {}
 # key value pairs
-d2 = {
-    "gooooogle": "Tom",
-    (12, 23, 4): 41,
-    "age": "Bob"
-}
+d2 = {"gooooogle": "Tom", (12, 23, 4): 41, "age": "Bob"}
 
 s = set()
 
@@ -94,8 +85,6 @@ s = set()
 
 # access an element via its key
 print(d2[(12, 23, 4)])  # O(1)
-
-
 
 
 # Lets think about Tuples?

@@ -3,7 +3,7 @@
 """Using tabnanny from your own code
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import sys
 import tabnanny
 

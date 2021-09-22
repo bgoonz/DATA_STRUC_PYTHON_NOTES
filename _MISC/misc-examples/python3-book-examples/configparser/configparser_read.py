@@ -3,10 +3,10 @@
 """Reading a configuration file.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from configparser import ConfigParser
 
 parser = ConfigParser()
-parser.read('simple.ini')
+parser.read("simple.ini")
 
-print(parser.get('bug_tracker', 'url'))
+print(parser.get("bug_tracker", "url"))

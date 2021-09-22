@@ -3,12 +3,12 @@
 """Dump the OPML in plain text
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from xml.etree import ElementTree
 
-with open('podcasts.opml', 'rt') as f:
+with open("podcasts.opml", "rt") as f:
     tree = ElementTree.parse(f)
 
-for node in tree.findall('.//outline/outline'):
-    url = node.attrib.get('xmlUrl')
+for node in tree.findall(".//outline/outline"):
+    url = node.attrib.get("xmlUrl")
     print(url)

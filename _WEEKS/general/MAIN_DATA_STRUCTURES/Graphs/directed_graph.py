@@ -3,11 +3,13 @@ class Node(object):
         self.value = value
         self.edges = []
 
+
 class Edge(object):
     def __init__(self, value, node_from, node_to):
         self.value = value
         self.node_from = node_from
         self.node_to = node_to
+
 
 class Graph(object):
     def __init__(self, nodes=[], edges=[]):
@@ -44,7 +46,11 @@ class Graph(object):
         edge_list = []
         for item in self.nodes:
             for each_edge in item.edges:
-                edge_tuple = (each_edge.value, each_edge.node_from.value, each_edge.node_to.value)
+                edge_tuple = (
+                    each_edge.value,
+                    each_edge.node_from.value,
+                    each_edge.node_to.value,
+                )
                 if edge_tuple not in edge_list:
                     edge_list.append(edge_tuple)
         return edge_list
@@ -61,18 +67,18 @@ class Graph(object):
         edge_list = self.get_edge_list()
         max_node_val = 0
         for tuple in edge_list:
-            if(max_node_val<tuple[1]):
+            if max_node_val < tuple[1]:
                 max_node_val = tuple[1]
-            if(max_node_val<tuple[2]):
+            if max_node_val < tuple[2]:
                 max_node_val = tuple[2]
 
-        for i in range(max_node_val+1):
+        for i in range(max_node_val + 1):
             node_list = []
             for item in edge_list:
-                if(i==item[1]):
+                if i == item[1]:
                     new_tuple = (item[2], item[0])
                     node_list.append(new_tuple)
-            if(node_list!=[]):
+            if node_list != []:
                 adjacency_list.append(node_list)
             else:
                 adjacency_list.append(None)
@@ -90,12 +96,13 @@ class Graph(object):
         max_node_val = len(adjacency_list)
 
         for item in adjacency_list:
-            node_list = [0]*(max_node_val)
-            if(item!=None):
+            node_list = [0] * (max_node_val)
+            if item != None:
                 for tuple in item:
-                    node_list[tuple[0]]=tuple[1]
+                    node_list[tuple[0]] = tuple[1]
             adjacency_matrix.append(node_list)
         return adjacency_matrix
+
 
 graph = Graph()
 graph.insert_edge(100, 1, 2)

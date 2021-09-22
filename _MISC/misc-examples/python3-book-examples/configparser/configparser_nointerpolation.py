@@ -3,10 +3,10 @@
 """Disabling interpolation
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from configparser import ConfigParser
 
 parser = ConfigParser(interpolation=None)
-parser.read('interpolation.ini')
+parser.read("interpolation.ini")
 
-print('Without interpolation:', parser.get('bug_tracker', 'url'))
+print("Without interpolation:", parser.get("bug_tracker", "url"))

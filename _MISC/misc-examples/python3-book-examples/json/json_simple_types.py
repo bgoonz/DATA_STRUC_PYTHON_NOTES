@@ -3,11 +3,11 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import json
 
-data = [{'a': 'A', 'b': (2, 4), 'c': 3.0}]
-print('DATA:', repr(data))
+data = [{"a": "A", "b": (2, 4), "c": 3.0}]
+print("DATA:", repr(data))
 
 data_string = json.dumps(data)
-print('JSON:', data_string)
+print("JSON:", data_string)

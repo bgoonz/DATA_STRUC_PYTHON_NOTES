@@ -21,6 +21,7 @@ def partition(data):
     # returns the tuple of (left, pivot, right)
     return left, pivot, right
 
+
 # quick sort that uses the partitioned data
 def quicksort(data):
     # base case if the data is an empty list return an empty list
@@ -34,5 +35,6 @@ def quicksort(data):
     # recursive call to quicksort using the right
     # return the concatination quicksort of lhs + pivot + quicksort of rhs
     return quicksort(left) + [pivot] + quicksort(right)
+
 
 print(quicksort([5, 9, 3, 7, 2, 8, 1, 6]))

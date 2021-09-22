@@ -3,18 +3,13 @@
 """Convert hostname to IP address.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import socket
 
-HOSTS = [
-    'apu',
-    'pymotw.com',
-    'www.python.org',
-    'nosuchname',
-]
+HOSTS = ["apu", "pymotw.com", "www.python.org", "nosuchname"]
 
 for host in HOSTS:
     try:
-        print('{} : {}'.format(host, socket.gethostbyname(host)))
+        print("{} : {}".format(host, socket.gethostbyname(host)))
     except socket.error as msg:
-        print('{} : {}'.format(host, msg))
+        print("{} : {}".format(host, msg))

@@ -239,7 +239,7 @@ expected = "owvieaqugtaleegvrabhugzyxgaegbxg"
 # fully passing
 def mergeStrings(s1, s2):
     # variable to hold the result
-    result = ''
+    result = ""
     # variable to hold the current index of the longer of the two strings
     s2_index = 0
     # variable to hold the current index of the shorter of the two strings
@@ -416,8 +416,8 @@ def concatenationsSum(a):
     # Need a sum: start it at 0
     concatentations_sum = 0
     # "every possible a[i] and a[j]" --> 2 indices, or 2 nested for loops
-        # iterate over the array
-        # for each index front_index:
+    # iterate over the array
+    # for each index front_index:
     for front_index in range(len(a)):
         # front_index is the index of the first element (front of the concatenation)
         # visit every other index to hit the possible combinations
@@ -439,11 +439,8 @@ def concatenationsSum(a):
     return concatentations_sum
     #
 
-test_cases = [
-    ([10, 2], 1344),
-    ([8], 88),
-    ([1, 2, 3], 198),
-]
+
+test_cases = [([10, 2], 1344), ([8], 88), ([1, 2, 3], 198)]
 
 for input, output in test_cases:
     print(f"For input: {input} expecting {output}")
@@ -517,8 +514,7 @@ query.length = queryType.length,
 The sum of the results for all get queries.
 """
 
-queryType = ["insert", "addToValue", "get", "insert", "addToKey", "addToValue",
-             "get"]
+queryType = ["insert", "addToValue", "get", "insert", "addToKey", "addToValue", "get"]
 query = [[1, 2], [2], [1], [2, 3], [1], [-1], [3]]
 
 queryType = ["insert", "insert", "addToValue", "addToKey", "get"]
@@ -547,8 +543,9 @@ def hashMap(queryType, query):
         elif method_name == "addToValue":
             hash_map = handle_add_to_value(hash_map, parameters)
 
-
     return sum_of_gets
+
+
 # keep track of the sum of get queries
 
 
@@ -559,11 +556,9 @@ def handle_insert(hash_map, parameters):
     return hash_map
 
 
-
 def handle_get(hash_map, parameters):
     key = parameters[0]
     return hash_map[key]
-
 
 
 def handle_add_to_key(hash_map, parameters):
@@ -589,57 +584,155 @@ def handle_add_to_value(hash_map, parameters):
 
 
 test_cases = [
-    {"queryType": ["insert", "insert", "addToValue", "addToKey", "get"],
-     "query": [[1, 2], [2, 3], [2], [1], [3]],
-     "expected_output": 5},
-    {"queryType": ["insert", "addToValue", "get", "insert", "addToKey",
-                   "addToValue", "get"],
-     "query": [[1, 2], [2], [1], [2, 3], [1], [-1], [3]],
-     "expected_output": 6},
-    {"queryType": ["addToKey", "addToKey", "insert", "addToValue", "addToValue",
-                   "get", "addToKey", "insert",
-                   "addToKey", "addToValue"],
-     "query": [[-3], [-1], [0, -3], [3], [-1], [0], [-1], [-4, -5], [-1], [-4]],
-     "expected_output": -1},
-    {"queryType": ["insert", "insert", "addToKey", "addToKey", "addToKey",
-                   "insert", "addToValue", "addToKey",
-                   "addToKey", "get"],
-     "query": [[-5, -2], [2, 4], [-1], [-3], [1], [3, -2], [-4], [-2], [2],
-               [-8]],
-     "expected_output": -6},
-    {"queryType": ["insert", "get", "insert", "addToValue", "addToValue",
-                   "addToValue", "insert", "addToKey", "get",
-                   "insert"],
-     "query": [[2, 1], [2], [1, 3], [-1], [0], [3], [4, -5], [3], [4], [1, 1]],
-     "expected_output": 6},
-    {"queryType": ["addToValue", "addToValue", "insert", "get", "addToKey",
-                   "insert", "insert", "insert", "addToValue",
-                   "addToKey"],
-     "query": [[-5], [3], [3, -3], [3], [0], [-4, 2], [0, -3], [-2, 4], [2],
-               [2]],
-     "expected_output": -3},
-    {"queryType": ["addToKey", "addToKey", "insert", "addToKey", "addToValue",
-                   "addToKey", "addToValue", "insert", "get",
-                   "insert"],
-     "query": [[-1], [-3], [4, 3], [2], [2], [-2], [0], [-5, 3], [-5], [3, -4]],
-     "expected_output": 3},
-    {"queryType": ["insert", "insert", "insert", "get", "insert", "insert",
-                   "insert", "addToKey", "insert", "insert"],
-     "query": [[3, -4], [-4, 3], [4, -3], [4], [-5, 0], [-2, -5], [2, 2], [1],
-               [-5, -2], [1, 3]],
-     "expected_output": -3},
-    {"queryType": ["addToValue", "addToKey", "addToKey", "insert", "addToValue",
-                   "addToValue", "insert", "get", "get", "insert"],
-     "query": [[-2], [-3], [0], [-3, 1], [-2], [-4], [2, -4], [2], [2],
-               [3, -1]],
-     "expected_output": -8}
+    {
+        "queryType": ["insert", "insert", "addToValue", "addToKey", "get"],
+        "query": [[1, 2], [2, 3], [2], [1], [3]],
+        "expected_output": 5,
+    },
+    {
+        "queryType": [
+            "insert",
+            "addToValue",
+            "get",
+            "insert",
+            "addToKey",
+            "addToValue",
+            "get",
+        ],
+        "query": [[1, 2], [2], [1], [2, 3], [1], [-1], [3]],
+        "expected_output": 6,
+    },
+    {
+        "queryType": [
+            "addToKey",
+            "addToKey",
+            "insert",
+            "addToValue",
+            "addToValue",
+            "get",
+            "addToKey",
+            "insert",
+            "addToKey",
+            "addToValue",
+        ],
+        "query": [[-3], [-1], [0, -3], [3], [-1], [0], [-1], [-4, -5], [-1], [-4]],
+        "expected_output": -1,
+    },
+    {
+        "queryType": [
+            "insert",
+            "insert",
+            "addToKey",
+            "addToKey",
+            "addToKey",
+            "insert",
+            "addToValue",
+            "addToKey",
+            "addToKey",
+            "get",
+        ],
+        "query": [[-5, -2], [2, 4], [-1], [-3], [1], [3, -2], [-4], [-2], [2], [-8]],
+        "expected_output": -6,
+    },
+    {
+        "queryType": [
+            "insert",
+            "get",
+            "insert",
+            "addToValue",
+            "addToValue",
+            "addToValue",
+            "insert",
+            "addToKey",
+            "get",
+            "insert",
+        ],
+        "query": [[2, 1], [2], [1, 3], [-1], [0], [3], [4, -5], [3], [4], [1, 1]],
+        "expected_output": 6,
+    },
+    {
+        "queryType": [
+            "addToValue",
+            "addToValue",
+            "insert",
+            "get",
+            "addToKey",
+            "insert",
+            "insert",
+            "insert",
+            "addToValue",
+            "addToKey",
+        ],
+        "query": [[-5], [3], [3, -3], [3], [0], [-4, 2], [0, -3], [-2, 4], [2], [2]],
+        "expected_output": -3,
+    },
+    {
+        "queryType": [
+            "addToKey",
+            "addToKey",
+            "insert",
+            "addToKey",
+            "addToValue",
+            "addToKey",
+            "addToValue",
+            "insert",
+            "get",
+            "insert",
+        ],
+        "query": [[-1], [-3], [4, 3], [2], [2], [-2], [0], [-5, 3], [-5], [3, -4]],
+        "expected_output": 3,
+    },
+    {
+        "queryType": [
+            "insert",
+            "insert",
+            "insert",
+            "get",
+            "insert",
+            "insert",
+            "insert",
+            "addToKey",
+            "insert",
+            "insert",
+        ],
+        "query": [
+            [3, -4],
+            [-4, 3],
+            [4, -3],
+            [4],
+            [-5, 0],
+            [-2, -5],
+            [2, 2],
+            [1],
+            [-5, -2],
+            [1, 3],
+        ],
+        "expected_output": -3,
+    },
+    {
+        "queryType": [
+            "addToValue",
+            "addToKey",
+            "addToKey",
+            "insert",
+            "addToValue",
+            "addToValue",
+            "insert",
+            "get",
+            "get",
+            "insert",
+        ],
+        "query": [[-2], [-3], [0], [-3, 1], [-2], [-4], [2, -4], [2], [2], [3, -1]],
+        "expected_output": -8,
+    },
 ]
 
 for test_case in test_cases:
-    query_type = test_case['queryType']
-    query = test_case['query']
+    query_type = test_case["queryType"]
+    query = test_case["query"]
     print(
-        f"Input:\nqueryType: {query_type}\nquery: {query}\nexpected_output: {test_case['expected_output']}")
+        f"Input:\nqueryType: {query_type}\nquery: {query}\nexpected_output: {test_case['expected_output']}"
+    )
     actual_output = hashMap(query_type, query)
     print(f"Actual output: {actual_output}")
     print("-----")
@@ -699,14 +792,8 @@ the output should be
 meanGroups(a) = [[0, 1, 2, 3]]
 The mean values of all of the arrays are 0, so all of them are in the same group.
 """
-a = [[0, 4],
-     [2, 3],
-     [1]]
-a = [[3, 3, 4, 2],
-     [4, 4],
-     [4, 0, 3, 3],
-     [2, 3],
-     [3, 3, 3]]
+a = [[0, 4], [2, 3], [1]]
+a = [[3, 3, 4, 2], [4, 4], [4, 0, 3, 3], [2, 3], [3, 3, 3]]
 
 
 # passing all tests
@@ -729,5 +816,6 @@ def meanGroups(a):
     for mean in means:
         result.append(means[mean])
     return result
+
 
 # print(meanGroups(a))

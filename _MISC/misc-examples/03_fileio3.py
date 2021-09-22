@@ -13,7 +13,7 @@ try:
             comment_split = line.split("#")
             n = comment_split[0].strip()
 
-            if n == '':
+            if n == "":
                 continue
 
             x = int(n, 2)

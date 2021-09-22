@@ -3,10 +3,10 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import compileall
 import sys
 
-sys.path[:] = ['examples', 'notthere']
-print('sys.path =', sys.path)
+sys.path[:] = ["examples", "notthere"]
+print("sys.path =", sys.path)
 compileall.compile_path()

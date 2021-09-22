@@ -4,7 +4,7 @@
 import pdb
 
 
-def recursive_function(n=5, output='to be printed'):
+def recursive_function(n=5, output="to be printed"):
     if n > 0:
         recursive_function(n - 1)
     else:
@@ -12,5 +12,6 @@ def recursive_function(n=5, output='to be printed'):
         print(output)
     return
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     recursive_function()

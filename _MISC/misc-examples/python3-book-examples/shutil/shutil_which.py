@@ -4,9 +4,9 @@
 """Find a program on $PATH
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import shutil
 
-print(shutil.which('virtualenv'))
-print(shutil.which('tox'))
-print(shutil.which('no-such-program'))
+print(shutil.which("virtualenv"))
+print(shutil.which("tox"))
+print(shutil.which("no-such-program"))

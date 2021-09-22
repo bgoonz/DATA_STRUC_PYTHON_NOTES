@@ -3,27 +3,25 @@
 """Defining tests not visible in the documentation.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import doctest_private_tests_external
 
 __test__ = {
-    'numbers': """
+    "numbers": """
 >>> my_function(2, 3)
 6
 
 >>> my_function(2.0, 3)
 6.0
 """,
-
-    'strings': """
+    "strings": """
 >>> my_function('a', 3)
 'aaa'
 
 >>> my_function(3, 'a')
 'aaa'
 """,
-
-    'external': doctest_private_tests_external,
+    "external": doctest_private_tests_external,
 }
 
 

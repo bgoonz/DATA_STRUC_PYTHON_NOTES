@@ -1,4 +1,3 @@
-
 # overall function that recursively splits an input array in half, and
 # uses the helper function "merge" to compare items in each half against each
 # other to sort them
@@ -9,7 +8,7 @@ def mergeSort(list):
         return list
 
     # Find the middle of the list.
-    middle = len(list)//2
+    middle = len(list) // 2
 
     # Break the list into two pieces.
     left = mergeSort(list[:middle])
@@ -40,22 +39,21 @@ def merge(left, right):
     totalLen = len(left) + len(right)
 
     # Keep working until all of the items are merged.
-    while (len(result) < totalLen):
+    while len(result) < totalLen:
 
         # Perform the required comparisons and merge
         # the pieces according to value.
         if left[leftIndex] < right[rightIndex]:
             result.append(left[leftIndex])
-            leftIndex+= 1
+            leftIndex += 1
         else:
             result.append(right[rightIndex])
-            rightIndex+= 1
+            rightIndex += 1
 
         # When the left side or the right side is longer,
         # add the remaining elements to the result.
         if leftIndex == len(left) or rightIndex == len(right):
-                result.extend(left[leftIndex:]
-                              or right[rightIndex:])
-                break
+            result.extend(left[leftIndex:] or right[rightIndex:])
+            break
 
     return result

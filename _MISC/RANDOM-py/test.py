@@ -1,3 +1,3 @@
-obj = { "name": "bob", "age": 10 }
+obj = {"name": "bob", "age": 10}
 
 obj["name"] = "ghdfg"

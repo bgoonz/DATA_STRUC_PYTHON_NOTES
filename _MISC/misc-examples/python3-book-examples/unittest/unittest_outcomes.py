@@ -2,12 +2,11 @@
 """Demonstrate possible test outcomes
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
 class OutcomesTest(unittest.TestCase):
-
     def testPass(self):
         return
 
@@ -15,4 +14,4 @@ class OutcomesTest(unittest.TestCase):
         self.assertFalse(True)
 
     def testError(self):
-        raise RuntimeError('Test error!')
+        raise RuntimeError("Test error!")

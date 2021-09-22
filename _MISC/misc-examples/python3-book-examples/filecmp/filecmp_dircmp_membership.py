@@ -2,16 +2,16 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import filecmp
 import pprint
 
-dc = filecmp.dircmp('example/dir1', 'example/dir2')
-print('Common:')
+dc = filecmp.dircmp("example/dir1", "example/dir2")
+print("Common:")
 pprint.pprint(dc.common)
 
-print('\nLeft:')
+print("\nLeft:")
 pprint.pprint(dc.left_only)
 
-print('\nRight:')
+print("\nRight:")
 pprint.pprint(dc.right_only)

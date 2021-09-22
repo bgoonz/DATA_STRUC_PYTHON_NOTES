@@ -3,25 +3,23 @@
 """Re-ordering an OrderedDict
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
-d = collections.OrderedDict(
-    [('a', 'A'), ('b', 'B'), ('c', 'C')]
-)
+d = collections.OrderedDict([("a", "A"), ("b", "B"), ("c", "C")])
 
-print('Before:')
+print("Before:")
 for k, v in d.items():
     print(k, v)
 
-d.move_to_end('b')
+d.move_to_end("b")
 
-print('\nmove_to_end():')
+print("\nmove_to_end():")
 for k, v in d.items():
     print(k, v)
 
-d.move_to_end('b', last=False)
+d.move_to_end("b", last=False)
 
-print('\nmove_to_end(last=False):')
+print("\nmove_to_end(last=False):")
 for k, v in d.items():
     print(k, v)

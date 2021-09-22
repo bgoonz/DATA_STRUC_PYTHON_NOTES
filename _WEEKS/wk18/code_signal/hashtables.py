@@ -52,10 +52,12 @@ Guaranteed constraints:
 The array containing the grouped dishes.
 """
 
-dishes = [["Salad", "Tomato", "Cucumber", "Salad", "Sauce"],
-          ["Pizza", "Tomato", "Sausage", "Sauce", "Dough"],
-          ["Quesadilla", "Chicken", "Cheese", "Sauce"],
-          ["Sandwich", "Salad", "Bread", "Tomato", "Cheese"]]
+dishes = [
+    ["Salad", "Tomato", "Cucumber", "Salad", "Sauce"],
+    ["Pizza", "Tomato", "Sausage", "Sauce", "Dough"],
+    ["Quesadilla", "Chicken", "Cheese", "Sauce"],
+    ["Sandwich", "Salad", "Bread", "Tomato", "Cheese"],
+]
 
 
 def groupingDishes(dishes):
@@ -136,9 +138,7 @@ patterns.length = strings.length,
 Return true if strings follows patterns and false otherwise.
 """
 
-strings = ["cat",
-           "dog",
-           "dog"]
+strings = ["cat", "dog", "dog"]
 patterns = ["a", "b", "c"]
 
 
@@ -160,7 +160,7 @@ def areFollowingPatterns(strings, patterns):
             else:
                 # set pattern item to empty string because   s   string item does
                 # not correspond
-                pattern_map[patterns[i]] = ''
+                pattern_map[patterns[i]] = ""
                 return False
         # if the value set to the pattern item does not equal the current
         # string item

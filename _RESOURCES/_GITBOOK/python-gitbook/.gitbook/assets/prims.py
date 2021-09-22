@@ -11,7 +11,9 @@ from typing import Optional
 from src.typehints import Node
 
 
-def prims(graph: Mapping[Node, Mapping[Node, int]], start: Node) -> dict[Node, Optional[Node]]:
+def prims(
+    graph: Mapping[Node, Mapping[Node, int]], start: Node
+) -> dict[Node, Optional[Node]]:
     """Find the minimum spanning tree of an undirected, weighted graph."""
     parents = {}
     to_visit = [(0, None, start)]

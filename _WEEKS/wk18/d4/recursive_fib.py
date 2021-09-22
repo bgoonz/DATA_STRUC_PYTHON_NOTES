@@ -1,13 +1,13 @@
 def get_fib(n):
 
     result = 0
-    if(n == 0):
+    if n == 0:
         return result
 
-    if(n == 1):
+    if n == 1:
         return n
     else:
-        result += get_fib(n-1)+get_fib(n-2)
+        result += get_fib(n - 1) + get_fib(n - 2)
         return result
 
 

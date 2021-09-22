@@ -1,29 +1,37 @@
 # some data structures to help with the graph traversals
-class Queue():
+class Queue:
     def __init__(self):
         self.queue = []
+
     def enqueue(self, value):
         self.queue.append(value)
+
     def dequeue(self):
         if self.size() > 0:
             return self.queue.pop(0)
         else:
             return None
+
     def size(self):
         return len(self.queue)
 
-class Stack():
+
+class Stack:
     def __init__(self):
         self.stack = []
+
     def push(self, value):
         self.stack.append(value)
+
     def pop(self):
         if self.size() > 0:
             return self.stack.pop()
         else:
             return None
+
     def size(self):
         return len(self.stack)
+
 
 class Vertex:
     def __init__(self, value):
@@ -31,9 +39,13 @@ class Vertex:
         self.connections = {}
 
     def __str__(self):
-        return str(self.value) + ' connections: ' + str([x.value for x in self.connections])
+        return (
+            str(self.value)
+            + " connections: "
+            + str([x.value for x in self.connections])
+        )
 
-    def add_connection(self, vert, weight = 0):
+    def add_connection(self, vert, weight=0):
         self.connections[vert] = weight
 
     def get_connections(self):
@@ -44,6 +56,7 @@ class Vertex:
 
     def get_weight(self, vert):
         return self.connections[vert]
+
 
 class Graph:
     def __init__(self):
@@ -62,7 +75,7 @@ class Graph:
         self.vertices[value] = new_vert
         return new_vert
 
-    def add_edge(self, v1, v2, weight = 0):
+    def add_edge(self, v1, v2, weight=0):
         if v1 not in self.vertices:
             self.add_vertex(v1)
         if v2 not in self.vertices:
@@ -111,10 +124,10 @@ class Graph:
 
                     # enqueue our copy of the path
                     to_visit.enqueue(path_copy)
-            
-            return None # you could also just return an empty list
 
-    def depth_first_search(self, vertex, visited = set()):
+            return None  # you could also just return an empty list
+
+    def depth_first_search(self, vertex, visited=set()):
         visited.add(vertex)
         for next_vert in vertex.get_connections():
             if next_vert not in visited:

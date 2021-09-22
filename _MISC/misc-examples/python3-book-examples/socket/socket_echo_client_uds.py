@@ -3,7 +3,7 @@
 """Client half of echo example
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import socket
 import sys
 
@@ -11,8 +11,8 @@ import sys
 sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
 
 # Connect the socket to the port where the server is listening
-server_address = './uds_socket'
-print('connecting to {}'.format(server_address))
+server_address = "./uds_socket"
+print("connecting to {}".format(server_address))
 try:
     sock.connect(server_address)
 except socket.error as msg:
@@ -22,8 +22,8 @@ except socket.error as msg:
 try:
 
     # Send data
-    message = b'This is the message.  It will be repeated.'
-    print('sending {!r}'.format(message))
+    message = b"This is the message.  It will be repeated."
+    print("sending {!r}".format(message))
     sock.sendall(message)
 
     amount_received = 0
@@ -32,8 +32,8 @@ try:
     while amount_received < amount_expected:
         data = sock.recv(16)
         amount_received += len(data)
-        print('received {!r}'.format(data))
+        print("received {!r}".format(data))
 
 finally:
-    print('closing socket')
+    print("closing socket")
     sock.close()

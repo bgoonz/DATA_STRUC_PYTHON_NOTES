@@ -1,4 +1,3 @@
-
 # This is a comment
 
 # lets print a string
@@ -10,7 +9,6 @@
 # label = value
 # let const var (js)
 # int bool short (c)
-
 
 
 first_name = "Tom"
@@ -27,7 +25,9 @@ my_string = "    this is a string tom    "
 # print(len(my_string.strip()))
 
 
-print(f"        Hello CSPT13 and           {len('this is a test')}     {first_name}.......".strip())
+print(
+    f"        Hello CSPT13 and           {len('this is a test')}     {first_name}.......".strip()
+)
 # print("something on a new line")
 
 # first_name

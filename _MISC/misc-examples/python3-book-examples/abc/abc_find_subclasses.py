@@ -3,7 +3,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import abc
 from abc_base import PluginBase
 import abc_subclass

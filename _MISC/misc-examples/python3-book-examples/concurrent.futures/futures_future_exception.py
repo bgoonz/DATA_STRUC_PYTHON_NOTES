@@ -4,21 +4,21 @@
 """Done callbacks.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from concurrent import futures
 
 
 def task(n):
-    print('{}: starting'.format(n))
-    raise ValueError('the value {} is no good'.format(n))
+    print("{}: starting".format(n))
+    raise ValueError("the value {} is no good".format(n))
 
 
 ex = futures.ThreadPoolExecutor(max_workers=2)
-print('main: starting')
+print("main: starting")
 f = ex.submit(task, 5)
 
 error = f.exception()
-print('main: error: {}'.format(error))
+print("main: error: {}".format(error))
 
 try:
     result = f.result()

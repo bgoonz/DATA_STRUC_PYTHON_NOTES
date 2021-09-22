@@ -5,13 +5,13 @@ from employees import Employee, Job, sort_employees_by_salary
 
 class TestEmployees(TestCase):
     def setUp(self):
-        agent = Job('Agent', 40000)
-        manager = Job('Manager', 50000)
+        agent = Job("Agent", 40000)
+        manager = Job("Manager", 50000)
 
-        self.alice = Employee('Alice', 'Anaheim', manager)
-        self.bob = Employee('Bob', 'Bodega', agent)
-        self.cindy = Employee('Cindy', 'Camille', agent)
-        self.dan = Employee('Dan', 'Dirk', manager)
+        self.alice = Employee("Alice", "Anaheim", manager)
+        self.bob = Employee("Bob", "Bodega", agent)
+        self.cindy = Employee("Cindy", "Camille", agent)
+        self.dan = Employee("Dan", "Dirk", manager)
 
         self.employee_list = [self.dan, self.cindy, self.bob, self.alice]
 
@@ -35,6 +35,6 @@ class TestEmployees(TestCase):
 
 class TestJobs(TestCase):
     def test_str(self):
-        job_title = 'Agent'
+        job_title = "Agent"
         job = Job(job_title, 40000)
         self.assertEqual(str(job), job_title)

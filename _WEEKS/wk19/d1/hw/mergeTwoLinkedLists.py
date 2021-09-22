@@ -80,6 +80,7 @@ def mergeTwoLinkedLists(l1, l2):
 
     return startNode
 
-l1 = [1, 2, 3] 
+
+l1 = [1, 2, 3]
 l2 = [4, 5, 6]
-mergeTwoLinkedLists(l1, l2)# should = [1, 2, 3, 4, 5, 6]
+mergeTwoLinkedLists(l1, l2)  # should = [1, 2, 3, 4, 5, 6]

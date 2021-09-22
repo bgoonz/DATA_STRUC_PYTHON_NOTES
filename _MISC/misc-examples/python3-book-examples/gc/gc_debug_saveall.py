@@ -3,19 +3,15 @@
 """Show the objects with references to a given object.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import gc
 
-flags = (gc.DEBUG_COLLECTABLE |
-         gc.DEBUG_UNCOLLECTABLE |
-         gc.DEBUG_SAVEALL
-         )
+flags = gc.DEBUG_COLLECTABLE | gc.DEBUG_UNCOLLECTABLE | gc.DEBUG_SAVEALL
 
 gc.set_debug(flags)
 
 
 class Graph:
-
     def __init__(self, name):
         self.name = name
         self.next = None
@@ -24,28 +20,26 @@ class Graph:
         self.next = next
 
     def __repr__(self):
-        return '{}({})'.format(
-            self.__class__.__name__, self.name)
+        return "{}({})".format(self.__class__.__name__, self.name)
 
 
 class CleanupGraph(Graph):
-
     def __del__(self):
-        print('{}.__del__()'.format(self))
+        print("{}.__del__()".format(self))
 
 
 # Construct a graph cycle
-one = Graph('one')
-two = Graph('two')
+one = Graph("one")
+two = Graph("two")
 one.set_next(two)
 two.set_next(one)
 
 # Construct another node that stands on its own
-three = CleanupGraph('three')
+three = CleanupGraph("three")
 
 # Construct a graph cycle with a finalizer
-four = CleanupGraph('four')
-five = CleanupGraph('five')
+four = CleanupGraph("four")
+five = CleanupGraph("five")
 four.set_next(five)
 five.set_next(four)
 
@@ -53,14 +47,14 @@ five.set_next(four)
 one = two = three = four = five = None
 
 # Force a sweep
-print('Collecting')
+print("Collecting")
 gc.collect()
-print('Done')
+print("Done")
 
 # Report on what was left
 for o in gc.garbage:
     if isinstance(o, Graph):
-        print('Retained: {} 0x{:x}'.format(o, id(o)))
+        print("Retained: {} 0x{:x}".format(o, id(o)))
 
 # Reset the debug flags before exiting to avoid dumping a lot
 # of extra information and making the example output more

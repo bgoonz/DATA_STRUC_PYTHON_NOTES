@@ -22,14 +22,14 @@ class Vec2:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-    
+
     def __str__(self):
         return f"({self.x}, {self.y})"
-    
+
     def add(self, other):
         self.x += other.x
         self.y += other.y
-    
+
     def sub(self, other):
         self.x -= other.x
         self.y -= other.y
@@ -57,6 +57,7 @@ print(v)
 
 # Linked Lists to trees
 
+
 class Node:
     def __init__(self, value):
         self.left = None
@@ -77,39 +78,37 @@ class Node:
 # right
 # value
 
-# init 
+# init
 
 # insert
- # left case
- # check if our value is less than root value
-    # move to the left and check if it is None
-        # insert node here
-    # otherwise
-        # do an insert on the root's left node
- # right case
- # otherwise
-    # move to the right and check if it is None
-        # insert node here
-    # otherwise
-        # do an insert on the root's right node
+# left case
+# check if our value is less than root value
+# move to the left and check if it is None
+# insert node here
+# otherwise
+# do an insert on the root's left node
+# right case
+# otherwise
+# move to the right and check if it is None
+# insert node here
+# otherwise
+# do an insert on the root's right node
 
 # contains
- # check the value root node against the value
- # if the root node value and value are the same
-    # return True
- 
- # left case
- # check if our value is less than the root val
-    # check if there is no child to the left
-        # return False
-    # otherwise
-        # call contains on the left child
- 
- # right case
- # otherwise
-    # check if there is no child to the right
-        # return False
-    # otherwise
-        # call contains on the right child
-    
+# check the value root node against the value
+# if the root node value and value are the same
+# return True
 
+# left case
+# check if our value is less than the root val
+# check if there is no child to the left
+# return False
+# otherwise
+# call contains on the left child
+
+# right case
+# otherwise
+# check if there is no child to the right
+# return False
+# otherwise
+# call contains on the right child

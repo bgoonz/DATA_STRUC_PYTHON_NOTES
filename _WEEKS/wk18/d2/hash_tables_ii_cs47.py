@@ -16,40 +16,40 @@ Original file is located at
 
 
 def djb2(key):
-  """
+    """
   DJB2 hash, 32-bit
   """
 
-  # Cast the key to a string and get bytes
-  str_key = str(key).encode()
+    # Cast the key to a string and get bytes
+    str_key = str(key).encode()
 
-  # Start from an arbitrary large prime
-  hash_value = 5381
+    # Start from an arbitrary large prime
+    hash_value = 5381
 
-  # Bit-shift and sum value for each character
-  for b in str_key:
-      hash_value = ((hash_value << 5) + hash_value) + b
-      hash_value &= 0xffffffff  # DJB2 is a 32-bit hash, only keep 32 bits
+    # Bit-shift and sum value for each character
+    for b in str_key:
+        hash_value = ((hash_value << 5) + hash_value) + b
+        hash_value &= 0xFFFFFFFF  # DJB2 is a 32-bit hash, only keep 32 bits
 
-  return hash
+    return hash
 
 
 def fnv1(key):
-  """
+    """
   FNV-1 hash, 64-bit
   """
 
-  # Cast the key to a string and get bytes
-  str_key = str(key).encode()
+    # Cast the key to a string and get bytes
+    str_key = str(key).encode()
 
-  hash = 0x00000100000001B3  # FNV Prime
+    hash = 0x00000100000001B3  # FNV Prime
 
-  for b in str_key:
-      hash *= 0xcbf29ce484222325  # FNV Offset Basis
-      hash ^= b
-      hash &= 0xffffffffffffffff  # 64-bit hash
+    for b in str_key:
+        hash *= 0xCBF29CE484222325  # FNV Offset Basis
+        hash ^= b
+        hash &= 0xFFFFFFFFFFFFFFFF  # 64-bit hash
 
-  return hash
+    return hash
 
 
 """# Load Factor
@@ -64,14 +64,14 @@ def fnv1(key):
 
 
 class HashTableEntry:
-  """
+    """
   Linked List hash table key/value pair
   """
 
-  def __init__(self, key, value):
-      self.key = key
-      self.value = value
-      self.next = None
+    def __init__(self, key, value):
+        self.key = key
+        self.value = value
+        self.next = None
 
 
 # Hash table can't have fewer than this many slots
@@ -79,142 +79,142 @@ class HashTableEntry:
 
 
 class HashTable:
-  """
+    """
   A hash table that with `capacity` buckets
   that accepts string keys
   Implement this.
   """
 
-  def __init__(self, capacity):
-    self.capacity = capacity  # Number of buckets in the hash table
-    self.storage = [None] * capacity
-    self.item_count = 0
-    self.MIN_CAPACITY = 8
+    def __init__(self, capacity):
+        self.capacity = capacity  # Number of buckets in the hash table
+        self.storage = [None] * capacity
+        self.item_count = 0
+        self.MIN_CAPACITY = 8
 
-  def get_num_slots(self):
-    """
+    def get_num_slots(self):
+        """
     Return the length of the list you're using to hold the hash
     table data. (Not the number of items stored in the hash table,
     but the number of slots in the main list.)
     """
-    return len(self.storage)
+        return len(self.storage)
 
-  def get_load_factor(self):
-    """
+    def get_load_factor(self):
+        """
     Return the load factor for this hash table.
     Implement this.
     """
-    return self.item_count / self.capacity
+        return self.item_count / self.capacity
 
-  def djb2(self, key):
-    """
+    def djb2(self, key):
+        """
     DJB2 hash, 32-bit
     Implement this, and/or FNV-1.
     """
 
-    # Cast the key to a string and get bytes
-    str_key = str(key).encode()
+        # Cast the key to a string and get bytes
+        str_key = str(key).encode()
 
-    # Start from an arbitrary large prime
-    hash_value = 5381
+        # Start from an arbitrary large prime
+        hash_value = 5381
 
-    # Bit-shift and sum value for each character
-    for b in str_key:
-        hash_value = ((hash_value << 5) + hash_value) + b
-        hash_value &= 0xffffffff  # DJB2 is a 32-bit hash, only keep 32 bits
+        # Bit-shift and sum value for each character
+        for b in str_key:
+            hash_value = ((hash_value << 5) + hash_value) + b
+            hash_value &= 0xFFFFFFFF  # DJB2 is a 32-bit hash, only keep 32 bits
 
-    return hash_value
+        return hash_value
 
-  def hash_index(self, key):
-    """
+    def hash_index(self, key):
+        """
     Take an arbitrary key and return a valid integer index
     between within the storage capacity of the hash table.
     """
-    return self.djb2(key) % self.capacity
+        return self.djb2(key) % self.capacity
 
-  def put(self, key, value):
-    """
+    def put(self, key, value):
+        """
     Store the value with the given key.
     Hash collisions should be handled with Linked List Chaining.
     Implement this.
     """
-    index = self.hash_index(key)
+        index = self.hash_index(key)
 
-    current_entry = self.storage[index]
+        current_entry = self.storage[index]
 
-    while current_entry is not None and current_entry.key != key:
-        current_entry = current_entry.next
+        while current_entry is not None and current_entry.key != key:
+            current_entry = current_entry.next
 
-    if current_entry is not None:
-        current_entry.value = value
-    else:
-        new_entry = HashTableEntry(key, value)
-        new_entry.next = self.storage[index]
-        self.storage[index] = new_entry
+        if current_entry is not None:
+            current_entry.value = value
+        else:
+            new_entry = HashTableEntry(key, value)
+            new_entry.next = self.storage[index]
+            self.storage[index] = new_entry
 
-    # increment the item count
-    self.item_count += 1
+        # increment the item count
+        self.item_count += 1
 
-    # resize based on load factor reaching higher than 70% (using a doubling strategy)
-    if self.get_load_factor() > 0.7:
-      self.resize(self.capacity * 2)
+        # resize based on load factor reaching higher than 70% (using a doubling strategy)
+        if self.get_load_factor() > 0.7:
+            self.resize(self.capacity * 2)
 
-  def delete(self, key):
-    """
+    def delete(self, key):
+        """
     Remove the value stored with the given key.
     Print a warning if the key is not found.
     Implement this.
     """
-    index = self.hash_index(key)
+        index = self.hash_index(key)
 
-    current_entry = self.storage[index]
-    last_entry = None
+        current_entry = self.storage[index]
+        last_entry = None
 
-    while current_entry is not None and current_entry.key != key:
-        last_entry = current_entry
-        current_entry = last_entry.next
+        while current_entry is not None and current_entry.key != key:
+            last_entry = current_entry
+            current_entry = last_entry.next
 
-    if current_entry is None:
-        print("ERROR: Unable to remove the entry with a key of", key)
-    else:
-        if last_entry is None:
-            self.storage[index] = current_entry.next
+        if current_entry is None:
+            print("ERROR: Unable to remove the entry with a key of", key)
         else:
-            last_entry.next = current_entry.next
+            if last_entry is None:
+                self.storage[index] = current_entry.next
+            else:
+                last_entry.next = current_entry.next
 
-        # decrement the item count
-        self.item_count -= 1
+            # decrement the item count
+            self.item_count -= 1
 
-    # TODO:  resizing?
-    if self.get_load_factor() < 0.2:
-      new_capacity = self.capacity // 2
+        # TODO:  resizing?
+        if self.get_load_factor() < 0.2:
+            new_capacity = self.capacity // 2
 
-  def get(self, key):
-    """
+    def get(self, key):
+        """
     Retrieve the value stored with the given key.
     Returns None if the key is not found.
     Implement this.
     """
-    index = self.hash_index(key)
+        index = self.hash_index(key)
 
-    current_entry = self.storage[index]
+        current_entry = self.storage[index]
 
-    # while the current entry exists
-    while current_entry is not None:
-        # check if the current entry key is the same as the passed in key
-        if current_entry.key == key:
-            # return the current entry value
-            return current_entry.value
-        # traverse to the next entry
-        current_entry = current_entry.next
+        # while the current entry exists
+        while current_entry is not None:
+            # check if the current entry key is the same as the passed in key
+            if current_entry.key == key:
+                # return the current entry value
+                return current_entry.value
+            # traverse to the next entry
+            current_entry = current_entry.next
 
-    return None
+        return None
 
-  def resize(self, new_capacity):  # O(n * k)
-    """
+    def resize(self, new_capacity):  # O(n * k)
+        """
     Changes the capacity of the hash table and rehashes all of the key / value pairs
     """
-    pass
+        pass
 
 
 if __name__ == "__main__":
@@ -299,17 +299,18 @@ res[:k]
 
 
 def top_k_frequent(words, k):
-  """
+    """
   Input:
   words -> List[str]
   k -> int
   Output:
   List[str]
   """
-  # Your code here
+    # Your code here
 
 
 # Tests
-top_k_frequent(["the", "sky", "is", "cloudy", "the",
-                "the", "the", "cloudy", "is", "is"], 4)
+top_k_frequent(
+    ["the", "sky", "is", "cloudy", "the", "the", "the", "cloudy", "is", "is"], 4
+)
 top_k_frequent(["lambda", "school", "rules", "lambda", "school", "rocks"], 2)

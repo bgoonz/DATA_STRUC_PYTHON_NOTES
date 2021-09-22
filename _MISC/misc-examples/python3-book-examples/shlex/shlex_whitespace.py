@@ -4,22 +4,22 @@
 """Parsing strings with shlex.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import shlex
 import sys
 
 if len(sys.argv) != 2:
-    print('Please specify one filename on the command line.')
+    print("Please specify one filename on the command line.")
     sys.exit(1)
 
 filename = sys.argv[1]
-with open(filename, 'r') as f:
+with open(filename, "r") as f:
     body = f.read()
-print('ORIGINAL: {!r}'.format(body))
+print("ORIGINAL: {!r}".format(body))
 print()
 
-print('TOKENS:')
+print("TOKENS:")
 lexer = shlex.shlex(body)
-lexer.whitespace += '.,'
+lexer.whitespace += ".,"
 for token in lexer:
-    print('{!r}'.format(token))
+    print("{!r}".format(token))

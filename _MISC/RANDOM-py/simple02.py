@@ -8,13 +8,13 @@ PRINT_TOM = 2
 PRINT_NUM = 3
 # memory
 memory = [
-    PRINT_TOM, # [0000 0010]
-    PRINT_TOM, # [0000 0010]
-    PRINT_TOM, # [0000 0010]
+    PRINT_TOM,  # [0000 0010]
+    PRINT_TOM,  # [0000 0010]
+    PRINT_TOM,  # [0000 0010]
     PRINT_NUM,
     45,
     PRINT_TOM,  # [0000 0010]
-    HALT      # [0000 0001] 
+    HALT,  # [0000 0001]
 ]
 
 # flags

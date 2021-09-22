@@ -343,7 +343,7 @@ s = "f"
 
 
 def increasingSubstrings(s):
-    string = ''
+    string = ""
     subs = []
     i = 0
     if len(s) == 1:
@@ -362,7 +362,7 @@ def increasingSubstrings(s):
         if ord(s[len(s) - 1]) == ord(s[len(s) - 2]) + 1:
             string = string + s[len(s) - 1]
         subs.append(string)
-        string = ''
+        string = ""
     return subs
 
 
@@ -422,7 +422,7 @@ def additionWithoutCarrying(param1, param2):
         result.append(added_digits % 10)
     result.reverse()
     number_string = map(str, result)
-    number_string = ''.join(number_string)
+    number_string = "".join(number_string)
     result = int(number_string)
     return result
 
@@ -470,7 +470,7 @@ def evenDigitsNumber(a):
 
 
 def increasingSubstrings(s):
-    string = ''
+    string = ""
     subs = []
     i = 0
     if len(s) == 1:
@@ -489,7 +489,7 @@ def increasingSubstrings(s):
         if ord(s[len(s) - 1]) == ord(s[len(s) - 2]) + 1:
             string = string + s[len(s) - 1]
         subs.append(string)
-        string = ''
+        string = ""
     return subs
 
 
@@ -505,7 +505,7 @@ def goodSubstrings(strToSplit, k):
     smallest = ord(strToSplit[0])
     largest = 0
     subs = []
-    s = ''
+    s = ""
     for i in range(len(strToSplit)):
         # print('Letter', strToSplit[i],
         #       ord(strToSplit[i]))
@@ -558,7 +558,7 @@ string = "LambdaSchool"
 
 
 def to_lower_case(string):
-    result = ''
+    result = ""
     for i in range(len(string)):
         if ord(string[i]) <= 90 or ord(string[i]) <= 65:
             result += chr(ord(string[i]) + 32)
@@ -586,27 +586,27 @@ Input: "MCMLXXXIV"
 Output: 1984
 """
 
-roman = 'IV'
-roman = 'XII'
+roman = "IV"
+roman = "XII"
 roman = "MCMLXXXIV"
 
 
 #  TODO finish this!
 def roman_to_integer(roman):
     numerals = {
-        'I': 1,
-        'V': 5,
-        'X': 10,
-        'L': 50,
-        'C': 100,
-        'D': 500,
-        'M': 1000,
-        'IV': 4,
-        'IX': 9,
-        'XL': 40,
-        'XC': 90,
-        'CD': 400,
-        'CM': 900
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000,
+        "IV": 4,
+        "IX": 9,
+        "XL": 40,
+        "XC": 90,
+        "CD": 400,
+        "CM": 900,
     }
     #  init i as our starting index
     i = 0
@@ -615,10 +615,10 @@ def roman_to_integer(roman):
     # iterate the string
     while i < len(roman):
         #  if there are 2 chars to check and they are both in numerals
-        if i + 1 < len(roman) and roman[i:i + 2] in numerals:
+        if i + 1 < len(roman) and roman[i : i + 2] in numerals:
             # add the integer version of the found 2 character roman numeral to
             # the num var
-            num += numerals[roman[i:i + 2]]
+            num += numerals[roman[i : i + 2]]
             # increment counter by 2 since we found a 2 character roman numeral
             i += 2
         else:
@@ -630,7 +630,7 @@ def roman_to_integer(roman):
     return num
 
 
-print('roman to int', roman_to_integer(roman))
+print("roman to int", roman_to_integer(roman))
 
 """
 Given a list of integers `lst`, any integer with a frequency that is equal to its value is considered a **lucky integer**.
@@ -658,5 +658,6 @@ def find_lucky(lst):
     if not lucky:
         return -1
     return max(lucky)
+
 
 # print(find_lucky(lst))

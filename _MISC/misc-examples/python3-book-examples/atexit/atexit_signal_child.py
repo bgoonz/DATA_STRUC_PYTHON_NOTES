@@ -9,13 +9,13 @@ import sys
 
 
 def not_called():
-    print('CHILD: atexit handler should not have been called')
+    print("CHILD: atexit handler should not have been called")
 
 
-print('CHILD: Registering atexit handler')
+print("CHILD: Registering atexit handler")
 sys.stdout.flush()
 atexit.register(not_called)
 
-print('CHILD: Pausing to wait for signal')
+print("CHILD: Pausing to wait for signal")
 sys.stdout.flush()
 time.sleep(5)

@@ -2,7 +2,7 @@
 """Example use of linecache module.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import linecache
 from linecache_data import *
 
@@ -12,7 +12,6 @@ filename = make_tempfile()
 # an empty string to indicate a line which does
 # not exist.
 not_there = linecache.getline(filename, 500)
-print('NOT THERE: {!r} includes {} characters'.format(
-    not_there, len(not_there)))
+print("NOT THERE: {!r} includes {} characters".format(not_there, len(not_there)))
 
 cleanup(filename)

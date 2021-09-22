@@ -1,4 +1,5 @@
 import sys
+
 # lets build up our simulator some more
 # now we will add the concept of registers
 # and an add opcode
@@ -12,8 +13,8 @@ PRINT_REG = 5
 ADD = 6
 PUSH = 7
 POP = 8
-CALL = 9 # New for day 4
-RET = 10 # New for day 4
+CALL = 9  # New for day 4
+RET = 10  # New for day 4
 
 # think of some operations that we might want to perform such as print something, load  or store something etc
 # maybe some way to stop execution and some arithmetic operations
@@ -57,7 +58,7 @@ RET = 10 # New for day 4
 #     print("RET")
 #     return 3
 
-# TODO: demo the idea of a branch table 
+# TODO: demo the idea of a branch table
 ## branch table
 # bt = {
 #     HALT: op_halt,
@@ -82,10 +83,10 @@ def load_memory(filename):
                 comment_split = line.split("#")
 
                 # extract our number
-                num = comment_split[0].strip() # trim whitespace
+                num = comment_split[0].strip()  # trim whitespace
 
-                if num == '':
-                    continue # ignore blank lines
+                if num == "":
+                    continue  # ignore blank lines
 
                 # convert our binary string to a number
                 val = int(num, 2)
@@ -135,7 +136,7 @@ while running:
     if cmd == HALT:
         # EXECUTE
         running = False
-    
+
     elif cmd == PRINT_TOM:
         # EXECUTE
         print("Tom")
@@ -173,10 +174,10 @@ while running:
         reg = memory[pc + 1]
         val = register[reg]
 
-        #PUSH
+        # PUSH
         register[sp] -= 1
         memory[register[sp]] = val
-        
+
         inc_size = 2
         op_pc = False
 
@@ -191,14 +192,14 @@ while running:
 
         inc_size = 2
         op_pc = False
-    
+
     elif cmd == CALL:
         # setup
         reg = memory[pc + 1]
 
         # CALL
-        register[sp] -= 1 # decrement sp
-        memory[register[sp]] = pc + 2 # push pc + 2 on to the stack
+        register[sp] -= 1  # decrement sp
+        memory[register[sp]] = pc + 2  # push pc + 2 on to the stack
 
         # set pc to subroutine
         pc = register[reg]
@@ -230,4 +231,3 @@ while running:
 #         pc += bt[ir](op1, op2)
 #     else:
 #         raise Exception(f"Invalid instruction {hex(ir)} at address {hex(pc)}")
-

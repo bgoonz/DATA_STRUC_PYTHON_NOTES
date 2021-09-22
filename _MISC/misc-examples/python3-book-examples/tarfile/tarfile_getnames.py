@@ -4,8 +4,8 @@
 """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import tarfile
 
-with tarfile.open('example.tar', 'r') as t:
+with tarfile.open("example.tar", "r") as t:
     print(t.getnames())

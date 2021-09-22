@@ -1,7 +1,10 @@
 from random import random
+
+
 class User:
     def __init__(self, name):
         self.name = name
+
 
 class SocialGraph:
     def __init__(self):
@@ -15,7 +18,9 @@ class SocialGraph:
         """
         if userID == friendID:
             print("WARNING: You cannot be friends with yourself")
-        elif friendID in self.friendships[userID] or userID in self.friendships[friendID]:
+        elif (
+            friendID in self.friendships[userID] or userID in self.friendships[friendID]
+        ):
             print("WARNING: Friendship already exists")
         else:
             self.friendships[userID].add(friendID)
@@ -54,7 +59,7 @@ class SocialGraph:
         # make a list of possible friendships
         possibleFreindships = []
         # avoid duplicates ensuring that the first number is smaller than the second
-        
+
         # loop over userID in users
         for userID in self.users:
             # loop over friend id in a range from user id + 1 to the lastID +1
@@ -63,7 +68,7 @@ class SocialGraph:
                 possibleFreindships.append((userID, friendID))
         # shuffle the possible friendships using the random.suffle method
         random.shuffle(possibleFreindships)
-        # create afriendships of the first x ammount of pairs in the list   
+        # create afriendships of the first x ammount of pairs in the list
         # X determined by the formula: numusers * avgFriendships // 2
         # we need to divide by to as each createFriendship adds 2 friendships
         # loop over a range to numUsers * avgFriendships // 2
@@ -72,8 +77,6 @@ class SocialGraph:
             friendship = possibleFreindships[i]
             # addfriendship of friendship[0] and friendship[1]
             self.addFriendship(friendship[0], friendship[1])
-
- 
 
     def getAllSocialPaths(self, userID):
         """
@@ -87,7 +90,7 @@ class SocialGraph:
         return visited
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sg = SocialGraph()
     sg.populateGraph(10, 2)
     print(sg.friendships)

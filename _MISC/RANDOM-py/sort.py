@@ -1,13 +1,12 @@
 from book import Book
 from time import time
 import random
+
 l = [random.randint(0, 1000) for i in range(0, 100)]
 
 input_sizes = [i * 100 for i in range(1, 50)]
 
 times = []
-
-
 
 
 def insertion_sort(books):
@@ -21,6 +20,7 @@ def insertion_sort(books):
             j -= 1
         books[j] = temp
     return books
+
 
 b1 = Book("f", "f", "f")
 b2 = Book("e", "e", "e")

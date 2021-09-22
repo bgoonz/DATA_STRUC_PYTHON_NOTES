@@ -3,13 +3,13 @@
 """Writing Unicode data to a file.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import codecs
 import sys
 
 encoding = sys.argv[1]
-filename = encoding + '.txt'
+filename = encoding + ".txt"
 
-print('Reading from', filename)
-with codecs.open(filename, mode='r', encoding=encoding) as f:
+print("Reading from", filename)
+with codecs.open(filename, mode="r", encoding=encoding) as f:
     print(repr(f.read()))

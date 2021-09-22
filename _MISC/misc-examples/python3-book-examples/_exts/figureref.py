@@ -23,21 +23,15 @@ class figureref(nodes.reference):
     pass
 
 
-def _role(typ, rawtext, text, lineno, inliner,
-          options={}, content=[], nodeclass=None):
+def _role(typ, rawtext, text, lineno, inliner, options={}, content=[], nodeclass=None):
     text = utils.unescape(text)
-    pnode = nodeclass(
-        rawsource=text,
-        text='',
-        internal=True,
-        refuri=text,
-    )
+    pnode = nodeclass(rawsource=text, text="", internal=True, refuri=text)
     return [pnode], []
 
 
 def latex_visit_figureref(self, node):
-    id = 'figure:' + node['refuri']
-    self.body.append(r'Figure~\ref{%s}' % self.idescape(id))
+    id = "figure:" + node["refuri"]
+    self.body.append(r"Figure~\ref{%s}" % self.idescape(id))
     raise nodes.SkipNode
 
 
@@ -46,7 +40,7 @@ def latex_depart_figureref(self, node):
 
 
 def html_visit_figureref(self, node):
-    self.body.append(r'the figure')
+    self.body.append(r"the figure")
     raise nodes.SkipNode
 
 
@@ -55,18 +49,15 @@ def html_depart_figureref(self, node):
 
 
 def builder_inited(app):
-    LOG.info('defining figure role')
-    app.add_role(
-        'figure',
-        functools.partial(_role, nodeclass=figureref)
-    )
+    LOG.info("defining figure role")
+    app.add_role("figure", functools.partial(_role, nodeclass=figureref))
 
 
 def setup(app):
-    LOG.info('initializing figureref')
+    LOG.info("initializing figureref")
     app.add_node(
         figureref,
         latex=(latex_visit_figureref, None),
         html=(html_visit_figureref, html_depart_figureref),
     )
-    app.connect('builder-inited', builder_inited)
+    app.connect("builder-inited", builder_inited)

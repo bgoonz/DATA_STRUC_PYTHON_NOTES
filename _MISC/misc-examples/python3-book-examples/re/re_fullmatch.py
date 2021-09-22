@@ -3,16 +3,16 @@
 """Matching vs. searching
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
-text = 'This is some text -- with punctuation.'
-pattern = 'is'
+text = "This is some text -- with punctuation."
+pattern = "is"
 
-print('Text       :', text)
-print('Pattern    :', pattern)
+print("Text       :", text)
+print("Pattern    :", pattern)
 
 m = re.search(pattern, text)
-print('Search     :', m)
+print("Search     :", m)
 s = re.fullmatch(pattern, text)
-print('Full match :', s)
+print("Full match :", s)

@@ -2,7 +2,7 @@
 #
 """List the registered dialects.
 """
-#end_pymotw_header
+# end_pymotw_header
 import csv
 
 print(csv.list_dialects())

@@ -5,7 +5,7 @@ records = [
     ("Erin", "Engineering"),
     ("Dave", "Engineering"),
     ("Frank", "Engineering"),
-    ("Grace", "Marketing")
+    ("Grace", "Marketing"),
 ]
 
 
@@ -21,7 +21,6 @@ def build_index(rec):
 
         idx[dept].append(name)
 
-
     return idx
 
 
@@ -33,6 +32,6 @@ for i in idx:
     print(i)
 
 # print everyone in Engineering:
-idx['Engineering'].sort()
+idx["Engineering"].sort()
 # ['Alice', 'Erin', 'Dave', 'Frank'].sort()
 print(f"Engineering: {idx['Engineering']}")

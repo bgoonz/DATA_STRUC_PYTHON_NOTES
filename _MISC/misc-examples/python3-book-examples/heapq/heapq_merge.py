@@ -2,7 +2,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import heapq
 import random
 
@@ -16,9 +16,9 @@ for i in range(4):
     data.append(new_data)
 
 for i, d in enumerate(data):
-    print('{}: {}'.format(i, d))
+    print("{}: {}".format(i, d))
 
-print('\nMerged:')
+print("\nMerged:")
 for i in heapq.merge(*data):
-    print(i, end=' ')
+    print(i, end=" ")
 print()

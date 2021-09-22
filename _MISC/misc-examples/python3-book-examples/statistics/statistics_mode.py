@@ -1,7 +1,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from statistics import *
 
 data = [1, 2, 2, 5, 10, 12]

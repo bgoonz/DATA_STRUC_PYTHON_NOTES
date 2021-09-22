@@ -5,7 +5,6 @@ class Color:
 
 
 class Node:
-
     def __init__(self, data, parent=None, color=Color.RED):
         self.data = data
         self.color = color
@@ -15,7 +14,6 @@ class Node:
 
 
 class RedBlackTree:
-
     def __init__(self):
         self.root = None
 
@@ -117,26 +115,29 @@ class RedBlackTree:
         if node.left:
             self.traverse_in_order(node.left)
 
-        l = ''
-        r = ''
-        p = ''
+        l = ""
+        r = ""
+        p = ""
 
         if node.left is not None:
             l = node.left.data
         else:
-            l = 'NULL'
+            l = "NULL"
 
         if node.right is not None:
             r = node.right.data
         else:
-            r = 'NULL'
+            r = "NULL"
 
         if node.parent is not None:
             p = node.parent.data
         else:
-            p = 'NULL'
+            p = "NULL"
 
-        print("%s left: %s right: %s parent: %s color: %s" % (node.data, l, r, p, node.color))
+        print(
+            "%s left: %s right: %s parent: %s color: %s"
+            % (node.data, l, r, p, node.color)
+        )
 
         if node.right:
             self.traverse_in_order(node.right)
@@ -204,5 +205,3 @@ rbt.insert(23)
 rbt.insert(12)
 
 rbt.traverse()
-
-

@@ -20,6 +20,7 @@
 # what imports will we need
 # https://docs.python.org/3/library/urllib.request.html#module-urllib.request
 import urllib.request
+
 # https://docs.python.org/3/library/datetime.html
 import datetime
 
@@ -30,10 +31,12 @@ class CacheEntry:
     - url
     - data
     """
+
     def __init__(self, url, data):
         self.url = url
         self.data = data
         self.timestamp = datetime.datetime.now().timestamp()
+
 
 # a cache
 cache = {}

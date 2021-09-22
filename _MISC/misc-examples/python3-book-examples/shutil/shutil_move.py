@@ -2,15 +2,15 @@
 """Copying a file
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import glob
 import shutil
 
-with open('example.txt', 'wt') as f:
-    f.write('contents')
+with open("example.txt", "wt") as f:
+    f.write("contents")
 
-print('BEFORE: ', glob.glob('example*'))
+print("BEFORE: ", glob.glob("example*"))
 
-shutil.move('example.txt', 'example.out')
+shutil.move("example.txt", "example.out")
 
-print('AFTER : ', glob.glob('example*'))
+print("AFTER : ", glob.glob("example*"))

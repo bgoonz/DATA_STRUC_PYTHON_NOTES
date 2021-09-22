@@ -4,7 +4,7 @@
 
 def f(n):
     if n < 0:
-        raise ValueError('Invalid n: {}'.format(n))
+        raise ValueError("Invalid n: {}".format(n))
     result = []
     j = 0
     for i in range(n):
@@ -14,17 +14,17 @@ def f(n):
     return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         print(f(5))
     finally:
-        print('Always printed')
+        print("Always printed")
 
     try:
         print(f(-5))
     except:
-        print('There was an error')
+        print("There was an error")
     else:
-        print('There was no error')
+        print("There was no error")
 
-    print('Last statement')
+    print("Last statement")

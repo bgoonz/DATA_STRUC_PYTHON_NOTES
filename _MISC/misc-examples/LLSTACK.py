@@ -1,9 +1,11 @@
 # let's implement a stack using a linked list (Let's add some peek functionality)!!!
 
+
 class LinkedListNode:
     def __init__(self, data):
         self.data = data
         self.next = None
+
 
 class Stack:
     def __init__(self):

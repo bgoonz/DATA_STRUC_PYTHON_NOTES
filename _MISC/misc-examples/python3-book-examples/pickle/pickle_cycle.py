@@ -3,13 +3,14 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import pickle
 
 
 class Node:
     """A simple digraph
     """
+
     def __init__(self, name):
         self.name = name
         self.connections = []
@@ -42,15 +43,14 @@ def show_edges(root):
     for parent, child in preorder_traversal(root):
         if not parent:
             continue
-        print('{:>5} -> {:>2} ({})'.format(
-            parent.name, child.name, id(child)))
+        print("{:>5} -> {:>2} ({})".format(parent.name, child.name, id(child)))
 
 
 # Set up the nodes.
-root = Node('root')
-a = Node('a')
-b = Node('b')
-c = Node('c')
+root = Node("root")
+a = Node("a")
+b = Node("b")
+c = Node("c")
 
 # Add edges between them.
 root.add_edge(a)
@@ -60,7 +60,7 @@ b.add_edge(a)
 b.add_edge(c)
 a.add_edge(a)
 
-print('ORIGINAL GRAPH:')
+print("ORIGINAL GRAPH:")
 show_edges(root)
 
 # Pickle and unpickle the graph to create
@@ -68,5 +68,5 @@ show_edges(root)
 dumped = pickle.dumps(root)
 reloaded = pickle.loads(dumped)
 
-print('\nRELOADED GRAPH:')
+print("\nRELOADED GRAPH:")
 show_edges(reloaded)

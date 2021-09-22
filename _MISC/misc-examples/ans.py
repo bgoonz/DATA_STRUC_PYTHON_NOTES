@@ -14,19 +14,21 @@ class Queue:
     def size(self):
         return len(self.storage)
 
+
 class Graph:
     """ 
         Represent a graph as a dictionary of verts 
         mapping labels to edges 
     
     """
+
     def __init__(self):
         self.vertices = {}
-    
+
     def add_vertex(self, vertex_id):
         if vertex_id not in self.vertices:
             self.vertices[vertex_id] = set()
-    
+
     def add_edge(self, v1, v2):
         if v1 in self.vertices and v2 in self.vertices:
             self.vertices[v1].add(v2)
@@ -61,7 +63,9 @@ def earliest_ancestor(ancestors, starting_node):
         # get the last vert
         vert = path[-1]
         # if path is longer or equal and the value is smaller, or if the path is longer
-        if (len(path) >= max_path_length and vert < earliest_ancestor) or (len(path) > max_path_length):
+        if (len(path) >= max_path_length and vert < earliest_ancestor) or (
+            len(path) > max_path_length
+        ):
             # set the earliest ancestor to the vert
             earliest_ancestor = vert
             # set the max path length to the len of the path

@@ -3,10 +3,7 @@
 """Escaping escape codes
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from re_test_patterns import test_patterns
 
-test_patterns(
-    r'\d+ \D+ \s+',
-    [(r'\\.\+', 'escape code')],
-)
+test_patterns(r"\d+ \D+ \s+", [(r"\\.\+", "escape code")])

@@ -6,7 +6,6 @@ def name_in_phonebook(to_find, phonebook):
     return False
 
 
-
 # binary search
 def name_in_phonebook_2(to_find, name):
     # sentinal , edge case
@@ -15,7 +14,7 @@ def name_in_phonebook_2(to_find, name):
     # set first element to zero
     first = 0
     # set the last items to size - 1
-    last = (len(to_find) - 1)
+    last = len(to_find) - 1
     # set a found flag to false
     found = False
 
@@ -36,6 +35,6 @@ def name_in_phonebook_2(to_find, name):
             # otherwise
             else:
                 # search the upper half
-                first = middle + 1 
+                first = middle + 1
     # return found
     return found

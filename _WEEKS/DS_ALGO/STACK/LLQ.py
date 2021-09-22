@@ -1,9 +1,11 @@
 # Let's make a queue using a linked list we need to add an is_empty() method. lets refactor the code
 
+
 class LinkedListNode:
     def __init__(self, data):
         self.data = data
         self.next = None
+
 
 class Queue:
     def __init__(self):
@@ -34,9 +36,9 @@ class Queue:
         if self.is_empty():
             # make sure rear is also None
             self.rear = None
-        
+
         return old_front
-    
+
     def is_empty(self):
         return self.front == None
 
@@ -44,9 +46,8 @@ class Queue:
 # test
 
 q = Queue()
-print(q.is_empty()) # => True
+print(q.is_empty())  # => True
 q.enqueue(12)
-print(q.is_empty()) # => False
+print(q.is_empty())  # => False
 q.dequeue()
-print(q.is_empty()) # => True
-
+print(q.is_empty())  # => True

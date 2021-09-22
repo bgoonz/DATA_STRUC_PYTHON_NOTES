@@ -3,18 +3,19 @@
 import sys
 
 import sys
+
 if len(sys.argv) != 2:
     print("usage: 02-fileio.2.py <filename>")
     sys.exit(1)
-try:  
+try:
     with open(sys.argv[1]) as f:
         for line in f:
             # split the comment out
-            comment_split = line.split('#')
+            comment_split = line.split("#")
 
             num = comment_split[0].strip()
 
-            if num == '':
+            if num == "":
                 continue
 
             i_num = int(num, 2)

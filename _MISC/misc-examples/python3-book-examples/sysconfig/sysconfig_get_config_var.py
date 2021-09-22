@@ -3,10 +3,8 @@
 """All configuration variables.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import sysconfig
 
-print('User base directory:',
-      sysconfig.get_config_var('userbase'))
-print('Unknown variable   :',
-      sysconfig.get_config_var('NoSuchVariable'))
+print("User base directory:", sysconfig.get_config_var("userbase"))
+print("Unknown variable   :", sysconfig.get_config_var("NoSuchVariable"))

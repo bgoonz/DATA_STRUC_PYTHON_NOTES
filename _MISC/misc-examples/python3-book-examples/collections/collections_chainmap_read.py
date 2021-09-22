@@ -3,27 +3,27 @@
 """Reading values from a ChainMap
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
-a = {'a': 'A', 'c': 'C'}
-b = {'b': 'B', 'c': 'D'}
+a = {"a": "A", "c": "C"}
+b = {"b": "B", "c": "D"}
 
 m = collections.ChainMap(a, b)
 
-print('Individual Values')
-print('a = {}'.format(m['a']))
-print('b = {}'.format(m['b']))
-print('c = {}'.format(m['c']))
+print("Individual Values")
+print("a = {}".format(m["a"]))
+print("b = {}".format(m["b"]))
+print("c = {}".format(m["c"]))
 print()
 
-print('Keys = {}'.format(list(m.keys())))
-print('Values = {}'.format(list(m.values())))
+print("Keys = {}".format(list(m.keys())))
+print("Values = {}".format(list(m.values())))
 print()
 
-print('Items:')
+print("Items:")
 for k, v in m.items():
-    print('{} = {}'.format(k, v))
+    print("{} = {}".format(k, v))
 print()
 
-print('"d" in m: {}'.format(('d' in m)))
+print('"d" in m: {}'.format(("d" in m)))

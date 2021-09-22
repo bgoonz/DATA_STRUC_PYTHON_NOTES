@@ -6,11 +6,15 @@ class Node:
         self.value = value
         self.left = None
         self.right = None
+
+
 class BST:
     def __init__(self):
         self.root = None
+
     def Insert(self, value):
         self.root = self.__InsertWrap(self.root, value)
+
     def __InsertWrap(self, x, value):
         if x == None:
             x = Node(value)
@@ -22,55 +26,68 @@ class BST:
                 # print("right")
                 x.right = self.__InsertWrap(x.right, value)
         return x
+
     def InOrder(self):
         return self.__InOrder(self.root)
+
     def __InOrder(self, x):
         if x:
             self.__InOrder(x.left)
             print(x.value)
             self.__InOrder(x.right)
+
     def PreOrder(self):
         return self.__PreOrder(self.root)
+
     def __PreOrder(self, x):
         if x:
             print(x.value)
             self.__PreOrder(x.left)
             self.__PreOrder(x.right)
+
     def PostOrder(self):
         return self.__PostOrder(self.root)
+
     def __PostOrder(self, x):
         if x:
             self.__PostOrder(x.left)
             self.__PostOrder(x.right)
             print(x.value)
+
     def FindMin(self, x):
         while x.left != None:
             x = x.left
         return x.value
+
     def FindMax(self, x):
         while x.right != None:
             x = x.right
         return x.value
+
     def successor(self, x):
         if x.right != None:
             xx = x.right
             while xx.left != None:
                 xx = xx.left
         return xx.value
+
     def predecessor(self, x):
         if x.left != None:
             xx = x.left
             while xx.right != None:
                 xx = x.right
         return xx.value
+
     def Height(self, x):
         y = self.__Height(x)
         return y
+
     def __Height(self, x):
         if x == None:
             return 0
         else:
             return 1 + max(self.__Height(x.left), self.__Height(x.right))
+
     def delete(self, node):
         x = self.root  # rootNode, {Parent Node of desired Node}
         if node > x.value:
@@ -144,6 +161,8 @@ class BST:
             minNode.right = rChild
             x.right = None
             x.right = minNode
+
+
 # Driver Code
 a = BST()
 a.Insert(20)

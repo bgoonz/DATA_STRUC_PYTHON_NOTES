@@ -42,6 +42,8 @@ Constraints:
 - `trust[i][0] != trust[i][1]`
 - `1 <= trust[i][0], trust[i][1] <= N`
 """
+
+
 def find_judge(N, trust):
     """
     Inputs:
@@ -53,8 +55,8 @@ def find_judge(N, trust):
     # Your code here
     # base case
     if len(trust) < N - 1:
-        return - 1
-    
+        return -1
+
     indegree = [0] * (N + 1)
     outdegree = [0] * (N + 1)
 
@@ -65,5 +67,5 @@ def find_judge(N, trust):
     for i in range(1, N + 1):
         if indegree[i] == N - 1 and outdegree[i] == 0:
             return i
-    
+
     return -1

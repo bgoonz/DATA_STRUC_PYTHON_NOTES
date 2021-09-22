@@ -46,6 +46,7 @@ rhs = [7]
 
 """
 
+
 def partition(data):
     # make a new empty list for LHS
     lhs = []
@@ -54,7 +55,7 @@ def partition(data):
     # make a new empty list for RHS
     rhs = []
 
-    # loop over the data 
+    # loop over the data
     for v in data[1:]:
         # if lower than or equal to pivot
         if v <= pivot:
@@ -64,9 +65,10 @@ def partition(data):
         else:
             # append to RHS list
             rhs.append(v)
-    
+
     # return a tuple containing the LHS list, the pivot, and the RHS list
     return lhs, pivot, rhs
+
 
 def quicksort(data):
     # base case
@@ -88,5 +90,5 @@ lst = [8, 3, 5, 6, 4, 7, 9, 5, 2, 1]
 
 slst = quicksort(lst)
 print(lst)
-print('-------------------------')
+print("-------------------------")
 print(slst)

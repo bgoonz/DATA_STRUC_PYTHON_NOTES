@@ -1,5 +1,6 @@
 from Product import Product
 
+
 class Electronic(Product):
     def __init__(self, name, price, power_rating):
         super().__init__(name, price)

@@ -4,14 +4,14 @@
 """Example use of ConfigParser module.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from configparser import ConfigParser
 import os
 
-filename = 'approach.ini'
+filename = "approach.ini"
 config = ConfigParser()
 config.read([filename])
 
-url = config.get('portal', 'url')
+url = config.get("portal", "url")
 
 print(url)

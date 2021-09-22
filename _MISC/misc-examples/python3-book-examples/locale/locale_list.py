@@ -10,7 +10,7 @@ comments into text which could be printed by the script.
 
 """
 
-#end_pymotw_header
+# end_pymotw_header
 
 locales = [
     ("af_ZA", "Afrikaans"),
@@ -225,4 +225,4 @@ locales = [
 ]
 
 for code, place in locales:
-    print('{:>6} : {}'.format(code, place))
+    print("{:>6} : {}".format(code, place))

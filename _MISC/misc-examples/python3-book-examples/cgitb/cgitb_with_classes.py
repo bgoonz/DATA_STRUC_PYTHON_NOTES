@@ -3,9 +3,10 @@
 """Show tracebacks with classes
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import cgitb
-cgitb.enable(format='text', context=12)
+
+cgitb.enable(format="text", context=12)
 
 
 class BrokenClass:
@@ -25,5 +26,6 @@ class BrokenClass:
         # here.
         self.d = self.a / self.b
         return
+
 
 o = BrokenClass(1, 0)

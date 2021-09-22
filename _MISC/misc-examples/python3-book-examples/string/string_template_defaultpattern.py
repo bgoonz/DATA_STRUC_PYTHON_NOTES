@@ -2,8 +2,8 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import string
 
-t = string.Template('$var')
+t = string.Template("$var")
 print(t.pattern.pattern)

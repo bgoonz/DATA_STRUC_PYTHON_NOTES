@@ -2,7 +2,7 @@
 """A simple directory listing.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import os
 import sys
 

@@ -14,7 +14,9 @@ from numbers import Rational
 from src.typehints import Node
 
 
-def dijkstras_distances_min(graph: Mapping[Node, Mapping[Node, Rational]], start: Node) -> dict[Node: Rational]:
+def dijkstras_distances_min(
+    graph: Mapping[Node, Mapping[Node, Rational]], start: Node
+) -> dict[Node:Rational]:
     """Find the minimum distance from start to all connected nodes on a directed, weighted graph."""
     distances = dict.fromkeys(graph, inf)
     distances[start] = 0

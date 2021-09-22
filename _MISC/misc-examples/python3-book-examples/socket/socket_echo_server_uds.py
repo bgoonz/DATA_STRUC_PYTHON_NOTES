@@ -3,12 +3,12 @@
 """Server half of echo example, using Unix domain sockets
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import socket
 import sys
 import os
 
-server_address = './uds_socket'
+server_address = "./uds_socket"
 
 # Make sure the socket does not already exist
 try:
@@ -21,7 +21,7 @@ except OSError:
 sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
 
 # Bind the socket to the address
-print('starting up on {}'.format(server_address))
+print("starting up on {}".format(server_address))
 sock.bind(server_address)
 
 # Listen for incoming connections
@@ -29,20 +29,20 @@ sock.listen(1)
 
 while True:
     # Wait for a connection
-    print('waiting for a connection')
+    print("waiting for a connection")
     connection, client_address = sock.accept()
     try:
-        print('connection from', client_address)
+        print("connection from", client_address)
 
         # Receive the data in small chunks and retransmit it
         while True:
             data = connection.recv(16)
-            print('received {!r}'.format(data))
+            print("received {!r}".format(data))
             if data:
-                print('sending data back to the client')
+                print("sending data back to the client")
                 connection.sendall(data)
             else:
-                print('no data from', client_address)
+                print("no data from", client_address)
                 break
 
     finally:

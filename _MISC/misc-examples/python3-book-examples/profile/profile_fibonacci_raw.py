@@ -1,6 +1,6 @@
 #
 
-#end_pymotw_header
+# end_pymotw_header
 import profile
 
 
@@ -23,4 +23,4 @@ def fib_seq(n):
     return seq
 
 
-profile.run('print(fib_seq(20)); print()')
+profile.run("print(fib_seq(20)); print()")

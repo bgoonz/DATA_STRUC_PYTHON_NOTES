@@ -1,6 +1,6 @@
 # Copyright (c) 2009 Doug Hellmann All rights reserved.
 #
-#end_pymotw_header
+# end_pymotw_header
 """Example source for pyclbr.
 """
 

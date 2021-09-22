@@ -1,1 +1,1 @@
-print("Hello, world!") # console.log("Hello, world!");
+print("Hello, world!")  # console.log("Hello, world!");

@@ -30,11 +30,12 @@ return elements in Last In First Out order.
 
 from singly_linked_list import LinkedList
 
+
 class Stack:
     def __init__(self):
         self.size = 0
         self.storage = LinkedList()
-    
+
     def __len__(self):
         return self.size
         # other option return len(self.storage)
@@ -42,7 +43,6 @@ class Stack:
     def push(self, value):
         self.storage.add_to_tail(value)
         self.size += 1
-
 
     def pop(self):
         if self.size == 0:

@@ -2,10 +2,10 @@
 """Echo anything written to stdin on stdout.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import sys
 
-sys.stderr.write('repeater.py: starting\n')
+sys.stderr.write("repeater.py: starting\n")
 sys.stderr.flush()
 
 while True:
@@ -16,5 +16,5 @@ while True:
     sys.stdout.write(next_line)
     sys.stdout.flush()
 
-sys.stderr.write('repeater.py: exiting\n')
+sys.stderr.write("repeater.py: exiting\n")
 sys.stderr.flush()

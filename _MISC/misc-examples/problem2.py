@@ -15,8 +15,9 @@ class Node:
             if end:
                 end = end.next
                 middle = middle.next
-        
+
         print(f"Middle Value: {middle.value}")
+
 
 root = Node([1, 2, 4, 3, 23])
 cur = root
@@ -36,6 +37,3 @@ cur.add(34)
 cur = cur.next
 
 root.find_middle()
-
-
-

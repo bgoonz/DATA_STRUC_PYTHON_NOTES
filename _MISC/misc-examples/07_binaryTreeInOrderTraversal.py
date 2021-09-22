@@ -36,11 +36,9 @@ def binaryTreeInOrderTraversal(root):
         res.append(root.value)
         inorder_helper(root.right, res)
 
-    # store our result        
+    # store our result
     result = []
     # pass in out root and result to the helper function
     inorder_helper(root, result)
     # after all of the calls to our helper fn are finished we can return our results
     return result
-
-

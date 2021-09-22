@@ -1,26 +1,27 @@
-'''
+"""
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
-'''
+"""
 
 # naive approach
-def single_number(arr): # time O(2n) # space O(n)
+def single_number(arr):  # time O(2n) # space O(n)
     # set a new dictionary of counts
 
     # figure out the counts
 
     # iterate over the array / luist
-        # if the number is in counts
-            # increment the value at the key of number
-        # otherwise
-            # set the value at the key number to 1
+    # if the number is in counts
+    # increment the value at the key of number
+    # otherwise
+    # set the value at the key number to 1
 
     # go over the counts dictionar and find the odd one out
     # interate over the items in counts, extract num and item
-        # if item is 1
-            # return num
+    # if item is 1
+    # return num
 
     pass
+
 
 # 2nd pass
 # def single_number(arr): # time O(n) space O(1)
@@ -35,8 +36,7 @@ def single_number(arr): # time O(2n) # space O(n)
 #     pass
 
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Use the main function to test your implementation
     arr = [1, 1, 4, 4, 5, 5, 3, 3, 9, 0, 0]
 

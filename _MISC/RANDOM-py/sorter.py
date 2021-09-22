@@ -1,8 +1,4 @@
-d = {
-    "foo": 12,
-    "bar": 17,
-    "qux": 2
-}
+d = {"foo": 12, "bar": 17, "qux": 2}
 
 # cast our dict to a list of pairs
 items = list(d.items())

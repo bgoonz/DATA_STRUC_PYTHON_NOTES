@@ -1,5 +1,4 @@
 class Node(object):
-
     def __init__(self, name):
         self.name = name
         self.adjacencyList = []
@@ -8,7 +7,6 @@ class Node(object):
 
 
 class BreadthFirstSearch(object):
-
     def bfs(self, startNode):
 
         queue = []

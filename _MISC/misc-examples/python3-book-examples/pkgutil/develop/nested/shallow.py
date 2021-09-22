@@ -4,5 +4,4 @@
 
 
 def func():
-    print('This func() comes from the development '
-          'version of nested.shallow')
+    print("This func() comes from the development " "version of nested.shallow")

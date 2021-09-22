@@ -1,6 +1,6 @@
 # Compute the Factorial of a given value (n!)
 
-# multiply all whole numbers from our chosen number 
+# multiply all whole numbers from our chosen number
 # down to 1.
 
 # 4! = 4 * 3 * 2 * 1
@@ -21,6 +21,7 @@ def fact_i(n):
     # return fact
     return fact
 
+
 print(fact_i(4))
 
 # recursive
@@ -33,5 +34,5 @@ def rec_fact(n):
         # return n multiplied by rec_fact of n - 1
         return n * rec_fact(n - 1)
 
-print(rec_fact(4))
 
+print(rec_fact(4))

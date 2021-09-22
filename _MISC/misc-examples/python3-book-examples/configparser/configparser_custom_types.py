@@ -3,23 +3,19 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from configparser import ConfigParser
 import datetime
 
 
 def parse_iso_datetime(s):
-    print('parse_iso_datetime({!r})'.format(s))
-    return datetime.datetime.strptime(s, '%Y-%m-%dT%H:%M:%S.%f')
+    print("parse_iso_datetime({!r})".format(s))
+    return datetime.datetime.strptime(s, "%Y-%m-%dT%H:%M:%S.%f")
 
 
-parser = ConfigParser(
-    converters={
-        'datetime': parse_iso_datetime,
-    }
-)
-parser.read('custom_types.ini')
+parser = ConfigParser(converters={"datetime": parse_iso_datetime})
+parser.read("custom_types.ini")
 
-string_value = parser['datetimes']['due_date']
-value = parser.getdatetime('datetimes', 'due_date')
-print('due_date : {!r} -> {!r}'.format(string_value, value))
+string_value = parser["datetimes"]["due_date"]
+value = parser.getdatetime("datetimes", "due_date")
+print("due_date : {!r} -> {!r}".format(string_value, value))

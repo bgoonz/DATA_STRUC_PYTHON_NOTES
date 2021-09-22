@@ -5,5 +5,5 @@
 """
 """
 
-#end_pymotw_header
-print('Importing submodule')
+# end_pymotw_header
+print("Importing submodule")

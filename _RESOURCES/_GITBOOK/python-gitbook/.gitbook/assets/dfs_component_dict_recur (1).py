@@ -9,9 +9,7 @@ from src.typehints import Node
 
 
 def dfs_component_dict_recur(
-    graph: Mapping[Node, Set[Node]],
-    start: Node,
-    component: Optional[Set[Node]] = None
+    graph: Mapping[Node, Set[Node]], start: Node, component: Optional[Set[Node]] = None
 ) -> set[Node]:
     """Recursively find all the nodes connected to start."""
     if component is None:

@@ -8,10 +8,10 @@
 # constructor that can take in x and y
 
 # class Vec2 {
-#     constructor(x, y) { 
+#     constructor(x, y) {
 #         this.x = x;
 #          this.y = y;
-#     } 
+#     }
 # }
 
 # v = new Vec2(12, 23);
@@ -23,8 +23,9 @@
 # _ method == Protected
 #   method == Public
 
+
 class Vec2:
-    def __init__(self, x, y): 
+    def __init__(self, x, y):
         self.x = x
         self.y = y
 
@@ -38,9 +39,8 @@ class Vec2:
 # l = []
 # l.__add__()
 
-# l + 
+# l +
 v = Vec2(12, 23)
 
 v.call_my_thing("Bob")
 v.__my_thing__("Dave")
-

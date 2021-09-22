@@ -8,7 +8,9 @@ from collections.abc import Iterable, Mapping
 from src.typehints import Node
 
 
-def bfs_paths_dict(graph: Mapping[Node, set[Node]], start: Node, goal: Node) -> Iterable[list[Node]]:
+def bfs_paths_dict(
+    graph: Mapping[Node, set[Node]], start: Node, goal: Node
+) -> Iterable[list[Node]]:
     """Find all the paths from start to goal using BFS on a dict."""
     to_visit = deque([[start]])
     while to_visit:

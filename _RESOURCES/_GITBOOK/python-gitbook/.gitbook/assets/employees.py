@@ -6,14 +6,19 @@ class Employee(object):
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
-            same_name = self.first_name == other.first_name and self.last_name == other.last_name
+            same_name = (
+                self.first_name == other.first_name
+                and self.last_name == other.last_name
+            )
             same_job = self.job == other.job
             if same_name and same_job:
                 return True
         return False
 
     def __repr__(self):
-        return 'Employee(first_name={}, last_name={}, job={})'.format(self.first_name, self.last_name, repr(self.job))
+        return "Employee(first_name={}, last_name={}, job={})".format(
+            self.first_name, self.last_name, repr(self.job)
+        )
 
 
 class Job(object):
@@ -25,7 +30,7 @@ class Job(object):
         print(self.title)
 
     def __repr__(self):
-        return 'Job(title={}, salary={})'.format(self.title, self.salary)
+        return "Job(title={}, salary={})".format(self.title, self.salary)
 
 
 def sort_employees_by_salary(employee_list):

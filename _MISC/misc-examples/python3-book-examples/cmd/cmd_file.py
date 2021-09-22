@@ -3,7 +3,7 @@
 """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import cmd
 
 
@@ -13,7 +13,7 @@ class HelloWorld(cmd.Cmd):
     use_rawinput = False
 
     # Do not show a prompt after each command read
-    prompt = ''
+    prompt = ""
 
     def do_greet(self, line):
         print("hello,", line)
@@ -22,7 +22,8 @@ class HelloWorld(cmd.Cmd):
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys
-    with open(sys.argv[1], 'rt') as input:
+
+    with open(sys.argv[1], "rt") as input:
         HelloWorld(stdin=input).cmdloop()

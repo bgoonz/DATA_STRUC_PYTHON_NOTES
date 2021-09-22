@@ -4,13 +4,9 @@
 """
 # flake8: noqa
 
-#end_pymotw_header
+# end_pymotw_header
 import gettext
 
-gettext.install(
-    'example',
-    'locale',
-    names=['ngettext'],
-)
+gettext.install("example", "locale", names=["ngettext"])
 
-print(_('This message is in the script.'))
+print(_("This message is in the script."))

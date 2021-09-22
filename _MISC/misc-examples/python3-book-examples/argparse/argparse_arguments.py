@@ -3,14 +3,12 @@
 """Long option name example.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import argparse
 
-parser = argparse.ArgumentParser(
-    description='Example with nonoptional arguments',
-)
+parser = argparse.ArgumentParser(description="Example with nonoptional arguments")
 
-parser.add_argument('count', action="store", type=int)
-parser.add_argument('units', action="store")
+parser.add_argument("count", action="store", type=int)
+parser.add_argument("units", action="store")
 
 print(parser.parse_args())

@@ -2,12 +2,11 @@
 """Test for truth
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
 class TruthTest(unittest.TestCase):
-
     def testAssertTrue(self):
         self.assertTrue(True)
 

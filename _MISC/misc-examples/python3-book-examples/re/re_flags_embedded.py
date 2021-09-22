@@ -3,13 +3,13 @@
 """Embedding flags in the expression.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
-text = 'This is some text -- with punctuation.'
-pattern = r'(?i)\bT\w+'
+text = "This is some text -- with punctuation."
+pattern = r"(?i)\bT\w+"
 regex = re.compile(pattern)
 
-print('Text      :', text)
-print('Pattern   :', pattern)
-print('Matches   :', regex.findall(text))
+print("Text      :", text)
+print("Pattern   :", pattern)
+print("Matches   :", regex.findall(text))

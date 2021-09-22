@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 
-#end_pymotw_header
+# end_pymotw_header
 """Tests can appear in any docstring within the module.
 
 Module-level tests cross class and function boundaries.
@@ -27,7 +27,7 @@ class A:
         >>> A('name').method()
         'eman'
         """
-        return ''.join(reversed(self.name))
+        return "".join(reversed(self.name))
 
 
 class B(A):

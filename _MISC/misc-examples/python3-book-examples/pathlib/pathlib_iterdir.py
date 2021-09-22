@@ -4,10 +4,10 @@
 """pathlib iterdir
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-p = pathlib.Path('.')
+p = pathlib.Path(".")
 
 for f in p.iterdir():
     print(f)

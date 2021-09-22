@@ -2,7 +2,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import array
 import binascii
 
@@ -17,15 +17,15 @@ def to_hex(a):
         yield hex_version[start:end]
 
 
-start = int('0x12345678', 16)
+start = int("0x12345678", 16)
 end = start + 5
-a1 = array.array('i', range(start, end))
-a2 = array.array('i', range(start, end))
+a1 = array.array("i", range(start, end))
+a2 = array.array("i", range(start, end))
 a2.byteswap()
 
-fmt = '{:>12} {:>12} {:>12} {:>12}'
-print(fmt.format('A1 hex', 'A1', 'A2 hex', 'A2'))
-print(fmt.format('-' * 12, '-' * 12, '-' * 12, '-' * 12))
-fmt = '{!r:>12} {:12} {!r:>12} {:12}'
+fmt = "{:>12} {:>12} {:>12} {:>12}"
+print(fmt.format("A1 hex", "A1", "A2 hex", "A2"))
+print(fmt.format("-" * 12, "-" * 12, "-" * 12, "-" * 12))
+fmt = "{!r:>12} {:12} {!r:>12} {:12}"
 for values in zip(to_hex(a1), a1, to_hex(a2), a2):
     print(fmt.format(*values))

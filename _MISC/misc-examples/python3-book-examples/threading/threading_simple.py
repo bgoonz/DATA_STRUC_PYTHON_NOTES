@@ -2,13 +2,13 @@
 """Creating and waiting for a thread.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import threading
 
 
 def worker():
     """thread worker function"""
-    print('Worker')
+    print("Worker")
 
 
 threads = []

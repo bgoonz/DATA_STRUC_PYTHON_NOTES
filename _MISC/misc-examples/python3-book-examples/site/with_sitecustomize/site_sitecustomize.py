@@ -3,9 +3,9 @@
 """Run in with_sitecustomize directory.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import sys
 
-print('Running main program from\n{}'.format(sys.argv[0]))
+print("Running main program from\n{}".format(sys.argv[0]))
 
-print('End of path:', sys.path[-1])
+print("End of path:", sys.path[-1])

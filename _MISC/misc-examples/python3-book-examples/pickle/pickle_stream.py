@@ -2,14 +2,13 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import io
 import pickle
 import pprint
 
 
 class SimpleObject:
-
     def __init__(self, name):
         self.name = name
         self.name_backwards = name[::-1]
@@ -17,16 +16,16 @@ class SimpleObject:
 
 
 data = []
-data.append(SimpleObject('pickle'))
-data.append(SimpleObject('preserve'))
-data.append(SimpleObject('last'))
+data.append(SimpleObject("pickle"))
+data.append(SimpleObject("preserve"))
+data.append(SimpleObject("last"))
 
 # Simulate a file.
 out_s = io.BytesIO()
 
 # Write to the stream
 for o in data:
-    print('WRITING : {} ({})'.format(o.name, o.name_backwards))
+    print("WRITING : {} ({})".format(o.name, o.name_backwards))
     pickle.dump(o, out_s)
     out_s.flush()
 
@@ -40,5 +39,4 @@ while True:
     except EOFError:
         break
     else:
-        print('READ    : {} ({})'.format(
-            o.name, o.name_backwards))
+        print("READ    : {} ({})".format(o.name, o.name_backwards))

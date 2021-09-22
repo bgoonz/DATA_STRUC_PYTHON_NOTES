@@ -3,8 +3,10 @@ from day4 import Player, Room, Item
 running = True
 player = Player()
 
+
 def move(player, direction):
     player.move(direction)
+
 
 # REPL === Parser
 while running:
@@ -17,4 +19,3 @@ while running:
 
     # if commands length is 2
     # get, drop
-

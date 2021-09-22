@@ -1,6 +1,6 @@
 #
 
-#end_pymotw_header
+# end_pymotw_header
 import functools
 import profile
 
@@ -25,5 +25,5 @@ def fib_seq(n):
     return seq
 
 
-if __name__ == '__main__':
-    profile.run('print(fib_seq(20)); print()')
+if __name__ == "__main__":
+    profile.run("print(fib_seq(20)); print()")

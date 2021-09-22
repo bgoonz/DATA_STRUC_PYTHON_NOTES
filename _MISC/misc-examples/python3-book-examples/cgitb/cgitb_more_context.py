@@ -3,12 +3,12 @@
 """Control the context by passing a number on command line
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import cgitb
 import sys
 
 context_length = int(sys.argv[1])
-cgitb.enable(format='text', context=context_length)
+cgitb.enable(format="text", context=context_length)
 
 
 def func2(a, divisor):
@@ -23,5 +23,6 @@ def func1(a, b):
     # goes
     # here.
     return func2(a, c)
+
 
 func1(1, 5)

@@ -5,7 +5,6 @@ import collections
 
 
 class Dictionary:
-
     def __init__(self, words):
         self.by_letter = collections.defaultdict(list)
         self.load_data(words)

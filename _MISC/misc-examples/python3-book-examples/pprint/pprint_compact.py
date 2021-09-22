@@ -5,12 +5,12 @@
 """Pretty print with pprint
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from pprint import pprint
 
 from pprint_data import data
 
-print('DEFAULT:')
+print("DEFAULT:")
 pprint(data, compact=False)
-print('\nCOMPACT:')
+print("\nCOMPACT:")
 pprint(data, compact=True)

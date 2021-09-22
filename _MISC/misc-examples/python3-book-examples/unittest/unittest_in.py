@@ -2,14 +2,13 @@
 """Test for equality
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
 class ContainerMembershipTest(unittest.TestCase):
-
     def testDict(self):
-        self.assertIn(4, {1: 'a', 2: 'b', 3: 'c'})
+        self.assertIn(4, {1: "a", 2: "b", 3: "c"})
 
     def testList(self):
         self.assertIn(4, [1, 2, 3])

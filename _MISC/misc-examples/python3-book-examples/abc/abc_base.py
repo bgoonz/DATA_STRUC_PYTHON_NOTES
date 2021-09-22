@@ -3,12 +3,11 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import abc
 
 
 class PluginBase(metaclass=abc.ABCMeta):
-
     @abc.abstractmethod
     def load(self, input):
         """Retrieve data from the input source

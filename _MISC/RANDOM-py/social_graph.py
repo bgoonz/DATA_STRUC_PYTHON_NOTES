@@ -2,9 +2,11 @@ import random
 from queue import Queue
 import time
 
+
 class User:
     def __init__(self, name):
         self.name = name
+
 
 class SocialGraph:
     def __init__(self):
@@ -19,7 +21,10 @@ class SocialGraph:
         if user_id == friend_id:
             # print("WARNING: You cannot be friends with yourself")
             return False
-        elif friend_id in self.friendships[user_id] or user_id in self.friendships[friend_id]:
+        elif (
+            friend_id in self.friendships[user_id]
+            or user_id in self.friendships[friend_id]
+        ):
             # print("WARNING: Friendship already exists")
             return False
         else:
@@ -89,7 +94,7 @@ class SocialGraph:
         # Add users
         for i in range(0, num_users):
             self.add_user(f"User {i + 1}")
-        
+
         target_friendships = num_users * avg_friendships
         total_friendships = 0
         collisions = 0
@@ -126,13 +131,13 @@ class SocialGraph:
                 visited[v] = path
 
                 for neighbor in self.friendships[v]:
-                    path_copy = list(path) # path.copy()
+                    path_copy = list(path)  # path.copy()
                     path_copy.append(neighbor)
                     q.enqueue(path_copy)
         return visited
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     num_users = 2000
     avg_friendships = 5
@@ -151,5 +156,5 @@ if __name__ == '__main__':
     # total_sp = 0
     # for user_id in connections:
     #     total_sp += len(connections[user_id])
-    
+
     # print(f"Avg len of social path: {total_sp // len(connections)}")

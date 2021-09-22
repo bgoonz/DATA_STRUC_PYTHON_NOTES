@@ -2,12 +2,12 @@
 """Using perf_counter for timing
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import hashlib
 import time
 
 # Data to use to calculate md5 checksums
-data = open(__file__, 'rb').read()
+data = open(__file__, "rb").read()
 
 loop_start = time.perf_counter()
 
@@ -20,5 +20,4 @@ for i in range(5):
     now = time.perf_counter()
     loop_elapsed = now - loop_start
     iter_elapsed = now - iter_start
-    print(time.ctime(), ': {:0.3f} {:0.3f}'.format(
-        iter_elapsed, loop_elapsed))
+    print(time.ctime(), ": {:0.3f} {:0.3f}".format(iter_elapsed, loop_elapsed))

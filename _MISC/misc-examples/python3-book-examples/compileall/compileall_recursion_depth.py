@@ -3,11 +3,8 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import compileall
 import re
 
-compileall.compile_dir(
-    'examples',
-    maxlevels=0,
-)
+compileall.compile_dir("examples", maxlevels=0)

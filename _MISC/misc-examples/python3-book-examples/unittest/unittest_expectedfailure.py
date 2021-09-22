@@ -2,12 +2,11 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
 class Test(unittest.TestCase):
-
     @unittest.expectedFailure
     def test_never_passes(self):
         self.assertTrue(False)

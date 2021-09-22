@@ -26,9 +26,9 @@ my_ll.append(3)
 my_ll.head.data
 my_ll.head.next.data
 my_ll.head.next.next.data
-print('my_ll = LinkedList(a):', my_ll)
-print('my_ll.append(2):', my_ll)
-print('my_ll.append(3):', my_ll)
-print('my_ll.head.data:', my_ll.head.data)
-print('my_ll.head.next.data:', my_ll.head.next.data)
-print('my_ll.head.next.next.data:', my_ll.head.next.next.data)
+print("my_ll = LinkedList(a):", my_ll)
+print("my_ll.append(2):", my_ll)
+print("my_ll.append(3):", my_ll)
+print("my_ll.head.data:", my_ll.head.data)
+print("my_ll.head.next.data:", my_ll.head.next.data)
+print("my_ll.head.next.next.data:", my_ll.head.next.next.data)

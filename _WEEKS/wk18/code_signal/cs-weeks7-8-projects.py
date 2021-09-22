@@ -48,7 +48,7 @@ class MyHashTable:
 
         for b in str_key:
             hash_value = ((hash_value << 5) + hash_value) + b
-            hash_value &= 0xffffffff
+            hash_value &= 0xFFFFFFFF
 
         return hash_value
 
@@ -167,7 +167,7 @@ def are_words_sorted(words, alpha_order):
             # create variables for the letters to check
             first_letter = words[word][letter]
             second_letter = words[word + 1][letter]
-            print('first', first_letter, 'second', second_letter)
+            print("first", first_letter, "second", second_letter)
 
             if hashed_letters[first_letter] < hashed_letters[second_letter]:
                 break
@@ -243,8 +243,19 @@ The average student `1` is `87`.
 The average of student `2` is `88.6`, but with integer division is `88`.
 """
 
-scores = [[1, 91], [1, 92], [2, 93], [2, 97], [1, 60], [2, 77], [1, 65],
-          [1, 87], [1, 100], [2, 100], [2, 76]]
+scores = [
+    [1, 91],
+    [1, 92],
+    [2, 93],
+    [2, 97],
+    [1, 60],
+    [2, 77],
+    [1, 65],
+    [1, 87],
+    [1, 100],
+    [2, 100],
+    [2, 76],
+]
 
 
 def csAverageOfTopFive(scores):
@@ -265,8 +276,7 @@ def csAverageOfTopFive(scores):
         top_five = students_scores[student]
         while len(top_five) > 5:
             top_five.remove(min(top_five))
-        average = [student, (sum(top_five)) // len(
-            students_scores[student])]
+        average = [student, (sum(top_five)) // len(students_scores[student])]
         averages.append(average)
     return averages
 
@@ -315,7 +325,7 @@ def csMaxNumberOfLambdas(text):
         if letter in lambdas:
             lambdas[letter] += 1
 
-    minimum_letter = lambdas['l']
+    minimum_letter = lambdas["l"]
     for letter in lambdas:
         if lambdas[letter] < minimum_letter:
             minimum_letter = lambdas[letter]
@@ -373,8 +383,7 @@ Notes:
 - words in the input list only contain lowercase letters.
 ```
 """
-words = ["the", "sky", "is", "cloudy", "the", "the", "the", "cloudy", "is",
-         "is"]
+words = ["the", "sky", "is", "cloudy", "the", "the", "the", "cloudy", "is", "is"]
 k = 4
 words = ["lambda", "school", "rules", "lambda", "school", "rocks"]
 k = 2
@@ -461,10 +470,12 @@ def frequency_sort(s: str) -> str:
         else:
             letter_freq[char] += 1
     print(letter_freq)
-    result = ''
+    result = ""
     while len(result) < len(s):
-        result += max(letter_freq, key=letter_freq.get) * letter_freq[
-            max(letter_freq, key=letter_freq.get)]
+        result += (
+            max(letter_freq, key=letter_freq.get)
+            * letter_freq[max(letter_freq, key=letter_freq.get)]
+        )
         del letter_freq[max(letter_freq, key=letter_freq.get)]
 
     return result
@@ -576,8 +587,9 @@ a = "lambda school school lambda"
 # pattern = "aaaa"
 # a = "lambda school school lambda"
 
+
 def csWordPattern(pattern, a):
-    word_arr = a.split(' ')
+    word_arr = a.split(" ")
 
     if len(pattern) != len(word_arr):
         return False
@@ -588,7 +600,7 @@ def csWordPattern(pattern, a):
             if word_arr[i] not in pattern_map.values():
                 pattern_map[pattern[i]] = word_arr[i]
             else:
-                pattern_map[pattern[i]] = ''
+                pattern_map[pattern[i]] = ""
         elif pattern_map[pattern[i]] != word_arr[i]:
             return False
     return True
@@ -632,7 +644,7 @@ strs = ["apt", "pat", "ear", "tap", "are", "arm"]
 def csGroupAnagrams(strs):
     result = {}
     for w in strs:
-        signature = ''.join(sorted(w))
+        signature = "".join(sorted(w))
 
         if signature not in result:
             result[signature] = []
@@ -690,8 +702,8 @@ def condense_linked_list(node):
         print(cur.value)
         # if current is in seen values
         if cur.value in seen_values:
-            print('in seen', cur.value)
-            print('prev', prev.value)
+            print("in seen", cur.value)
+            print("prev", prev.value)
             # remove it
             prev.next = cur.next
         else:
@@ -751,10 +763,10 @@ def first_not_repeating_character(s):
         if chars[key] == 1:
             return key
 
-    return '_'
+    return "_"
+
 
 # print(first_not_repeating_character(s))
-
 
 
 """
@@ -799,10 +811,11 @@ Explanation: Person 1 trusts Person 3 and Person 4, Person 2 trusts Person 3 and
 """
 
 n = 3
-trust = [[1,2],
- [2,3]]
+trust = [[1, 2], [2, 3]]
 n = 4
-trust = [[1, 3],[1, 4],[2, 3],[2, 4],[4, 3]]
+trust = [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]
+
+
 def uncover_spy(n, trust):
     # create map of people who trust
     # return the person who trusts no one
@@ -823,8 +836,6 @@ def uncover_spy(n, trust):
     for person in trusts:
         if len(trusts[person]) == 0:
             spies.append(person)
-
-
 
     if len(spies) == 1:
         if len(trusted[spies[0]]) == n - 1:

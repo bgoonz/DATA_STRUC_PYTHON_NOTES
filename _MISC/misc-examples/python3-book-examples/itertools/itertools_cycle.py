@@ -2,8 +2,8 @@
 """Using cycle().
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from itertools import *
 
-for i in zip(range(7), cycle(['a', 'b', 'c'])):
+for i in zip(range(7), cycle(["a", "b", "c"])):
     print(i)

@@ -1,4 +1,4 @@
-''' 
+""" 
 349. Intersection of Two Arrays
 
 DescriptionHintsSubmissionsDiscussSolution
@@ -17,7 +17,8 @@ Note:
 Each element in the result must be unique.
 The result can be in any order.
 
-'''
+"""
+
 
 class Solution:
     def intersection(self, nums1, nums2):
@@ -26,23 +27,21 @@ class Solution:
         :type nums2: List[int]
         :rtype: List[int]
         """
-		
-		
-		#declaring an empty array for comparing
+
+        # declaring an empty array for comparing
         result = []
-        
-		#final array initialization
+
+        # final array initialization
         finalResult = []
-        
+
         for i in nums1:
             for j in nums2:
-                
-                if i == j : 
-                    
+
+                if i == j:
+
                     result.append(i)
-        
-		#removing duplicates		
+
+        # removing duplicates
         finalResult = set(result)
-        
+
         return list(finalResult)
-        

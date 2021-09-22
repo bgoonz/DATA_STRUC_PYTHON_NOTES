@@ -3,16 +3,15 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import abc
 
 
 class Base(abc.ABC):
-
     @property
     @abc.abstractmethod
     def value(self):
-        return 'Should never reach here'
+        return "Should never reach here"
 
     @value.setter
     @abc.abstractmethod
@@ -21,15 +20,14 @@ class Base(abc.ABC):
 
 
 class PartialImplementation(Base):
-
     @property
     def value(self):
-        return 'Read-only'
+        return "Read-only"
 
 
 class Implementation(Base):
 
-    _value = 'Default value'
+    _value = "Default value"
 
     @property
     def value(self):
@@ -42,21 +40,21 @@ class Implementation(Base):
 
 try:
     b = Base()
-    print('Base.value:', b.value)
+    print("Base.value:", b.value)
 except Exception as err:
-    print('ERROR:', str(err))
+    print("ERROR:", str(err))
 
 p = PartialImplementation()
-print('PartialImplementation.value:', p.value)
+print("PartialImplementation.value:", p.value)
 
 try:
-    p.value = 'Alteration'
-    print('PartialImplementation.value:', p.value)
+    p.value = "Alteration"
+    print("PartialImplementation.value:", p.value)
 except Exception as err:
-    print('ERROR:', str(err))
+    print("ERROR:", str(err))
 
 i = Implementation()
-print('Implementation.value:', i.value)
+print("Implementation.value:", i.value)
 
-i.value = 'New value'
-print('Changed value:', i.value)
+i.value = "New value"
+print("Changed value:", i.value)

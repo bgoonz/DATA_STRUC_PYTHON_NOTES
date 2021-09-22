@@ -6,6 +6,7 @@
 3. return output to caller
 """
 
+
 def add_one(num):
     try:
         output = int(num) + 1
@@ -14,9 +15,10 @@ def add_one(num):
         # print("Value Error input int")
         return f"ERROR: {num} is not an integer: Please input an integer"
 
+
 # test
-print(add_one(4)) # => 5
-print(add_one(15)) # => 16
-print(add_one(40)) # => 41
-name = add_one("65") # => 65 + 1
-print(name) # => 66
+print(add_one(4))  # => 5
+print(add_one(15))  # => 16
+print(add_one(40))  # => 41
+name = add_one("65")  # => 65 + 1
+print(name)  # => 66

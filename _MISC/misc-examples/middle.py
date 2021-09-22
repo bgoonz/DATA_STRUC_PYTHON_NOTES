@@ -11,6 +11,7 @@
 
 """
 
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -37,7 +38,6 @@ class Node:
                 # increment middle
                 middle = middle.next
 
-        
         # print the value of the middle
         print(f"Middle Value is {middle.value}")
 

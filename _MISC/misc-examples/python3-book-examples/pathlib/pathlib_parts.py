@@ -4,8 +4,8 @@
 """Parsing paths
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-p = pathlib.PurePosixPath('/usr/local')
+p = pathlib.PurePosixPath("/usr/local")
 print(p.parts)

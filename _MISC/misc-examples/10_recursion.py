@@ -1,4 +1,5 @@
 import sys
+
 sys.setrecursionlimit(1000)
 n = 40
 
@@ -17,9 +18,11 @@ n = 40
 
 # rec_while(n)
 
+
 def fib(n):
     if n < 2:
         return 1
     return fib(n - 1) + fib(n - 2)
+
 
 print(fib(n))

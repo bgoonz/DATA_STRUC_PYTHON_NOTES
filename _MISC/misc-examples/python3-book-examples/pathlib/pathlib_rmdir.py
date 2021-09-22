@@ -4,10 +4,10 @@
 """Creating a directory
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-p = pathlib.Path('example_dir')
+p = pathlib.Path("example_dir")
 
-print('Removing {}'.format(p))
+print("Removing {}".format(p))
 p.rmdir()

@@ -2,15 +2,15 @@
 # Written for https://pymotw.com
 #
 
-#end_pymotw_header
+# end_pymotw_header
 import dis
 
 code = """
 my_dict = {'a': 1}
 """
 
-print('Disassembly:\n')
+print("Disassembly:\n")
 dis.dis(code)
 
-print('\nCode details:\n')
+print("\nCode details:\n")
 dis.show_code(code)

@@ -3,12 +3,12 @@
 """Substitute based on patterns.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
-bold = re.compile(r'\*{2}(.*?)\*{2}')
+bold = re.compile(r"\*{2}(.*?)\*{2}")
 
-text = 'Make this **bold**.  This **too**.'
+text = "Make this **bold**.  This **too**."
 
-print('Text:', text)
-print('Bold:', bold.subn(r'<b>\1</b>', text))
+print("Text:", text)
+print("Bold:", bold.subn(r"<b>\1</b>", text))

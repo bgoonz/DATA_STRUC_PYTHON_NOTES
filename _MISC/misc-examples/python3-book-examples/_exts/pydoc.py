@@ -1,4 +1,3 @@
-
 #
 
 #
@@ -24,13 +23,9 @@ from sphinx.util import logging
 
 LOG = logging.getLogger(__name__)
 
-PYTHON_VERSION = '{}.{}'.format(*(sys.version_info[:2]))
-URL_TEMPLATE = (
-    'https://docs.python.org/' +
-    PYTHON_VERSION +
-    '/library/{}.html'
-)
-TITLE_TEMPLATE = 'Standard library documentation for {}'
+PYTHON_VERSION = "{}.{}".format(*(sys.version_info[:2]))
+URL_TEMPLATE = "https://docs.python.org/" + PYTHON_VERSION + "/library/{}.html"
+TITLE_TEMPLATE = "Standard library documentation for {}"
 
 
 def make_link_node(rawtext, app, module_name, options):
@@ -46,12 +41,12 @@ def make_link_node(rawtext, app, module_name, options):
         rawtext,
         TITLE_TEMPLATE.format(module_name),
         refuri=URL_TEMPLATE.format(module_name.lower()),
-        **options)
+        **options
+    )
     return node
 
 
-def pydoc_role(name, rawtext, text, lineno, inliner,
-               options={}, content=[]):
+def pydoc_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     """Link to a Python module documentation page.
 
     Returns 2 part tuple containing list of nodes to insert into
@@ -70,8 +65,8 @@ def pydoc_role(name, rawtext, text, lineno, inliner,
     module_name = text.strip()
     if not module_name:
         msg = inliner.reporter.error(
-            'Module name must not be empty; '
-            '%r is invalid.' % text, line=lineno)
+            "Module name must not be empty; " "%r is invalid." % text, line=lineno
+        )
         prb = inliner.problematic(rawtext, rawtext, msg)
         return [prb], [msg]
     app = inliner.document.settings.env.app
@@ -85,5 +80,5 @@ def setup(app):
 
     :param app: Sphinx application context.
     """
-    LOG.info('Initializing BitBucket plugin')
-    app.add_role('pydoc', pydoc_role)
+    LOG.info("Initializing BitBucket plugin")
+    app.add_role("pydoc", pydoc_role)

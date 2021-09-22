@@ -3,11 +3,11 @@
 """Query tasks in the database.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import sqlite3
 import sys
 
-db_filename = 'todo.db'
+db_filename = "todo.db"
 project_name = sys.argv[1]
 
 with sqlite3.connect(db_filename) as conn:
@@ -22,5 +22,8 @@ with sqlite3.connect(db_filename) as conn:
 
     for row in cursor.fetchall():
         task_id, priority, details, status, deadline = row
-        print('{:2d} [{:d}] {:<25} [{:<8}] ({})'.format(
-            task_id, priority, details, status, deadline))
+        print(
+            "{:2d} [{:d}] {:<25} [{:<8}] ({})".format(
+                task_id, priority, details, status, deadline
+            )
+        )

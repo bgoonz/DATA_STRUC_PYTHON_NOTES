@@ -101,10 +101,10 @@ s = "abacabad"
 
 def firstNotRepeatingCharacter(s):
     for i in range(len(s)):
-        if s[i] not in s[i + 1:] and s[i] not in s[:i]:
+        if s[i] not in s[i + 1 :] and s[i] not in s[:i]:
             return s[i]
 
-    return '_'
+    return "_"
 
 
 # print(firstNotRepeatingCharacter(s))
@@ -131,9 +131,11 @@ rotateImage(a) =
      [9, 6, 3]]
 """
 
-a = [[1, 2, 3],  # 1 -> [0 : len - 1] 2 -> [1 : len - 1] 3 -> [2 : len -1]
-     [4, 5, 6],  # 4 -> [0 : len - 2] 2 -> [1 : len - 2] 6 [2 : len -2]
-     [7, 8, 9]]  # 7 -> [0 : len - 3] 8 -> [1 : len - 3] 9 -> [2 : len -3]
+a = [
+    [1, 2, 3],  # 1 -> [0 : len - 1] 2 -> [1 : len - 1] 3 -> [2 : len -1]
+    [4, 5, 6],  # 4 -> [0 : len - 2] 2 -> [1 : len - 2] 6 [2 : len -2]
+    [7, 8, 9],
+]  # 7 -> [0 : len - 3] 8 -> [1 : len - 3] 9 -> [2 : len -3]
 
 
 def rotateImage(a):
@@ -141,13 +143,13 @@ def rotateImage(a):
     length = len(a[0])
     # iterate through the length // 2
     for idx1 in range(length // 2):
-        print(f'idx1, {idx1}')
+        print(f"idx1, {idx1}")
         # starting from idx1, iterate (num3) over length idx1 -1 -  (should get 1)
         for idx2 in range(idx1, length - idx1 - 1):
-            print(f'idx2, {idx2}')
+            print(f"idx2, {idx2}")
             # initialize a placeholder
             holder = a[idx1][idx2]
-            print(f'holder, {holder}')
+            print(f"holder, {holder}")
             # replace the item at the cur_index of  a[idx1][idx2], with the item 90 degrees before              it
             a[idx1][idx2] = a[length - 1 - idx2][idx1]
             # replace the item moved with the item 90 degrees before it
@@ -210,15 +212,17 @@ sudoku2(grid) = false.
 The given grid is not correct because there are two 1s in the second column. Each column, each row, and each 3 × 3 subgrid can only contain the numbers 1 through 9 one time.
 """
 
-grid = [[".", "4", ".", ".", ".", ".", ".", ".", "."],
-        [".", ".", "4", ".", ".", ".", ".", ".", "."],
-        [".", ".", ".", "1", ".", ".", "7", ".", "."],
-        [".", ".", ".", ".", ".", ".", ".", ".", "."],
-        [".", ".", ".", "3", ".", ".", ".", "6", "."],
-        [".", ".", ".", ".", ".", "6", ".", "9", "."],
-        [".", ".", ".", ".", "1", ".", ".", ".", "."],
-        [".", ".", ".", ".", ".", ".", "2", ".", "."],
-        [".", ".", ".", "8", ".", ".", ".", ".", "."]]
+grid = [
+    [".", "4", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", "4", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", "1", ".", ".", "7", ".", "."],
+    [".", ".", ".", ".", ".", ".", ".", ".", "."],
+    [".", ".", ".", "3", ".", ".", ".", "6", "."],
+    [".", ".", ".", ".", ".", "6", ".", "9", "."],
+    [".", ".", ".", ".", "1", ".", ".", ".", "."],
+    [".", ".", ".", ".", ".", ".", "2", ".", "."],
+    [".", ".", ".", "8", ".", ".", ".", ".", "."],
+]
 
 
 # my solution
@@ -296,7 +300,7 @@ grid = [[".", "4", ".", ".", ".", ".", ".", ".", "."],
 def check_unique(nums):
     s = set()
     for num in nums:
-        if num == '.':
+        if num == ".":
             continue
 
         if num in s:
@@ -317,8 +321,8 @@ def sudoku2(grid):
     for i in range(0, 9, 3):
         for j in range(0, 9, 3):
             if not check_unique(
-                    grid[i][j:j + 3] + grid[i + 1][j:j + 3] + grid[i + 2][
-                                                              j:j + 3]):
+                grid[i][j : j + 3] + grid[i + 1][j : j + 3] + grid[i + 2][j : j + 3]
+            ):
                 return False
 
     return True
@@ -370,30 +374,32 @@ Even though 054 + 091 = 145, 054 and 091 both contain leading zeroes, meaning th
 
 crypt = ["SEND", "MORE", "MONEY"]
 
-solution = [['O', '0'],
-            ['M', '1'],
-            ['Y', '2'],
-            ['E', '5'],
-            ['N', '6'],
-            ['D', '7'],
-            ['R', '8'],
-            ['S', '9']]
+solution = [
+    ["O", "0"],
+    ["M", "1"],
+    ["Y", "2"],
+    ["E", "5"],
+    ["N", "6"],
+    ["D", "7"],
+    ["R", "8"],
+    ["S", "9"],
+]
 
 
 # my solution
 def isCryptSolution(crypt, solution):
     # for each string get the numbers for each character
     num_arr = []
-    nums = ''
+    nums = ""
     for word in crypt:
         for char in word:
             for sect in solution:
                 if char in sect:
                     nums += sect[1]
-        if len(nums) > 1 and nums.startswith('0'):
+        if len(nums) > 1 and nums.startswith("0"):
             return False
         num_arr.append(nums)
-        nums = ''
+        nums = ""
     pointer = 0
     total = 0
     while pointer < len(num_arr) - 1:
@@ -648,9 +654,11 @@ def addTwoHugeNumbers(a, b):
     result = None
 
     while a is not None or b is not None or carry > 0:
-        raw = ((a.value if a is not None else 0) +
-               (b.value if b is not None else 0) +
-               carry)
+        raw = (
+            (a.value if a is not None else 0)
+            + (b.value if b is not None else 0)
+            + carry
+        )
 
         node = ListNode(raw % 10000)
         node.next = result

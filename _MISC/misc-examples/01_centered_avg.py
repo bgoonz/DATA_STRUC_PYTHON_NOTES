@@ -1,5 +1,5 @@
-# Return the "centered" average of an array of ints, which we'll say is the mean average of the values, 
-# except ignoring the largest and smallest values in the array (list). 
+# Return the "centered" average of an array of ints, which we'll say is the mean average of the values,
+# except ignoring the largest and smallest values in the array (list).
 
 # what do we do if smallest or largest is duplicated
 # - we only consider 1 of smallest and 1 of largest to be valid
@@ -36,6 +36,7 @@ apply the algorithm of sum divided by the length of our list minus two
 
 """
 
+
 def centered_avg(ints):
     smallest = min(ints)
     largest = max(ints)
@@ -43,18 +44,20 @@ def centered_avg(ints):
     sum = 0
     for num in ints:
         sum += num
-    
+
     sum = sum - largest - smallest
 
     return sum // (len(ints) - 2)
 
+
 # print(centered_avg([1, 2, 3, 4, 100])) # 3
-# print(centered_avg([1, 1, 5, 5, 10, 8, 7]))  # 
+# print(centered_avg([1, 1, 5, 5, 10, 8, 7]))  #
 # print(centered_avg([-10, -4, -2, -4, -2, 0]))  # -3
 # print(centered_avg([1, 3, 2, 7, 9, 0]))
 
 
 import statistics
+
 
 def centered_avg2(ints):
     ints.sort()
@@ -62,7 +65,7 @@ def centered_avg2(ints):
 
 
 # print(centered_avg2([1, 2, 3, 4, 100])) # 3
-# print(centered_avg2([1, 1, 5, 5, 10, 8, 7]))  # 
+# print(centered_avg2([1, 1, 5, 5, 10, 8, 7]))  #
 # print(centered_avg2([-10, -4, -2, -4, -2, 0]))  # -3?
 # print(centered_avg2([1, 3, 2, 7, 9, 0])) # ?
 
@@ -86,4 +89,3 @@ for i in range(1000):
 end = time.time()
 
 print(end - start)
-

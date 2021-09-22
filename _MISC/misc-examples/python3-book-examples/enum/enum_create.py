@@ -3,7 +3,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import enum
 
 
@@ -18,5 +18,5 @@ class BugStatus(enum.Enum):
     fix_released = 1
 
 
-print('\nMember name: {}'.format(BugStatus.wont_fix.name))
-print('Member value: {}'.format(BugStatus.wont_fix.value))
+print("\nMember name: {}".format(BugStatus.wont_fix.name))
+print("Member value: {}".format(BugStatus.wont_fix.value))

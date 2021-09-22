@@ -1,9 +1,11 @@
 #  Hint:  You may not need all of these.  Remove the unused functions.
-from hashtables import (HashTable,
-                        hash_table_insert,
-                        hash_table_remove,
-                        hash_table_retrieve,
-                        hash_table_resize)
+from hashtables import (
+    HashTable,
+    hash_table_insert,
+    hash_table_remove,
+    hash_table_retrieve,
+    hash_table_resize,
+)
 
 
 class Ticket:

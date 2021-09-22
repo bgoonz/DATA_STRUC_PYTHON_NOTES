@@ -1,6 +1,5 @@
 # create the node class that the tree will use
 class Node:
-
     def __init__(self, data, parent):
         self.data = data
         self.leftChild = None
@@ -10,7 +9,6 @@ class Node:
 
 # create the tree class and initialize the root node to none
 class BinarySearchTree:
-
     def __init__(self):
         self.root = None
 
@@ -147,7 +145,7 @@ class BinarySearchTree:
             # there are 4 cases to address now to remove the node
             # case 1: the node is a leaf node ( has no children)
             if node.leftChild is None and node.rightChild is None:
-                print(f'Removing a leaf node.. {node.data}')
+                print(f"Removing a leaf node.. {node.data}")
                 # get the parent
                 parent = node.parent
                 # check if the node is a left child or right child
@@ -167,7 +165,7 @@ class BinarySearchTree:
                 del node
             # case 2: the node has a single right child
             elif node.leftChild is None and node.rightChild is not None:
-                print('Removing a node with a single right child..', node.data)
+                print("Removing a node with a single right child..", node.data)
                 # get the parent
                 parent = node.parent
                 # check if the parent exists
@@ -193,7 +191,7 @@ class BinarySearchTree:
                 del node
             # case 3: the node has a single left child
             elif node.rightChild is None and node.leftChild is not None:
-                print(f'Removing node with a single left child..{node.data}')
+                print(f"Removing node with a single left child..{node.data}")
                 # get the parent
                 parent = node.parent
                 # check if the parent exists
@@ -226,10 +224,10 @@ class BinarySearchTree:
                 # Swap the data between the root and predecessor so we can
                 # just remove the predecessor and the root will now become the
                 # predecessors data
-                print(f'Removing node with two children.. {node.data}')
+                print(f"Removing node with two children.. {node.data}")
                 # set the predecessor (largest item in the left subtree) to the
                 # nodes left child
-                predecessor = self. get_predecessor(node.leftChild)
+                predecessor = self.get_predecessor(node.leftChild)
                 # set a temporary node to hold predecessor data to allow the
                 # predecessor to take the given node to removes data
                 temp = predecessor.data
@@ -253,9 +251,6 @@ class BinarySearchTree:
         return node
 
 
-
-
-
 """
 Using the methods
 """
@@ -268,7 +263,7 @@ bst.insert(99)
 bst.insert(34)
 bst.remove(99)
 # print the max node of the tree passing in the root
-print('max node:', bst.get_max(bst.root))
+print("max node:", bst.get_max(bst.root))
 # print the min node of the tree passing in the root
-print('min node:', bst.get_min(bst.root))
+print("min node:", bst.get_min(bst.root))
 bst.traverse()

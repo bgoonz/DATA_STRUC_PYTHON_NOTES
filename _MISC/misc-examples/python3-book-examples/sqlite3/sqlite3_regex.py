@@ -4,11 +4,11 @@
 """Use a regular expression in a query.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 import sqlite3
 
-db_filename = 'todo.db'
+db_filename = "todo.db"
 
 
 def regexp(pattern, input):
@@ -17,10 +17,10 @@ def regexp(pattern, input):
 
 with sqlite3.connect(db_filename) as conn:
     conn.row_factory = sqlite3.Row
-    conn.create_function('regexp', 2, regexp)
+    conn.create_function("regexp", 2, regexp)
     cursor = conn.cursor()
 
-    pattern = '.*[wW]rite [aA]bout.*'
+    pattern = ".*[wW]rite [aA]bout.*"
 
     cursor.execute(
         """
@@ -28,10 +28,13 @@ with sqlite3.connect(db_filename) as conn:
         where details regexp :pattern
         order by deadline, priority
         """,
-        {'pattern': pattern},
+        {"pattern": pattern},
     )
 
     for row in cursor.fetchall():
         task_id, priority, details, status, deadline = row
-        print('{:2d} [{:d}] {:<25} [{:<8}] ({})'.format(
-            task_id, priority, details, status, deadline))
+        print(
+            "{:2d} [{:d}] {:<25} [{:<8}] ({})".format(
+                task_id, priority, details, status, deadline
+            )
+        )

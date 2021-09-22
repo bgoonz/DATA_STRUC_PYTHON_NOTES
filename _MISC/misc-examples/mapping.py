@@ -1,4 +1,3 @@
-
 def my_hash(s):
     # turn the string in to some numbers
     nums = s.encode()
@@ -9,7 +8,8 @@ def my_hash(s):
 
     return sum
 
-hash_table = [None] * 8 # lets start with size 8 as our clamping size
+
+hash_table = [None] * 8  # lets start with size 8 as our clamping size
 
 # take the hash and turn it in to an index clamped to the size of a list
 

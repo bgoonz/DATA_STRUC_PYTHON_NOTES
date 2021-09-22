@@ -8,6 +8,6 @@ import random
 wins = 0
 losses = 0
 ties = 0
-choices = ['r', 'p', 's']
+choices = ["r", "p", "s"]
 
 # write a REPL to run the game

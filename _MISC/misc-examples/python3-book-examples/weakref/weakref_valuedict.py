@@ -2,7 +2,7 @@
 """Demonstrate WeakValueDictionary.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import gc
 from pprint import pprint
 import weakref
@@ -11,15 +11,14 @@ gc.set_debug(gc.DEBUG_UNCOLLECTABLE)
 
 
 class ExpensiveObject:
-
     def __init__(self, name):
         self.name = name
 
     def __repr__(self):
-        return 'ExpensiveObject({})'.format(self.name)
+        return "ExpensiveObject({})".format(self.name)
 
     def __del__(self):
-        print('    (Deleting {})'.format(self))
+        print("    (Deleting {})".format(self))
 
 
 def demo(cache_factory):
@@ -27,30 +26,30 @@ def demo(cache_factory):
     # are not removed immediately
     all_refs = {}
     # create the cache using the factory
-    print('CACHE TYPE:', cache_factory)
+    print("CACHE TYPE:", cache_factory)
     cache = cache_factory()
-    for name in ['one', 'two', 'three']:
+    for name in ["one", "two", "three"]:
         o = ExpensiveObject(name)
         cache[name] = o
         all_refs[name] = o
         del o  # decref
 
-    print('  all_refs =', end=' ')
+    print("  all_refs =", end=" ")
     pprint(all_refs)
-    print('\n  Before, cache contains:', list(cache.keys()))
+    print("\n  Before, cache contains:", list(cache.keys()))
     for name, value in cache.items():
-        print('    {} = {}'.format(name, value))
+        print("    {} = {}".format(name, value))
         del value  # decref
 
     # remove all references to the objects except the cache
-    print('\n  Cleanup:')
+    print("\n  Cleanup:")
     del all_refs
     gc.collect()
 
-    print('\n  After, cache contains:', list(cache.keys()))
+    print("\n  After, cache contains:", list(cache.keys()))
     for name, value in cache.items():
-        print('    {} = {}'.format(name, value))
-    print('  demo returning')
+        print("    {} = {}".format(name, value))
+    print("  demo returning")
     return
 
 

@@ -2,18 +2,14 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import time
 
-template = '{} - {:0.2f} - {:0.2f}'
+template = "{} - {:0.2f} - {:0.2f}"
 
-print(template.format(
-    time.ctime(), time.time(), time.process_time())
-)
+print(template.format(time.ctime(), time.time(), time.process_time()))
 
 for i in range(3, 0, -1):
-    print('Sleeping', i)
+    print("Sleeping", i)
     time.sleep(i)
-    print(template.format(
-        time.ctime(), time.time(), time.process_time())
-    )
+    print(template.format(time.ctime(), time.time(), time.process_time()))

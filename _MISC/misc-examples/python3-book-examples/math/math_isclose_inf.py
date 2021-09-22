@@ -4,10 +4,10 @@
 """
 # abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 
-print('nan, nan:', math.isclose(math.nan, math.nan))
-print('nan, 1.0:', math.isclose(math.nan, 1.0))
-print('inf, inf:', math.isclose(math.inf, math.inf))
-print('inf, 1.0:', math.isclose(math.inf, 1.0))
+print("nan, nan:", math.isclose(math.nan, math.nan))
+print("nan, 1.0:", math.isclose(math.nan, 1.0))
+print("inf, inf:", math.isclose(math.inf, math.inf))
+print("inf, 1.0:", math.isclose(math.inf, 1.0))

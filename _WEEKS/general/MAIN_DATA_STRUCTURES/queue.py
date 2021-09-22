@@ -22,7 +22,7 @@ class Queue:
     def dequeue(self):
 
         # first check to make sure its not an empty queue
-        if self.size_queue()!= 0:
+        if self.size_queue() != 0:
             # get the first item in the queue
             data = self.queue[0]
             # remove it
@@ -49,8 +49,8 @@ queue = Queue()
 queue.enqueue(1)
 queue.enqueue(2)
 queue.enqueue(3)
-print(f'Size: {queue.size_queue()}')
-print(f'Dequeue: {queue.dequeue()}')
-print(f'Size: {queue.size_queue()}')
-print(f'Peeked item: {queue.peek()}')
-print(f'Size: {queue.size_queue()}')
+print(f"Size: {queue.size_queue()}")
+print(f"Dequeue: {queue.dequeue()}")
+print(f"Size: {queue.size_queue()}")
+print(f"Peeked item: {queue.peek()}")
+print(f"Size: {queue.size_queue()}")

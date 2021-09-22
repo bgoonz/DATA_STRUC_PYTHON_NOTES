@@ -1,14 +1,15 @@
 import unittest
 
-from r_hashtables import (HashTable,
-                          hash_table_insert,
-                          hash_table_remove,
-                          hash_table_retrieve,
-                          hash_table_resize)
+from r_hashtables import (
+    HashTable,
+    hash_table_insert,
+    hash_table_remove,
+    hash_table_retrieve,
+    hash_table_resize,
+)
 
 
 class TestFullHashTable(unittest.TestCase):
-
     def test_hash_table_insertion_and_retrieval(self):
         ht = HashTable(8)
 
@@ -176,5 +177,5 @@ class TestFullHashTable(unittest.TestCase):
         self.assertTrue(return_value == "val-9")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

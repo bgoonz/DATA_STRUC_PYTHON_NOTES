@@ -3,11 +3,11 @@
 """Find email addresses that match the person's name
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
 address = re.compile(
-    r'''
+    r"""
 
     # The regular name
     (\w+)               # first name
@@ -30,21 +30,22 @@ address = re.compile(
     )
 
     >
-    ''',
-    re.VERBOSE | re.IGNORECASE)
+    """,
+    re.VERBOSE | re.IGNORECASE,
+)
 
 candidates = [
-    u'First Last <first.last@example.com>',
-    u'Different Name <first.last@example.com>',
-    u'First Middle Last <first.last@example.com>',
-    u'First M. Last <first.last@example.com>',
+    u"First Last <first.last@example.com>",
+    u"Different Name <first.last@example.com>",
+    u"First Middle Last <first.last@example.com>",
+    u"First M. Last <first.last@example.com>",
 ]
 
 for candidate in candidates:
-    print('Candidate:', candidate)
+    print("Candidate:", candidate)
     match = address.search(candidate)
     if match:
-        print('  Match name :', match.group(1), match.group(4))
-        print('  Match email:', match.group(5))
+        print("  Match name :", match.group(1), match.group(4))
+        print("  Match email:", match.group(5))
     else:
-        print('  No match')
+        print("  No match")

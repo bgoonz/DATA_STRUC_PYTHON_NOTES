@@ -3,13 +3,12 @@
 """Sending Unicode data over a socket.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import sys
 import socketserver
 
 
 class Echo(socketserver.BaseRequestHandler):
-
     def handle(self):
         # Get some bytes and echo them back to the client.
         data = self.request.recv(1024)
@@ -17,12 +16,12 @@ class Echo(socketserver.BaseRequestHandler):
         return
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import codecs
     import socket
     import threading
 
-    address = ('localhost', 0)  # let the kernel assign a port
+    address = ("localhost", 0)  # let the kernel assign a port
     server = socketserver.TCPServer(address, Echo)
     ip, port = server.server_address  # what port was assigned?
 
@@ -36,7 +35,7 @@ if __name__ == '__main__':
 
     # Send the data
     # WRONG: Not encoded first!
-    text = 'français'
+    text = "français"
     len_sent = s.send(text)
 
     # Receive a response

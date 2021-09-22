@@ -36,7 +36,7 @@ n = 5
 n_times_loop(n)
 
 
-print('------------------------------RECURSIVE----------------------------------')
+print("------------------------------RECURSIVE----------------------------------")
 
 
 def n_times_recurse(n):
@@ -53,12 +53,15 @@ def n_times_recurse(n):
 n = 5
 n_times_recurse(n)
 
-print('------------------------------Binary Search---------BigO (log(n))-------------------------')
-print('------------------------------Requires Sorted Data...-------------------------')
+print(
+    "------------------------------Binary Search---------BigO (log(n))-------------------------"
+)
+print("------------------------------Requires Sorted Data...-------------------------")
 
 # Binary Search
 # If the list is sorted, then the binary search algorithm will take O(log(n)) time.
-# 
+#
+
 
 def binary_search(lst, target):
     low = 0

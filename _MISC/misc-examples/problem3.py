@@ -9,14 +9,15 @@ class Node:
     def reverse(self):
         cur = self
         new = cur.next
-        cur.next = None # new tail?
+        cur.next = None  # new tail?
         while new is not None:
             prev = cur
             cur = new
             new = cur.next
             cur.next = prev
-        
+
         return cur
+
 
 root = Node(3)
 cur = root

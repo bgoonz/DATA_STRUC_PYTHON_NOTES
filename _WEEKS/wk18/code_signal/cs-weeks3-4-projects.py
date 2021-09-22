@@ -87,6 +87,7 @@ Explanation: The input array represents the integer 999. 999 + 1 = 1000.
 #     result.append(num)
 # print(int(number) + 1)
 
+
 def plus_one(digits):
     # check the last digit if its not 9 we just add 1
     # if it is a 9 make it 0
@@ -197,7 +198,7 @@ inputString = "crazy"
 
 
 def alphabeticShift(inputString):
-    new_string = ''
+    new_string = ""
     for letter in inputString:
         new_letter = ord(letter) + 1
         if new_letter == 123:
@@ -227,12 +228,12 @@ s = "()()())"
 
 def validParenthesesSequence(s):
     check = []
-    if s == '':
+    if s == "":
         return True
-    if s[0] == ')':
+    if s[0] == ")":
         return False
     for paren in s:
-        if paren == '(':
+        if paren == "(":
             check.append(paren)
         else:
             if len(check) == 0:
@@ -269,7 +270,7 @@ delete_node(y)
 """
 
 
-class LinkedListNode():
+class LinkedListNode:
     def __init__(self, value):
         self.value = value
         self.next = None
@@ -282,9 +283,9 @@ def delete_node(node_to_delete):
     node_to_delete.next = next.next
 
 
-x = LinkedListNode('X')
-y = LinkedListNode('Y')
-z = LinkedListNode('Z')
+x = LinkedListNode("X")
+y = LinkedListNode("Y")
+z = LinkedListNode("Z")
 
 x.next = y
 y.next = z
@@ -307,7 +308,7 @@ consider edge cases (like a list with only 1 or 0 elements).*
 """
 
 
-class LinkedListNode():
+class LinkedListNode:
     def __init__(self, value):
         self.value = value
         self.next = None
@@ -794,33 +795,39 @@ code = "{ [ }"
 
 def is_valid(code):
     check = []
-    if code == '':
+    if code == "":
         return True
-    if code[0] == ')' or code[0] == '}' or code[0] == ']':
+    if code[0] == ")" or code[0] == "}" or code[0] == "]":
         return False
 
     for paren in code:
-        if paren == ' ':
+        if paren == " ":
             continue
-        if paren == '(' or paren == '{' or paren == '[':
-            print('paren:', paren)
+        if paren == "(" or paren == "{" or paren == "[":
+            print("paren:", paren)
             check.append(paren)
-            print('append:', check)
-        elif paren == ')' and check[-1] == '(' or paren == '}' and check[-1] \
-                == '{' or paren == ']' and check[-1] == '[':
+            print("append:", check)
+        elif (
+            paren == ")"
+            and check[-1] == "("
+            or paren == "}"
+            and check[-1] == "{"
+            or paren == "]"
+            and check[-1] == "["
+        ):
 
             if len(check) == 0:
-                print('len:', len(check))
+                print("len:", len(check))
                 return False
             else:
-                print('pop:', paren)
+                print("pop:", paren)
                 check.pop()
         else:
-            print('else check:', paren, check)
+            print("else check:", paren, check)
             return False
 
     if check:
-        print('check:', check)
+        print("check:", check)
         return False
     return True
 
@@ -864,7 +871,7 @@ def queueOnStacks(requests):
 
     def insert(x):
         left.push(x)
-        print('queue:', left.items)
+        print("queue:", left.items)
 
     def remove():
         if len(right.items) == 0:
@@ -876,11 +883,11 @@ def queueOnStacks(requests):
     ans = []
     for request in requests:
         req = request.split(" ")
-        if req[0] == 'push':
+        if req[0] == "push":
             insert(int(req[1]))
         else:
             ans.append(remove())
-            print('add to ans:', ans)
+            print("add to ans:", ans)
 
     return ans
 
@@ -907,7 +914,7 @@ sequence = "()"
 
 
 def validBracketSequence(sequence):
-    pairs = dict(zip('(,[,{', '),],}'))
+    pairs = dict(zip("(,[,{", "),],}"))
     stack = []
     for item in sequence:
         if item in pairs:
@@ -1085,7 +1092,7 @@ def csSearchRotatedSortedArray(nums, target):
                 min = guess + 1
         # else if min is greater than the guess
         else:
-            print('min is greater than or equal to guess')
+            print("min is greater than or equal to guess")
             # if max - 1 is greater than the target and greater than the guess
             if nums[max - 1] >= target > nums[guess]:
                 # print('max - 1 greater than or equal to target and greater '
@@ -1100,6 +1107,7 @@ def csSearchRotatedSortedArray(nums, target):
                 max = guess
 
     return -1
+
 
 # print(f'search rotate'
 #       f'd array: '
@@ -1257,17 +1265,17 @@ complexity.*
 """
 
 surnames = [
-    'sparks',
-    'zhang',
-    'liu',
-    'ahmed',  # <-- rotates here!
-    'brandt',
-    'davenport',
-    'farley',
-    'glover',
-    'kennedy',
-    'mcdowell',
-    'nixon',
+    "sparks",
+    "zhang",
+    "liu",
+    "ahmed",  # <-- rotates here!
+    "brandt",
+    "davenport",
+    "farley",
+    "glover",
+    "kennedy",
+    "mcdowell",
+    "nixon",
 ]
 
 
@@ -1278,8 +1286,10 @@ def find_rotation_point(surnames):
     max = len(surnames) - 1
     while not max < min:
         guess = (min + max) // 2
-        if surnames[guess] < surnames[guess + 1] and surnames[guess] < surnames[
-            guess - 1]:
+        if (
+            surnames[guess] < surnames[guess + 1]
+            and surnames[guess] < surnames[guess - 1]
+        ):
             return guess
         else:
             if surnames[guess] > surnames[0]:
@@ -1289,6 +1299,7 @@ def find_rotation_point(surnames):
 
 
 # print('rotation', find_rotation_point([6, 7, 8, 9, 10, 0, 1, 2, 3, 4, 5]))
+
 
 def find_rotation_point(surnames):
     # Your code here
@@ -1435,9 +1446,10 @@ def eating_cookies(n, cache=None):
     cache[1] = 1
     cache[2] = 2
     for i in range(3, n + 1):
-        print('*******i:', i)
+        print("*******i:", i)
         print(
-            f'cache[i]: {cache[i]} = cache[i - 1]: {cache[i - 1]} + cache[i - 2]: {cache[i - 2]} + cache[i - 3]: {cache[i - 3]}')
+            f"cache[i]: {cache[i]} = cache[i - 1]: {cache[i - 1]} + cache[i - 2]: {cache[i - 2]} + cache[i - 3]: {cache[i - 3]}"
+        )
         cache[i] = cache[i - 1] + cache[i - 2] + cache[i - 3]
     return cache[n]
 
@@ -1467,9 +1479,10 @@ removeAdjacent(s) = "abcab".
 # s = "aaaaa"
 # s = "abccaaab"
 
+
 def removeAdjacent(s):
     # add first letter to new string
-    if s == '':
+    if s == "":
         return s
     new_str = s[0]
     # iterate the string
@@ -1498,7 +1511,7 @@ Hint: you should try using a "two-pointers approach".
 [output] array.char
 """
 
-str = 'reverse'
+str = "reverse"
 
 
 def reverse_String(str):
@@ -1608,9 +1621,9 @@ word2 = "anagram"
 
 
 def checkBlanagrams(word1, word2):
-    if word1 == '' or word2 == '':
+    if word1 == "" or word2 == "":
         return False
-    work_string = ''
+    work_string = ""
     diff = 0
     sort1 = sorted(word1)  # O(n) space O(nlogn) time
     sort2 = sorted(word2)  # O(n) space O(nlogn) time
@@ -1618,7 +1631,7 @@ def checkBlanagrams(word1, word2):
         # check for substitutions
         if sort1[i] != sort2[i]:
             diff += 1
-        work_string += word1[i] # O(n) space
+        work_string += word1[i]  # O(n) space
     print(work_string)
     print(word1)
     count = 0
@@ -1626,7 +1639,7 @@ def checkBlanagrams(word1, word2):
     for i in range(len(work_string)):  # O(n)
         if work_string[i] not in word2:
             count += 1
-    print('count:', count)
+    print("count:", count)
     # if more than 1 substitution return False
     if count > 1:
         return False
@@ -1687,5 +1700,3 @@ def findValueSortedShiftedArray(nums, target):
                 max = guess
 
     return -1
-
-

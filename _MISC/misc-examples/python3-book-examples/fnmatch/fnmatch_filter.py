@@ -2,18 +2,18 @@
 """Filter a list of filenames against a pattern.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import fnmatch
 import os
 import pprint
 
-pattern = 'fnmatch_*.py'
-print('Pattern :', pattern)
+pattern = "fnmatch_*.py"
+print("Pattern :", pattern)
 
-files = list(sorted(os.listdir('.')))
+files = list(sorted(os.listdir(".")))
 
-print('\nFiles   :')
+print("\nFiles   :")
 pprint.pprint(files)
 
-print('\nMatches :')
+print("\nMatches :")
 pprint.pprint(fnmatch.filter(files, pattern))

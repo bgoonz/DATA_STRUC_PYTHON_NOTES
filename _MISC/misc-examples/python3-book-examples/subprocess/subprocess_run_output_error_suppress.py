@@ -5,19 +5,19 @@ Capture the output of a command and
 test its exit code at the same time.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import subprocess
 
 try:
     completed = subprocess.run(
-        'echo to stdout; echo to stderr 1>&2; exit 1',
+        "echo to stdout; echo to stderr 1>&2; exit 1",
         shell=True,
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     )
 except subprocess.CalledProcessError as err:
-    print('ERROR:', err)
+    print("ERROR:", err)
 else:
-    print('returncode:', completed.returncode)
-    print('stdout is {!r}'.format(completed.stdout))
-    print('stderr is {!r}'.format(completed.stderr))
+    print("returncode:", completed.returncode)
+    print("stdout is {!r}".format(completed.stdout))
+    print("stderr is {!r}".format(completed.stderr))

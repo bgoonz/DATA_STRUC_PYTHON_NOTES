@@ -1,4 +1,4 @@
-'''
+"""
 
 242. Valid Anagram
 
@@ -13,7 +13,8 @@ Example 2:
 Input: s = "rat", t = "car"
 Output: false
 
-'''
+"""
+
 
 class Solution:
     def isAnagram(self, s, t):
@@ -22,12 +23,12 @@ class Solution:
         :type t: str
         :rtype: bool
         """
-        
+
         a = sorted(s)
-        
+
         b = sorted(t)
-        
-        if b==a :
+
+        if b == a:
             return True
         else:
             return False

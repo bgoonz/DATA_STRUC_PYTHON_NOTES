@@ -4,7 +4,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import dis
 import sys
 import textwrap
@@ -17,14 +17,16 @@ Dictionary = module.Dictionary
 dis.dis(Dictionary.load_data)
 print()
 t = timeit.Timer(
-    'd = Dictionary(words)',
-    textwrap.dedent("""
+    "d = Dictionary(words)",
+    textwrap.dedent(
+        """
     from {module_name} import Dictionary
     words = [
         l.strip()
         for l in open('/usr/share/dict/words', 'rt')
     ]
-    """).format(module_name=module_name)
+    """
+    ).format(module_name=module_name),
 )
 iterations = 10
-print('TIME: {:0.4f}'.format(t.timeit(iterations) / iterations))
+print("TIME: {:0.4f}".format(t.timeit(iterations) / iterations))

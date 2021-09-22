@@ -17,6 +17,7 @@
 3. Implement
 """
 
+
 def first_pass_anagrams(words):
     import random
     import operator
@@ -39,14 +40,14 @@ def first_pass_anagrams(words):
 
             if index >= 0 and index < 26:
                 signature += chars[index]
-            
+
             # group words with the same value
             if signature not in anagrams:
                 anagrams[signature] = []
 
             anagrams[signature].append(word)
             signature = 0
-    
+
     # get max entry in dictionary
     max_anagrams = max(anagrams.items(), key=operator.itemgetter(1))[0]
 
@@ -62,9 +63,9 @@ def secons_pass_anagrams(words):
         # convert the list to a string
         signature = "".join(sorted(word.lower()))
         if signature not in anagrams:
-            anagrams[signature] = []     
+            anagrams[signature] = []
         anagrams[signature].append(word)
         # Update the largest set as we create them
         if longest == None or len(anagrams[signature]) > len(anagrams[longest]):
-            longest = signature  
+            longest = signature
     print(anagrams[longest])

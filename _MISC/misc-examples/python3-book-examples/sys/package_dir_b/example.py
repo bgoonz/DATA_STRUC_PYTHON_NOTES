@@ -10,5 +10,5 @@
 """
 """
 
-#end_pymotw_header
-DATA = 'This is example B'
+# end_pymotw_header
+DATA = "This is example B"

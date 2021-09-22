@@ -3,14 +3,11 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import gettext
 
 # Set up message catalog access
-t = gettext.translation(
-    'example', 'locale',
-    fallback=True,
-)
+t = gettext.translation("example", "locale", fallback=True)
 _ = t.gettext
 
-print(_('This message is in the script.'))
+print(_("This message is in the script."))

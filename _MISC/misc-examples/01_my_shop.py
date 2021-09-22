@@ -3,7 +3,9 @@ from store import Store
 from data_for_store import cats
 
 
-my_store = Store("Bobs Emporium", [cats["legs"], cats["fruit"], cats["special"], cats["bats"]])
+my_store = Store(
+    "Bobs Emporium", [cats["legs"], cats["fruit"], cats["special"], cats["bats"]]
+)
 
 print(my_store)
 # print(repr(my_store))
@@ -24,6 +26,5 @@ while selection != len(my_store.categories) + 1:
 
     except ValueError:
         print("Please enter your choice as a number.")
-
 
     # print(f"The user selected {selection}")

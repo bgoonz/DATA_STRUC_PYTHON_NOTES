@@ -68,5 +68,5 @@ class TestOop1(unittest.TestCase):
             print(e)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

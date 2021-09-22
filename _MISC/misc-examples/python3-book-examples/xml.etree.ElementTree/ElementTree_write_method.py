@@ -3,22 +3,20 @@
 """Creating XML documents
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import io
 import sys
-from xml.etree.ElementTree import (
-    Element, SubElement, ElementTree,
-)
+from xml.etree.ElementTree import Element, SubElement, ElementTree
 
-top = Element('top')
+top = Element("top")
 
-child = SubElement(top, 'child')
-child.text = 'Contains text.'
+child = SubElement(top, "child")
+child.text = "Contains text."
 
-empty_child = SubElement(top, 'empty_child')
+empty_child = SubElement(top, "empty_child")
 
-for method in ['xml', 'html', 'text']:
+for method in ["xml", "html", "text"]:
     print(method)
     sys.stdout.flush()
     ElementTree(top).write(sys.stdout.buffer, method=method)
-    print('\n')
+    print("\n")

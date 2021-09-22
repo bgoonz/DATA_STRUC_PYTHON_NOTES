@@ -2,7 +2,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import traceback
 import sys
 from pprint import pprint

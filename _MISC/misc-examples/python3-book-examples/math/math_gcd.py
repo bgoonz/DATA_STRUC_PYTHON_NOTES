@@ -3,7 +3,7 @@
 """Greatest common denominator
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 
 print(math.gcd(10, 8))

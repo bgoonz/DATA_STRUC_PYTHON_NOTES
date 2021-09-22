@@ -12,7 +12,6 @@ CAPACITY = 10
 
 # define the heap class
 class Heap(object):
-
     def __init__(self):
         # create array with as many slots as the CAPACITY
         self.heap = [0] * CAPACITY
@@ -92,8 +91,7 @@ class Heap(object):
         index_largest = index
 
         # if the left child is greater than the parent: largest is the left node
-        if index_left < self.heap_size and self.heap[index_left] > self.heap[
-            index]:
+        if index_left < self.heap_size and self.heap[index_left] > self.heap[index]:
             index_largest = index_left
 
         # figure out if the left child or right child is the greater one
@@ -101,8 +99,10 @@ class Heap(object):
         # size)
         # if the right child is greater than the left child: largest is the
         # right node
-        if index_right < self.heap_size and self.heap[index_right] > \
-                self.heap[index_largest]:
+        if (
+            index_right < self.heap_size
+            and self.heap[index_right] > self.heap[index_largest]
+        ):
             index_largest = index_right
 
         # we don't want to swap items with themselves
@@ -128,6 +128,7 @@ class Heap(object):
     # swap two items with (index1, index2) in the heap array
     def swap(self, index1, index2):
         self.heap[index2], self.heap[index1] = self.heap[index1], self.heap[index2]
+
 
 heap = Heap()
 heap.insert(10)

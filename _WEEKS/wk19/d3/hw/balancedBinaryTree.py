@@ -10,12 +10,16 @@ def balancedBinaryTree(root):
         if root is None:
             return 0
         return max(get_height(root.left), get_height(root.right)) + 1
+
     if root is None:
         return True
     left_height = get_height(root.left)
     right_height = get_height(root.right)
 
-    if (abs(left_height - right_height) <= 1) and balancedBinaryTree(
-            root.left) is True and balancedBinaryTree(root.right) is True:
+    if (
+        (abs(left_height - right_height) <= 1)
+        and balancedBinaryTree(root.left) is True
+        and balancedBinaryTree(root.right) is True
+    ):
         return True
     return False

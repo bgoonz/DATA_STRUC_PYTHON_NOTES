@@ -23,14 +23,17 @@
 
 # The largest product of adjacent elements.
 
+
 def adjacentElementsProduct(inputArray):
     # return max(a*b for a, b in zip(inputArray, inputArray[1:]))
-    length = len(inputArray) 
-     
+    length = len(inputArray)
+
     sum = []
-     
-    for i in range(length-1):
-        
-        sum.append(inputArray[i] * inputArray[i+1]) #append all the values of the product into the array
-        
+
+    for i in range(length - 1):
+
+        sum.append(
+            inputArray[i] * inputArray[i + 1]
+        )  # append all the values of the product into the array
+
     return max(sum)

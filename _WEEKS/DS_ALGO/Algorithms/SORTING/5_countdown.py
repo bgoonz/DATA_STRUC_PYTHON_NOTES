@@ -3,6 +3,7 @@ One of the most straightforward problems we can solve recursively is to print ev
 We can do that simply by writing a function that prints n, then calls itself for n-1:
 """
 import sys
+
 sys.setrecursionlimit(10005)
 N = 10000
 # def countdown_i(n):
@@ -10,7 +11,8 @@ N = 10000
 #         print(n) # body
 #         n -= 1 # decrement
 
-def countdown(n): # label
+
+def countdown(n):  # label
     # condition (base case)
     if n == 0:
         return
@@ -20,6 +22,7 @@ def countdown(n): # label
 
     # decrement
     countdown(n - 1)
+
 
 # countdown_i(n)
 countdown(N)

@@ -17,7 +17,8 @@ We can use this understanding to plan our approach via pseudocode:
 
 # base case ?
 
-def fibn(n): # label
+
+def fibn(n):  # label
     # condition (base case)
     if n == 0:
         return 0

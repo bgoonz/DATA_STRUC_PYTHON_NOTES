@@ -3,7 +3,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import enum
 
 
@@ -18,5 +18,5 @@ class BugStatus(enum.IntEnum):
     fix_released = 1
 
 
-print('Ordered by value:')
-print('\n'.join('  ' + s.name for s in sorted(BugStatus)))
+print("Ordered by value:")
+print("\n".join("  " + s.name for s in sorted(BugStatus)))

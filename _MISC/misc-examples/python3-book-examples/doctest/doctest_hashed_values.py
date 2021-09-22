@@ -3,8 +3,8 @@
 """Demonstrate how insertion order affects dictonaries and sets.
 """
 
-#end_pymotw_header
-keys = ['a', 'aa', 'aaa']
+# end_pymotw_header
+keys = ["a", "aa", "aaa"]
 
-print('dict:', {k: len(k) for k in keys})
-print('set :', set(keys))
+print("dict:", {k: len(k) for k in keys})
+print("set :", set(keys))

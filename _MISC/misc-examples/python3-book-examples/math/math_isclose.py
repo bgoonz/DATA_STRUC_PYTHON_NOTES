@@ -4,7 +4,7 @@
 """
 # abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
 
-#end_pymotw_header
+# end_pymotw_header
 import math
 
 INPUTS = [
@@ -15,14 +15,14 @@ INPUTS = [
     (0.1, 0.09, 0.1),
 ]
 
-print('{:^8} {:^8} {:^8} {:^8} {:^8} {:^8}'.format(
-    'a', 'b', 'rel_tol', 'abs(a-b)', 'tolerance', 'close')
+print(
+    "{:^8} {:^8} {:^8} {:^8} {:^8} {:^8}".format(
+        "a", "b", "rel_tol", "abs(a-b)", "tolerance", "close"
+    )
 )
-print('{:-^8} {:-^8} {:-^8} {:-^8} {:-^8} {:-^8}'.format(
-    '-', '-', '-', '-', '-', '-'),
-)
+print("{:-^8} {:-^8} {:-^8} {:-^8} {:-^8} {:-^8}".format("-", "-", "-", "-", "-", "-"))
 
-fmt = '{:8.2f} {:8.2f} {:8.2f} {:8.2f} {:8.2f} {!s:>8}'
+fmt = "{:8.2f} {:8.2f} {:8.2f} {:8.2f} {:8.2f} {!s:>8}"
 
 for a, b, rel_tol in INPUTS:
     close = math.isclose(a, b, rel_tol=rel_tol)

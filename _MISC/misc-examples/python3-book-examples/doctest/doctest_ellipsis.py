@@ -2,7 +2,7 @@
 #
 """Ignoring part of the verification value with ELIPSIS
 """
-#end_pymotw_header
+# end_pymotw_header
 class MyClass:
     pass
 

@@ -2,10 +2,13 @@
 1. Write the delete method with the assumption that linked list chaining was used for collision resolution.
 2. Write the get method with the assumption that linked list chaining was used for collision resolution.
 """
+
+
 class HashTableEntry:
     """
     Linked List hash table key/value pair
     """
+
     def __init__(self, key, value):
         self.key = key
         self.value = value
@@ -29,7 +32,6 @@ class HashTable:
         self.item_count = 0
         self.MIN_CAPACITY = 8
 
-
     def get_num_slots(self):
         """
         Return the length of the list you're using to hold the hash
@@ -41,14 +43,12 @@ class HashTable:
         # Your code here
         return len(self.storage)
 
-
     def get_load_factor(self):
         """
         Return the load factor for this hash table.
         Implement this.
         """
         return self.item_count / self.capacity
-
 
     def djb2(self, key):
         """
@@ -65,10 +65,9 @@ class HashTable:
         # Bit-shift and sum value for each character
         for b in str_key:
             hash_value = ((hash_value << 5) + hash_value) + b
-            hash_value &= 0xffffffff  # DJB2 is a 32-bit hash, only keep 32 bits
+            hash_value &= 0xFFFFFFFF  # DJB2 is a 32-bit hash, only keep 32 bits
 
         return hash_value
-
 
     def hash_index(self, key):
         """
@@ -96,7 +95,7 @@ class HashTable:
             new_entry = HashTableEntry(key, value)
             new_entry.next = self.storage[index]
             self.storage[index] = new_entry
-        
+
         # TODO: handle resize?
         # increment the item count
         self.item_count += 1
@@ -105,7 +104,6 @@ class HashTable:
         if self.get_load_factor() > 0.7:
             # double the size of the storage
             self.resize(self.capacity * 2)
-
 
     def delete(self, key):
         """
@@ -146,7 +144,6 @@ class HashTable:
             # resize to the new capacity
             self.resize(new_capacity)
 
-
     def get(self, key):
         """
         Retrieve the value stored with the given key.
@@ -166,7 +163,7 @@ class HashTable:
                 return current_entry.value
             # traverse to the next entry
             current_entry = current_entry.next
-        
+
         return None
 
     def resize(self, new_capacity):
@@ -201,8 +198,6 @@ class HashTable:
 
         # restore the item count to the correct number
         self.item_count = old_item_count
-
-
 
 
 if __name__ == "__main__":

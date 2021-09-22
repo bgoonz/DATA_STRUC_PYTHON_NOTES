@@ -192,7 +192,7 @@ Import the "math" module. Then, print an alphabetically sorted list of all the f
 #     if func.startswith('is'):
 #         print(func)
 
-s = 'abacaba'
+s = "abacaba"
 
 
 # def threeCharsDistinct(s):
@@ -203,7 +203,6 @@ s = 'abacaba'
 #             if s[0] != s[i + 1] and s[i] != s[i + 2] and s[i + 1] != s[i + 2]:
 #                 count += 1
 #     print(count)
-
 
 
 def threeCharsDistinct(s):
@@ -222,26 +221,28 @@ sentence = "Man bites dog"
 
 
 def reverseSentence(sentence):
-    words_array = sentence.split(' ')
-    words_reversed = ' '.join(reversed(words_array))
+    words_array = sentence.split(" ")
+    words_reversed = " ".join(reversed(words_array))
     return words_reversed
 
 
 # print(reverseSentence(sentence))
 
-passcode = '1111'
-attempts = ["1111",
-            "4444",
-            "9999",
-            "3333",
-            "8888",
-            "2222",
-            "7777",
-            "0000",
-            "6666",
-            "7285",
-            "5555",
-            "1111"]
+passcode = "1111"
+attempts = [
+    "1111",
+    "4444",
+    "9999",
+    "3333",
+    "8888",
+    "2222",
+    "7777",
+    "0000",
+    "6666",
+    "7285",
+    "5555",
+    "1111",
+]
 
 
 def incorrectPasscodeAttempts(passcode, attempts):
@@ -250,11 +251,11 @@ def incorrectPasscodeAttempts(passcode, attempts):
     if len(attempts) < 10 and passcode not in attempts:
         return False
     for attempt in attempts:
-        print('attempt:', attempt)
+        print("attempt:", attempt)
         if attempt != passcode:
-            print('count before:', count)
+            print("count before:", count)
             count += 1
-            print('count after:', count)
+            print("count after:", count)
         if attempt == passcode:
             count = 0
         if count >= 10:
@@ -311,7 +312,7 @@ s = "abcde"
 def countVowelConsonant(s):
     vowel_count = 0
     const_count = 0
-    vowels = ['a', 'e', 'i', 'o', 'u']
+    vowels = ["a", "e", "i", "o", "u"]
     for letter in s:
         if letter in vowels:
             vowel_count += 1
@@ -369,6 +370,7 @@ def contains_duplicate_2(nums):
             return True
         i += 1
     return False
+
 
 # n = 15
 #

@@ -1,5 +1,4 @@
 class Node(object):
-
     def __init__(self, name):
         self.name = name
         self.adjacencyList = []
@@ -7,7 +6,9 @@ class Node(object):
         self.predecessor = None
 
 
-class DepthFirstSearch(object):  # BFS -> queue + layer by layer algorithm   DFS -> stack + goes
+class DepthFirstSearch(
+    object
+):  # BFS -> queue + layer by layer algorithm   DFS -> stack + goes
     # as deep as possible into the tree !!!
 
     def dfs(self, node):

@@ -1,5 +1,5 @@
-# Return the "centered" average of an array of ints, which we'll say is the mean average of the values, 
-# except ignoring the largest and smallest values in the array (list). 
+# Return the "centered" average of an array of ints, which we'll say is the mean average of the values,
+# except ignoring the largest and smallest values in the array (list).
 
 # UNDERSTAND
 # what do we do if smallest or largest is duplicated
@@ -53,15 +53,20 @@ def centered_avg(ints):
     # return the final number
     return final_number
 
+
 import statistics
+
+
 def centered_avg2(ints):
     ints.sort()
     return statistics.mean(ints[1:-1])
 
+
 # Robert Sharp version
 def centered_avg3(arr):
     return (sum(arr) - min(arr) - max(arr)) // (len(arr) - 2)
-    
+
+
 # testing
 
 numbers = [1, 2, 3, 4, 100]

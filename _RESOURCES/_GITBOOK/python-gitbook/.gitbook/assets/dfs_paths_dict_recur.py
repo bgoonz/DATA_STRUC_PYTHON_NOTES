@@ -11,7 +11,7 @@ def dfs_paths_dict_recur(
     graph: Mapping[Node, set[Node]],
     start: Node,
     goal: Node,
-    path: Optional[list[Node]] = None
+    path: Optional[list[Node]] = None,
 ) -> Iterable[list[Node]]:
     """Find all the paths from start to goal recursively on a dict."""
     if path is None:

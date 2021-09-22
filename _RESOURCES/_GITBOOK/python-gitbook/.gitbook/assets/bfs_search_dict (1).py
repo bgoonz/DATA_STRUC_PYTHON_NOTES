@@ -8,7 +8,9 @@ from collections.abc import Callable, Iterable, Mapping
 from src.typehints import Node
 
 
-def bfs_search_dict(graph: Mapping[Node, Iterable[Node]], start: Node, predicate: Callable[[Node], bool]) -> bool:
+def bfs_search_dict(
+    graph: Mapping[Node, Iterable[Node]], start: Node, predicate: Callable[[Node], bool]
+) -> bool:
     """Find the closest node to start that matches the predicate using breadth first search."""
     visited = set()
     to_visit = deque([start])

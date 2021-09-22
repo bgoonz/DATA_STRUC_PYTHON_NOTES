@@ -3,7 +3,7 @@
 """Embedded XML string
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from xml.etree.ElementTree import XML
 
 
@@ -19,7 +19,8 @@ def show_node(node):
         show_node(child)
 
 
-parsed = XML('''
+parsed = XML(
+    """
 <root>
   <group>
     <child id="a">This is child "a".</child>
@@ -29,9 +30,10 @@ parsed = XML('''
     <child id="c">This is child "c".</child>
   </group>
 </root>
-''')
+"""
+)
 
-print('parsed =', parsed)
+print("parsed =", parsed)
 
 for elem in parsed:
     show_node(elem)

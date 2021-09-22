@@ -2,16 +2,16 @@
 """Scheduling a callback with call_later
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import asyncio
 
 
 def callback(n):
-    print('callback {} invoked'.format(n))
+    print("callback {} invoked".format(n))
 
 
 async def main(loop):
-    print('registering callbacks')
+    print("registering callbacks")
     loop.call_later(0.2, callback, 1)
     loop.call_later(0.1, callback, 2)
     loop.call_soon(callback, 3)
@@ -21,8 +21,8 @@ async def main(loop):
 
 event_loop = asyncio.get_event_loop()
 try:
-    print('entering event loop')
+    print("entering event loop")
     event_loop.run_until_complete(main(event_loop))
 finally:
-    print('closing event loop')
+    print("closing event loop")
     event_loop.close()

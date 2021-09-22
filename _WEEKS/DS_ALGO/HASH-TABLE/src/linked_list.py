@@ -4,12 +4,14 @@ class Node:
     def __init__(self, value=None, next_node=None):
         self.value = value
         self.next = next_node
+
+
 # linked list class
 class LinkedList:
     # constructor
     def __init__(self):
         self.head = None
-    
+
     # add to head
     def add_to_head(self, value):
         # create a new node with value
@@ -90,7 +92,6 @@ class LinkedList:
         linked_list_string += "None"
         # print the string
         print(linked_list_string)
-
 
 
 # test code

@@ -2,7 +2,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import imaplib
 import re
 
@@ -13,9 +13,8 @@ with open_connection() as c:
     typ, data = c.list()
     for line in data:
         flags, delimiter, mailbox = parse_list_response(line)
-        print('Mailbox:', mailbox)
+        print("Mailbox:", mailbox)
         status = c.status(
-            '"{}"'.format(mailbox),
-            '(MESSAGES RECENT UIDNEXT UIDVALIDITY UNSEEN)',
+            '"{}"'.format(mailbox), "(MESSAGES RECENT UIDNEXT UIDVALIDITY UNSEEN)"
         )
         print(status)

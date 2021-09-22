@@ -2,19 +2,18 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import gc
 import weakref
 
 
 class ExpensiveObject:
-
     def __del__(self):
-        print('(Deleting {})'.format(self))
+        print("(Deleting {})".format(self))
 
 
 def on_finalize(*args):
-    print('on_finalize({!r})'.format(args))
+    print("on_finalize({!r})".format(args))
 
 
 obj = ExpensiveObject()
@@ -27,4 +26,4 @@ del obj
 
 for o in gc.get_objects():
     if id(o) == obj_id:
-        print('found uncollected object in gc')
+        print("found uncollected object in gc")

@@ -8,7 +8,9 @@ from collections.abc import Callable, Iterable
 from src.typehints import T
 
 
-def counting_sort_dict(items: Iterable[T], key: Callable[[T], int] = lambda x: x) -> Iterable[T]:
+def counting_sort_dict(
+    items: Iterable[T], key: Callable[[T], int] = lambda x: x
+) -> Iterable[T]:
     groups = defaultdict(list)
     for item in items:
         groups[key(item)].append(item)

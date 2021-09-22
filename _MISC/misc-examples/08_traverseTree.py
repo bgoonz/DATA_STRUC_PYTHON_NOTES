@@ -67,8 +67,8 @@ def traverseTree(t):
     if t is None:
         return []
 
-    result = [] # final holder
-    queue = [] # intermediate holder
+    result = []  # final holder
+    queue = []  # intermediate holder
     queue.append(t)
 
     while len(queue) != 0:
@@ -82,4 +82,3 @@ def traverseTree(t):
             queue.append(node.right)
 
     return result
-

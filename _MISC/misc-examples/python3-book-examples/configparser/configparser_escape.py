@@ -4,14 +4,14 @@
 """Example use of ConfigParser module.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from configparser import ConfigParser
 import os
 
-filename = 'escape.ini'
+filename = "escape.ini"
 config = ConfigParser()
 config.read([filename])
 
-value = config.get('escape', 'value')
+value = config.get("escape", "value")
 
 print(value)

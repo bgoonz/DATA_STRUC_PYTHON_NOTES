@@ -3,10 +3,10 @@
 """Updating counts.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import collections
 
-c = collections.Counter('abcdaab')
+c = collections.Counter("abcdaab")
 
-for letter in 'abcde':
-    print('{} : {}'.format(letter, c[letter]))
+for letter in "abcde":
+    print("{} : {}".format(letter, c[letter]))

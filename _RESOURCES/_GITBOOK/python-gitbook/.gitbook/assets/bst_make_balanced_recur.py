@@ -15,5 +15,5 @@ def bst_make_balanced_recur(values: Sequence[int]) -> Optional[BTNode]:
     mid = len(values) // 2
     root = BTNode(values[mid])
     root.left = bst_make_balanced_recur(values[:mid])
-    root.right = bst_make_balanced_recur(values[mid + 1:])
+    root.right = bst_make_balanced_recur(values[mid + 1 :])
     return root

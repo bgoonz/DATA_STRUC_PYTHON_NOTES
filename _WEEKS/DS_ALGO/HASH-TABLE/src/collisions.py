@@ -2,13 +2,14 @@
 # How many before collision
 import random
 
+
 def how_many_before_collision(buckets, loops=1):
-    '''
+    """
     Roll random hash indexes into `buckets` and print
     how many rolls before a hash collision.
 
     Run `loops` number of times.
-    '''
+    """
     # loop over loops range
     for _ in range(loops):
         # track the tries count
@@ -32,7 +33,10 @@ def how_many_before_collision(buckets, loops=1):
                 # break out of the loop
                 break
         # output data
-        print(f"{buckets} buckets, {tries} hashes before collision. ({tries / buckets * 100:.1f}%)")
+        print(
+            f"{buckets} buckets, {tries} hashes before collision. ({tries / buckets * 100:.1f}%)"
+        )
+
 
 # Test Code
 how_many_before_collision(32, 10)

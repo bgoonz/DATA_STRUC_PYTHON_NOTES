@@ -3,7 +3,7 @@
 """Simplistic sed implementation
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import fileinput
 import glob
 import sys
@@ -14,13 +14,10 @@ files = sys.argv[3:]
 
 for line in fileinput.input(files, inplace=True):
     if fileinput.isfirstline():
-        sys.stderr.write('Started processing {}\n'.format(
-            fileinput.filename()))
-        sys.stderr.write('Directory contains: {}\n'.format(
-            glob.glob('etc_hosts.txt*')))
+        sys.stderr.write("Started processing {}\n".format(fileinput.filename()))
+        sys.stderr.write("Directory contains: {}\n".format(glob.glob("etc_hosts.txt*")))
     line = line.rstrip().replace(from_base, to_base)
     print(line)
 
-sys.stderr.write('Finished processing\n')
-sys.stderr.write('Directory contains: {}\n'.format(
-    glob.glob('etc_hosts.txt*')))
+sys.stderr.write("Finished processing\n")
+sys.stderr.write("Directory contains: {}\n".format(glob.glob("etc_hosts.txt*")))

@@ -10,6 +10,7 @@ def f(n):
         print(i, j)
     return
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     pdb.set_trace()
     f(5)

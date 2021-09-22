@@ -5,8 +5,6 @@ class Thing:
         self.name = name
 
 
-
-
 t = Thing(12, 34, "dave")
 
-print(vars(t)) # {'x': 12, 'y': 34, 'name': 'dave'}
+print(vars(t))  # {'x': 12, 'y': 34, 'name': 'dave'}

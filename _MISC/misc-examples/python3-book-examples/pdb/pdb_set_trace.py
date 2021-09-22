@@ -5,7 +5,6 @@ import pdb
 
 
 class MyObj:
-
     def __init__(self, num_loops):
         self.count = num_loops
 
@@ -15,5 +14,6 @@ class MyObj:
             print(i)
         return
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     MyObj(5).go()

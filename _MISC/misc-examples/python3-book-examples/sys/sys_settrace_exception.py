@@ -5,21 +5,21 @@ import sys
 
 
 def trace_exceptions(frame, event, arg):
-    if event != 'exception':
+    if event != "exception":
         return
     co = frame.f_code
     func_name = co.co_name
     line_no = frame.f_lineno
     exc_type, exc_value, exc_traceback = arg
-    print(('* Tracing exception:\n'
-           '* {} "{}"\n'
-           '* on line {} of {}\n').format(
-               exc_type.__name__, exc_value, line_no,
-               func_name))
+    print(
+        ("* Tracing exception:\n" '* {} "{}"\n' "* on line {} of {}\n").format(
+            exc_type.__name__, exc_value, line_no, func_name
+        )
+    )
 
 
 def trace_calls(frame, event, arg):
-    if event != 'call':
+    if event != "call":
         return
     co = frame.f_code
     func_name = co.co_name
@@ -28,23 +28,23 @@ def trace_calls(frame, event, arg):
 
 
 def c():
-    raise RuntimeError('generating exception in c()')
+    raise RuntimeError("generating exception in c()")
 
 
 def b():
     c()
-    print('Leaving b()')
+    print("Leaving b()")
 
 
 def a():
     b()
-    print('Leaving a()')
+    print("Leaving a()")
 
 
-TRACE_INTO = ['a', 'b', 'c']
+TRACE_INTO = ["a", "b", "c"]
 
 sys.settrace(trace_calls)
 try:
     a()
 except Exception as e:
-    print('Exception handler:', e)
+    print("Exception handler:", e)

@@ -14,9 +14,7 @@ from src.typehints import Node
 
 
 def dijkstras_path_pq(
-    graph: Mapping[Node, Mapping[Node, Real]],
-    start: Node,
-    goal: Node
+    graph: Mapping[Node, Mapping[Node, Real]], start: Node, goal: Node
 ) -> dict[Node, Optional[Node]]:
     """Find the shortest path from start to goal in a directed, weighted graph. Return it as a parents dict."""
     distances = {start: 0}

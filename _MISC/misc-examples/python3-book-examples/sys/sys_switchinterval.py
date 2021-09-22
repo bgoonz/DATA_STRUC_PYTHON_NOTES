@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # encoding: utf-8
-#end_pymotw_header
+# end_pymotw_header
 import sys
 import threading
 from queue import Queue
@@ -16,12 +16,10 @@ def show_thread(q):
 
 def run_threads():
     interval = sys.getswitchinterval()
-    print('interval = {:0.3f}'.format(interval))
+    print("interval = {:0.3f}".format(interval))
     q = Queue()
     threads = [
-        threading.Thread(target=show_thread,
-                         name='T{}'.format(i),
-                         args=(q,))
+        threading.Thread(target=show_thread, name="T{}".format(i), args=(q,))
         for i in range(3)
     ]
     for t in threads:
@@ -30,7 +28,7 @@ def run_threads():
     for t in threads:
         t.join()
     while not q.empty():
-        print(q.get(), end=' ')
+        print(q.get(), end=" ")
     print()
     return
 

@@ -2,19 +2,19 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import filecmp
 import pprint
 
-dc = filecmp.dircmp('example/dir1', 'example/dir2')
-print('Common:')
+dc = filecmp.dircmp("example/dir1", "example/dir2")
+print("Common:")
 pprint.pprint(dc.common)
 
-print('\nDirectories:')
+print("\nDirectories:")
 pprint.pprint(dc.common_dirs)
 
-print('\nFiles:')
+print("\nFiles:")
 pprint.pprint(dc.common_files)
 
-print('\nFunny:')
+print("\nFunny:")
 pprint.pprint(dc.common_funny)

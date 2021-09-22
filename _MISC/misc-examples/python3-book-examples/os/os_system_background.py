@@ -2,12 +2,12 @@
 """Running a command in the background
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import os
 import time
 
-print('Calling...')
-os.system('date; (sleep 3; date) &')
+print("Calling...")
+os.system("date; (sleep 3; date) &")
 
-print('Sleeping...')
+print("Sleeping...")
 time.sleep(5)

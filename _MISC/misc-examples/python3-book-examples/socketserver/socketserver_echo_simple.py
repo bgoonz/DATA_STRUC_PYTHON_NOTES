@@ -2,12 +2,11 @@
 """Echo server example for SocketServer
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import socketserver
 
 
 class EchoRequestHandler(socketserver.BaseRequestHandler):
-
     def handle(self):
         # Echo the back to the client
         data = self.request.recv(1024)
@@ -15,11 +14,11 @@ class EchoRequestHandler(socketserver.BaseRequestHandler):
         return
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import socket
     import threading
 
-    address = ('localhost', 0)  # let the kernel assign a port
+    address = ("localhost", 0)  # let the kernel assign a port
     server = socketserver.TCPServer(address, EchoRequestHandler)
     ip, port = server.server_address  # what port was assigned?
 
@@ -32,13 +31,13 @@ if __name__ == '__main__':
     s.connect((ip, port))
 
     # Send the data
-    message = 'Hello, world'.encode()
-    print('Sending : {!r}'.format(message))
+    message = "Hello, world".encode()
+    print("Sending : {!r}".format(message))
     len_sent = s.send(message)
 
     # Receive a response
     response = s.recv(len_sent)
-    print('Received: {!r}'.format(response))
+    print("Received: {!r}".format(response))
 
     # Clean up
     server.shutdown()

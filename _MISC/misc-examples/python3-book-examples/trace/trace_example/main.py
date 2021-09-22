@@ -5,14 +5,14 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from recurse import recurse
 
 
 def main():
-    print('This is the main program.')
+    print("This is the main program.")
     recurse(2)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

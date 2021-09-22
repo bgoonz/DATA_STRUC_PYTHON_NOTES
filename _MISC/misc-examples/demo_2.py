@@ -10,10 +10,13 @@ once.
 running your function by hand. Does it actually work? Also, don't forget to
 consider edge cases (like a list with only 1 or 0 elements).*
 """
-class LinkedListNode():
+
+
+class LinkedListNode:
     def __init__(self, value):
         self.value = value
-        self.next  = None
+        self.next = None
+
 
 def reverse(head_of_list):
     # Your code here

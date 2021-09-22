@@ -4,20 +4,17 @@
 """Extracting archives
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 import shutil
 import sys
 import tempfile
 
 with tempfile.TemporaryDirectory() as d:
-    print('Unpacking archive:')
-    shutil.unpack_archive(
-        'example.tar.gz',
-        extract_dir=d,
-    )
+    print("Unpacking archive:")
+    shutil.unpack_archive("example.tar.gz", extract_dir=d)
 
-    print('\nCreated:')
+    print("\nCreated:")
     prefix_len = len(d) + 1
-    for extracted in pathlib.Path(d).rglob('*'):
+    for extracted in pathlib.Path(d).rglob("*"):
         print(str(extracted)[prefix_len:])

@@ -5,7 +5,7 @@ Print a list of the dates for the 2nd Thursday of every month
 for a year.
 
 """
-#end_pymotw_header
+# end_pymotw_header
 import calendar
 import sys
 
@@ -29,5 +29,4 @@ for month in range(1, 13):
     else:
         meeting_date = third_week[calendar.THURSDAY]
 
-    print('{:>3}: {:>2}'.format(calendar.month_abbr[month],
-                                meeting_date))
+    print("{:>3}: {:>2}".format(calendar.month_abbr[month], meeting_date))

@@ -3,31 +3,29 @@
 """Show the objects with references to a given object.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import gc
 import pprint
 import queue
 
 
 class Graph:
-
     def __init__(self, name):
         self.name = name
         self.next = None
 
     def set_next(self, next):
-        print('Linking nodes {}.next = {}'.format(self, next))
+        print("Linking nodes {}.next = {}".format(self, next))
         self.next = next
 
     def __repr__(self):
-        return '{}({})'.format(
-            self.__class__.__name__, self.name)
+        return "{}({})".format(self.__class__.__name__, self.name)
 
 
 # Construct a graph cycle
-one = Graph('one')
-two = Graph('two')
-three = Graph('three')
+one = Graph("one")
+two = Graph("two")
+three = Graph("three")
 one.set_next(two)
 two.set_next(three)
 three.set_next(one)
@@ -47,7 +45,7 @@ while not to_process.empty():
     chain, next = to_process.get()
     chain = chain[:]
     chain.append(next)
-    print('Examining:', repr(next))
+    print("Examining:", repr(next))
     seen.add(id(next))
     for r in gc.get_referents(next):
         if isinstance(r, str) or isinstance(r, type):
@@ -55,9 +53,9 @@ while not to_process.empty():
             pass
         elif id(r) in seen:
             print()
-            print('Found a cycle to {}:'.format(r))
+            print("Found a cycle to {}:".format(r))
             for i, link in enumerate(chain):
-                print('  {}: '.format(i), end=' ')
+                print("  {}: ".format(i), end=" ")
                 pprint.pprint(link)
         else:
             to_process.put((chain, r))

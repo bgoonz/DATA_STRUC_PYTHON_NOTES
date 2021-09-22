@@ -52,24 +52,18 @@ class tableref(nodes.reference):
     pass
 
 
-def _role(typ, rawtext, text, lineno, inliner,
-          options={}, content=[], nodeclass=None):
+def _role(typ, rawtext, text, lineno, inliner, options={}, content=[], nodeclass=None):
     text = utils.unescape(text)
-    pnode = nodeclass(
-        rawsource=text,
-        text='',
-        internal=True,
-        refuri=text,
-    )
+    pnode = nodeclass(rawsource=text, text="", internal=True, refuri=text)
     return [pnode], []
 
 
 def latex_visit_tableref(self, node):
-    if node['ids']:
-        id = node['ids'][0]
+    if node["ids"]:
+        id = node["ids"][0]
     else:
-        id = 'table:' + node['refuri']
-    self.body.append(r'Table~\ref{%s}' % self.idescape(id))
+        id = "table:" + node["refuri"]
+    self.body.append(r"Table~\ref{%s}" % self.idescape(id))
     raise nodes.SkipNode
 
 
@@ -78,7 +72,7 @@ def latex_depart_tableref(self, node):
 
 
 def html_visit_tableref(self, node):
-    self.body.append('the table below')
+    self.body.append("the table below")
     raise nodes.SkipNode
 
 
@@ -87,18 +81,15 @@ def html_depart_tableref(self, node):
 
 
 def builder_inited(app):
-    LOG.info('defining table role')
-    app.add_role(
-        'table',
-        functools.partial(_role, nodeclass=tableref)
-    )
+    LOG.info("defining table role")
+    app.add_role("table", functools.partial(_role, nodeclass=tableref))
 
 
 def setup(app):
-    LOG.info('initializing tableref')
+    LOG.info("initializing tableref")
     app.add_node(
         tableref,
         latex=(latex_visit_tableref, None),
         html=(html_visit_tableref, html_depart_tableref),
     )
-    app.connect('builder-inited', builder_inited)
+    app.connect("builder-inited", builder_inited)

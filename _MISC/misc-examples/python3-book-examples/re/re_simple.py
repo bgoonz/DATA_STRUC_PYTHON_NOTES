@@ -3,18 +3,18 @@
 """Simple pattern examples.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
-patterns = ['this', 'that']
-text = 'Does this text match the pattern?'
+patterns = ["this", "that"]
+text = "Does this text match the pattern?"
 
-print('Text: {!r}\n'.format(text))
+print("Text: {!r}\n".format(text))
 
 for pattern in patterns:
-    print('Seeking "{}" ->'.format(pattern), end=' ')
+    print('Seeking "{}" ->'.format(pattern), end=" ")
 
     if re.search(pattern, text) is None:
-        print('no match')
+        print("no match")
     else:
-        print('match!')
+        print("match!")

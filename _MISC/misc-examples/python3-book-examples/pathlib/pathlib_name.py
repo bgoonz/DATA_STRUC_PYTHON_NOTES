@@ -4,11 +4,11 @@
 """Parsing paths
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
-p = pathlib.PurePosixPath('./source/pathlib/pathlib_name.py')
-print('path  : {}'.format(p))
-print('name  : {}'.format(p.name))
-print('suffix: {}'.format(p.suffix))
-print('stem  : {}'.format(p.stem))
+p = pathlib.PurePosixPath("./source/pathlib/pathlib_name.py")
+print("path  : {}".format(p))
+print("name  : {}".format(p.name))
+print("suffix: {}".format(p.suffix))
+print("stem  : {}".format(p.stem))

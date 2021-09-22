@@ -3,9 +3,10 @@
 """Local variables lead to an answer
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import cgitb
-cgitb.enable(format='text')
+
+cgitb.enable(format="text")
 
 
 def func2(a, divisor):
@@ -15,5 +16,6 @@ def func2(a, divisor):
 def func1(a, b):
     c = b - 5
     return func2(a, c)
+
 
 func1(1, 5)

@@ -5,7 +5,6 @@ Hashtables (associative arrays)
 
 # linear probing
 class HashTable(object):
-
     def __init__(self):
         self.size = 10
         self.keys = [None] * self.size
@@ -47,6 +46,7 @@ class HashTable(object):
             sum = sum + ord(key[pos])
 
         return sum % self.size
+
 
 table = HashTable()
 

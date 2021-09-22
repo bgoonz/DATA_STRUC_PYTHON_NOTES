@@ -1,4 +1,4 @@
-'''
+"""
 350. Intersection of Two Arrays II 
 
 Given two arrays, write a function to compute their intersection.
@@ -21,7 +21,8 @@ What if the given array is already sorted? How would you optimize your algorithm
 What if nums1's size is small compared to nums2's size? Which algorithm is better?
 What if elements of nums2 are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?
 
-'''
+"""
+
 
 class Solution:
     def intersect(self, nums1, nums2):
@@ -30,21 +31,19 @@ class Solution:
         :type nums2: List[int]
         :rtype: List[int]
         """
-        
-        
+
         result = []
-        
+
         if len(nums1) <= len(nums2):
             for i in nums1:
                 if i in nums2:
                     result.append(i)
                     nums2.remove(i)
-                    
+
         else:
             for j in nums2:
                 if j in nums1:
                     result.append(j)
                     nums1.remove(j)
-                    
-                    
+
         return result

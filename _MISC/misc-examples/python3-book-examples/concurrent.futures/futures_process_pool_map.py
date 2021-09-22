@@ -4,7 +4,7 @@
 """Running tasks in a managed group of processes.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from concurrent import futures
 import os
 
@@ -16,4 +16,4 @@ def task(n):
 ex = futures.ProcessPoolExecutor(max_workers=2)
 results = ex.map(task, range(5, 0, -1))
 for n, pid in results:
-    print('ran task {} in process {}'.format(n, pid))
+    print("ran task {} in process {}".format(n, pid))

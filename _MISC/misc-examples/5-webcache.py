@@ -61,8 +61,6 @@ import datetime
 #         resp.close()
 
 
-
-
 # second pass
 
 # let's make a class to hold a cache entry
@@ -75,29 +73,29 @@ import datetime
 
 # let's plan out how we will approach this
 # keep looping
-    # take input from user set it to url
+# take input from user set it to url
 
-    # some data store
+# some data store
 
-    # check if the key is in the cache
-        # if it is then set the cache at the url to an entry
-        # has our cache timeout expired
-        
-        # if it has not expired
-            # set our data to the entry / the data that was returned
-            # print getting from cache
+# check if the key is in the cache
+# if it is then set the cache at the url to an entry
+# has our cache timeout expired
 
-    # if our data is still none
-        # then get the data from the server
-        # call to urlopen passing in the url
-        # save the response
-        # take the response data and put it in the data variable
-        # print getting from server
+# if it has not expired
+# set our data to the entry / the data that was returned
+# print getting from cache
 
-        # store the data in the cache
-        # create a cache entry object and store that in the cache
+# if our data is still none
+# then get the data from the server
+# call to urlopen passing in the url
+# save the response
+# take the response data and put it in the data variable
+# print getting from server
 
-        # close connection
+# store the data in the cache
+# create a cache entry object and store that in the cache
+
+# close connection
 
 # let's make a class to hold a cache entry
 
@@ -107,12 +105,13 @@ import datetime
 
 CACHE_EXPIRY_SECONDS = 10
 
-class CacheEntry:
 
+class CacheEntry:
     def __init__(self, url, data):
         self.url = url
         self.data = data
         self.timestamp = datetime.datetime.now().timestamp()
+
 
 # hold a cache
 cache = {}

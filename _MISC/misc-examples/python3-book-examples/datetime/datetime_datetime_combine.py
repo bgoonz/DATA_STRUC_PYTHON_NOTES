@@ -2,14 +2,14 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import datetime
 
 t = datetime.time(1, 2, 3)
-print('t :', t)
+print("t :", t)
 
 d = datetime.date.today()
-print('d :', d)
+print("d :", d)
 
 dt = datetime.datetime.combine(d, t)
-print('dt:', dt)
+print("dt:", dt)

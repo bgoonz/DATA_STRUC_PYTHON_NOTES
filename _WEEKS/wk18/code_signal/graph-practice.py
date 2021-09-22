@@ -75,14 +75,14 @@ roadRegister[i][i] = false.
 true if the new road system is good enough, false otherwise.
 """
 
-roadRegister = [[False, True, False, False],
-                [False, False, True, False],
-                [True, False, False, True],
-                [False, False, True, False]]
+roadRegister = [
+    [False, True, False, False],
+    [False, False, True, False],
+    [True, False, False, True],
+    [False, False, True, False],
+]
 
-roadRegister = [[False, True, False],
-                [False, False, False],
-                [True, False, False]]
+roadRegister = [[False, True, False], [False, False, False], [True, False, False]]
 
 
 # my solution (no google)
@@ -118,8 +118,9 @@ def newRoadSystem(roadRegister):
 
 # ------------------------------
 def newRoadSystem(roadRegister):
-    return [l.count(True) for l in roadRegister] == [l.count(True) for l in
-                                                     zip(*roadRegister)]
+    return [l.count(True) for l in roadRegister] == [
+        l.count(True) for l in zip(*roadRegister)
+    ]
 
 
 """
@@ -168,11 +169,7 @@ A unique array of roads that should be built sorted as described above. There's 
 """
 
 cities = 4
-roads = [
-    [0, 1],
-    [1, 2],
-    [2, 0]
-]
+roads = [[0, 1], [1, 2], [2, 0]]
 
 # cities = 9
 # roads = [
@@ -308,8 +305,7 @@ true if the road system is efficient, false otherwise.
 """
 
 n = 6
-roads = [[3, 0], [0, 4], [5, 0], [2, 1],
-         [1, 4], [2, 3], [5, 2]]
+roads = [[3, 0], [0, 4], [5, 0], [2, 1], [1, 4], [2, 3], [5, 2]]
 
 tester = [
     [0, 0, 0, 1, 1, 1],
@@ -444,12 +440,14 @@ financialCrisis(roadRegister) = [
 ]
 """
 
-roadRegister = [[False, False, False, False, True, False],
-                [False, False, True, False, True, False],
-                [False, True, False, True, True, True],
-                [False, False, True, False, False, False],
-                [True, True, True, False, False, True],
-                [False, False, True, False, True, False]]
+roadRegister = [
+    [False, False, False, False, True, False],
+    [False, False, True, False, True, False],
+    [False, True, False, True, True, True],
+    [False, False, True, False, False, False],
+    [True, True, True, False, False, True],
+    [False, False, True, False, True, False],
+]
 
 
 def financialCrisis(roadRegister):
@@ -482,15 +480,16 @@ def financialCrisis(roadRegister):
     for city in range(len(roadRegister)):
         new_register = []
         # remove the city array
-        temp_road_register = (remove_city(city))
+        temp_road_register = remove_city(city)
         # remove the road element of each other array
         for i in range(len(temp_road_register)):
             # add that to the result matrix
             new_register.append(remove_roads(temp_road_register[i], city))
-        print('new register', new_register)
+        print("new register", new_register)
         result.append(new_register)
 
     # return result
+
 
 """
 def financialCrisis(roadRegister):
@@ -837,20 +836,20 @@ connections = [[1], [2], [3, 4], [4], [0]]
 
 # connections = [[1, 2, 3], [2, 3], [3], []]
 
-connections = [[1, 2],
-               [2],
-               [],
-               [4],
-               [3]]
+connections = [[1, 2], [2], [], [4], [3]]
 # top codesignal solution
 def hasDeadlock(g):
-    return any(cycle(g, u, [False]*len(g)) for u in range(len(g)))
+    return any(cycle(g, u, [False] * len(g)) for u in range(len(g)))
+
 
 def cycle(g, u, path):
     path[u] = True
     for v in g[u]:
-        if path[v] or cycle(g, v, path.copy()): return True
+        if path[v] or cycle(g, v, path.copy()):
+            return True
     return False
+
+
 # my solution only passing 19/20 tests
 # def hasDeadlock(connections):
 #     # find out if the graph has a cycle
@@ -902,5 +901,3 @@ def cycle(g, u, path):
 
 
 # print(hasDeadlock(connections))
-
-

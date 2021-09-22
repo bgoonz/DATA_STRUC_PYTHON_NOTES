@@ -3,7 +3,7 @@
 """Platform specifier for binary modules
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import sysconfig
 
 print(sysconfig.get_platform())

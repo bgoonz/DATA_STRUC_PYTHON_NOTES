@@ -24,7 +24,7 @@ def linear_search(arr, target):
     for i in range(len(arr)):
         if arr[i] == target:
             return True
-    
+
     return False
 
 
@@ -32,7 +32,7 @@ def linear_search(arr, target):
 #     for i in range(len(arr)):
 #         if arr[i] == target:
 #             return i
-    
+
 #     return -1
 
 # Binary Search
@@ -44,10 +44,11 @@ Key Points
 - Key words: sorted, ordered
 """
 
+
 def find_value_binary(arr, value):
     first = 0
 
-    last = (len(arr) - 1)
+    last = len(arr) - 1
 
     found = False
 
@@ -66,9 +67,8 @@ def find_value_binary(arr, value):
                 # right case
                 # search the upper half
                 first = middle + 1
-    
-    return found
 
+    return found
 
 
 # Comparing Linear vs. Binary

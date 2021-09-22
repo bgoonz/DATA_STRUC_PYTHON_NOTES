@@ -3,12 +3,12 @@
 """OverflowError
 """
 
-#end_pymotw_header
+# end_pymotw_header
 x = 10.0 ** 200
 
-print('x    =', x)
-print('x*x  =', x * x)
-print('x**2 =', end=' ')
+print("x    =", x)
+print("x*x  =", x * x)
+print("x**2 =", end=" ")
 try:
     print(x ** 2)
 except OverflowError as err:

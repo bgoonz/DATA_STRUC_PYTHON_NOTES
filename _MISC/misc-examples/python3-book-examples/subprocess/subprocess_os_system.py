@@ -2,8 +2,8 @@
 """Replacing os.system with subprocess.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import subprocess
 
-completed = subprocess.run(['ls', '-1'])
-print('returncode:', completed.returncode)
+completed = subprocess.run(["ls", "-1"])
+print("returncode:", completed.returncode)

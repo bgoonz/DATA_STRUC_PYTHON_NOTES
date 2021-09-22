@@ -2,12 +2,12 @@
 """Docstrings
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import inspect
 import example
 
-print('B.__doc__:')
+print("B.__doc__:")
 print(example.B.__doc__)
 print()
-print('getdoc(B):')
+print("getdoc(B):")
 print(inspect.getdoc(example.B))

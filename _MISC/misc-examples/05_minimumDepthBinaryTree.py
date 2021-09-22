@@ -31,7 +31,5 @@ def minimumDepthBinaryTree(root):
         return 0
     else:
         return 1 + min(
-            minimumDepthBinaryTree(root.left),
-            minimumDepthBinaryTree(root.right)
+            minimumDepthBinaryTree(root.left), minimumDepthBinaryTree(root.right)
         )
-

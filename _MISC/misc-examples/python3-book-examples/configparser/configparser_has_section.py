@@ -3,12 +3,11 @@
 """Reading a configuration file.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from configparser import ConfigParser
 
 parser = ConfigParser()
-parser.read('multisection.ini')
+parser.read("multisection.ini")
 
-for candidate in ['wiki', 'bug_tracker', 'dvcs']:
-    print('{:<12}: {}'.format(
-        candidate, parser.has_section(candidate)))
+for candidate in ["wiki", "bug_tracker", "dvcs"]:
+    print("{:<12}: {}".format(candidate, parser.has_section(candidate)))

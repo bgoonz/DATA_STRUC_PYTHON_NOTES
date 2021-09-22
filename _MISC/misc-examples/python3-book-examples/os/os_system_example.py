@@ -2,8 +2,8 @@
 """Using os.system() to run external commands.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import os
 
 # Simple command
-os.system('pwd')
+os.system("pwd")

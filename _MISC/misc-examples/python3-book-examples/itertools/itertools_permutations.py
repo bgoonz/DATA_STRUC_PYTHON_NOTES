@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # encoding: utf-8
 
-#end_pymotw_header
+# end_pymotw_header
 from itertools import *
 
 
@@ -12,12 +12,12 @@ def show(iterable):
             if first is not None:
                 print()
             first = item[0]
-        print(''.join(item), end=' ')
+        print("".join(item), end=" ")
     print()
 
 
-print('All permutations:\n')
-show(permutations('abcd'))
+print("All permutations:\n")
+show(permutations("abcd"))
 
-print('\nPairs:\n')
-show(permutations('abcd', r=2))
+print("\nPairs:\n")
+show(permutations("abcd", r=2))

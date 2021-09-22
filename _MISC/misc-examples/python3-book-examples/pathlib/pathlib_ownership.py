@@ -2,9 +2,9 @@
 """Show stat info for a file.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import pathlib
 
 p = pathlib.Path(__file__)
 
-print('{} is owned by {}/{}'.format(p, p.owner(), p.group()))
+print("{} is owned by {}/{}".format(p, p.owner(), p.group()))

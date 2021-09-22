@@ -2,14 +2,13 @@
 #
 """
 """
-#end_pymotw_header
+# end_pymotw_header
 import collections
 import itertools
 import multiprocessing
 
 
 class SimpleMapReduce:
-
     def __init__(self, map_func, reduce_func, num_workers=None):
         """
         map_func
@@ -56,16 +55,7 @@ class SimpleMapReduce:
           This can be used to tune performance during the mapping
           phase.
         """
-        map_responses = self.pool.map(
-            self.map_func,
-            inputs,
-            chunksize=chunksize,
-        )
-        partitioned_data = self.partition(
-            itertools.chain(*map_responses)
-        )
-        reduced_values = self.pool.map(
-            self.reduce_func,
-            partitioned_data,
-        )
+        map_responses = self.pool.map(self.map_func, inputs, chunksize=chunksize)
+        partitioned_data = self.partition(itertools.chain(*map_responses))
+        reduced_values = self.pool.map(self.reduce_func, partitioned_data)
         return reduced_values

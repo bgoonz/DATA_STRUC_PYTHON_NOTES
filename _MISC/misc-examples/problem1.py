@@ -39,6 +39,7 @@ class Node:
         # print the value at the middle
         return f"Middle is: {middle.value}"
 
+
 root = Node(3)
 cur = root
 cur.add(4)
@@ -51,5 +52,3 @@ cur.add(7)
 cur = cur.next
 print(cur.next)
 print(root.find_middle())
-
-

@@ -16,14 +16,14 @@ def insertion_sort(list_to_sort):
         j = i
 
         # keep looking left, until we find where our temp number belongs
-        # while j is greater than zero (we are not past the start of the indces) 
+        # while j is greater than zero (we are not past the start of the indces)
         # and our temp variable is less than the number to the left of j
         while j > 0 and temp < list_to_sort[j - 1]:
             # as we look left we can shift the items to the right as we iterate
             list_to_sort[j] = list_to_sort[j - 1]
             # decrement j
             j -= 1
-        
+
         # when left is smaller than temp, or we are at zero, put the item at that spot
         list_to_sort[j] = temp
 

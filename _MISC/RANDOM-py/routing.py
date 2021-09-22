@@ -1,4 +1,4 @@
-#/usr/bin/env python
+# /usr/bin/env python
 
 import sys
 
@@ -6,7 +6,7 @@ import sys
 class Queue:
     def __init__(self):
         self.storage = []
-    
+
     # enqueue method
     def enqueue(self, value):
         self.storage.append(value)
@@ -14,7 +14,6 @@ class Queue:
     # dequeue method
     def dequeue(self):
         return self.storage.pop(0) if self.size() > 0 else None
-
 
     # size method
     def size(self):
@@ -27,6 +26,7 @@ class Queue:
     def __setitem__(self, index):
         return self.storage[index]
 
+
 # Edge class
 class Edge:
     def __init__(self, destination, weight=1):
@@ -36,7 +36,7 @@ class Edge:
 
 # Vertex class
 class Vertex:
-    def __init__(self, value='vertex', color='white', parent=None):
+    def __init__(self, value="vertex", color="white", parent=None):
         self.value = value
         self.edges = []
         # Color of this vertex
@@ -89,7 +89,7 @@ class Graph:
         for vert in self.vertices:
             vert.color = "white"
             vert.parent = None
-        
+
         ## set the starting vert color to gray
         ## and add it to the queue
         start.color = "gray"
@@ -97,9 +97,11 @@ class Graph:
 
         ## while the queue has some items grab the first item off it and set it to the current one
         while queue.size() > 0:
-            current = queue[0] # this made me have to make some new methods in my queue class
+            current = queue[
+                0
+            ]  # this made me have to make some new methods in my queue class
 
-            ## loop over thr edges and if the edge destination is white then 
+            ## loop over thr edges and if the edge destination is white then
             ## set the edge destination to gray and set the edge destination pareent to the current
             ## and add the edge.destination to the queue
             for edge in current.edges:
@@ -111,9 +113,6 @@ class Graph:
             ## set the current color to black and and deque the front off
             current.color = "black"
             queue.dequeue()
-
-
-
 
     def output_route(self, start):
         """
@@ -130,8 +129,8 @@ class Graph:
             route_list.append(vert)
             vert = vert.parent
 
-        print(" --> ".join([F"{v.value}" for v in route_list]))
-        return " --> ".join([F"{v.value}" for v in route_list]) # this breaks bfs
+        print(" --> ".join([f"{v.value}" for v in route_list]))
+        return " --> ".join([f"{v.value}" for v in route_list])  # this breaks bfs
 
     def route(self, start, end):
         # BFS to build the parent reference tree
@@ -147,14 +146,14 @@ def add_edge(start, end):
 
 
 graph = Graph()
-vertA = Vertex('HostA')
-vertB = Vertex('HostB')
-vertC = Vertex('HostC')
-vertD = Vertex('HostD')
-vertE = Vertex('HostE')
-vertF = Vertex('HostF')
-vertG = Vertex('HostG')
-vertH = Vertex('HostH')
+vertA = Vertex("HostA")
+vertB = Vertex("HostB")
+vertC = Vertex("HostC")
+vertD = Vertex("HostD")
+vertE = Vertex("HostE")
+vertF = Vertex("HostF")
+vertG = Vertex("HostG")
+vertH = Vertex("HostH")
 
 add_edge(vertA, vertB)
 add_edge(vertB, vertD)
@@ -179,13 +178,13 @@ graph.vertices.append(vertH)
 # name to see if we can find them.
 hostAVert = graph.find_vertex(sys.argv[1])
 if hostAVert is None:
-    print('routing.py: could not find host: ', sys.argv[1])
+    print("routing.py: could not find host: ", sys.argv[1])
     sys.exit()
 
 hostBVert = graph.find_vertex(sys.argv[2])
 
 if hostBVert is None:
-    print('routing.py: could not find host: ', sys.argv[2])
+    print("routing.py: could not find host: ", sys.argv[2])
     sys.exit()
 
 # Show the route from one Vertex to the other

@@ -2,12 +2,11 @@
 """Test for equality
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import unittest
 
 
 class EqualityTest(unittest.TestCase):
-
     def testExpectEqual(self):
         self.assertEqual(1, 3 - 2)
 

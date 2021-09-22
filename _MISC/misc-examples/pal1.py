@@ -39,13 +39,12 @@ def is_palindrome(s):
         return False
 
 
-
 # is_palindrome with input of "Mom"
 print(is_palindrome("Mom"))  # True
 
-print(is_palindrome("dAd")) # True
+print(is_palindrome("dAd"))  # True
 
 # is_palindrome with input of "Add"
 print(is_palindrome("Add"))  # False
 
-print(is_palindrome("Mom is A non Palindrome!")) # False
+print(is_palindrome("Mom is A non Palindrome!"))  # False

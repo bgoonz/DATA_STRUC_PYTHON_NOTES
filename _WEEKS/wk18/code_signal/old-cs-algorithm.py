@@ -2,11 +2,11 @@
 # function takes a single integer can be negative
 # if every digit in the number divides into n evenly return true
 
+
 def divides_itself(n):
     # ** REFLECT
     # using comprehension ( less efficient will always be O(N) always
-    return False not in [digit == '0' or n % int(digit) == 0 for digit in
-                         str(n)]
+    return False not in [digit == "0" or n % int(digit) == 0 for digit in str(n)]
     #  ** PLAN / EXECUTE
     # the long way to understand below more efficient O(N) but potentially less
     # # iterate the digits
@@ -68,7 +68,7 @@ class Item:
         self.efficiency = 0
 
     def __str__(self):
-        return f'{self.name}, {self.weight}, lbs, ${self.value}'
+        return f"{self.name}, {self.weight}, lbs, ${self.value}"
 
 
 small_cave = []
@@ -81,8 +81,18 @@ def fill_cave_with_items():
      Randomly generates item objects and creates caves of different sizes
      for testing
     """
-    names = ['painting', 'jewel', 'coin', 'statue', 'treasure chest', 'gold',
-             'silver', 'sword', 'goblet', 'hat']
+    names = [
+        "painting",
+        "jewel",
+        "coin",
+        "statue",
+        "treasure chest",
+        "gold",
+        "silver",
+        "sword",
+        "goblet",
+        "hat",
+    ]
 
     for _ in range(5):
         n = names[random.randint(0, 4)]
@@ -112,13 +122,13 @@ def print_results(items, knapsack):
     # for i in items:
     #   print(i)
     total = 0
-    print('\nBest items to put in the knapsack:\n')
+    print("\nBest items to put in the knapsack:\n")
     for item in knapsack:
-        print(f'* {item}')
+        print(f"* {item}")
         total += item.value
-    print(f'\nTotal value: ${total}')
-    print(f'\nResult calculated in {time.time() - start:.5f} seconds\n')
-    print('\n------------------------------')
+    print(f"\nTotal value: ${total}")
+    print(f"\nResult calculated in {time.time() - start:.5f} seconds\n")
+    print("\n------------------------------")
 
 
 def naive_fill_knapsack(sack, items):
@@ -253,6 +263,7 @@ def greedy_fill_knapsack(sack, items):  # O(n log n) because of the sort
 
 #  fibonacci bottom up approach
 
+
 def fib(n):
     f = [0, 1]
 
@@ -263,7 +274,7 @@ def fib(n):
         # add the previous two numbers
         next_fib = f[i - 1] + f[i - 2]
         # another way to do it
-        next_fib = f[- 1] + f[- 2]
+        next_fib = f[-1] + f[-2]
         # append the answer to create the sequence
         f.append(next_fib)
 
@@ -281,7 +292,7 @@ ex: listen, silent
 # brute force approach with list O(n^2)
 
 words = []
-with open('words.txt') as f:
+with open("words.txt") as f:
     for w in f:
         w = w.strip()
         words.append(w)
@@ -320,7 +331,7 @@ def brute_force_anagrams():
     longest_sig = None
     longest_len = -1
     for w in words:
-        signature = ''.join(sorted(w))
+        signature = "".join(sorted(w))
 
         if signature not in result:
             result[signature] = []
@@ -352,7 +363,7 @@ shape to test)
 
 
 def floodfill(row, col, char, image):
-    if image[row][col] != ' ':
+    if image[row][col] != " ":
         return
 
     image[row][col] = char
@@ -384,7 +395,7 @@ def single_number(arr):
     # check if the number selected is in arr[num:] or arr[:num]
     # if so continue if not return number
     for i in range(len(arr)):
-        if arr[i] not in arr[i + 1:] and arr[i] not in arr[:i]:
+        if arr[i] not in arr[i + 1 :] and arr[i] not in arr[:i]:
             return arr[i]
 
 
@@ -499,7 +510,7 @@ Your output should be a list of lists containing strings. Each inner list should
 
 # TODO make this work, its not there yet
 
-game = ['rock', 'paper', 'scissors']
+game = ["rock", "paper", "scissors"]
 
 
 def rock_paper_scissors(n):
@@ -514,6 +525,7 @@ def rock_paper_scissors(n):
         return combos
 
     return get_combos(game, combos)
+
 
 # print(rock_paper_scissors(2))
 

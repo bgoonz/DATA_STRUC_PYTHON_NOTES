@@ -3,7 +3,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import contextlib
 
 
@@ -12,16 +12,14 @@ class NonFatalError(Exception):
 
 
 def non_idempotent_operation():
-    raise NonFatalError(
-        'The operation failed because of existing state'
-    )
+    raise NonFatalError("The operation failed because of existing state")
 
 
 try:
-    print('trying non-idempotent operation')
+    print("trying non-idempotent operation")
     non_idempotent_operation()
-    print('succeeded!')
+    print("succeeded!")
 except NonFatalError:
     pass
 
-print('done')
+print("done")

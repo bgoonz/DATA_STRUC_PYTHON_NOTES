@@ -3,28 +3,27 @@
 with a callback.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import weakref
 
 
 class ExpensiveObject:
-
     def __del__(self):
-        print('(Deleting {})'.format(self))
+        print("(Deleting {})".format(self))
 
 
 def callback(reference):
     """Invoked when referenced object is deleted"""
-    print('callback({!r})'.format(reference))
+    print("callback({!r})".format(reference))
 
 
 obj = ExpensiveObject()
 r = weakref.ref(obj, callback)
 
-print('obj:', obj)
-print('ref:', r)
-print('r():', r())
+print("obj:", obj)
+print("ref:", r)
+print("r():", r())
 
-print('deleting obj')
+print("deleting obj")
 del obj
-print('r():', r())
+print("r():", r())

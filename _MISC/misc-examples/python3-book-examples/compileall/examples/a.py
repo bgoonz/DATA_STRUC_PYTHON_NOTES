@@ -3,5 +3,5 @@
 """
 """
 
-#end_pymotw_header
-print('running {}'.format(__file__))
+# end_pymotw_header
+print("running {}".format(__file__))

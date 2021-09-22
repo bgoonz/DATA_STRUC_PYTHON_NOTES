@@ -16,16 +16,16 @@ class BinarySearchTree:
     def insert(self, value):
         # LEFT CASE
         # check if the new nodes value is less than our current ones value
-            # if the is no left child, 
-                # place a new node here
-            # otherwise
-                # repeat process for left
+        # if the is no left child,
+        # place a new node here
+        # otherwise
+        # repeat process for left
         # RIGHT CASE
         # check if the new nodes value is greater than or equal to the current parent value
-            # if there is no right child here, 
-                # place a new one
-            # otherwise
-                # repeat process right
+        # if there is no right child here,
+        # place a new one
+        # otherwise
+        # repeat process right
         pass
 
     # Return True if the tree contains the value
@@ -40,23 +40,23 @@ class BinarySearchTree:
 
     # Return the maximum value found in the tree
     def get_max(self):
-        # BASE CASE 
+        # BASE CASE
         # if empty tree
-            # return none
-        
+        # return none
+
         # RECURSIVE
         # if the the is no right value
-            # return the root value
+        # return the root value
         # return the get max of the the right node
 
         # ITTERATIVE
         # set a max value variable to keep track of max value
         # get a ref to current node
         # check if we are at a valid tree node
-            # if our current value is greater than the max value
-                # update the max value
-            # move on to the next right node in the tree
-            # setting the current node to the current nodes right
+        # if our current value is greater than the max value
+        # update the max value
+        # move on to the next right node in the tree
+        # setting the current node to the current nodes right
         # return our max value
         pass
 

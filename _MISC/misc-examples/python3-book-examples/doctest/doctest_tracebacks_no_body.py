@@ -3,7 +3,7 @@
 """Expecting exceptions
 """
 
-#end_pymotw_header
+# end_pymotw_header
 def this_raises():
     """This function always raises an exception.
 
@@ -15,4 +15,4 @@ def this_raises():
     Traceback (innermost last):
     RuntimeError: here is the error
     """
-    raise RuntimeError('here is the error')
+    raise RuntimeError("here is the error")

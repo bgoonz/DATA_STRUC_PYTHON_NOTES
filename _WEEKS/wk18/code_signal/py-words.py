@@ -1,5 +1,5 @@
 words = []
-with open('sowpods.txt') as f:
+with open("sowpods.txt") as f:
     for w in f:
         w = w.strip()
         words.append(w)
@@ -10,7 +10,7 @@ What are all of the words containing "uu"?
 
 res = []
 for word in words:
-    if 'UU' in word:
+    if "UU" in word:
         res.append(word)
 
 """
@@ -18,40 +18,40 @@ What are all of the letters that never appear doubled in an English word?
 """
 
 alphabet = {
-    'A': 0,
-    'B': 0,
-    'C': 0,
-    'D': 0,
-    'E': 0,
-    'F': 0,
-    'G': 0,
-    'H': 0,
-    'I': 0,
-    'J': 0,
-    'K': 0,
-    'L': 0,
-    'M': 0,
-    'N': 0,
-    'O': 0,
-    'P': 0,
-    'Q': 0,
-    'R': 0,
-    'S': 0,
-    'T': 0,
-    'U': 0,
-    'V': 0,
-    'W': 0,
-    'X': 0,
-    'Y': 0,
-    'Z': 0,
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0,
+    "E": 0,
+    "F": 0,
+    "G": 0,
+    "H": 0,
+    "I": 0,
+    "J": 0,
+    "K": 0,
+    "L": 0,
+    "M": 0,
+    "N": 0,
+    "O": 0,
+    "P": 0,
+    "Q": 0,
+    "R": 0,
+    "S": 0,
+    "T": 0,
+    "U": 0,
+    "V": 0,
+    "W": 0,
+    "X": 0,
+    "Y": 0,
+    "Z": 0,
 }
 
 for word in words:
-    for i in range(len(word)-1):
-        if word[i] == word[i+1]:
+    for i in range(len(word) - 1):
+        if word[i] == word[i + 1]:
             alphabet[word[i]] += 1
 
-for key, in alphabet:
+for (key,) in alphabet:
     if alphabet[key] == 0:
         # print(key)
         pass
@@ -63,7 +63,7 @@ What are all of the words that have all 5 vowels, in alphabetical order?
 What is the longest palindrome?
 """
 
-vowels = ['A', 'E', 'I', 'O', 'U']
+vowels = ["A", "E", "I", "O", "U"]
 
 for word in words:
     if all(char in word for char in vowels):
@@ -76,15 +76,15 @@ What are all of the words that have all 5 vowels, in alphabetical order?
 
 for word in words:
     for i in range(len(word)):
-        if 'A' in word:
-            new_word = word[word.index('A') + 1:]
-            if 'E' in new_word:
-                new_word = new_word[new_word.index('E') + 1:]
-                if 'I' in new_word:
-                    new_word = new_word[new_word.index('I') + 1:]
-                    if 'O' in new_word:
-                        new_word = new_word[new_word.index('O') + 1:]
-                        if 'U' in new_word:
+        if "A" in word:
+            new_word = word[word.index("A") + 1 :]
+            if "E" in new_word:
+                new_word = new_word[new_word.index("E") + 1 :]
+                if "I" in new_word:
+                    new_word = new_word[new_word.index("I") + 1 :]
+                    if "O" in new_word:
+                        new_word = new_word[new_word.index("O") + 1 :]
+                        if "U" in new_word:
                             # print(word)
                             pass
 
@@ -93,7 +93,7 @@ for word in words:
 What is the longest palindrome?
 """
 
-longest_pal = ''
+longest_pal = ""
 
 for word in words:
     if word == word[::-1]:
@@ -130,10 +130,10 @@ scores = {
     "w": 4,
     "x": 8,
     "y": 4,
-    "z": 10
+    "z": 10,
 }
 
-with open('sowpods.txt') as f:
+with open("sowpods.txt") as f:
     for w in f:
         w = w.strip()
         words.append(w.lower())
@@ -160,17 +160,15 @@ Extend the script to handle blank tiles. When reading the input, the character _
 Wildcards do not count towards a word's score.
 """
 
-letters = 'SPCQEIU'.lower()
-letters = 'CAT**'.lower()
+letters = "SPCQEIU".lower()
+letters = "CAT**".lower()
 
-words = ['at', 'tac', 'boy', 'cant', 'tact', 'tank']
-
+words = ["at", "tac", "boy", "cant", "tact", "tank"]
 
 
 def findWords(rack, words):
     res = []
     wild_count = rack.count("*")
-
 
     for word in words:
         rack_copy = list(rack)
@@ -191,7 +189,7 @@ def findWords(rack, words):
         if match:
             res.append([word, wilds_used])
 
-    return (res)
+    return res
 
 
 found_words = findWords(letters, words)

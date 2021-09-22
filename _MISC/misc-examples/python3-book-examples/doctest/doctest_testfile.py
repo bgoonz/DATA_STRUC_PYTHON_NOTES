@@ -3,8 +3,8 @@
 """Run the tests from an external file.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import doctest
 
-if __name__ == '__main__':
-    doctest.testfile('doctest_in_help.txt')
+if __name__ == "__main__":
+    doctest.testfile("doctest_in_help.txt")

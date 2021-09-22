@@ -3,6 +3,7 @@ class Node:
         self.value = value
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -19,20 +20,20 @@ class LinkedList:
         while cur is not None:
             if cur.value == value:
                 return cur
-            
+
             cur = cur.next
-        
+
         return None
 
     # Delete (for deleting a node)
     # stretch
 
 
-
-# hashtableentry class 
+# hashtableentry class
 # key, value
 # repr
 # str
+
 
 class HashTableEntry:
     def __init__(self, key, value):
@@ -45,8 +46,8 @@ class HashTableEntry:
         return f"HashTableEntry({self.key}, {self.value})"
 
 
+hash_table = [None] * 8  # 8 slots, all initiailized to None
 
-hash_table = [None] * 8   # 8 slots, all initiailized to None
 
 def my_hash(s):
     sb = s.encode()  # Get the UTF-8 bytes for the string
@@ -55,20 +56,23 @@ def my_hash(s):
 
     for b in sb:
         total += b
-        total &= 0xffffffff  # clamp to 32 bits
+        total &= 0xFFFFFFFF  # clamp to 32 bits
 
     return total
+
 
 def hash_index(key):
     h = my_hash(key)
     return h % len(hash_table)
+
 
 def put(key, val):
     i = hash_index(key)
     if hash_table[i] != None:
         print(f"Collision! Overwriting {repr(hash_table[i])}")
     hash_table[i] = HashTableEntry(key, val)
-    
+
+
 def get(key):
     i = hash_index(key)
     entry = hash_table[i]
@@ -78,20 +82,21 @@ def get(key):
 
     return entry.value
 
+
 def delete(key):
     i = hash_index(key)
     hash_table[i] = None
 
-    
+
 put("Hello", "Hello Value")
 put("World", "World Value")
-put("foo", "foo value")   # "foo" hashes to same index as "Hello"
-                          # AKA "foo collides with Hello"
+put("foo", "foo value")  # "foo" hashes to same index as "Hello"
+# AKA "foo collides with Hello"
 
 print(hash_table)
 
 v = get("Hello")
-print(f'Hello value is: {v}') # Should be "Hello Value", but gives "foo value"
+print(f"Hello value is: {v}")  # Should be "Hello Value", but gives "foo value"
 
 # Get "Frogs" from the table
 # Doesn't exist!

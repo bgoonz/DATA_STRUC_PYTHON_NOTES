@@ -3,11 +3,11 @@
 """ID-based conditional expressions
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import re
 
 address = re.compile(
-    '''
+    """
     ^
 
     # A name is made up of letters, and may include "."
@@ -45,22 +45,23 @@ address = re.compile(
     (?(brackets)>|\s*)
 
     $
-    ''',
-    re.VERBOSE)
+    """,
+    re.VERBOSE,
+)
 
 candidates = [
-    u'First Last <first.last@example.com>',
-    u'No Brackets first.last@example.com',
-    u'Open Bracket <first.last@example.com',
-    u'Close Bracket first.last@example.com>',
-    u'no.brackets@example.com',
+    u"First Last <first.last@example.com>",
+    u"No Brackets first.last@example.com",
+    u"Open Bracket <first.last@example.com",
+    u"Close Bracket first.last@example.com>",
+    u"no.brackets@example.com",
 ]
 
 for candidate in candidates:
-    print('Candidate:', candidate)
+    print("Candidate:", candidate)
     match = address.search(candidate)
     if match:
-        print('  Match name :', match.groupdict()['name'])
-        print('  Match email:', match.groupdict()['email'])
+        print("  Match name :", match.groupdict()["name"])
+        print("  Match email:", match.groupdict()["email"])
     else:
-        print('  No match')
+        print("  No match")

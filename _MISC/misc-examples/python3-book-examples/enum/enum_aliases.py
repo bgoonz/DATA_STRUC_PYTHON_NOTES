@@ -3,7 +3,7 @@
 """
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import enum
 
 
@@ -22,9 +22,7 @@ class BugStatus(enum.Enum):
 
 
 for status in BugStatus:
-    print('{:15} = {}'.format(status.name, status.value))
+    print("{:15} = {}".format(status.name, status.value))
 
-print('\nSame: by_design is wont_fix: ',
-      BugStatus.by_design is BugStatus.wont_fix)
-print('Same: closed is fix_released: ',
-      BugStatus.closed is BugStatus.fix_released)
+print("\nSame: by_design is wont_fix: ", BugStatus.by_design is BugStatus.wont_fix)
+print("Same: closed is fix_released: ", BugStatus.closed is BugStatus.fix_released)

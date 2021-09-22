@@ -3,10 +3,11 @@
 """Embedded XML string with ID values
 """
 
-#end_pymotw_header
+# end_pymotw_header
 from xml.etree.ElementTree import XMLID
 
-tree, id_map = XMLID('''
+tree, id_map = XMLID(
+    """
 <root>
   <group>
     <child id="a">This is child "a".</child>
@@ -16,7 +17,8 @@ tree, id_map = XMLID('''
     <child id="c">This is child "c".</child>
   </group>
 </root>
-''')
+"""
+)
 
 for key, value in sorted(id_map.items()):
-    print('%s = %s' % (key, value))
+    print("%s = %s" % (key, value))

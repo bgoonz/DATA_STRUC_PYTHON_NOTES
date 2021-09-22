@@ -3,7 +3,6 @@ import heapq
 
 
 class Edge(object):
-
     def __init__(self, weight, startVertex, targetVertex):
         self.weight = weight
         self.startVertex = startVertex
@@ -11,7 +10,6 @@ class Edge(object):
 
 
 class Node(object):
-
     def __init__(self, name):
         self.name = name
         self.visited = False
@@ -29,7 +27,6 @@ class Node(object):
 
 
 class Algorithm(object):
-
     def calculateShortestPath(self, vertexList, startVertex):
 
         q = []

@@ -1,4 +1,3 @@
-  
 records = [
     ("Alice", "Engineering"),
     ("Bob", "Sales"),
@@ -6,11 +5,13 @@ records = [
     ("Dave", "Engineering"),
     ("Erin", "Engineering"),
     ("Frank", "Engineering"),
-    ("Grace", "Marketing")
+    ("Grace", "Marketing"),
 ]
+
 
 def build_index(rec):
     pass
+
 
 # # Test Code
 # idx = build_index(records)

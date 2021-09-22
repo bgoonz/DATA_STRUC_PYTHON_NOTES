@@ -3,9 +3,9 @@
 """Random values from a range
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import random
 
 for i in range(3):
-    print(random.randrange(0, 101, 5), end=' ')
+    print(random.randrange(0, 101, 5), end=" ")
 print()

@@ -4,11 +4,13 @@ class HashTableEntry:
         self.value = value
 
     def __repr__(self):
-        return f'HashTableEntry({repr(self.key)},{repr(self.value)})'
+        return f"HashTableEntry({repr(self.key)},{repr(self.value)})"
+
 
 # lets refactor some code
 
-hash_table = [None] * 8   # 8 slots, all initiailized to None
+hash_table = [None] * 8  # 8 slots, all initiailized to None
+
 
 def my_hash(s):
     sb = s.encode()  # Get the UTF-8 bytes for the string
@@ -17,24 +19,27 @@ def my_hash(s):
 
     for b in sb:
         sum += b
-        sum &= 0xffffffff  # clamp to 32 bits
+        sum &= 0xFFFFFFFF  # clamp to 32 bits
 
     return sum
+
 
 # hash the index
 def hash_index(key):
     h = my_hash(key)
     return h % len(hash_table)
 
+
 # put
 def put(key, val):
     i = hash_index(key)
 
-        # while the hash_table[i] != None
-            # then increment index and try again
+    # while the hash_table[i] != None
+    # then increment index and try again
     if hash_table[i] != None:
         print(f"Collision! Overwriting {repr(hash_table[i])}")
     hash_table[i] = HashTableEntry(key, val)
+
 
 # get
 def get(key):
@@ -44,20 +49,15 @@ def get(key):
     if entry == None:
         return None
     # while the entry.key != key
-        # then increment index and try again
+    # then increment index and try again
 
     return entry.value
+
 
 # delete
 def delete(key):
     i = hash_index(key)
     hash_table[i] = None
-
-
-
-
-
-
 
 
 if __name__ == "__main__":

@@ -20,26 +20,23 @@ marks_3 = int(input("Enter the marks in subject 3: "))
 
 total_marks = marks_1 + marks_2 + marks_3
 
-print("Total number of marks secured by the student {} is {}".format(student_name,total_marks))
+print(
+    "Total number of marks secured by the student {} is {}".format(
+        student_name, total_marks
+    )
+)
 
 average_marks = total_marks / 3
 
 print("The average of the marks secured by the student {}".format(average_marks))
 
-if(average_marks >= 80):
+if average_marks >= 80:
     print("Distinction")
-elif(average_marks >= 60):
+elif average_marks >= 60:
     print("First Class")
-elif(average_marks >= 50):
+elif average_marks >= 50:
     print("Second Class")
-elif(average_marks >= 35):
+elif average_marks >= 35:
     print("Thrid Class")
 else:
     print("Fail")
-
-
-
-
-
-
-

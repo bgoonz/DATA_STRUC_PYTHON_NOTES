@@ -2,7 +2,6 @@
 
 # create the abstract data type
 class Stack:
-
     def __init__(self):
         # initialize it to a one dimensional array or linked list
         self.stack = []
@@ -49,8 +48,8 @@ stack = Stack()
 stack.push(1)
 stack.push(2)
 stack.push(3)
-print(f'Size: {stack.stack_size()}')
-print(f'Popped item: {stack.pop()}')
-print(f'Size: {stack.stack_size()}')
-print(f'Peeked item: {stack.peek()}')
-print(f'Size: {stack.stack_size()}')
+print(f"Size: {stack.stack_size()}")
+print(f"Popped item: {stack.pop()}")
+print(f"Size: {stack.stack_size()}")
+print(f"Peeked item: {stack.peek()}")
+print(f"Size: {stack.stack_size()}")

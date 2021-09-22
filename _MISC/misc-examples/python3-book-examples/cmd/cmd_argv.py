@@ -3,7 +3,7 @@
 """
 
 
-#end_pymotw_header
+# end_pymotw_header
 import cmd
 
 
@@ -13,15 +13,16 @@ class InteractiveOrCommandLine(cmd.Cmd):
     """
 
     def do_greet(self, line):
-        print('hello,', line)
+        print("hello,", line)
 
     def do_EOF(self, line):
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys
+
     if len(sys.argv) > 1:
-        InteractiveOrCommandLine().onecmd(' '.join(sys.argv[1:]))
+        InteractiveOrCommandLine().onecmd(" ".join(sys.argv[1:]))
     else:
         InteractiveOrCommandLine().cmdloop()

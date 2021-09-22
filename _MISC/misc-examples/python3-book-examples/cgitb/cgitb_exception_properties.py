@@ -3,9 +3,10 @@
 """Showing exception properties in a traceback
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import cgitb
-cgitb.enable(format='text')
+
+cgitb.enable(format="text")
 
 
 class MyException(Exception):
@@ -17,4 +18,5 @@ class MyException(Exception):
         Exception.__init__(self, message)
         return
 
-raise MyException('Normal message', bad_value=99)
+
+raise MyException("Normal message", bad_value=99)

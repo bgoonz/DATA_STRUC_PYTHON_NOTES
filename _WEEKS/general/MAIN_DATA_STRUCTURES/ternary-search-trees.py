@@ -1,5 +1,4 @@
 class Node(object):
-
     def __init__(self, character):
         self.character = character
         self.leftNode = None
@@ -9,7 +8,6 @@ class Node(object):
 
 
 class TST(object):
-
     def __init__(self):
         self.rootNode = None
 
@@ -28,12 +26,11 @@ class TST(object):
         elif c > node.character:
             node.rightNode = self.putItem(node.rightNode, key, value, index)
         elif index < len(key) - 1:
-            node.middleNode = self.putItem(node.middleNode, key, value,
-                                           index + 1)
+            node.middleNode = self.putItem(node.middleNode, key, value, index + 1)
         else:
             node.value = value
 
-        return node;
+        return node
 
     def get(self, key):
 

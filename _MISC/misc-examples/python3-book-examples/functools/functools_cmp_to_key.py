@@ -3,23 +3,22 @@
 """Fill in missing rich comparison methods.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import functools
 
 
 class MyObject:
-
     def __init__(self, val):
         self.val = val
 
     def __str__(self):
-        return 'MyObject({})'.format(self.val)
+        return "MyObject({})".format(self.val)
 
 
 def compare_obj(a, b):
     """Old-style comparison function.
     """
-    print('comparing {} and {}'.format(a, b))
+    print("comparing {} and {}".format(a, b))
     if a.val < b.val:
         return -1
     elif a.val > b.val:
@@ -30,10 +29,11 @@ def compare_obj(a, b):
 # Make a key function using cmp_to_key()
 get_key = functools.cmp_to_key(compare_obj)
 
+
 def get_key_wrapper(o):
     "Wrapper function for get_key to allow for print statements."
     new_key = get_key(o)
-    print('key_wrapper({}) -> {!r}'.format(o, new_key))
+    print("key_wrapper({}) -> {!r}".format(o, new_key))
     return new_key
 
 

@@ -12,14 +12,14 @@
 """The asterisk as wildcard character.
 """
 
-#end_pymotw_header
+# end_pymotw_header
 import glob
 
-specials = '?*['
+specials = "?*["
 
 for char in specials:
-    pattern = 'dir/*' + glob.escape(char) + '.txt'
-    print('Searching for: {!r}'.format(pattern))
+    pattern = "dir/*" + glob.escape(char) + ".txt"
+    print("Searching for: {!r}".format(pattern))
     for name in sorted(glob.glob(pattern)):
         print(name)
     print()

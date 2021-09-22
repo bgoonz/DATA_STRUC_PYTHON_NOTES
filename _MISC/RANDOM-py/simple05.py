@@ -13,24 +13,23 @@ PUSH = 7
 POP = 8
 
 
-
-
 # flags
 
 # program counter
 pc = 0
 
 # memory
-memory = [0] * 128 # 128 bytes of RAM
+memory = [0] * 128  # 128 bytes of RAM
 
 # registers
-register = [0] * 8 # list of 8 registers
-SP = 7 # Stack pointer R7
+register = [0] * 8  # list of 8 registers
+SP = 7  # Stack pointer R7
 
 # state (running)
 running = True
 
 # Helper Functions
+
 
 def load_memory(filename):
     try:
@@ -54,18 +53,16 @@ def load_memory(filename):
                 value = int(num, 2)
                 # print the value in binary and in decimal
                 # uncomment for debugging: print(f"{value:08b}: {value:d}")
-                
+
                 # add the value in to the memory at the index of address
                 memory[address] = value
 
                 # increment the address
                 address += 1
 
-
     except FileNotFoundError:
         print(f"{sys.argv[0]}: {sys.argv[1]} not found")
         sys.exit(2)
-
 
 
 # Main entry
@@ -87,7 +84,7 @@ while running:
         # EXECUTE
         instruction_size = 1
         print("Tom")
- 
+
     # DECODE
     elif command == HALT:
         # EXECUTE
@@ -100,7 +97,7 @@ while running:
         instruction_size = 2
         num = memory[pc + 1]
         print(num)
-  
+
     # DECODE
     elif command == SAVE:
         # EXECUTE
@@ -108,7 +105,7 @@ while running:
         num = memory[pc + 1]
         reg = memory[pc + 2]
         register[reg] = num
-  
+
     # DECODE
     elif command == ADD:
         # EXECUTE
@@ -123,7 +120,7 @@ while running:
         instruction_size = 2
         reg = memory[pc + 1]
         print(register[reg])
-    
+
     # DECODE
     elif command == PUSH:
         # EXECUTE
@@ -148,9 +145,6 @@ while running:
         register[reg] = val
         register[SP] += 1
 
-
-
-
     # DECODE (ERROR)
     else:
         # EXECUTE
@@ -158,4 +152,3 @@ while running:
         sys.exit(1)
 
     pc += instruction_size
-

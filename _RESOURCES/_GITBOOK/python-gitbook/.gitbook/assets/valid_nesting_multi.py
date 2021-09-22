@@ -10,7 +10,9 @@ from collections.abc import Mapping, Sequence
 from src.typehints import Node
 
 
-def valid_nesting_multi(items: Sequence[Node], openers_to_closers: Mapping[Node, Node]) -> bool:
+def valid_nesting_multi(
+    items: Sequence[Node], openers_to_closers: Mapping[Node, Node]
+) -> bool:
     """The parentheses problem with multiple brackets."""
     openers = openers_to_closers.keys()
     closers = set(openers_to_closers.values())

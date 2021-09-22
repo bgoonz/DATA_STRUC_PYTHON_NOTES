@@ -24,11 +24,7 @@ snek_x = s_width / 4
 
 snek_y = s_height / 2
 
-snek = [
-    [snek_y, snek_x],
-    [snek_y, snek_x - 1],
-    [snek_y, snek_x - 2],
-]
+snek = [[snek_y, snek_x], [snek_y, snek_x - 1], [snek_y, snek_x - 2]]
 
 food = [math.floor(s_height / 2), math.floor(s_width / 2)]
 w.addch(food[0], food[1], curses.ACS_CKBOARD)
@@ -41,8 +37,7 @@ while running:
     next_key = w.getch()
     key = key if next_key == -1 else next_key
 
-    if snek[0][0] in [0, s_height] or snek[0][1] in [0, s_width
-                                                     ] or snek[0] in snek[1:]:
+    if snek[0][0] in [0, s_height] or snek[0][1] in [0, s_width] or snek[0] in snek[1:]:
         running = False
         curses.endwin()
         quit()
@@ -67,15 +62,12 @@ while running:
         food = None
 
         while food is None:
-            new_food = [
-                random.randint(1, s_height - 1),
-                random.randint(1, s_width - 1)
-            ]
+            new_food = [random.randint(1, s_height - 1), random.randint(1, s_width - 1)]
 
             food = new_food if new_food not in snek else None
         w.addch(math.floor(food[0]), math.floor(food[1]), curses.ACS_CKBOARD)
     else:
         tail = snek.pop()
-        w.addch(math.floor(tail[0]), math.floor(tail[1]), ' ')
+        w.addch(math.floor(tail[0]), math.floor(tail[1]), " ")
 
     w.addch(math.floor(snek[0][0]), math.floor(snek[0][1]), curses.ACS_CKBOARD)

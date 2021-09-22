@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # encoding: utf-8
-#end_pymotw_header
+# end_pymotw_header
 import sys
 import threading
 import time
@@ -8,14 +8,16 @@ import time
 
 def do_something_with_exception():
     exc_type, exc_value = sys.exc_info()[:2]
-    print('Handling {} exception with message "{}" in {}'.format(
-        exc_type.__name__, exc_value,
-        threading.current_thread().name))
+    print(
+        'Handling {} exception with message "{}" in {}'.format(
+            exc_type.__name__, exc_value, threading.current_thread().name
+        )
+    )
 
 
 def cause_exception(delay):
     time.sleep(delay)
-    raise RuntimeError('This is the error message')
+    raise RuntimeError("This is the error message")
 
 
 def thread_target(delay):
