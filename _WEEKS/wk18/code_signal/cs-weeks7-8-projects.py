@@ -817,30 +817,11 @@ trust = [[1, 3], [1, 4], [2, 3], [2, 4], [4, 3]]
 
 
 def uncover_spy(n, trust):
-    # create map of people who trust
-    # return the person who trusts no one
-    trusts = {}
-    trusted = {}
-    for i in range(1, n + 1):
-        trusts[i] = []
-        trusted[i] = []
-    for group in trust:
-        if group[0] in trusts:
-            trusts[group[0]].append(group[1])
-    for group in trust:
-        if group[1] in trusted:
-            trusted[group[1]].append(group[0])
-    print(trusts)
-    print(trusted)
-    spies = []
-    for person in trusts:
-        if len(trusts[person]) == 0:
-            spies.append(person)
-
-    if len(spies) == 1:
-        if len(trusted[spies[0]]) == n - 1:
-            return spies[0]
+    degrees = [0] * n
+    for i, j in trust:
+        degrees[i - 1] -= 1
+        degrees[j - 1] += 1
+    for i in range(len(degrees)):
+        if degrees[i] == n - 1:
+            return i + 1
     return -1
-
-
-print(uncover_spy(n, trust))

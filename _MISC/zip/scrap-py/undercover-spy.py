@@ -1,9 +1,9 @@
 def uncover_spy(n, trust):
-    trusted = [0 for _ in range(n + 1)]
+    degrees = [0] * n
     for i, j in trust:
-        trusted[i] -= 1
-        trusted[j] += 1
-        for i in range(1, len(trusted)):
-            if trusted[i] == n - 1:
-                return i
-            return -1
+        degrees[i - 1] -= 1
+        degrees[j - 1] += 1
+    for i in range(len(degrees)):
+        if degrees[i] == n - 1:
+            return i + 1
+    return -1
