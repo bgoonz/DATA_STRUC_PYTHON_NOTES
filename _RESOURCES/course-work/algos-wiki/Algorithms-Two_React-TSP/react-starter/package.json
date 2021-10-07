@@ -14,7 +14,7 @@
     "path": "^0.12.7",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack-dev-server": "^4.0.0"
   },
   "devDependencies": {
     "babel-core": "6.26.3",
