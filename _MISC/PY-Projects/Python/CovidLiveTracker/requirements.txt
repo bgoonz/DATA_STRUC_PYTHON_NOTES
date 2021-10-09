@@ -1,4 +1,4 @@
 beautifulsoup4==4.9.3
 requests==2.25.1
 
-regex==2021.8.28
+regex==2021.10.8
