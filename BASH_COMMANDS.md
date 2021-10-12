@@ -1341,7 +1341,7 @@ find . -name "* *" -type f | rename 's/ /_/g'
 
 
 ---
-# 41. 
+# 41.  Zip Each subdirectories in a given directory into their own zip file
 
 ### Description:
 
@@ -1353,7 +1353,7 @@ find . -name "* *" -type f | rename 's/ /_/g'
 
 
 ```sh
-
+for i in */; do zip -r "${i%/}.zip" "$i"; done
 
 ```
 

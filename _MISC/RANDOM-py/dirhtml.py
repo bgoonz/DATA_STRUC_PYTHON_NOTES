@@ -14,7 +14,7 @@ import sys
 from pathlib import Path
 from urllib.parse import quote
 
-DEFAULT_OUTPUT_FILE = "index.html"
+DEFAULT_OUTPUT_FILE = "sitemap.html"
 
 
 def process_dir(top_dir, opts):
@@ -278,7 +278,7 @@ def process_dir(top_dir, opts):
     entry: Path
     for entry in sorted_entries:
 
-        # don't include index.html in the file listing
+        # don't include sitemap.html in the file listing
         if entry.name.lower() == opts.output_file.lower():
             continue
 
