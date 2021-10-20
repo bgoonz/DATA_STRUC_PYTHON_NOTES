@@ -1,4 +1,4 @@
-FROM node:16 AS build-stage
+FROM node:17 AS build-stage
 
 WORKDIR /react-app
 COPY react-app/. .
